@@ -2,29 +2,48 @@
 title: Overview
 type: overview
 tags: [meta]
-sources: []
+sources: [thesis-goal, dsia-studienordnung-2027, hok-dsia-program-listings]
 updated: 2026-10-20
 ---
-Current big-picture understanding of ML/DL algorithm selection for Overpass/OSM geospatial problems.
+Current big-picture understanding of ML/DL algorithm selection for recognising OSM/Overpass objects in orthoimagery, for the HOK master thesis.
 
 ## Scope
 
-How to pick machine-learning and deep-learning methods for problems whose data comes (at
-least partly) from OpenStreetMap via the Overpass API: which problem types exist, which
-model families fit which data representations (points, polylines, polygons, graphs,
-rasters, grid cells), and how to evaluate them honestly on spatial data.
+The master thesis in the [[hok-dsia-master]] aims at an ML/DL **recognition and
+classification** method for objects that exist in [[openstreetmap]] (defined via
+[[overpass-turbo]]), applied to [[orthoimagery]], with a proof of concept in which imagery is
+uploaded to a [[poc-platform]] ([[thesis-goal]]).
 
 ## Current understanding
 
-Nothing ingested yet. This section is rewritten as sources arrive — it should always read
-as a short, current synthesis, not a changelog.
+- **Labels come almost for free from OSM.** Because orthoimagery is georeferenced, OSM
+  geometries from the [[overpass-api]] can be turned straight into training masks or boxes.
+  The price is label noise: misalignment, missing objects, and outdated objects
+  ([[osm-weak-labels]]). (unsourced)
+- **The choice of method depends on the object classes.** Compact, countable objects suit
+  [[object-detection]]; areal or linear features suit [[semantic-segmentation]]. Instance
+  segmentation covers both cases for things like buildings. (unsourced)
+- **The working design** is in [[thesis-poc-pipeline]]: Overpass → labels → model → PoC.
+- **Programme constraints** come from the official regulation ([[dsia-studienordnung-2027]]):
+  the thesis is 20 ECTS + a 2-ECTS committee exam in semester 4, the exposé is approved by the
+  programme director, and the colloquium examines the research question and method. The
+  curriculum teaches CNNs and image-based object recognition but **nothing geospatial**, so
+  the thesis must bring its own GIS foundations. Milestones are in [[thesis-timeline]].
 
 ## Open questions
 
-- What problem types does this project actually target first? (unsourced)
-- Which representation of OSM data (vector features, graphs, rasterised tiles, hex-grid aggregates) suits each?
-- How should spatial leakage be handled in train/test splits?
+- Which object classes and study region? This drives every other choice.
+- Detection, segmentation, or both?
+- Which orthoimagery source (resolution, date, licence)?
+- Does the PoC platform exist already, or is building it part of the thesis?
+- How should spatial leakage be handled in train/test splits? (unsourced)
+- Which regulation version applies to the author? The one ingested covers cohorts starting WS 2027/28.
+- What is the research question for the exposé? A PoC alone is not one; see [[thesis-timeline]].
+- Formal thesis guidelines (length, citation style, deadlines) are not in the regulation.
 
 ## Related
+- [[thesis-goal]]
+- [[thesis-poc-pipeline]]
+- [[thesis-timeline]]
 - [[index]]
 - [[log]]
