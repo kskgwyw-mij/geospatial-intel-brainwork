@@ -4,16 +4,24 @@ Catalog of every wiki page. One line each: `[[page]] — one-sentence summary`.
 Updated on every ingest, filed query, or rename. Read this first when answering a question.
 
 ## Overview
-- [[overview]] — Current big-picture understanding of ML/DL algorithm selection for Overpass/OSM geospatial problems.
+- [[overview]] — Current big-picture understanding of ML/DL algorithm selection for recognising OSM/Overpass objects in orthoimagery, for the HOK master thesis.
 
 ## Sources
-_None yet — drop a file into `raw/` and run `/ingest`._
+- [[thesis-goal]] — The author's own statement of the master thesis goal: an ML/DL method that recognises and classifies OSM objects (via Overpass Turbo) in orthoimagery, shown in a PoC platform.
+- [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities
-_None yet._
+- [[hok-dsia-master]] — The part-time master's programme at HOK Kufstein Tirol in which the thesis is written.
+- [[openstreetmap]] — The crowd-sourced world map whose features define the object classes.
+- [[overpass-api]] — Read-only query API for OSM data; the backend Overpass Turbo calls.
+- [[overpass-turbo]] — Web IDE for writing and visualising Overpass queries; defines which OSM objects count.
+- [[poc-platform]] — The proof-of-concept platform where orthoimagery is uploaded and detections are shown.
 
 ## Concepts
-_None yet._
+- [[orthoimagery]] — Orthorectified aerial or satellite images that line up with map coordinates; the input data.
+- [[osm-weak-labels]] — Using OSM geometries from Overpass as noisy training labels instead of hand annotation.
+- [[object-detection]] — Bounding box plus class per object; suits compact, countable features.
+- [[semantic-segmentation]] — A class for every pixel; suits areal and linear features.
 
 ## Analyses
-_None yet._
+- [[thesis-poc-pipeline]] — Working end-to-end design: Overpass → labels → model → PoC platform.
