@@ -32,7 +32,7 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]).
 
 ## Open questions
 
-- Which object classes and study region? This drives every other choice.
+- Which object classes and study region? This drives every other choice. Candidates: [[osm-object-catalog]].
 - Detection, segmentation, or both?
 - Which orthoimagery source (resolution, date, licence)?
 - Does the PoC platform exist already, or is building it part of the thesis?

@@ -22,7 +22,7 @@ The regulation expects an end-to-end ML project and an exposé that aligns probl
 
 ## Decisions still open
 - Detection vs. segmentation vs. both: this depends on the chosen object classes.
-- Object classes and study region.
+- Object classes and study region (candidate shortlist in [[osm-object-catalog]]).
 - Imagery source, resolution, and licence.
 - Whether the PoC platform exists already or must be built.
 

@@ -26,4 +26,5 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 
 ## Analyses
 - [[thesis-poc-pipeline]] — Working end-to-end design: Overpass → labels → model → PoC platform.
+- [[osm-object-catalog]] — Element types, primary OSM keys with main values, visibility in orthoimagery, thesis class shortlist, query templates.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.

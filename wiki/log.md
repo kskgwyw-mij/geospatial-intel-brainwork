@@ -19,3 +19,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[dsia-studienordnung-2027]], [[thesis-timeline]]
 - updated: [[hok-dsia-master]], [[overview]], [[thesis-poc-pipeline]], [[poc-platform]]
 - notes: Official regulation supersedes the listing notes. Thesis = 20 ECTS + 2 ECTS committee exam in Sem 4; the exposé is drafted in Sem 3 and approved by the programme director. The curriculum covers CNNs and image object recognition but nothing geospatial. The regulation applies to cohorts from WS 2027/28; check which one applies to the author.
+
+## [2026-10-20] query | List all Overpass Turbo / API objects
+- created: [[osm-object-catalog]]
+- updated: [[overpass-api]], [[overpass-turbo]], [[thesis-poc-pipeline]], [[overview]]
+- notes: Catalogue of element types, primary keys, main values and orthoimagery visibility, plus a thesis class shortlist (buildings, pools, rooftop PV, tanks, pitches, trees). taginfo, the OSM wiki and overpass-api.de were blocked, so it is written from model knowledge and is entirely (unsourced) until a taginfo/Overpass export is ingested.
