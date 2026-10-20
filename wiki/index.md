@@ -10,6 +10,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[thesis-goal]] — The author's own statement of the master thesis goal: an ML/DL method that recognises and classifies OSM objects (via Overpass Turbo) in orthoimagery, shown in a PoC platform.
 - [[dsia-studienordnung-2027]] — Official 83-page study regulation (from WS 2027/28): curriculum, thesis rules (exposé, 20+2 ECTS), relevant courses, admission.
 - [[aerial-cv-benchmarks]] — Search-result facts on DOTA (detection, 15–18 classes), ISPRS Potsdam/Vaihingen (6-class segmentation, 5/9 cm) and Inria (30 cm buildings).
+- [[author-note-industrial-colour]] — Author observation: industrial areas have a distinct colour in orthoimagery.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities
@@ -24,6 +25,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[osm-weak-labels]] — Using OSM geometries from Overpass as noisy training labels instead of hand annotation.
 - [[object-detection]] — Bounding box plus class per object; suits compact, countable features.
 - [[semantic-segmentation]] — A class for every pixel; suits areal and linear features.
+- [[spectral-texture-features]] — Colour, texture and shape cues that reveal land use (e.g. industrial areas) and power a classical ML baseline.
 
 ## Analyses
 - [[thesis-poc-pipeline]] — Working end-to-end design: Overpass → labels → model → PoC platform.

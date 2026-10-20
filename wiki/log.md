@@ -29,3 +29,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[aerial-cv-benchmarks]], [[cv-detectability]]
 - updated: [[object-detection]], [[semantic-segmentation]], [[osm-object-catalog]], [[overview]]
 - notes: Detectability depends on object size in pixels, visibility from above, occlusion and bands. The DOTA and ISPRS benchmark classes overlap well with OSM tags (pools, tanks, pitches, buildings, vehicles, trees). Benchmark facts come from search snippets; the GSD table is (unsourced).
+
+## [2026-10-20] ingest | Author note: industrial areas have a different colour
+- created: [[author-note-industrial-colour]], [[spectral-texture-features]]
+- updated: [[cv-detectability]], [[osm-object-catalog]], [[thesis-poc-pipeline]], [[overview]]
+- notes: Corrected the claim that land use is invisible from above: coarse land use (industrial vs. residential vs. farmland) is recognisable from colour, texture and shape. `landuse=industrial` was added to the class shortlist, and colour/texture features now define the classical baseline.

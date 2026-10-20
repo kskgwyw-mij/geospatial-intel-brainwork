@@ -13,7 +13,7 @@ Working end-to-end design for the thesis: Overpass → labels → model → PoC 
 2. **Pull geometries via the [[overpass-api]]** for the training regions; cache them as GeoJSON with the OSM timestamp.
 3. **Get matching [[orthoimagery]]**: same extent, known resolution and acquisition date.
 4. **Build labels** ([[osm-weak-labels]]): rasterise polygons into masks and/or derive boxes; tile to fixed-size chips; split train/val/test **by region**, not randomly, to avoid spatial leakage. (unsourced)
-5. **Train and compare models**: [[object-detection]] and/or [[semantic-segmentation]], with a classical ML baseline (for example a random forest on pixel or object features) to justify using DL. Both families are taught: random forests and ensembles in Statistical Learning 1/2, CNNs in ML & Deep Learning ([[dsia-studienordnung-2027]]).
+5. **Train and compare models**: [[object-detection]] and/or [[semantic-segmentation]], with a classical ML baseline (for example a random forest on colour, texture and shape features, see [[spectral-texture-features]]) to justify using DL. Both families are taught: random forests and ensembles in Statistical Learning 1/2, CNNs in ML & Deep Learning ([[dsia-studienordnung-2027]]).
 6. **Evaluate** on a hand-checked test set, since the OSM labels are noisy. (unsourced)
 7. **PoC on the [[poc-platform]]**: upload GeoTIFF → tile → infer → merge → GeoJSON output, optionally compared with current OSM to report agreement, objects missing from OSM, and possibly outdated ones.
 

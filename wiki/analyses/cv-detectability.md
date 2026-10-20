@@ -2,7 +2,7 @@
 title: What computer vision can detect in orthoimagery
 type: analysis
 tags: [computer-vision, classes, decision]
-sources: [aerial-cv-benchmarks]
+sources: [aerial-cv-benchmarks, author-note-industrial-colour]
 updated: 2026-10-20
 ---
 What computer vision can and cannot recognise in orthoimagery, by task type, object size and resolution, mapped to OSM tags, to decide the thesis classes.
@@ -17,7 +17,7 @@ What computer vision can and cannot recognise in orthoimagery, by task type, obj
 
 | Task | Output | Typical aerial targets | OSM link |
 |---|---|---|---|
-| Image or tile **classification** | One label per tile | "contains PV yes/no", land-use type | `landuse=*`, presence of a tag |
+| Image or tile **classification** | One label per tile | "contains PV yes/no", land-use type: industrial areas have a distinct colour ([[author-note-industrial-colour]]), plus texture and size cues, see [[spectral-texture-features]] | `landuse=industrial\|commercial\|residential\|farmland\|forest` |
 | **[[object-detection]]** (boxes, oriented boxes) | Box + class per object | DOTA classes: plane, ship, storage tank, vehicles, tennis/basketball court, soccer field, track field, baseball diamond, swimming pool, bridge, harbor, roundabout, helicopter, container crane, airport, helipad ([[aerial-cv-benchmarks]]) | `aeroway`, `man_made=storage_tank`, `leisure=pitch`+`sport`, `leisure=swimming_pool`, `bridge=yes`, `junction=roundabout` |
 | **[[semantic-segmentation]]** | Class per pixel | ISPRS classes: impervious surface, building, low vegetation, tree, car ([[aerial-cv-benchmarks]]); water, roads, forest | `building`, `highway`, `natural`, `landuse`, `water` |
 | **Instance segmentation** | Mask per object | Building footprints (Inria: 30 cm, [[aerial-cv-benchmarks]]), PV arrays, single trees | `building=*`, `power=generator`, `natural=tree` |
@@ -37,9 +37,15 @@ What computer vision can and cannot recognise in orthoimagery, by task type, obj
 
 ## Mostly not detectable from imagery alone
 Most `shop=*`, `office=*`, `amenity=*` POIs (restaurant, school, pharmacy…), names, addresses,
-`building=*` function subtypes (a residential vs. commercial roof looks the same), opening hours,
+fine `building=*` function subtypes (a single house roof says little about its use), opening hours,
 access rules, underground features (pipelines, tunnels), and anything under tree canopy.
 These are context classes: the model can at best infer them from surroundings. (unsourced)
+
+> [!note] Correction
+> Coarse **land use** is an exception. Industrial areas differ visibly in colour
+> ([[author-note-industrial-colour]]), and large halls, yards and truck parking add texture and
+> shape cues. `landuse=industrial` is therefore detectable at the area level, even if a single
+> building's function is not. See [[spectral-texture-features]].
 
 ## Implication for the thesis
 The overlap of "computer vision detects it well" and "it exists in OSM via Overpass" is roughly the
@@ -48,6 +54,7 @@ PV, trees, water, roads. See the shortlist in [[osm-object-catalog]]. Start with
 detection class (for example `leisure=swimming_pool`) and one segmentation class (`building=*`). (unsourced)
 
 ## Related
+- [[spectral-texture-features]]
 - [[osm-object-catalog]]
 - [[aerial-cv-benchmarks]]
 - [[object-detection]]

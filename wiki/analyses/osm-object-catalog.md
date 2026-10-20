@@ -2,7 +2,7 @@
 title: OSM / Overpass object catalogue
 type: analysis
 tags: [osm, overpass, classes, catalogue]
-sources: []
+sources: [author-note-industrial-colour]
 updated: 2026-10-20
 ---
 Catalogue of what Overpass Turbo / the Overpass API can return: element types, the primary feature keys with their main values, and how visible each class is in orthoimagery. It is the menu for choosing the thesis classes.
@@ -37,7 +37,7 @@ estimate. (unsourced)
 |---|---|---|---|
 | `building` | yes, house, residential, detached, apartments, garage(s), shed, industrial, commercial, retail, warehouse, farm_auxiliary, barn, roof, church, school, hut, greenhouse, service, construction | ●●● footprint / ●● subtype | Best-covered class; the subtype is often `yes` → weak class labels |
 | `highway` | motorway, trunk, primary, secondary, tertiary, unclassified, residential, service, track, path, footway, cycleway, steps, living_street, pedestrian; nodes: crossing, traffic_signals, bus_stop, street_lamp | ●●● roads / ● nodes | Lines → buffer for masks; road class is partly semantic |
-| `landuse` | residential, commercial, industrial, retail, farmland, farmyard, meadow, orchard, vineyard, forest, grass, cemetery, allotments, construction, quarry, landfill, railway, military, greenhouse_horticulture, basin, reservoir | ●● | Large polygons; boundaries are fuzzy → segmentation |
+| `landuse` | residential, commercial, industrial, retail, farmland, farmyard, meadow, orchard, vineyard, forest, grass, cemetery, allotments, construction, quarry, landfill, railway, military, greenhouse_horticulture, basin, reservoir | ●●● industrial, farmland, forest / ●● others | Large polygons; boundaries are fuzzy → segmentation or tile classification. Industrial areas differ in colour ([[author-note-industrial-colour]]); see [[spectral-texture-features]] |
 | `natural` | wood, tree (node), tree_row, scrub, heath, grassland, wetland, water, beach, sand, scree, bare_rock, cliff, glacier, peak, spring | ●●● tree, water / ●● others | `natural=tree` is a good point-detection class |
 | `water` (with natural=water) | lake, pond, river, reservoir, basin, canal, lagoon, stream_pool, wastewater | ●●● | Strong segmentation class |
 | `waterway` | river, stream, canal, ditch, drain, weir, dam | ●● | Thin lines; often hidden under trees |
@@ -73,7 +73,8 @@ Ranked by suitability for OSM-labelled orthoimagery. (unsourced)
 4. `man_made=storage_tank` / `silo` → detection.
 5. `leisure=pitch` + `sport=tennis|soccer|…` → detection plus fine-grained classification.
 6. `natural=tree` → point detection; `natural=wood` / `landuse=forest` → segmentation.
-7. `amenity=parking` (areas) / `highway=*` (buffered) → [[semantic-segmentation]].
+7. `landuse=industrial` (vs. residential, commercial, farmland) → tile classification or segmentation, using its distinct colour and texture ([[spectral-texture-features]]).
+8. `amenity=parking` (areas) / `highway=*` (buffered) → [[semantic-segmentation]].
 
 ## 4. Query templates
 
