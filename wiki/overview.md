@@ -2,7 +2,7 @@
 title: Overview
 type: overview
 tags: [meta]
-sources: [thesis-goal, hok-dsia-program-listings]
+sources: [thesis-goal, dsia-studienordnung-2027, hok-dsia-program-listings]
 updated: 2026-10-20
 ---
 Current big-picture understanding of ML/DL algorithm selection for recognising OSM/Overpass objects in orthoimagery, for the HOK master thesis.
@@ -24,7 +24,11 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]).
   [[object-detection]]; areal or linear features suit [[semantic-segmentation]]. Instance
   segmentation covers both cases for things like buildings. (unsourced)
 - **The working design** is in [[thesis-poc-pipeline]]: Overpass → labels → model → PoC.
-- Programme facts so far come only from third-party listings ([[hok-dsia-program-listings]]).
+- **Programme constraints** come from the official regulation ([[dsia-studienordnung-2027]]):
+  the thesis is 20 ECTS + a 2-ECTS committee exam in semester 4, the exposé is approved by the
+  programme director, and the colloquium examines the research question and method. The
+  curriculum teaches CNNs and image-based object recognition but **nothing geospatial**, so
+  the thesis must bring its own GIS foundations. Milestones are in [[thesis-timeline]].
 
 ## Open questions
 
@@ -33,10 +37,13 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]).
 - Which orthoimagery source (resolution, date, licence)?
 - Does the PoC platform exist already, or is building it part of the thesis?
 - How should spatial leakage be handled in train/test splits? (unsourced)
-- What are the official thesis requirements (deadline, format, evaluation)?
+- Which regulation version applies to the author? The one ingested covers cohorts starting WS 2027/28.
+- What is the research question for the exposé? A PoC alone is not one; see [[thesis-timeline]].
+- Formal thesis guidelines (length, citation style, deadlines) are not in the regulation.
 
 ## Related
 - [[thesis-goal]]
 - [[thesis-poc-pipeline]]
+- [[thesis-timeline]]
 - [[index]]
 - [[log]]

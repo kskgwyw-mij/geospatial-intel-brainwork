@@ -8,10 +8,11 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 
 ## Sources
 - [[thesis-goal]] — The author's own statement of the master thesis goal: an ML/DL method that recognises and classifies OSM objects (via Overpass Turbo) in orthoimagery, shown in a PoC platform.
+- [[dsia-studienordnung-2027]] — Official 83-page study regulation (from WS 2027/28): curriculum, thesis rules (exposé, 20+2 ECTS), relevant courses, admission.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities
-- [[hok-dsia-master]] — The part-time master's programme at HOK Kufstein Tirol in which the thesis is written.
+- [[hok-dsia-master]] — The DSIA master's programme at HOK Kufstein Tirol (part-time form) in which the thesis is written.
 - [[openstreetmap]] — The crowd-sourced world map whose features define the object classes.
 - [[overpass-api]] — Read-only query API for OSM data; the backend Overpass Turbo calls.
 - [[overpass-turbo]] — Web IDE for writing and visualising Overpass queries; defines which OSM objects count.
@@ -25,3 +26,4 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 
 ## Analyses
 - [[thesis-poc-pipeline]] — Working end-to-end design: Overpass → labels → model → PoC platform.
+- [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.
