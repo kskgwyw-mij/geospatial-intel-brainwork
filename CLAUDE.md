@@ -112,3 +112,9 @@ label noise / OSM completeness, gradient boosting (XGBoost/LightGBM), random for
 CNNs / U-Net for segmentation, GNNs for road networks, transformers / foundation models
 for geospatial (e.g. Prithvi, SatMAE), embeddings of POIs (e.g. hex2vec, loc2vec).
 Treat these as prompts for what to look for, not as facts — nothing above is sourced.
+
+## Git
+
+After every milestone — each ingest, each filed query/analysis, each lint pass, each schema
+change — commit with a descriptive message (e.g. `ingest: <source title>`) and push to the
+current branch right away. Don't batch milestones into one commit or leave work unpushed.
