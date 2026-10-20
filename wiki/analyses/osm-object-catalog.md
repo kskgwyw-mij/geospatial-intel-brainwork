@@ -61,7 +61,9 @@ estimate. (unsourced)
 | `surface` (attribute) | asphalt, paved, unpaved, gravel, grass, concrete | ●● | Classification attribute for roads and parking lots |
 | `roof:shape`, `roof:material` (attributes) | flat, gabled, hipped, … / tiles, metal, … | ●●● shape | Classification target for buildings |
 
-## 3. Shortlist for the thesis (visible, well mapped, enough samples)
+## 3. Shortlist for the thesis
+
+Why these: they overlap with the classes CV benchmarks such as DOTA and ISPRS cover; see [[cv-detectability]]. (visible, well mapped, enough samples)
 
 Ranked by suitability for OSM-labelled orthoimagery. (unsourced)
 
@@ -103,6 +105,7 @@ Export the counts for the study area (taginfo or the Overpass `out tags` query a
 `raw/` and `/ingest` them. That replaces the visibility guesses with real sample counts per class.
 
 ## Related
+- [[cv-detectability]]
 - [[overpass-api]]
 - [[overpass-turbo]]
 - [[openstreetmap]]

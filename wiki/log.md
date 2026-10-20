@@ -24,3 +24,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[osm-object-catalog]]
 - updated: [[overpass-api]], [[overpass-turbo]], [[thesis-poc-pipeline]], [[overview]]
 - notes: Catalogue of element types, primary keys, main values and orthoimagery visibility, plus a thesis class shortlist (buildings, pools, rooftop PV, tanks, pitches, trees). taginfo, the OSM wiki and overpass-api.de were blocked, so it is written from model knowledge and is entirely (unsourced) until a taginfo/Overpass export is ingested.
+
+## [2026-10-20] query | What can be detected with computer vision
+- created: [[aerial-cv-benchmarks]], [[cv-detectability]]
+- updated: [[object-detection]], [[semantic-segmentation]], [[osm-object-catalog]], [[overview]]
+- notes: Detectability depends on object size in pixels, visibility from above, occlusion and bands. The DOTA and ISPRS benchmark classes overlap well with OSM tags (pools, tanks, pitches, buildings, vehicles, trees). Benchmark facts come from search snippets; the GSD table is (unsourced).

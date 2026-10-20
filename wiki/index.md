@@ -9,6 +9,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 ## Sources
 - [[thesis-goal]] — The author's own statement of the master thesis goal: an ML/DL method that recognises and classifies OSM objects (via Overpass Turbo) in orthoimagery, shown in a PoC platform.
 - [[dsia-studienordnung-2027]] — Official 83-page study regulation (from WS 2027/28): curriculum, thesis rules (exposé, 20+2 ECTS), relevant courses, admission.
+- [[aerial-cv-benchmarks]] — Search-result facts on DOTA (detection, 15–18 classes), ISPRS Potsdam/Vaihingen (6-class segmentation, 5/9 cm) and Inria (30 cm buildings).
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities
@@ -27,4 +28,5 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 ## Analyses
 - [[thesis-poc-pipeline]] — Working end-to-end design: Overpass → labels → model → PoC platform.
 - [[osm-object-catalog]] — Element types, primary OSM keys with main values, visibility in orthoimagery, thesis class shortlist, query templates.
+- [[cv-detectability]] — What CV can and cannot recognise in orthoimagery, by task, object size and GSD, mapped to OSM tags.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.
