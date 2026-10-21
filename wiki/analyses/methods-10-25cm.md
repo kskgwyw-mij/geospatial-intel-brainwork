@@ -2,7 +2,7 @@
 title: Detector & classifier approaches for 10–25 cm orthophotos
 type: analysis
 tags: [methods, decision, detection, segmentation, classification]
-sources: [methods-10-25cm-search, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, author-note-industrial-colour]
+sources: [bayern-opengeodata, methods-10-25cm-search, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, author-note-industrial-colour]
 updated: 2026-10-21
 ---
 A rethink of which detector, segmenter and classifier approaches fit each thesis class (buildings and roof shapes, pools, solar arrays, trees, pitches, tanks) at state-orthophoto resolution, and how they combine into one pipeline.
@@ -51,6 +51,8 @@ the classical random-forest baseline and a zero-shot Grounded-SAM baseline (F1 0
 buildings), which gives a three-way comparison for the research question.
 
 Pretrained starting points for each head (YOLO11-OBB on DOTA, DeepForest, Satlas/DINOv3 encoders, SAM2): [[pretrained-models]].
+
+In Bavaria, **LoD2 provides roof shapes** and Hausumringe provide footprints as official labels, so the buildings + roof-shape scope no longer depends on sparse OSM `roof:shape` tags. DOM − DGM gives an nDSM input band ([[bayern-opengeodata]]).
 
 ## 4. What to scope down to
 A full three-head system is too much for one part-time thesis. (unsourced) Realistic cuts:

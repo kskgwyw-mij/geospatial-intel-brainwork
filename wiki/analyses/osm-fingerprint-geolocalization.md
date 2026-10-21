@@ -116,13 +116,13 @@ anchors**, which the countryside has in abundance:
 |---|---|---|---|
 | **Forest edges** | `landuse=forest`, `natural=wood` polygons | Long irregular outline, like a coastline | High (years) |
 | **Watercourses** | `waterway=stream\|river\|ditch` lines, `natural=water` | Unique meanders; ponds as point anchors | High, but streams are often hidden under trees ([[rural-geolocalization-search]]) |
-| **Field mosaic** | `landuse=farmland\|meadow\|orchard` polygons | Parcel shapes and sizes form a near-cadastral pattern | Medium: parcels merge or split; crop colour changes every season |
+| **Field mosaic** | `landuse=farmland\|meadow\|orchard` polygons; in Bavaria also the ALKIS parcel map and ATKIS Basis-DLM ([[bayern-opengeodata]]) | Parcel shapes and sizes form a near-cadastral pattern | Medium: parcels merge or split; crop colour changes every season |
 | **Hedges & tree rows** | `barrier=hedge`, `natural=tree_row` | Linear, irregular, long-lived | High |
 | **Isolated farm buildings** | `building=farm_auxiliary\|barn\|house` | Footprint shape and **orientation** of each building | High |
 | **Tracks** | `highway=track\|path` | Denser than roads, distinctive curves | Medium (often incompletely mapped) |
 | **Power lines & pylons** | `power=line`, `power=tower` | Straight lines with regular pylon spacing; pylons are point anchors | High |
 | **Alpine extras (Tyrol)** | `aerialway=*`, `piste:type`, `natural=peak\|cliff\|scree` | Very rare, distinctive | High |
-| **Terrain** | Not OSM: a DEM/DSM, for example Copernicus DEM GLO-30, free ([[copernicus-browser]]) | Ridge and valley shapes are unique everywhere | Very high |
+| **Terrain** | Not OSM: a DEM/DSM. In Bavaria use **DGM1 (1 m, free)** ([[bayern-opengeodata]]); elsewhere Copernicus DEM GLO-30 ([[copernicus-browser]]) | Ridge and valley shapes are unique everywhere | Very high |
 
 Evidence and method (sourced unless marked):
 - **Boundary-map matching** is the rural counterpart of road matching. Segment land cover, simplify it to boundary maps, and template-match against large maps; this has been done for cadastral geolocation ([[rural-geolocalization-search]]).

@@ -2,7 +2,7 @@
 title: Imagery sources for training and testing
 type: analysis
 tags: [imagery, data-sources, decision]
-sources: [german-dop-search, copernicus-browser, bayern-dop-regions-search, author-decision-search-region, geopera-free-satellite-germany, author-decision-no-metadata, pretrained-models-search, maggiori-2017-hr-semantic-labeling]
+sources: [bayern-opengeodata, german-dop-search, copernicus-browser, bayern-dop-regions-search, author-decision-search-region, geopera-free-satellite-germany, author-decision-no-metadata, pretrained-models-search, maggiori-2017-hr-semantic-labeling]
 updated: 2026-10-21
 ---
 Which imagery to use for training (georeferenced, OSM-labelled) and testing (metadata-free nadir photos), ranked by fit with the thesis resolution of 10–25 cm.
@@ -15,7 +15,10 @@ Which imagery to use for training (georeferenced, OSM-labelled) and testing (met
 
 | Source | GSD | Coverage / update | Fit | Evidence |
 |---|---|---|---|---|
-| **Bavarian DOP20** (RGB + colour-infrared) | 20 cm | All of Bavaria, including the search region [[oberbayern-sued]]; **CC BY 4.0**, WMS | ●●●● **first choice**: in-region training **and** test data | [[bayern-dop-regions-search]] |
+| **Bavarian DOP20** (RGB + colour-infrared) | 20 cm | All of Bavaria, including the search region [[oberbayern-sued]]; **CC BY 4.0**; download, bulk download, WMS; EPSG:25832 | ●●●● **first choice**: in-region training **and** test data | [[bayern-dop-regions-search]], [[bayern-opengeodata]] |
+| **Bavarian DGM1 / DOM / laser points** | 1 m terrain; surface model | All of Bavaria, CC BY 4.0 | ●●●● terrain for geolocation; nDSM (DOM − DGM) as an extra input band | [[bayern-opengeodata]] |
+| **Bavarian LoD2 + Hausumringe** | Vector (3D buildings, footprints) | All of Bavaria; LoD2 updated continuously | ●●●● official building and **roof-shape labels** | [[bayern-opengeodata]] |
+| Bavarian ATKIS Basis-DLM, ALKIS parcels | Vector | All of Bavaria; parcels carry a no-modification clause | ●●● rural anchors (fields, water, forest edges) | [[bayern-opengeodata]] |
 | Commercial satellite (for example via Geopera) | up to 30 cm | Paid, taskable | ● coarser than free DOP20; only if aerial data is missing | [[geopera-free-satellite-germany]] |
 | Landsat (NASA Earthdata) | 30 m | Global since 1972, free | ✗ for objects ("a football pitch is roughly one pixel") | [[geopera-free-satellite-germany]] |
 | German state orthophotos **DOP10** (for example NRW) | 10 cm | Per Land; NRW renewed every 3 years | ●●● training at the upper resolution | [[german-dop-search]] |
@@ -34,7 +37,8 @@ Which imagery to use for training (georeferenced, OSM-labelled) and testing (met
 2. Optionally add NRW DOP10 for extra urban training data, and use Tyrolean orthophotos as an out-of-region generalisation test. (unsourced)
 3. **Simulate metadata-free nadir test photos** by cropping held-out orthophotos, then rotating, rescaling and stripping coordinates. The true position, scale and heading are known, so geolocation error can be measured exactly.
 4. Ignore Sentinel-2 for objects. Use it only for land-cover context, if at all.
-5. **Use Copernicus DEM GLO-30** (via the Copernicus Browser) as the terrain layer for geolocation in the Alpine districts ([[copernicus-browser]]).
+5. **Terrain: use Bavarian DGM1 (1 m)** inside Bavaria ([[bayern-opengeodata]]); Copernicus DEM GLO-30 (30 m) only as a fallback outside Bavaria ([[copernicus-browser]]).
+6. **Labels: combine OSM with official data.** Bavarian Hausumringe and LoD2 give building footprints and roof shapes; OSM remains the searched map ([[bayern-opengeodata]]).
 
 ## Related
 - [[orthoimagery]]

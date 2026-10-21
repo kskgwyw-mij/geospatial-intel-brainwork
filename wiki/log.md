@@ -128,3 +128,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[author-note-use-cases-gnss-denied]], [[gnss-denied-use-cases]]
 - updated: [[thesis-timeline]] (preferred research question, dual-use ethics), [[overview]]
 - notes: The thesis is now framed as GNSS-denied visual localisation using detected OSM objects. There are 8 use cases; the best fits are spoofing and outage backup, Alpine shading, after-the-fact locating, sub-metre refinement, inspection and OSM maintenance. Military use is dual-use and goes in the ethics section. The German research question is adopted as the preferred exposé candidate. The jamming, multipath and drone-GPS claims still need literature.
+
+## [2026-10-21] ingest | Bayern OpenGeoData portal (DOP20 RGB detail + further datasets, search snippets)
+- created: [[bayern-opengeodata]]
+- updated: [[imagery-sources]], [[osm-fingerprint-geolocalization]], [[osm-weak-labels]], [[methods-10-25cm]], [[copernicus-browser]], [[bayern-dop-regions-search]], [[overview]]
+- notes: The site was blocked, so this comes from snippets. Free Bavarian data changes the design: DGM1 (1 m) replaces Copernicus GLO-30 for terrain inside Bavaria; DOM − DGM gives an nDSM band; LoD2 and Hausumringe give official building and roof-shape labels; ATKIS and ALKIS give rural anchors (parcels carry a no-modification clause). OSM stays the searched map.

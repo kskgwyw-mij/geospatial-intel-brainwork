@@ -26,6 +26,9 @@ WMS access. An OSM community note says CC BY 4.0 is ODbL-incompatible for *mappi
 ## Pages touched
 [[oberbayern-sued]], [[imagery-sources]], [[orthoimagery]]
 
+More Bavarian open datasets (DGM1, DOM, LoD2, Hausumringe, ATKIS, ALKIS): [[bayern-opengeodata]].
+
 ## Related
+- [[bayern-opengeodata]]
 - [[oberbayern-sued]]
 - [[imagery-sources]]
