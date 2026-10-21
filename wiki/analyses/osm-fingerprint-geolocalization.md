@@ -2,7 +2,7 @@
 title: Two-factor OSM fingerprint for locating an image
 type: analysis
 tags: [geolocalization, fingerprint, overpass, decision]
-sources: [costea-2016-aerial-geolocalization, methods-10-25cm-search, aerial-cv-benchmarks]
+sources: [costea-2016-aerial-geolocalization, methods-10-25cm-search, aerial-cv-benchmarks, author-note-rural-roads, rural-geolocalization-search]
 updated: 2026-10-21
 ---
 How to turn detected objects in an orthoimage into a two-factor "fingerprint" (what + where-relative-to-what) that can be searched in OSM via Overpass to find where the image was taken, and how to estimate whether a fingerprint is unique.
@@ -97,6 +97,37 @@ If scale or rotation is unknown (non-orthophoto input), switch to **three-object
 constellations** with scale- and rotation-invariant keys (triangle angles and side ratios),
 i.e. geometric hashing. (unsourced)
 
+## Rural areas: when roads are not enough
+Roads alone fail in sparse countryside ([[author-note-rural-roads]]). The road-and-intersection method was
+tested only in two cities ([[costea-2016-aerial-geolocalization]]). In the country there are few
+junctions per tile, and those are generic T- and Y-junctions. Switch from **point anchors** to **shape
+anchors**, which the countryside has in abundance:
+
+| Rural anchor | OSM source | Why it is distinctive | Stability |
+|---|---|---|---|
+| **Forest edges** | `landuse=forest`, `natural=wood` polygons | Long irregular outline, like a coastline | High (years) |
+| **Watercourses** | `waterway=stream\|river\|ditch` lines, `natural=water` | Unique meanders; ponds as point anchors | High, but streams are often hidden under trees ([[rural-geolocalization-search]]) |
+| **Field mosaic** | `landuse=farmland\|meadow\|orchard` polygons | Parcel shapes and sizes form a near-cadastral pattern | Medium: parcels merge or split; crop colour changes every season |
+| **Hedges & tree rows** | `barrier=hedge`, `natural=tree_row` | Linear, irregular, long-lived | High |
+| **Isolated farm buildings** | `building=farm_auxiliary\|barn\|house` | Footprint shape and **orientation** of each building | High |
+| **Tracks** | `highway=track\|path` | Denser than roads, distinctive curves | Medium (often incompletely mapped) |
+| **Power lines & pylons** | `power=line`, `power=tower` | Straight lines with regular pylon spacing; pylons are point anchors | High |
+| **Alpine extras (Tyrol)** | `aerialway=*`, `piste:type`, `natural=peak\|cliff\|scree` | Very rare, distinctive | High |
+| **Terrain** | Not OSM: a DEM/DSM | Ridge and valley shapes are unique everywhere | Very high |
+
+Evidence and method (sourced unless marked):
+- **Boundary-map matching** is the rural counterpart of road matching. Segment land cover, simplify it to boundary maps, and template-match against large maps; this has been done for cadastral geolocation ([[rural-geolocalization-search]]).
+  Here, render OSM `landuse`, `natural`, `waterway` and `barrier` geometry into the same boundary map and match detections against it.
+- **Expect broken edges:** natural boundaries are irregular, discontinuous and partly hidden by vegetation ([[rural-geolocalization-search]]), so use robust matching such as Chamfer distance or RANSAC rather than exact shapes ([[costea-2016-aerial-geolocalization]]).
+- **Terrain** is the strongest fallback in Tyrol. DEM-based orthoprojection gave about 26–31 m mean error after 2 km in a UAV setting ([[rural-geolocalization-search]]). An nDSM also improves detection ([[maggiori-2017-hr-semantic-labeling]]).
+- **Adapt the radius:** grow the neighbourhood w until expected chance matches N ≪ 1. Rural tiles need a larger w because anchors are sparser, but each anchor is also rarer. (unsourced)
+- **Season:** use shapes, not colours, for fields, because crop colour flips between flights; prefer forest edges, water and buildings as the primary anchors. (unsourced)
+- **Evaluation data:** AirZoo-Real has a 190-image rural subset ([[rural-geolocalization-search]]).
+
+Practical split: **urban → roads, intersections and objects; rural → forest edges, water, buildings
+and fields as a boundary map, plus terrain.** One retrieve-then-verify pipeline can serve both, by adding
+the area-based anchors to the same neighbourhood descriptor. (unsourced)
+
 ## Thesis angle
 This could be the research question itself: *"How many and which OSM-mapped objects detected in
 a 10–25 cm orthophoto are needed to geolocate it uniquely within Tyrol?"* It uses the
@@ -105,6 +136,8 @@ rate against fingerprint size. Ethics: geolocating images can affect privacy, so
 ([[thesis-timeline]]). (unsourced)
 
 ## Related
+- [[author-note-rural-roads]]
+- [[rural-geolocalization-search]]
 - [[costea-2016-aerial-geolocalization]]
 - [[methods-10-25cm]]
 - [[osm-object-catalog]]
