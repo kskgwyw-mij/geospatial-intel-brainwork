@@ -11,7 +11,17 @@ How to turn detected objects in an orthoimage into a two-factor "fingerprint" (w
 State orthophotos are already georeferenced. Fingerprinting matters for images **without**
 coordinates: drone frames with stripped metadata, screenshots, scanned historic air photos,
 or tiles whose georeference must be verified. Published precedent: detect road intersections,
-match them to OSM, then align geometrically ([[costea-2016-aerial-geolocalization]]).
+match each intersection's neighbourhood to OSM, then align the road networks geometrically. About 90 %
+of intersections were located within 2.5 m at 1 m/px, even when trained on one city and tested on another
+([[costea-2016-aerial-geolocalization]]).
+
+> [!note] What the paper changes in this design
+> 1. A **single object or pair is a weak key**. The paper's fingerprint is the *neighbourhood*: all anchors
+>    within a radius w. Identification accuracy grows with w ([[costea-2016-aerial-geolocalization]]).
+> 2. Use **retrieve then verify**: a cheap descriptor kNN gives k candidates, and geometric alignment
+>    (Shape Context + RANSAC affine + Chamfer distance) picks the winner. Alignment pushed identification to about 90 % (same source).
+> 3. **Known orientation is a legitimate factor**: the paper assumes a compass heading and tolerates σ = 5° noise (same source).
+>    North-up orthophotos give it for free.
 
 ## The two factors
 
@@ -27,8 +37,12 @@ north-up with a known pixel size, so the image gives
 - the **bearing θ** from A to B (north-up, so it can be used directly),
 - optionally the **sizes or orientations** of A and B (pitch long-axis angle, pool area).
 
-Fingerprint = `(class_A, class_B, d ± δd, θ ± δθ)`. This is a two-object version of the
-intersection descriptor in [[costea-2016-aerial-geolocalization]]. (unsourced)
+Fingerprint = `(class_A, class_B, d ± δd, θ ± δθ)`. This is the minimal, interpretable version.
+
+**Recommended upgrade, following the paper:** Factor 1 = the anchor class (the rarest detected object). Factor 2 =
+its **neighbourhood constellation**: classes, distances and bearings of all detected objects (and road
+intersections) within radius w. A pair is just the w-neighbourhood with one neighbour, so the uniqueness
+maths below still applies; each extra neighbour multiplies down the chance of a false match. (unsourced)
 
 ## How unique is a fingerprint? Back-of-envelope
 Expected number of chance matches in a region (assuming independent random placement): (unsourced)
@@ -64,7 +78,7 @@ and building function (not visible).
 2. **Choose the most informative pair:** the lowest expected N among detected pairs.
 3. **Query OSM.** Use Overpass for a quick test, or download all candidate-class geometries for
    the region once and build a local spatial index for speed. Matching object descriptors
-   rather than pixels is far faster (648×, [[costea-2016-aerial-geolocalization]]).
+   rather than pixels is far faster: Lin et al. report 648×, as noted on [[costea-2016-aerial-geolocalization]]. In Costea & Leordeanu, matching and alignment ran about 10× faster than detection over 70 km².
 
    ```
    [out:json][timeout:300];
@@ -76,7 +90,7 @@ and building function (not visible).
    out center;
    ```
    Then filter client-side by the distance band d ± δd and the bearing θ ± δθ.
-4. **Verify** each candidate with a third object or the road network (RANSAC-style alignment), as in the geometric refinement step of [[costea-2016-aerial-geolocalization]].
+4. **Verify** each candidate by aligning all detected objects and roads in the neighbourhood: RANSAC affine fit, then Chamfer distance; keep the minimum ([[costea-2016-aerial-geolocalization]]).
 5. **Output** location + confidence, using the number of agreeing objects and N.
 
 If scale or rotation is unknown (non-orthophoto input), switch to **three-object

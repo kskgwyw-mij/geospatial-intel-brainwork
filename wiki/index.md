@@ -14,7 +14,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[maggiori-2017-hr-semantic-labeling]] — Maggiori et al. 2017 (TGRS, full text): CNN architecture analysis plus a multi-resolution MLP net; 88.92 % OA on Vaihingen, 2nd of 29 on ISPRS.
 - [[maggiori-osm-imperfect-labels]] — Maggiori et al.: FCN pretrained on imperfect OSM labels, then refined on a small accurate set; precedent for this thesis.
 - [[methods-10-25cm-search]] — Search evidence: PV U-Net (F1 91.75 % at 10 cm), DeepForest trees, roof-type CNNs, U-Net vs. Mask R-CNN footprints, Grounded-SAM zero-shot.
-- [[costea-2016-aerial-geolocalization]] — Costea & Leordeanu 2016: detect road intersections, match them to OSM, align roads to geolocate aerial images; semantic matching is 648× faster.
+- [[costea-2016-aerial-geolocalization]] — Costea & Leordeanu 2016 (full text): intersection-neighbourhood fingerprints matched to OSM plus RANSAC/Chamfer alignment; about 90 % of intersections located within 2.5 m at 1 m/px.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities

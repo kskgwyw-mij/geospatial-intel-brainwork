@@ -53,3 +53,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[costea-2016-aerial-geolocalization]], [[osm-fingerprint-geolocalization]]
 - updated: [[overview]], [[overpass-api]], [[thesis-timeline]]
 - notes: Fingerprint = semantic key (a pair of rare, stable, detectable classes) + geometric key (distance and bearing in metres, available because orthophotos are north-up with known GSD). The expected chance-match formula shows bearing is essential. Precedent: intersection-to-OSM matching (BMVC 2016). Opens a possible research question on fingerprint uniqueness; the example counts are hypothetical.
+
+## [2026-10-21] ingest | Costea & Leordeanu 2016 full PDF (arXiv:1605.08323v1)
+- updated: [[costea-2016-aerial-geolocalization]] (rewritten from the full text), [[osm-fingerprint-geolocalization]], [[osm-weak-labels]], [[overview]]
+- notes: Confirmed fingerprint idea, now refined: use the neighbourhood constellation (radius w), retrieve then verify (descriptor kNN, then Shape Context/RANSAC/Chamfer), and orientation is assumed known (σ = 5° tolerated). About 90 % of intersections located within 2.5 m at 1 m/px; OSM alignment raised road F from 66.5 % to 93.9 %. Correction: the "648× faster" claim belongs to Lin et al. (SPIE), not this paper.
