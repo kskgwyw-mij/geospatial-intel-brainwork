@@ -2,7 +2,7 @@
 title: Colour, texture and shape cues
 type: concept
 tags: [features, land-use, classical-ml, computer-vision]
-sources: [author-note-industrial-colour, dsia-studienordnung-2027, maggiori-2017-hr-semantic-labeling]
+sources: [author-note-industrial-colour, dsia-studienordnung-2027, maggiori-2017-hr-semantic-labeling, bayern-opengeodata]
 updated: 2026-10-20
 ---
 Low-level image cues (colour, texture, shape, size) that let a model recognise land use, such as industrial areas, from orthoimagery, and that make a classical ML baseline possible.
@@ -25,6 +25,7 @@ plus big car parks). (unsourced)
   (RGB/HSV, plus NDVI if NIR is available), texture (GLCM, local binary patterns) and shape
   features, then train a random forest. This is a natural baseline next to a CNN, and the
   regulation teaches random forests ([[dsia-studienordnung-2027]]). (unsourced)
+- **Official labels in Bavaria:** ALKIS Tatsächliche Nutzung (actual land use) and DOP20 CIR (NIR for NDVI) are open data ([[bayern-opengeodata]]).
 - **Deep learning:** CNNs learn these cues implicitly. Tile classification or
   [[semantic-segmentation]] on `landuse=industrial|commercial|retail|residential` polygons
   from Overpass is a cheap first experiment with [[osm-weak-labels]]. (unsourced)

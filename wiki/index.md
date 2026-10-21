@@ -26,6 +26,8 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[bayern-dop-regions-search]] — Search facts: Bavarian DOP20 (20 cm RGB+CIR) open under CC BY 4.0; Oberland 3,956 km² + Südostoberbayern 5,225 km².
 - [[copernicus-browser]] — Copernicus Browser (CDSE): free Sentinel data and mosaics, Copernicus DEM (GLO-30 free, EEA-10 restricted), VHR2024 (download restricted); useful mainly as a terrain DEM.
 - [[author-note-use-cases-gnss-denied]] — Author note (German): eight use cases for GNSS-denied drone localisation, simulation limits, proposed research question.
+- [[bayern-opengeodata]] — Bavarian OpenGeoData catalogue (full clip): DOP20 RGB/CIR, DGM1, DOM20, LiDAR, LoD2, Einzelbäume, Hausumringe, ATKIS, ALKIS land use, parcels and districts.
+- [[bayern-dop20rgb-detail]] — DOP20 RGB product page: 1 km GeoTIFF tiles in EPSG:25832, about 50 MB per tile, up to 126 GB per district, WMS (incl. historical DOP) and WMTS, CC BY 4.0.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities

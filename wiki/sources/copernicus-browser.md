@@ -26,7 +26,7 @@ and federated datasets. Facts come from search snippets; the site was blocked fr
   VHR2024 is probably out of reach for download by a master's student; check whether HOK research use qualifies. (unsourced)
 - **Valuable for terrain:** Copernicus DEM GLO-30 provides the elevation model for the terrain cue in rural and Alpine geolocation
   ([[osm-fingerprint-geolocalization]], [[rural-geolocalization-search]]). This matters in the Alpine search region [[oberbayern-sued]].
-  At 30 m it captures ridges and valleys, not buildings.
+  At 30 m it captures ridges and valleys, not buildings. **Superseded inside Bavaria** by the free 1 m DGM1 ([[bayern-opengeodata]]); GLO-30 stays the fallback outside Bavaria.
 - Sentinel-2 mosaics can add coarse land-cover context, and a multi-season view helps tell fields apart. (unsourced)
 
 ## Pages touched

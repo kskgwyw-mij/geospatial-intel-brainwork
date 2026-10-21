@@ -2,7 +2,7 @@
 title: Oberbayern Süd (search region)
 type: entity
 tags: [region, study-area, bavaria]
-sources: [author-decision-search-region, bayern-dop-regions-search, author-note-rural-roads]
+sources: [author-decision-search-region, bayern-dop-regions-search, author-note-rural-roads, bayern-opengeodata, bayern-dop20rgb-detail]
 updated: 2026-10-21
 ---
 The thesis search region and study area: the Alpine-edge districts of southern Upper Bavaria (about 7,800 km²), a provisional working definition.
@@ -24,7 +24,9 @@ The thesis search region and study area: the Alpine-edge districts of southern U
 - Borders Tyrol, including Kufstein and the HOK campus ([[hok-dsia-master]]).
 
 ## Data
-- **Imagery:** Bavarian DOP20 (20 cm RGB + CIR, CC BY 4.0) ([[bayern-dop-regions-search]], [[imagery-sources]]).
+- **Imagery:** Bavarian DOP20 (20 cm RGB + CIR, CC BY 4.0) ([[bayern-dop-regions-search]], [[imagery-sources]]). Available as 1 km GeoTIFF tiles in EPSG:25832, up to 126 GB per district, so sample rather than mirror the whole region ([[bayern-dop20rgb-detail]]).
+- **Region polygon:** use **ALKIS Verwaltungsgebiete** (official district polygons, open data) as the region parameter instead of an OSM name regex ([[bayern-opengeodata]]).
+- **Heights and terrain:** DGM1 (1 m) and DOM20 (20 cm) cover the whole region ([[bayern-opengeodata]]).
 - **OSM:** Overpass area query by district, for example:
 
   ```
