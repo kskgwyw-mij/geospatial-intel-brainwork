@@ -2,7 +2,7 @@
 title: Technical & statistical feasibility
 type: analysis
 tags: [feasibility, statistics, evaluation, risks]
-sources: [author-decision-no-metadata, author-decision-search-region, author-decision-detection-in-scope, bayern-dop20rgb-detail, bayern-opengeodata, pretrained-models-search, dsia-studienordnung-2027, costea-2016-aerial-geolocalization]
+sources: [osm-real-test, author-decision-no-metadata, author-decision-search-region, author-decision-detection-in-scope, bayern-dop20rgb-detail, bayern-opengeodata, pretrained-models-search, dsia-studienordnung-2027, costea-2016-aerial-geolocalization]
 updated: 2026-10-21
 ---
 Why metadata-free localisation from detected OSM objects is technically buildable and statistically sound, with back-of-envelope numbers: false-match probability, anchor availability, precision, and the test-set sizes needed to prove it.
@@ -85,9 +85,20 @@ stage 3 registers against DOP20 rather than OSM for sub-metre results ([[coarse-
 - **Comparisons:** bootstrap CIs, or McNemar's test for paired success/failure between methods on the same photos.
 - **End-to-end:** replace simulated detections with real detector output to measure how FF1 errors propagate into FF2 ([[author-decision-detection-in-scope]]).
 
+## Reality check with real OSM data ([[osm-real-test]])
+The densities above were hypothetical. Measured in the region:
+- **Point anchors are about 1.5/km² in total** (pools 0.12/km², not the assumed 0.5/km²). That is the "2/km²" row of A2, so P(≥ 4) is about 0.
+- On the real layout, **randomly placed photos are located only 1 % of the time**, and 89 % contain ≤ 2 detections.
+- **Buildings: about 55/km²** in Miesbach. Real random footprints: ≥ 4 buildings 32 %, ≥ 8 buildings 23 %, **no building in 51 %**.
+
+So A2's prediction is confirmed with real data. Object-based localisation is feasible in **settled areas** using buildings
+(with size, orientation and roof descriptors, because 74 % are just `building=yes`). In about half of the Alpine-edge area it is
+infeasible without terrain (DGM1) and shape cues (forest edges, water).
+
 ## Bottom line
 Technically, every component exists or has a working prototype. Statistically, uniqueness is not the problem
-(≥ 4 agreeing objects make false matches very rare in about 7,800 km²); **anchor availability is**. The thesis
+(≥ 4 agreeing objects make false matches very rare in about 7,800 km²); **anchor availability is**, and real OSM data
+confirms it: point anchors cover about 1 % of random photos, buildings about 25–30 %, and half the area has no buildings ([[osm-real-test]]). The thesis
 therefore stands or falls on detecting enough *dense* anchors per photo, which makes FF1 (detection) and FF2
 (localisation) inseparable.
 

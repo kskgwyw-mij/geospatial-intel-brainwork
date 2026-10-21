@@ -2,7 +2,7 @@
 title: Two-factor OSM fingerprint for locating an image
 type: analysis
 tags: [geolocalization, fingerprint, overpass, decision]
-sources: [author-decision-search-region, bayern-dop-regions-search, author-decision-no-metadata, costea-2016-aerial-geolocalization, methods-10-25cm-search, aerial-cv-benchmarks, author-note-rural-roads, rural-geolocalization-search]
+sources: [osm-real-test, author-decision-search-region, bayern-dop-regions-search, author-decision-no-metadata, costea-2016-aerial-geolocalization, methods-10-25cm-search, aerial-cv-benchmarks, author-note-rural-roads, rural-geolocalization-search]
 updated: 2026-10-21
 ---
 How to turn detected objects in an orthoimage into a two-factor "fingerprint" (what + where-relative-to-what) that can be searched in OSM via Overpass to find where the image was taken, and how to estimate whether a fingerprint is unique.
@@ -59,6 +59,8 @@ where `n_A` = count of class A and `ρ_B` = density of class B (per m²). The fi
 Suppose 4,250 pools and 850 tennis courts (the same density as before, scaled to the area), so ρ_B ≈ 1.09·10⁻⁷ /m². For d = 100 m:
 - distance only, ±5 m → N ≈ 4250 · 1.09e-7 · 6283 m² ≈ **2.9 matches**, not unique;
 - distance + bearing, ±5 m positional tolerance → N ≈ 4250 · 1.09e-7 · 79 m² ≈ **0.04**, which is unique.
+
+**Real counts** ([[osm-real-test]]): 934 pools and 681 tennis courts (not 4,250 and 850). The real ρ_B is about 0.087/km², so the pair example gives N ≈ 934 · 8.7e-8 · 6283 ≈ 0.5 with distance only. Rarer classes are more unique but also rarely appear in a photo.
 
 At constant density, N scales with the region's area: shrinking from about 9,181 to about 7,800 km² cuts chance matches by about 15 %.
 

@@ -2,7 +2,7 @@
 title: Oberbayern Süd (search region)
 type: entity
 tags: [region, study-area, bavaria]
-sources: [author-decision-search-region, bayern-dop-regions-search, author-note-rural-roads, bayern-opengeodata, bayern-dop20rgb-detail]
+sources: [osm-real-test, author-decision-search-region, bayern-dop-regions-search, author-note-rural-roads, bayern-opengeodata, bayern-dop20rgb-detail]
 updated: 2026-10-21
 ---
 The thesis search region and study area: the Alpine-edge districts of southern Upper Bavaria (about 7,800 km²), a provisional working definition.
@@ -27,6 +27,7 @@ The thesis search region and study area: the Alpine-edge districts of southern U
 - **Imagery:** Bavarian DOP20 (20 cm RGB + CIR, CC BY 4.0) ([[bayern-dop-regions-search]], [[imagery-sources]]). Available as 1 km GeoTIFF tiles in EPSG:25832, up to 126 GB per district, so sample rather than mirror the whole region ([[bayern-dop20rgb-detail]]).
 - **Region polygon:** use **ALKIS Verwaltungsgebiete** (official district polygons, open data) as the region parameter instead of an OSM name regex ([[bayern-opengeodata]]).
 - **Heights and terrain:** DGM1 (1 m) and DOM20 (20 cm) cover the whole region ([[bayern-opengeodata]]).
+- **Real OSM counts** ([[osm-real-test]]): 11,599 point anchors (about 1.5/km²); Miesbach has 47,261 buildings (about 55/km²). OSM relation ids of the 8 areas are recorded there, and the public Overpass mirror maps.mail.ru is reachable from the research environment.
 - **OSM:** Overpass area query by district, for example:
 
   ```
