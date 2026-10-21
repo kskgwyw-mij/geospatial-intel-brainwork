@@ -93,8 +93,12 @@ def main():
         if not (inbound[name] - SPECIAL) and name != "overview":
             warnings.append(f"{pages[name].relative_to(ROOT)}: orphan (no inbound links from other pages)")
 
-    ingested = {parse_frontmatter(texts[n]).get("raw") for n, p in pages.items()
-                if p.parent.name == "sources" and parse_frontmatter(texts[n])}
+    ingested = set()
+    for n, p in pages.items():
+        fm = parse_frontmatter(texts[n]) if p.parent.name == "sources" else None
+        if fm:
+            ingested.add(fm.get("raw"))
+            ingested.update(fm.get("superseded_raw") or [])
     for f in sorted(RAW.rglob("*")):
         if f.is_file() and "assets" not in f.parts and not f.name.startswith("."):
             if str(f.relative_to(ROOT)) not in ingested:

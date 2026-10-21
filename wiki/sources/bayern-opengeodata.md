@@ -4,6 +4,7 @@ type: source
 tags: [open-data, bavaria, orthophotos, dem, buildings, lidar, land-use]
 sources: [bayern-opengeodata, bayern-dop20rgb-detail]
 raw: raw/2026-10-21-bayern-opendata-index-clip.md
+superseded_raw: [raw/2026-10-21-bayern-opengeodata-search.md]
 updated: 2026-10-21
 ---
 The start page of the Bavarian surveying administration's OpenData portal (clipped by the author): about 40 free products, among them orthophotos (RGB and CIR), terrain and surface models at 1 m and 20 cm, LiDAR, LoD2 buildings, individual trees, building outlines, ALKIS land use and parcels, administrative areas and topographic maps.

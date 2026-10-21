@@ -4,6 +4,7 @@ type: source
 tags: [geolocalization, osm, roads, matching, paper]
 sources: [costea-2016-aerial-geolocalization]
 raw: raw/2026-10-21-costea-2016-arxiv-1605.08323v1.pdf
+superseded_raw: [raw/2026-10-21-aerial-geolocalization-osm-search.md]
 updated: 2026-10-21
 ---
 Locates aerial images without GPS by detecting roads and intersections, matching the neighbourhood of each intersection to OSM as a "unique fingerprint", and confirming with geometric road alignment: about 90 % of intersections are localised within 2.5 m.

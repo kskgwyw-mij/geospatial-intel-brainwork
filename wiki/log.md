@@ -138,3 +138,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[bayern-dop20rgb-detail]]
 - updated: [[bayern-opengeodata]] (rewritten from the full product list), [[imagery-sources]], [[oberbayern-sued]], [[osm-weak-labels]], [[methods-10-25cm]], [[spectral-texture-features]], [[overview]]
 - notes: Confirmed 1 km GeoTIFF tiles in EPSG:25832 (about 50 MB each, up to 126 GB per district), so sample tiles instead of mirroring about 160–390 GB. New finds: DOM20 (20 cm surface model, giving an nDSM at image resolution), Einzelbäume (official tree labels), ALKIS Tatsächliche Nutzung (land-use labels), ALKIS Verwaltungsgebiete (district polygons for the region parameter), historical DOP WMS (cross-year tests). The earlier snippet notes are superseded.
+
+## [2026-10-21] schema | `superseded_raw` frontmatter for replaced source notes
+- updated: CLAUDE.md, tools/lint.py, [[bayern-opengeodata]], [[costea-2016-aerial-geolocalization]]
+- notes: Snippet notes replaced by full clips or PDFs stay in raw/ (raw is immutable) and are listed under `superseded_raw:`, so lint no longer reports them as un-ingested.
