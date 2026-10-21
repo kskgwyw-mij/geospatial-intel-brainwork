@@ -20,7 +20,8 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[pretrained-models-search]] — Search facts: TorchGeo/Satlas Swin V2 NAIP weights, YOLO11-OBB on DOTAv1 (78.4 mAP50 nano), DINOv3 SAT-493M (Maxar 0.6 m).
 - [[author-decision-nadir-input]] — Author decision: nadir images are the required input; orthoimagery ideal but optional.
 - [[author-decision-no-metadata]] — Author decision: the photo is used without any metadata, so location, scale and north must come from the image.
-- [[geopera-free-satellite-germany]] — Vendor blog (snippets): 10 free imagery sources for Germany; Sentinel-2 10 m; official German DOP10/20/40 orthophotos (NRW 10 cm, 3-year cycle).
+- [[geopera-free-satellite-germany]] — Vendor blog (full clip): 10 free sources for Germany; free satellite data is 10–30 m, paid satellite at best 30 cm; contradiction on Copernicus registration.
+- [[german-dop-search]] — Search facts: German state orthophotos DOP20/40 nationwide, DOP10 in some Länder (NRW 10 cm, 3-year cycle).
 - [[author-decision-search-region]] — Author decision: the search region is Oberbayern Süd.
 - [[bayern-dop-regions-search]] — Search facts: Bavarian DOP20 (20 cm RGB+CIR) open under CC BY 4.0; Oberland 3,956 km² + Südostoberbayern 5,225 km².
 - [[copernicus-browser]] — Copernicus Browser (CDSE): free Sentinel data and mosaics, Copernicus DEM (GLO-30 free, EEA-10 restricted), VHR2024 (download restricted); useful mainly as a terrain DEM.

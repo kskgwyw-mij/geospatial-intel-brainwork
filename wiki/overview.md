@@ -45,6 +45,7 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** a nadir ph
 - Which regulation version applies to the author? The one ingested covers cohorts starting WS 2027/28.
 - Geolocation is now part of the method ([[author-decision-no-metadata]]). The search region is fixed ([[oberbayern-sued]]). Provisional choice: Alpine-edge districts only; the area may change later, so keep it parameterised. How is scale recovered (metric anchors such as tennis courts)?
 - What is the research question for the exposé? A PoC alone is not one; see [[thesis-timeline]].
+- Contradiction: Copernicus access with vs. without registration ([[geopera-free-satellite-germany]] vs. [[copernicus-browser]]). The official docs are taken as correct.
 - Formal thesis guidelines (length, citation style, deadlines) are not in the regulation.
 
 ## Related

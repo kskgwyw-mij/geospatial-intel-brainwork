@@ -18,6 +18,9 @@ and federated datasets. Facts come from search snippets; the site was blocked fr
 - **Copernicus DEM:** GLO-30 (30 m, global) and GLO-90 are free for registered users. **EEA-10 (10 m, Europe) is restricted** to certain user categories. Since Aug 2026 the GLO-30 *view* service needs a CCM opt-in.
 - **VHR2024** mosaic of Europe (via CCM): download is limited to Copernicus Services, EU institutions, EU-funded research and public authorities. **The general public can only view it.** Its resolution was not in the snippets.
 
+> [!warning] Contradiction
+> [[geopera-free-satellite-germany]] claims Copernicus access needs no registration. The CDSE documentation above says a free account is required. Trust the docs.
+
 ## Relevance to this wiki
 - **Not an object-imagery source.** Sentinel-2 at 10 m is far too coarse for pools, tanks or roofs ([[cv-detectability]], [[imagery-sources]]).
   VHR2024 is probably out of reach for download by a master's student; check whether HOK research use qualifies. (unsourced)

@@ -113,3 +113,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[copernicus-browser]]
 - updated: [[imagery-sources]], [[osm-fingerprint-geolocalization]], [[overview]]
 - notes: The site was blocked, so it was ingested from search snippets. Sentinel-2 is too coarse for objects, and the VHR2024 download is restricted. The useful part is Copernicus DEM GLO-30 (30 m, free with registration) as the terrain layer for Alpine and rural geolocation. EEA-10 (10 m) is restricted, and the GLO-30 view service needs a CCM opt-in since Aug 2026.
+
+## [2026-10-21] ingest | Geopera article, full clip (replaces snippet-based ingest)
+- updated: [[geopera-free-satellite-germany]] (rewritten from the full text), [[copernicus-browser]], [[imagery-sources]], [[overview]]
+- created: [[german-dop-search]] (the DOP facts split out of the old snippet notes)
+- notes: Full list of 10 sources; key point: free satellite data is 10–30 m and paid satellite is at best 30 cm, still coarser than free Bavarian DOP20. Flagged a contradiction: the blog says Copernicus needs no registration, the CDSE docs say a free account is required. Corrected the attribution: the DOP10/20/40 facts came from other search results, not this article.
