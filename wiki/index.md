@@ -11,7 +11,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[dsia-studienordnung-2027]] — Official 83-page study regulation (from WS 2027/28): curriculum, thesis rules (exposé, 20+2 ECTS), relevant courses, admission.
 - [[aerial-cv-benchmarks]] — Search-result facts on DOTA (detection, 15–18 classes), ISPRS Potsdam/Vaihingen (6-class segmentation, 5/9 cm) and Inria (30 cm buildings).
 - [[author-note-industrial-colour]] — Author observation: industrial areas have a distinct colour in orthoimagery.
-- [[maggiori-2017-hr-semantic-labeling]] — Maggiori et al. 2017 (TGRS): multi-resolution FCN features combined by an MLP for per-pixel aerial labelling; best on Vaihingen/Potsdam.
+- [[maggiori-2017-hr-semantic-labeling]] — Maggiori et al. 2017 (TGRS, full text): CNN architecture analysis plus a multi-resolution MLP net; 88.92 % OA on Vaihingen, 2nd of 29 on ISPRS.
 - [[maggiori-osm-imperfect-labels]] — Maggiori et al.: FCN pretrained on imperfect OSM labels, then refined on a small accurate set; precedent for this thesis.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 

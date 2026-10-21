@@ -39,3 +39,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[maggiori-2017-hr-semantic-labeling]], [[maggiori-osm-imperfect-labels]]
 - updated: [[semantic-segmentation]], [[osm-weak-labels]], [[thesis-poc-pipeline]], [[thesis-timeline]], [[overview]]
 - notes: Per-pixel labelling of georeferenced imagery is a location-aware alternative to box detection, not image geolocalisation. The same group pretrained on imperfect OSM labels and refined on a small accurate set, which gives the thesis a sourced method and research-question template. The full texts were blocked, so the facts come from search snippets and the exact accuracy numbers are still missing.
+
+## [2026-10-21] ingest | Maggiori et al. arXiv:1611.01962v1 full PDF
+- updated: [[maggiori-2017-hr-semantic-labeling]] (rewritten from the full text), [[semantic-segmentation]], [[aerial-cv-benchmarks]], [[spectral-texture-features]], [[orthoimagery]], [[cv-detectability]], [[thesis-poc-pipeline]], [[overview]]
+- notes: Exact results replace the snippets: MLP 88.92 OA / 86.58 mean F1 (Vaihingen), 87.02 / 86.62 (Potsdam), 2nd of 29 on the ISPRS test (OA 89.5), small FCN on a 4 GB GPU. New sourced points: colour alone is ambiguous (grey roof vs. asphalt), DSM works as an extra band, use overlapped tiling at inference, and the benchmark ground truth itself is imprecise.

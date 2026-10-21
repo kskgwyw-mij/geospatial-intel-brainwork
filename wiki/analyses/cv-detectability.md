@@ -2,7 +2,7 @@
 title: What computer vision can detect in orthoimagery
 type: analysis
 tags: [computer-vision, classes, decision]
-sources: [aerial-cv-benchmarks, author-note-industrial-colour]
+sources: [aerial-cv-benchmarks, author-note-industrial-colour, maggiori-2017-hr-semantic-labeling]
 updated: 2026-10-20
 ---
 What computer vision can and cannot recognise in orthoimagery, by task type, object size and resolution, mapped to OSM tags, to decide the thesis classes.
@@ -12,6 +12,8 @@ What computer vision can and cannot recognise in orthoimagery, by task type, obj
 2. **Visible from above.** Only what the roof or ground shows. Function, names, opening hours and indoor use are invisible. (unsourced)
 3. **Occlusion and conditions.** Trees hide paths and streams, and shadows, season, snow and viewing angle (building lean in non-true orthophotos) all degrade results. (unsourced)
 4. **Bands.** RGB only, or with near-infrared. NIR helps separate vegetation; ISPRS Vaihingen is IRRG ([[aerial-cv-benchmarks]]). Height (buildings, trees) needs a DSM/nDSM, not just the image. (unsourced)
+
+Small minority classes are the hardest: cars reach only about 72–78 F1 on Vaihingen (9 cm) compared with about 95 for buildings ([[maggiori-2017-hr-semantic-labeling]]).
 
 ## By CV task
 

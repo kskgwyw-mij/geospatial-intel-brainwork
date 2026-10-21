@@ -2,7 +2,7 @@
 title: Aerial CV benchmarks (DOTA, ISPRS, Inria)
 type: source
 tags: [computer-vision, datasets, benchmarks]
-sources: [aerial-cv-benchmarks]
+sources: [aerial-cv-benchmarks, maggiori-2017-hr-semantic-labeling]
 raw: raw/2026-10-20-aerial-cv-benchmarks-search.md
 updated: 2026-10-20
 ---
@@ -17,6 +17,7 @@ aerial imagery. Facts come from search snippets, not the full papers.
 - **DOTA v1.0**: 15 classes: plane, ship, storage tank, baseball diamond, tennis court, basketball court, ground track field, soccer-ball field, harbor, bridge, large vehicle, small vehicle, helicopter, roundabout, swimming pool. Uses oriented bounding boxes.
 - **DOTA v1.5** adds container crane and objects under 10 px (402,089 instances). **v2.0** has 18 classes (adds airport, helipad), 11,268 images and 1,793,658 instances.
 - **ISPRS Potsdam** (5 cm GSD, 38 tiles of 6000×6000 px) and **Vaihingen** (9 cm, near-infrared/red/green): 6 classes: impervious surface, building, low vegetation, tree, car, clutter.
+- Confirmed by the full text of [[maggiori-2017-hr-semantic-labeling]]: Vaihingen tiles average 2494×2064 px with NIR-R-G + DSM; Potsdam adds a blue band and an nDSM; common split 11/5 (Vaihingen) and 17/7 (Potsdam) train/validation; accuracy measured on eroded-boundary ground truth.
 - **Inria**: 30 cm RGB, 360 tiles of 5000×5000 px, 10 cities, building footprint masks.
 
 ## Relevance to this wiki

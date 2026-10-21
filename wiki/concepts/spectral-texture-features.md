@@ -2,7 +2,7 @@
 title: Colour, texture and shape cues
 type: concept
 tags: [features, land-use, classical-ml, computer-vision]
-sources: [author-note-industrial-colour, dsia-studienordnung-2027]
+sources: [author-note-industrial-colour, dsia-studienordnung-2027, maggiori-2017-hr-semantic-labeling]
 updated: 2026-10-20
 ---
 Low-level image cues (colour, texture, shape, size) that let a model recognise land use, such as industrial areas, from orthoimagery, and that make a classical ML baseline possible.
@@ -30,6 +30,7 @@ plus big car parks). (unsourced)
   from Overpass is a cheap first experiment with [[osm-weak-labels]]. (unsourced)
 
 ## Caveats (unsourced)
+- Colour alone is ambiguous: a grey pixel can be roof or asphalt, and only the surrounding context decides ([[maggiori-2017-hr-semantic-labeling]]). CNNs learn such colour-plus-context rules, for example "red, inside a larger red rectangle, surrounded by vegetation, near a road → building" (same source).
 - Colour alone is fragile. It changes between orthophoto flights, sensors and seasons, with
   sun angle and haze, and with roof material, so normalise radiometry and test across flight
   years and regions.
