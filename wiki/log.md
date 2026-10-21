@@ -151,3 +151,13 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-21] query | Why must the photo be scaled and oriented?
 - updated: [[osm-fingerprint-geolocalization]]
 - notes: Map = metres and north-up, photo = pixels in an arbitrary orientation, so matching needs a 4-parameter similarity (shift 2, scale 1, rotation 1). Without scale, pixel distances cannot be compared with metres; without rotation, directions mean nothing; object coordinates and drone heading need both. Invariant fingerprints defer, but do not remove, the need.
+
+## [2026-10-21] query | How to localise at fine granularity?
+- created: [[coarse-to-fine-localization]]
+- updated: [[geo-match-prototype]], [[osm-fingerprint-geolocalization]], [[overview]]
+- notes: Four stages: retrieval by object fingerprints, RANSAC object alignment (the current prototype, metre level), dense registration against DOP20 (sub-metre), and camera pose with DOM20/DGM1 heights (removes relief displacement, gives height and tilt). OSM is only metre-accurate, so the fine stages use DOP and DOM as the reference. Expected accuracies beyond the simulation are unsourced.
+
+## [2026-10-21] query | How is it technically and statistically possible?
+- created: [[feasibility]]
+- updated: [[geo-match-prototype]] (OSM-noise results), [[thesis-timeline]], [[overview]]; tools/sim_geo_match.py gains --osm-noise
+- notes: Uniqueness is not the limit: going from 3 to 4 inliers cuts expected false matches from about 22 to about 0.002 per photo (H = 10⁵). Anchor availability is the limit: rare classes give P(≥ 4) of about 0 per 0.27 km² photo, while dense anchors (≥ 30/km²) give 0.9+. Precision is about σ/√n; with OSM noise of 1 / 2 m the median error is 0.72 / 1.78 m, confident still 100 %. About 100 test photos per condition for ±10 pp.

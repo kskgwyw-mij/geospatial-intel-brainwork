@@ -77,6 +77,7 @@ def main():
     ap.add_argument("--recall", type=float, default=0.85)
     ap.add_argument("--false-pos", type=int, default=2)
     ap.add_argument("--osm-missing", type=float, default=0.1, help="share of real objects absent from OSM")
+    ap.add_argument("--osm-noise", type=float, default=0.0, help="OSM positional error, std dev in metres per axis")
     ap.add_argument("--jitter", type=float, default=3.0, help="detector position noise in px")
     ap.add_argument("--seed", type=int, default=1)
     args = ap.parse_args()
@@ -92,7 +93,8 @@ def main():
     else:
         frame = LocalFrame(11.8, 47.7)  # arbitrary anchor in the Alpine-edge districts
         world = synth_region(rng, args.size_km, args.villages)
-    mapped = [o for o in world if rng.random() >= args.osm_missing]  # what OSM knows
+    mapped = [(c, z + complex(rng.gauss(0, args.osm_noise), rng.gauss(0, args.osm_noise)))
+              for c, z in world if rng.random() >= args.osm_missing]  # what OSM knows (incomplete, shifted)
     osm = {}
     for c, z in mapped:
         lon, lat = frame.to_lonlat(z.real, z.imag)

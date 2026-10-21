@@ -34,6 +34,9 @@ This follows the retrieve-then-verify pattern of [[costea-2016-aerial-geolocaliz
 
 When located: median position error **0.2–0.4 m**, GSD error **< 0.1 %**, heading error **< 0.1°**.
 
+## OSM positional error (added later)
+`--osm-noise` shifts OSM objects by σ metres per axis. At σ = 0 / 1 / 2 m (60 photos, 900 km²) the median position error is 0.30 / 0.72 / 1.78 m, while confident matches stay 100 % correct (12/12, 12/12, 9/9). OSM error passes almost one-to-one into position error, so sub-metre accuracy needs registration against DOP20 ([[feasibility]], [[coarse-to-fine-localization]]).
+
 ## Findings
 - **Two detections never suffice**: two points always fit some similarity transform, so 2-inlier answers are noise. This is why the status rule needs ≥ 3 inliers.
 - **"Confident" (≥ 4 inliers, margin ≥ 2) was 100 % correct** in both runs (19/19); this is the only status to trust. "Probable" degrades with region size (1 of 5 correct at 7,744 km²).
@@ -41,12 +44,15 @@ When located: median position error **0.2–0.4 m**, GSD error **< 0.1 %**, head
 - **3–4 detections fail (0/51).** At 0.08–0.25 m a 4000 × 3000 photo covers only about 320 × 240 m to 1000 × 750 m, so rural photos often have too few point anchors. This quantifies [[author-note-rural-roads]]: add dense anchors (buildings with orientation, road intersections) and shape or terrain cues ([[rural-geolocalization-search]]).
 
 ## Limitations / next steps (unsourced)
+- This prototype is stages 1–2 of [[coarse-to-fine-localization]]. Fine accuracy needs dense registration against DOP20 and DOM20 heights (stages 3–4).
 - Synthetic densities: rerun with the real Overpass export of the seven districts (`--osm region.geojson`).
 - Only point anchors so far. Next: building footprints (orientation and size), road intersections (Costea-style), forest-edge and water shape matching, DEM.
 - Pure Python; about 2.7 s per photo at regional scale. Vectorising or using a k-d tree would speed it up.
 - Real detections will come from the fine-tuned detectors ([[pretrained-models]], [[methods-10-25cm]]). Detection is in scope ([[author-decision-detection-in-scope]]), so replace the simulated 85 % recall, 2 false alarms and perfect classes with the **measured** detector performance, including class confusion.
 
 ## Related
+- [[feasibility]]
+- [[coarse-to-fine-localization]]
 - [[osm-fingerprint-geolocalization]]
 - [[ransac]]
 - [[oberbayern-sued]]
