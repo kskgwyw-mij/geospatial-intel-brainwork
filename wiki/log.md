@@ -43,3 +43,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-21] ingest | Maggiori et al. arXiv:1611.01962v1 full PDF
 - updated: [[maggiori-2017-hr-semantic-labeling]] (rewritten from the full text), [[semantic-segmentation]], [[aerial-cv-benchmarks]], [[spectral-texture-features]], [[orthoimagery]], [[cv-detectability]], [[thesis-poc-pipeline]], [[overview]]
 - notes: Exact results replace the snippets: MLP 88.92 OA / 86.58 mean F1 (Vaihingen), 87.02 / 86.62 (Potsdam), 2nd of 29 on the ISPRS test (OA 89.5), small FCN on a 4 GB GPU. New sourced points: colour alone is ambiguous (grey roof vs. asphalt), DSM works as an extra band, use overlapped tiling at inference, and the benchmark ground truth itself is imprecise.
+
+## [2026-10-21] query | Rethink detector & classifier approaches for 10–25 cm orthophotos
+- created: [[methods-10-25cm-search]], [[methods-10-25cm]]
+- updated: [[semantic-segmentation]], [[object-detection]], [[thesis-poc-pipeline]], [[overview]]
+- notes: Four approach families (classical, task-specific DL, two-stage, foundation/zero-shot). Per-class choice: segmentation for buildings and solar, detection for pools, tanks, pitches and trees, crop classifiers for roof shape and sport, SAM2 as refiner. Proposed minimum scope: buildings plus roof-shape classification. The evidence comes from search snippets.

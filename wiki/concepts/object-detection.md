@@ -2,7 +2,7 @@
 title: Object detection
 type: concept
 tags: [deep-learning, computer-vision]
-sources: [thesis-goal, aerial-cv-benchmarks]
+sources: [thesis-goal, aerial-cv-benchmarks, methods-10-25cm-search]
 updated: 2026-10-20
 ---
 Finding each object in an image and returning a bounding box plus a class; one reading of "recognition and classification" in the thesis.
@@ -11,9 +11,11 @@ Finding each object in an image and returning a bounding box plus a class; one r
 - Candidate families: one-stage detectors (the YOLO family, RetinaNet), two-stage detectors (Faster R-CNN), transformer detectors (DETR variants). Rotated-box variants help for top-down imagery. (unsourced)
 - Instance segmentation (Mask R-CNN and similar) produces boxes and masks together, which suits buildings. (unsourced)
 - Benchmark: DOTA uses oriented boxes over 15 classes (v1.0) to 18 (v2.0), including storage tanks, swimming pools, tennis courts and vehicles; v2.0 has 1,793,658 instances ([[aerial-cv-benchmarks]]).
+- Trees: DeepForest is a pretrained RetinaNet crown detector. Detector boxes also work as prompts for SAM2 masks ([[methods-10-25cm-search]]). Per-class choice: [[methods-10-25cm]].
 - Usual metrics: mAP at IoU 0.5 and mAP over IoU 0.5:0.95. (unsourced)
 
 ## Related
+- [[methods-10-25cm]]
 - [[cv-detectability]]
 - [[semantic-segmentation]]
 - [[osm-weak-labels]]
