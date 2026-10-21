@@ -55,6 +55,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[osm-fingerprint-geolocalization]] — Two-factor fingerprint (anchor + neighbourhood constellation) to locate images via Overpass; uniqueness maths, urban vs. rural anchors, search procedure.
 - [[geo-match-prototype]] — Matcher prototype (geo_match.py) and simulation: confident matches always correct; about 8 anchors needed at regional scale.
 - [[coarse-to-fine-localization]] — Four stages from region prior to decimetre camera pose: fingerprint retrieval, RANSAC object alignment, dense DOP20 registration, pose with DOM20 heights.
+- [[feasibility]] — Technical and statistical feasibility: false-match maths (≥ 4 inliers), anchor availability (the bottleneck), error propagation, OSM-noise simulation, test-set sizes.
 - [[pretrained-models]] — Pretrained CNNs and foundation models per thesis task, resolution caveat, minimal fine-tuning stack.
 - [[imagery-sources]] — Imagery for training (German DOP10/20, Tyrolean orthophotos) and testing (simulated metadata-free nadir crops); Sentinel-2 ruled out for objects.
 - [[gnss-denied-use-cases]] — Application framing: GNSS-denied visual localisation, use-case table with prototype fit and evidence, research question, dual-use ethics.

@@ -37,6 +37,7 @@ For a cohort starting WS 2027/28, semester 4 is summer 2029. Confirm the author'
   can show private property, so add a short legal and licence section. (unsourced)
 
 ## Related
+- [[feasibility]]
 - [[thesis-goal]]
 - [[thesis-poc-pipeline]]
 - [[hok-dsia-master]]
