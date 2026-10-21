@@ -52,11 +52,13 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** a nadir ph
 - Geolocation is now part of the method ([[author-decision-no-metadata]]). The search region is fixed ([[oberbayern-sued]]). Provisional choice: Alpine-edge districts only; the area may change later, so keep it parameterised. How is scale recovered (metric anchors such as tennis courts)?
 - Research question: a preferred candidate exists (GNSS-denied localisation from OSM objects; see [[thesis-timeline]]). Open: confirm it with the supervisor, and back the use-case claims with literature.
 - Contradiction: Copernicus access with vs. without registration ([[geopera-free-satellite-germany]] vs. [[copernicus-browser]]). The official docs are taken as correct.
-- Formal thesis guidelines (length, citation style, deadlines) are not in the regulation.
+- Formal rules are now known: 10–15k words, ≥ 6 months processing, exposé due 23.10.2026, registration 31.10.2026, AI share ≤ 50 % ([[hok-aspo-2026]], [[wa-course-expose]]; checklist in [[expose-guide]]). Still missing: the HOK thesis guide (citation style) and confirmation of the cohort and regulation version.
+- Literature for the exposé is thin: the relevance (GNSS-denied UAV localisation) rests on an author note; it needs peer-reviewed sources ([[expose-guide]]).
 
 ## Related
 - [[thesis-goal]]
 - [[thesis-poc-pipeline]]
 - [[thesis-timeline]]
+- [[expose-guide]]
 - [[index]]
 - [[log]]
