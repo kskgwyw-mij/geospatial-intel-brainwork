@@ -2,7 +2,7 @@
 title: Coarse-to-fine localisation
 type: analysis
 tags: [geolocalization, registration, pose, accuracy]
-sources: [costea-2016-aerial-geolocalization, author-decision-no-metadata, author-decision-search-region, bayern-dop20rgb-detail, bayern-opengeodata, maggiori-2017-hr-semantic-labeling, rural-geolocalization-search]
+sources: [settlement-test, costea-2016-aerial-geolocalization, author-decision-no-metadata, author-decision-search-region, bayern-dop20rgb-detail, bayern-opengeodata, maggiori-2017-hr-semantic-labeling, rural-geolocalization-search]
 updated: 2026-10-21
 ---
 How to go from "somewhere in the search region" to a fine-grained (decimetre-level) position, scale, heading and full camera pose for a metadata-free nadir photo, in four stages from object fingerprints to dense image registration.
@@ -41,7 +41,11 @@ Stage 1–2 answer *"where roughly, how big, which way"*. Stage 3–4 answer *"e
 - Stage 4 needs DOM20 tiles for the matched area and an approximate camera model (focal length can be estimated if unknown).
 - Evaluate each stage separately: success rate and error after stage 2 vs. after stage 3/4.
 
+## Settlement mask as a coarse cue (proposal)
+A settlement / no-settlement mask can be predicted stably across districts and flight years ([[settlement-detection]]). Its layout in a photo (where villages and farmsteads lie) is a season-robust shape cue for the retrieval stage, before object RANSAC (unsourced).
+
 ## Related
+- [[settlement-detection]]
 - [[geo-match-prototype]]
 - [[osm-fingerprint-geolocalization]]
 - [[ransac]]

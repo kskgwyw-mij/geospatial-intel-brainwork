@@ -2,8 +2,8 @@
 title: What computer vision can detect in orthoimagery
 type: analysis
 tags: [computer-vision, classes, decision]
-sources: [aerial-cv-benchmarks, author-note-industrial-colour, maggiori-2017-hr-semantic-labeling]
-updated: 2026-10-20
+sources: [settlement-test, aerial-cv-benchmarks, author-note-industrial-colour, maggiori-2017-hr-semantic-labeling]
+updated: 2026-10-21
 ---
 What computer vision can and cannot recognise in orthoimagery, by task type, object size and resolution, mapped to OSM tags, to decide the thesis classes.
 
@@ -55,7 +55,11 @@ DOTA/ISPRS-style classes: buildings, pools, storage tanks, sports pitches, vehic
 PV, trees, water, roads. See the shortlist in [[osm-object-catalog]]. Start with one well-mapped
 detection class (for example `leisure=swimming_pool`) and one segmentation class (`building=*`). (unsourced)
 
+## Measured example: settlements
+In the search region, whether a hectare is a settlement (≥ 5 buildings) is recognisable from DOP20 with AUC ≈ 0.98–0.995, stable across districts and the 2018/2024 flights. Single isolated huts are not reliably recognised at tile level ([[settlement-detection]]).
+
 ## Related
+- [[settlement-detection]]
 - [[spectral-texture-features]]
 - [[osm-object-catalog]]
 - [[aerial-cv-benchmarks]]
