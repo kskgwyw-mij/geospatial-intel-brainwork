@@ -2,7 +2,7 @@
 title: Pretrained CNNs & foundation models for the thesis
 type: analysis
 tags: [pretrained, transfer-learning, foundation-models, decision]
-sources: [pretrained-models-search, methods-10-25cm-search, maggiori-2017-hr-semantic-labeling, aerial-cv-benchmarks]
+sources: [real-e2e-test, pretrained-models-search, methods-10-25cm-search, maggiori-2017-hr-semantic-labeling, aerial-cv-benchmarks]
 updated: 2026-10-21
 ---
 Which pretrained networks exist for each part of the thesis (detection, segmentation, classification, geolocation), what they were trained on, and how to fine-tune them on Overpass-labelled 10–25 cm orthophotos.
@@ -40,6 +40,11 @@ None of these was trained at 10–25 cm:
 Options: fine-tune at your GSD, or resample tiles so objects have their pretraining pixel size
 (for example 25 cm imagery downsampled ×2 to about 0.5 m for a 0.6 m backbone; small objects suffer). (unsourced)
 
+## Measured zero-shot baseline
+YOLO11s-OBB (DOTA v1) on real DOP20 crops of the search region, without fine-tuning: precision about 0.49 and recall about 0.62 against OSM
+pools, tanks, pitches, tracks and courts. Small or partly covered pools and some clay courts are missed, and fields are sometimes taken for
+soccer pitches ([[real-e2e-test]]). A usable zero-shot baseline for FF1, but fine-tuning is needed.
+
 ## Suggested minimal stack
 1. YOLO11-OBB (DOTA weights), fine-tuned on Overpass pools, tanks and pitches.
 2. U-Net with a Satlas or DINOv3 encoder, fine-tuned on Overpass buildings.
@@ -49,6 +54,7 @@ Options: fine-tune at your GSD, or resample tiles so objects have their pretrain
 All are open and PyTorch-based; check each licence before using it in the [[poc-platform]]. (unsourced)
 
 ## Related
+- [[real-e2e-test]]
 - [[methods-10-25cm]]
 - [[osm-fingerprint-geolocalization]]
 - [[object-detection]]

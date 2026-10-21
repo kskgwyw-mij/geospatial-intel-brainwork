@@ -32,6 +32,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[bayern-opengeodata]] — Bavarian OpenGeoData catalogue (full clip): DOP20 RGB/CIR, DGM1, DOM20, LiDAR, LoD2, Einzelbäume, Hausumringe, ATKIS, ALKIS land use, parcels and districts.
 - [[bayern-dop20rgb-detail]] — DOP20 RGB product page: 1 km GeoTIFF tiles in EPSG:25832, about 50 MB per tile, up to 126 GB per district, WMS (incl. historical DOP) and WMTS, CC BY 4.0.
 - [[author-decision-detection-in-scope]] — Author decision: detection and classification are part of the thesis, alongside metadata-free localisation.
+- [[real-e2e-test]] — Real end-to-end test (DOP20 + DOTA YOLO11-OBB + real OSM): detection precision 0.49 / recall 0.62; located 6/40 near anchors, 0/40 random; first wrong confident match (tank farm).
 - [[osm-real-test]] — Real OSM test: 11,599 anchors (about 1.5/km²), Miesbach 47k buildings (about 55/km²); random photos located 1 % with point anchors; half of footprints have no building.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
