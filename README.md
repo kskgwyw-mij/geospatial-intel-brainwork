@@ -16,7 +16,7 @@ cross-referencing and bookkeeping.
 | `raw/` | Original sources (papers, articles, notes, Overpass query dumps). Immutable. | You |
 | `wiki/` | Summaries, entity & concept pages, analyses, `overview.md`, `index.md`, `log.md` | The LLM |
 | `CLAUDE.md` | The schema: structure, page format, workflows | You + the LLM |
-| `tools/` | `lint.py` (health checks), `search.py` (BM25 search), `osm_overlay.py` (project Overpass objects onto a nadir image → annotated PNG + pixel labels / YOLO), `geo_match.py` (locate a metadata-free photo from detected objects + OSM), `sim_geo_match.py` (simulated evaluation) | — |
+| `tools/` | `lint.py` (health checks), `search.py` (BM25 search), `osm_overlay.py` (project Overpass objects onto a nadir image → annotated PNG + pixel labels / YOLO), `geo_match.py` (locate a metadata-free photo from detected objects + OSM), `sim_geo_match.py` (simulated evaluation), `real_geo_test.py` (end-to-end test on real DOP20 imagery + pretrained YOLO11-OBB + real OSM) | — |
 | `.claude/commands/` | `/ingest`, `/query`, `/lint` slash commands for Claude Code | — |
 
 ## Workflow
