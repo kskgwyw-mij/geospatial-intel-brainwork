@@ -90,3 +90,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[geopera-free-satellite-germany]], [[imagery-sources]]
 - updated: [[orthoimagery]], [[thesis-poc-pipeline]], [[overview]]
 - notes: The page was blocked, so it was ingested from search snippets and flagged as a vendor blog. Key takeaway: free satellite imagery (Sentinel-2, 10 m) is too coarse for the classes, while German state orthophotos (DOP10/20, NRW 10 cm on a 3-year cycle) fit training at 10–25 cm. Proposed: train on German DOP, fine-tune and test on Tyrol, and simulate metadata-free test photos from held-out tiles.
+
+## [2026-10-21] ingest | Author decision: search region Oberbayern Süd (+ Bavarian DOP and region search)
+- created: [[author-decision-search-region]], [[bayern-dop-regions-search]], [[oberbayern-sued]]
+- updated: [[osm-fingerprint-geolocalization]] (example re-computed for about 9,181 km²; a pair without bearing is not unique, so use triangles), [[imagery-sources]] (Bavarian DOP20 is now the first choice), [[orthoimagery]], [[overview]]
+- notes: "Oberbayern Süd" is not official; working definition is planning regions 17 Oberland + 18 Südostoberbayern. Bavarian DOP20 (RGB+CIR) is CC BY 4.0, so training and testing can happen in-region with a district split. Open: whether to include the lowland districts Altötting and Mühldorf.

@@ -21,6 +21,8 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[author-decision-nadir-input]] — Author decision: nadir images are the required input; orthoimagery ideal but optional.
 - [[author-decision-no-metadata]] — Author decision: the photo is used without any metadata, so location, scale and north must come from the image.
 - [[geopera-free-satellite-germany]] — Vendor blog (snippets): 10 free imagery sources for Germany; Sentinel-2 10 m; official German DOP10/20/40 orthophotos (NRW 10 cm, 3-year cycle).
+- [[author-decision-search-region]] — Author decision: the search region is Oberbayern Süd.
+- [[bayern-dop-regions-search]] — Search facts: Bavarian DOP20 (20 cm RGB+CIR) open under CC BY 4.0; Oberland 3,956 km² + Südostoberbayern 5,225 km².
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities
@@ -28,6 +30,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[openstreetmap]] — The crowd-sourced world map whose features define the object classes.
 - [[overpass-api]] — Read-only query API for OSM data; the backend Overpass Turbo calls.
 - [[overpass-turbo]] — Web IDE for writing and visualising Overpass queries; defines which OSM objects count.
+- [[oberbayern-sued]] — Search region and study area: planning regions Oberland + Südostoberbayern (about 9,181 km²), DOP20 imagery, Overpass area query.
 - [[poc-platform]] — The proof-of-concept platform where orthoimagery is uploaded and detections are shown.
 
 ## Concepts

@@ -2,7 +2,7 @@
 title: Two-factor OSM fingerprint for locating an image
 type: analysis
 tags: [geolocalization, fingerprint, overpass, decision]
-sources: [author-decision-no-metadata, costea-2016-aerial-geolocalization, methods-10-25cm-search, aerial-cv-benchmarks, author-note-rural-roads, rural-geolocalization-search]
+sources: [author-decision-search-region, bayern-dop-regions-search, author-decision-no-metadata, costea-2016-aerial-geolocalization, methods-10-25cm-search, aerial-cv-benchmarks, author-note-rural-roads, rural-geolocalization-search]
 updated: 2026-10-21
 ---
 How to turn detected objects in an orthoimage into a two-factor "fingerprint" (what + where-relative-to-what) that can be searched in OSM via Overpass to find where the image was taken, and how to estimate whether a fingerprint is unique.
@@ -55,10 +55,15 @@ Expected number of chance matches in a region (assuming independent random place
 where `n_A` = count of class A and `ρ_B` = density of class B (per m²). The fingerprint is
 **unique when N ≪ 1**.
 
-*Illustrative example (hypothetical counts, not measured):* Tyrol covers about 12,600 km².
-Suppose 5,000 pools and 1,000 tennis courts, so ρ_B ≈ 7.9·10⁻⁸ /m². For d = 100 m:
-- distance only, ±5 m → N ≈ 5000 · 7.9e-8 · 6283 m² ≈ **2.5 matches**, not unique;
-- distance + bearing, ±5 m positional tolerance → N ≈ 5000 · 7.9e-8 · 79 m² ≈ **0.03**, which is unique.
+*Illustrative example for the search region [[oberbayern-sued]] (about 9,181 km², [[bayern-dop-regions-search]]; hypothetical counts, not measured):*
+Suppose 5,000 pools and 1,000 tennis courts, so ρ_B ≈ 1.09·10⁻⁷ /m². For d = 100 m:
+- distance only, ±5 m → N ≈ 5000 · 1.09e-7 · 6283 m² ≈ **3.4 matches**, not unique;
+- distance + bearing, ±5 m positional tolerance → N ≈ 5000 · 1.09e-7 · 79 m² ≈ **0.04**, which is unique.
+
+Metadata-free photos have no bearing ([[author-decision-no-metadata]]), so a pair is **not** unique in this region.
+Add a third anchor: a triangle gives an extra distance and angle, which multiplies N by roughly another factor of
+10⁻²–10⁻³ for rare classes, giving about 0.003–0.03. (unsourced)
+(An earlier version of this example used Tyrol at about 12,600 km²; the region was changed by [[author-decision-search-region]].)
 
 Lessons: **use the bearing** (free with north-up orthophotos), keep tolerances tight, and pick
 **rare** classes. Real counts should come from an Overpass export of the study area ([[osm-object-catalog]]).
@@ -84,7 +89,7 @@ and building function (not visible).
 
    ```
    [out:json][timeout:300];
-   area["name"="Tirol"]["admin_level"="4"]->.a;
+   area["boundary"="administrative"]["admin_level"="6"]["name"~"Garmisch|Tölz|Miesbach|Weilheim|Rosenheim|Traunstein|Berchtesgaden|Altötting|Mühldorf"]->.a;  // Oberbayern Süd, see [[oberbayern-sued]]
    nwr["leisure"="swimming_pool"](area.a)->.pools;
    nwr["leisure"="pitch"]["sport"="tennis"](around.pools:120)->.courts;
    nwr.pools(around.courts:120)->.pairs;
@@ -168,12 +173,13 @@ project the full OSM layer onto the photo to label or check every object → out
 
 ## Thesis angle
 This could be the research question itself: *"How many and which OSM-mapped objects detected in
-a 10–25 cm orthophoto are needed to geolocate it uniquely within Tyrol?"* It uses the
+a 10–25 cm orthophoto are needed to geolocate it uniquely within Oberbayern Süd ([[oberbayern-sued]])?"* It uses the
 detectors from [[methods-10-25cm]], the Overpass index, and has a measurable answer: uniqueness
 rate against fingerprint size. Ethics: geolocating images can affect privacy, so cover it in the legal section
 ([[thesis-timeline]]). (unsourced)
 
 ## Related
+- [[oberbayern-sued]]
 - [[author-decision-no-metadata]]
 - [[pretrained-models]]
 - [[author-note-rural-roads]]
