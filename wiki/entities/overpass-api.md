@@ -13,7 +13,10 @@ Read-only query API for OpenStreetMap data; it is the backend that Overpass Turb
 
 Element types, primary keys and query templates: [[osm-object-catalog]].
 
+Pair-proximity queries (`around.<set>:<m>`) for fingerprint search: [[osm-fingerprint-geolocalization]].
+
 ## Related
+- [[osm-fingerprint-geolocalization]]
 - [[osm-object-catalog]]
 - [[overpass-turbo]]
 - [[openstreetmap]]

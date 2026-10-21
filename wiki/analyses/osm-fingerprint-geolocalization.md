@@ -1,0 +1,98 @@
+---
+title: Two-factor OSM fingerprint for locating an image
+type: analysis
+tags: [geolocalization, fingerprint, overpass, decision]
+sources: [costea-2016-aerial-geolocalization, methods-10-25cm-search, aerial-cv-benchmarks]
+updated: 2026-10-21
+---
+How to turn detected objects in an orthoimage into a two-factor "fingerprint" (what + where-relative-to-what) that can be searched in OSM via Overpass to find where the image was taken, and how to estimate whether a fingerprint is unique.
+
+## When this is needed
+State orthophotos are already georeferenced. Fingerprinting matters for images **without**
+coordinates: drone frames with stripped metadata, screenshots, scanned historic air photos,
+or tiles whose georeference must be verified. Published precedent: detect road intersections,
+match them to OSM, then align geometrically ([[costea-2016-aerial-geolocalization]]).
+
+## The two factors
+
+**Factor 1 — semantic key (what):** a *pair of object classes*, A and B, chosen so that
+- both are **reliably detectable** at 10–25 cm, with few false positives ([[methods-10-25cm]]);
+- both are **rare** in the search region (low density, so few chance matches);
+- both are **well mapped** in OSM (missing OSM objects create false negatives);
+- both are **stable over time**: tanks and pitches, not cars or construction sites. (unsourced)
+
+**Factor 2 — geometric key (where, relative to each other):** the vector from A to B. Orthophotos are
+north-up with a known pixel size, so the image gives
+- the **distance d in metres** (pixels × GSD),
+- the **bearing θ** from A to B (north-up, so it can be used directly),
+- optionally the **sizes or orientations** of A and B (pitch long-axis angle, pool area).
+
+Fingerprint = `(class_A, class_B, d ± δd, θ ± δθ)`. This is a two-object version of the
+intersection descriptor in [[costea-2016-aerial-geolocalization]]. (unsourced)
+
+## How unique is a fingerprint? Back-of-envelope
+Expected number of chance matches in a region (assuming independent random placement): (unsourced)
+
+- distance only: `N ≈ n_A · ρ_B · 2π·d·2δd`
+- distance + bearing: `N ≈ n_A · ρ_B · (d·2δθ) · 2δd`, roughly `n_A · ρ_B · π·r²` for a positional tolerance r
+
+where `n_A` = count of class A and `ρ_B` = density of class B (per m²). The fingerprint is
+**unique when N ≪ 1**.
+
+*Illustrative example (hypothetical counts, not measured):* Tyrol covers about 12,600 km².
+Suppose 5,000 pools and 1,000 tennis courts, so ρ_B ≈ 7.9·10⁻⁸ /m². For d = 100 m:
+- distance only, ±5 m → N ≈ 5000 · 7.9e-8 · 6283 m² ≈ **2.5 matches**, not unique;
+- distance + bearing, ±5 m positional tolerance → N ≈ 5000 · 7.9e-8 · 79 m² ≈ **0.03**, which is unique.
+
+Lessons: **use the bearing** (free with north-up orthophotos), keep tolerances tight, and pick
+**rare** classes. Real counts should come from an Overpass export of the study area ([[osm-object-catalog]]).
+
+## Good class pairs (ranked; unsourced)
+| Pair | Why it works |
+|---|---|
+| `man_made=storage_tank` + `railway=rail` siding or a second tank | Rare, very stable, high detection precision |
+| `leisure=pitch`+`sport=tennis` + `leisure=swimming_pool` | Both DOTA classes ([[aerial-cv-benchmarks]]); a common pairing at hotels, which narrows the pool of candidates |
+| `leisure=pitch`+`sport=soccer` + `leisure=track` | Large, stable, distinctive geometry |
+| Road intersection (degree + angles) + any rare object | Intersections are dense but carry strong geometry ([[costea-2016-aerial-geolocalization]]) |
+| `power=generator` (wind) or `aerialway=pylon` + anything | Very rare; good in Tyrol mountain areas |
+
+Avoid as factors: cars, trees (too dense), solar PV (changes often, incompletely mapped),
+and building function (not visible).
+
+## Search procedure
+1. **Detect** objects, convert positions to metres in the image frame (north-up).
+2. **Choose the most informative pair:** the lowest expected N among detected pairs.
+3. **Query OSM.** Use Overpass for a quick test, or download all candidate-class geometries for
+   the region once and build a local spatial index for speed. Matching object descriptors
+   rather than pixels is far faster (648×, [[costea-2016-aerial-geolocalization]]).
+
+   ```
+   [out:json][timeout:300];
+   area["name"="Tirol"]["admin_level"="4"]->.a;
+   nwr["leisure"="swimming_pool"](area.a)->.pools;
+   nwr["leisure"="pitch"]["sport"="tennis"](around.pools:120)->.courts;
+   nwr.pools(around.courts:120)->.pairs;
+   (.pairs; .courts;);
+   out center;
+   ```
+   Then filter client-side by the distance band d ± δd and the bearing θ ± δθ.
+4. **Verify** each candidate with a third object or the road network (RANSAC-style alignment), as in the geometric refinement step of [[costea-2016-aerial-geolocalization]].
+5. **Output** location + confidence, using the number of agreeing objects and N.
+
+If scale or rotation is unknown (non-orthophoto input), switch to **three-object
+constellations** with scale- and rotation-invariant keys (triangle angles and side ratios),
+i.e. geometric hashing. (unsourced)
+
+## Thesis angle
+This could be the research question itself: *"How many and which OSM-mapped objects detected in
+a 10–25 cm orthophoto are needed to geolocate it uniquely within Tyrol?"* It uses the
+detectors from [[methods-10-25cm]], the Overpass index, and has a measurable answer: uniqueness
+rate against fingerprint size. Ethics: geolocating images can affect privacy, so cover it in the legal section
+([[thesis-timeline]]). (unsourced)
+
+## Related
+- [[costea-2016-aerial-geolocalization]]
+- [[methods-10-25cm]]
+- [[osm-object-catalog]]
+- [[overpass-api]]
+- [[thesis-timeline]]

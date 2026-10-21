@@ -14,6 +14,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[maggiori-2017-hr-semantic-labeling]] — Maggiori et al. 2017 (TGRS, full text): CNN architecture analysis plus a multi-resolution MLP net; 88.92 % OA on Vaihingen, 2nd of 29 on ISPRS.
 - [[maggiori-osm-imperfect-labels]] — Maggiori et al.: FCN pretrained on imperfect OSM labels, then refined on a small accurate set; precedent for this thesis.
 - [[methods-10-25cm-search]] — Search evidence: PV U-Net (F1 91.75 % at 10 cm), DeepForest trees, roof-type CNNs, U-Net vs. Mask R-CNN footprints, Grounded-SAM zero-shot.
+- [[costea-2016-aerial-geolocalization]] — Costea & Leordeanu 2016: detect road intersections, match them to OSM, align roads to geolocate aerial images; semantic matching is 648× faster.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities
@@ -35,4 +36,5 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[osm-object-catalog]] — Element types, primary OSM keys with main values, visibility in orthoimagery, thesis class shortlist, query templates.
 - [[cv-detectability]] — What CV can and cannot recognise in orthoimagery, by task, object size and GSD, mapped to OSM tags.
 - [[methods-10-25cm]] — Per-class detector/segmenter/classifier choice at 10–25 cm, three-head pipeline, scope cuts.
+- [[osm-fingerprint-geolocalization]] — Two-factor fingerprint (class pair + distance/bearing) to locate images via Overpass; uniqueness maths, pair ranking, search procedure.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.

@@ -48,3 +48,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[methods-10-25cm-search]], [[methods-10-25cm]]
 - updated: [[semantic-segmentation]], [[object-detection]], [[thesis-poc-pipeline]], [[overview]]
 - notes: Four approach families (classical, task-specific DL, two-stage, foundation/zero-shot). Per-class choice: segmentation for buildings and solar, detection for pools, tanks, pitches and trees, crop classifiers for roof shape and sport, SAM2 as refiner. Proposed minimum scope: buildings plus roof-shape classification. The evidence comes from search snippets.
+
+## [2026-10-21] query | Two-factor label as a searchable location fingerprint
+- created: [[costea-2016-aerial-geolocalization]], [[osm-fingerprint-geolocalization]]
+- updated: [[overview]], [[overpass-api]], [[thesis-timeline]]
+- notes: Fingerprint = semantic key (a pair of rare, stable, detectable classes) + geometric key (distance and bearing in metres, available because orthophotos are north-up with known GSD). The expected chance-match formula shows bearing is essential. Precedent: intersection-to-OSM matching (BMVC 2016). Opens a possible research question on fingerprint uniqueness; the example counts are hypothetical.
