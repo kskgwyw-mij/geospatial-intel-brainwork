@@ -67,3 +67,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[pretrained-models-search]], [[pretrained-models]]
 - updated: [[methods-10-25cm]], [[osm-fingerprint-geolocalization]], [[overview]]
 - notes: Yes, one per head: YOLO11-OBB pretrained on DOTAv1 (already covers pools, tanks, pitches), DeepForest, SatlasPretrain Swin V2/ResNet via TorchGeo, DINOv3 SAT-493M (0.6 m Maxar, also usable as a fingerprint retrieval descriptor), SAM2/Grounded-SAM. None was trained at 10–25 cm, so fine-tune or resample.
+
+## [2026-10-21] edit | Tool: project Overpass objects onto a nadir image
+- updated: [[thesis-poc-pipeline]], [[osm-weak-labels]]
+- notes: Added tools/osm_overlay.py (numpy + Pillow; pyproj optional). Input: Overpass Turbo GeoJSON or Overpass JSON with `out geom`, plus georeference via GeoTIFF tags, a world file + EPSG, or a lon/lat bbox for Web-Mercator images. Output: annotated PNG, a JSON of pixel boxes and polygons per OSM object, and optional YOLO labels. Tested on synthetic data; all three georeference modes agree.
