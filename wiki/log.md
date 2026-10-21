@@ -142,3 +142,12 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-21] schema | `superseded_raw` frontmatter for replaced source notes
 - updated: CLAUDE.md, tools/lint.py, [[bayern-opengeodata]], [[costea-2016-aerial-geolocalization]]
 - notes: Snippet notes replaced by full clips or PDFs stay in raw/ (raw is immutable) and are listed under `superseded_raw:`, so lint no longer reports them as un-ingested.
+
+## [2026-10-21] ingest | Author decision: detection is part of the thesis
+- created: [[author-decision-detection-in-scope]]
+- updated: [[thesis-goal]], [[thesis-timeline]] (FF1 detection + FF2 localisation), [[thesis-poc-pipeline]], [[geo-match-prototype]], [[overview]]
+- notes: The thesis has two connected contributions: detecting and classifying OSM-class objects, then locating metadata-free photos from those detections. Measured detector recall, false alarms and confusion must replace the simulated assumptions, so the evaluation becomes end-to-end.
+
+## [2026-10-21] query | Why must the photo be scaled and oriented?
+- updated: [[osm-fingerprint-geolocalization]]
+- notes: Map = metres and north-up, photo = pixels in an arbitrary orientation, so matching needs a 4-parameter similarity (shift 2, scale 1, rotation 1). Without scale, pixel distances cannot be compared with metres; without rotation, directions mean nothing; object coordinates and drone heading need both. Invariant fingerprints defer, but do not remove, the need.

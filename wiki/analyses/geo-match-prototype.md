@@ -2,7 +2,7 @@
 title: Geolocation matcher prototype & first simulation
 type: analysis
 tags: [geolocalization, ransac, prototype, evaluation]
-sources: [author-decision-no-metadata, author-decision-search-region, costea-2016-aerial-geolocalization]
+sources: [author-decision-no-metadata, author-decision-search-region, costea-2016-aerial-geolocalization, author-decision-detection-in-scope]
 updated: 2026-10-21
 ---
 First working prototype of metadata-free photo geolocation (`tools/geo_match.py`) and its evaluation on simulated photos (`tools/sim_geo_match.py`): confident matches were always right, but photos need about 5–8 detected anchors.
@@ -44,7 +44,7 @@ When located: median position error **0.2–0.4 m**, GSD error **< 0.1 %**, head
 - Synthetic densities: rerun with the real Overpass export of the seven districts (`--osm region.geojson`).
 - Only point anchors so far. Next: building footprints (orientation and size), road intersections (Costea-style), forest-edge and water shape matching, DEM.
 - Pure Python; about 2.7 s per photo at regional scale. Vectorising or using a k-d tree would speed it up.
-- Real detections will come from the fine-tuned detectors ([[pretrained-models]], [[methods-10-25cm]]).
+- Real detections will come from the fine-tuned detectors ([[pretrained-models]], [[methods-10-25cm]]). Detection is in scope ([[author-decision-detection-in-scope]]), so replace the simulated 85 % recall, 2 false alarms and perfect classes with the **measured** detector performance, including class confusion.
 
 ## Related
 - [[osm-fingerprint-geolocalization]]

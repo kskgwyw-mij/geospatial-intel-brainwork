@@ -143,6 +143,16 @@ orthophoto, three things are unknown: **where**, **how big** (GSD, metres per pi
 Bearing and metric distance, the strongest factors above, are therefore not directly available.
 (Everything in this section is design reasoning: unsourced unless cited.)
 
+**Why scale and rotation must be solved, not just position (unsourced, basic geometry)**
+- The map (OSM) is in **metres and north-up**; the photo is in **pixels, in an arbitrary orientation**. Comparing the two needs
+  a transform with 4 unknowns: shift (2), scale (1), rotation (1). Position alone is only 2 of the 4.
+- **Without scale**, a distance of 300 px between two detected pools could be 30 m (drone at 0.1 m/px) or 150 m (0.5 m/px), so the
+  constellation cannot be compared with map distances.
+- **Without rotation**, "the tennis court is north-east of the pool" in the photo means nothing, because image-up is not north.
+- **Output needs them too:** every detected object only gets a map coordinate if scale and rotation are known. For a drone, the
+  heading is itself a navigation result (GNSS-denied use, [[gnss-denied-use-cases]]).
+- Invariant fingerprints (angles, distance ratios) avoid needing scale and rotation *before* matching, but the final fit still delivers them.
+
 **1. Recover scale from objects with known size ("metric anchors")**
 - Standardised objects set the scale: a tennis court (about 23.8 × 11 m doubles), football pitches (within a regulated range), cars (about 4.5 m), road lane width (about 3 m), parking bays (about 2.5 × 5 m).
 - One detected tennis court gives the GSD to within a few percent. Several anchors averaged give a robust estimate.

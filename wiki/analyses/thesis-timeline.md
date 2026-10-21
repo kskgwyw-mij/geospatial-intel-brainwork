@@ -2,7 +2,7 @@
 title: Thesis timeline & course fit
 type: analysis
 tags: [thesis, planning]
-sources: [dsia-studienordnung-2027, thesis-goal, maggiori-osm-imperfect-labels, author-note-use-cases-gnss-denied]
+sources: [dsia-studienordnung-2027, thesis-goal, maggiori-osm-imperfect-labels, author-note-use-cases-gnss-denied, author-decision-detection-in-scope]
 updated: 2026-10-20
 ---
 How the thesis goal maps onto the part-time DSIA semesters: when each thesis milestone happens and which course supplies what.
@@ -26,6 +26,10 @@ For a cohort starting WS 2027/28, semester 4 is summer 2029. Confirm the author'
   class X in orthoimagery, compared with a classical ML baseline?* (unsourced) A sourced variant: *how much does a small hand-corrected set improve a model pretrained on Overpass labels?*, following the two-step scheme in [[maggiori-osm-imperfect-labels]].
 - With metadata-free photos as input ([[author-decision-no-metadata]]), geolocation is part of the method. A natural research question: *how reliably can a metadata-free nadir photo be located, scaled and oriented from detected OSM objects, and how many objects are needed?*; see [[osm-fingerprint-geolocalization]].
 - **Current preferred research question** ([[author-note-use-cases-gnss-denied]]): *"Wie zuverlässig lässt sich eine Drohnenaufnahme ohne Metadaten allein anhand erkannter OSM-Objekte lokalisieren, skalieren und ausrichten, und wie viele Objekte sind dafür in alpinen und ländlichen Gebieten nötig?"* Application framing: GNSS-denied visual localisation ([[gnss-denied-use-cases]]).
+- **Detection is part of the thesis** ([[author-decision-detection-in-scope]]), so the question splits into two connected sub-questions (proposal, unsourced):
+  - **FF1 (Erkennung):** How well can OSM-class anchor objects (pools, tennis courts, tanks, pylons, buildings…) be detected and classified in 20 cm nadir images when trained on OSM and official Bavarian labels? Metrics: per-class precision, recall, mAP and F1.
+  - **FF2 (Lokalisierung):** How reliably can a metadata-free photo be located, scaled and oriented from *these real detections*, and how many objects are needed in Alpine and rural areas? Metrics: success rate, position, scale and heading error vs. number and type of anchors.
+  - The link: FF1's measured recall, false-alarm rate and confusion matrix feed directly into the FF2 simulation and the end-to-end test ([[geo-match-prototype]]).
 - No geospatial courses exist in the curriculum ([[dsia-studienordnung-2027]]), so the
   thesis must cover the GIS basics itself: coordinate reference systems, rasters vs. vectors,
   [[overpass-api]] and [[orthoimagery]] sources.
