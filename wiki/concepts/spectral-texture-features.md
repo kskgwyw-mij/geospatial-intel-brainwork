@@ -2,8 +2,8 @@
 title: Colour, texture and shape cues
 type: concept
 tags: [features, land-use, classical-ml, computer-vision]
-sources: [author-note-industrial-colour, dsia-studienordnung-2027, maggiori-2017-hr-semantic-labeling, bayern-opengeodata]
-updated: 2026-10-20
+sources: [settlement-test, author-note-industrial-colour, dsia-studienordnung-2027, maggiori-2017-hr-semantic-labeling, bayern-opengeodata]
+updated: 2026-10-21
 ---
 Low-level image cues (colour, texture, shape, size) that let a model recognise land use, such as industrial areas, from orthoimagery, and that make a classical ML baseline possible.
 
@@ -40,7 +40,11 @@ plus big car parks). (unsourced)
   between `industrial`, `commercial` and `retail`, and between `farmyard` and `industrial`.
 - OSM `landuse` polygon boundaries are drawn loosely, so pixel labels near the edges are noisy.
 
+## Measured in the search region
+23 colour/texture statistics plus logistic regression detect settlement hectares with AUC 0.959 Miesbach → Garmisch and 0.943 on the 2018 flight. A pretrained DOTA embedding does better (0.982 / 0.984), and the gap is largest under transfer and for single buildings (0.898 vs 0.965). Colour cues held up across flight years better than feared, but pretrained features are the safer default ([[settlement-test]], [[settlement-detection]]).
+
 ## Related
+- [[settlement-detection]]
 - [[cv-detectability]]
 - [[semantic-segmentation]]
 - [[osm-weak-labels]]

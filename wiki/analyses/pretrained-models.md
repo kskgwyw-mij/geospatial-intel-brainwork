@@ -2,7 +2,7 @@
 title: Pretrained CNNs & foundation models for the thesis
 type: analysis
 tags: [pretrained, transfer-learning, foundation-models, decision]
-sources: [real-e2e-test, pretrained-models-search, methods-10-25cm-search, maggiori-2017-hr-semantic-labeling, aerial-cv-benchmarks]
+sources: [settlement-test, real-e2e-test, pretrained-models-search, methods-10-25cm-search, maggiori-2017-hr-semantic-labeling, aerial-cv-benchmarks]
 updated: 2026-10-21
 ---
 Which pretrained networks exist for each part of the thesis (detection, segmentation, classification, geolocation), what they were trained on, and how to fine-tune them on Overpass-labelled 10–25 cm orthophotos.
@@ -45,6 +45,9 @@ YOLO11s-OBB (DOTA v1) on real DOP20 crops of the search region, without fine-tun
 pools, tanks, pitches, tracks and courts. Small or partly covered pools and some clay courts are missed, and fields are sometimes taken for
 soccer pitches ([[real-e2e-test]]). A usable zero-shot baseline for FF1, but fine-tuning is needed.
 
+## Pretrained features as a frozen backbone
+The 512-d embedding of the same DOTA model, with only a linear classifier on top, detects settlement hectares with AUC 0.98–0.995 across districts and flight years. It beats hand-crafted colour/texture features, especially under transfer ([[settlement-test]]).
+
 ## Suggested minimal stack
 1. YOLO11-OBB (DOTA weights), fine-tuned on Overpass pools, tanks and pitches.
 2. U-Net with a Satlas or DINOv3 encoder, fine-tuned on Overpass buildings.
@@ -54,6 +57,7 @@ soccer pitches ([[real-e2e-test]]). A usable zero-shot baseline for FF1, but fin
 All are open and PyTorch-based; check each licence before using it in the [[poc-platform]]. (unsourced)
 
 ## Related
+- [[settlement-detection]]
 - [[real-e2e-test]]
 - [[methods-10-25cm]]
 - [[osm-fingerprint-geolocalization]]

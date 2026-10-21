@@ -176,3 +176,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[real-e2e-test]]
 - updated: [[geo-match-prototype]], [[feasibility]], [[osm-real-test]], [[pretrained-models]], [[overview]]; schema and lint gain `raw_data:` for data files belonging to a source
 - notes: 80 real metadata-free DOP20 photos, 500 × 375 m. Zero-shot YOLO11s-OBB (DOTA): precision 0.49, recall 0.62 vs OSM. Located 6/40 near anchors (correct ones 0.9–5.2 m, ≤ 2.4 % scale, ≤ 2.9°) and 0/40 uniformly placed (36/40 photos contain no anchor). First wrong "confident" match: a tank farm matched the densest tank cluster 63.5 km away → inlier count must be judged against local density / class diversity. Contradiction with the simulated 30/30 is recorded.
+
+## [2026-10-21] query | How possible is stable detection of inhabited areas in our dataset?
+- created: [[settlement-test]], [[settlement-detection]]; tools/settlement_test.py; tools/real_geo_test.py `fetch_dop` gains url/layer (historical flights)
+- updated: [[spectral-texture-features]], [[pretrained-models]], [[cv-detectability]], [[coarse-to-fine-localization]], [[overview]]
+- notes: Measured rather than assumed: 1,100 real 1-ha DOP20 cells, OSM building labels, Miesbach → Garmisch and 2024 → 2018. Settlement (≥ 5 buildings/ha) AUC 0.982–0.995 with a frozen DOTA embedding (0.94–0.97 with colour/texture); 2018 flight costs ≤ 0.016 AUC; 92–96 % same-cell agreement. "Any building" is harder (0.965 / 0.898): misses are isolated hay barns and Alpine huts. Low prevalence (2–4 %) limits precision at a naive threshold. OSM buildings ≠ inhabitants; ALKIS land use or a population grid would be better labels.
