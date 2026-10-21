@@ -2,7 +2,7 @@
 title: Overview
 type: overview
 tags: [meta]
-sources: [thesis-goal, dsia-studienordnung-2027, hok-dsia-program-listings]
+sources: [thesis-goal, dsia-studienordnung-2027, hok-dsia-program-listings, maggiori-osm-imperfect-labels, maggiori-2017-hr-semantic-labeling]
 updated: 2026-10-20
 ---
 Current big-picture understanding of ML/DL algorithm selection for recognising OSM/Overpass objects in orthoimagery, for the HOK master thesis.
@@ -19,11 +19,12 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]).
 - **Labels come almost for free from OSM.** Because orthoimagery is georeferenced, OSM
   geometries from the [[overpass-api]] can be turned straight into training masks or boxes.
   The price is label noise: misalignment, missing objects, and outdated objects
-  ([[osm-weak-labels]]). (unsourced)
+  ([[osm-weak-labels]]). There is published precedent: pretrain on noisy OSM labels, then refine on a small accurate set ([[maggiori-osm-imperfect-labels]]).
 - **The choice of method depends on the object classes.** Compact, countable objects suit
   [[object-detection]]; areal or linear features suit [[semantic-segmentation]]. Instance
   segmentation covers both cases for things like buildings. (unsourced)
 - **What CV can see** is bounded by object size in pixels (about 10–20 px minimum), visibility from above, and occlusion. Detectable OSM classes overlap with the DOTA/ISPRS benchmark classes ([[cv-detectability]], [[aerial-cv-benchmarks]]). Coarse land use is also visible: industrial areas differ in colour and texture ([[author-note-industrial-colour]], [[spectral-texture-features]]).
+- **Per-pixel labelling** of high-resolution aerial imagery works best when multi-resolution CNN features are combined, which gives recognition plus precise boundaries ([[maggiori-2017-hr-semantic-labeling]]). Because the imagery is georeferenced, pixel labels become geo-polygons.
 - **The working design** is in [[thesis-poc-pipeline]]: Overpass → labels → model → PoC.
 - **Programme constraints** come from the official regulation ([[dsia-studienordnung-2027]]):
   the thesis is 20 ECTS + a 2-ECTS committee exam in semester 4, the exposé is approved by the

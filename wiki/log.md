@@ -34,3 +34,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[author-note-industrial-colour]], [[spectral-texture-features]]
 - updated: [[cv-detectability]], [[osm-object-catalog]], [[thesis-poc-pipeline]], [[overview]]
 - notes: Corrected the claim that land use is invisible from above: coarse land use (industrial vs. residential vs. farmland) is recognisable from colour, texture and shape. `landuse=industrial` was added to the class shortlist, and colour/texture features now define the classical baseline.
+
+## [2026-10-21] ingest | Maggiori et al. — High-Resolution Semantic Labeling with CNNs (+ OSM imperfect-labels paper)
+- created: [[maggiori-2017-hr-semantic-labeling]], [[maggiori-osm-imperfect-labels]]
+- updated: [[semantic-segmentation]], [[osm-weak-labels]], [[thesis-poc-pipeline]], [[thesis-timeline]], [[overview]]
+- notes: Per-pixel labelling of georeferenced imagery is a location-aware alternative to box detection, not image geolocalisation. The same group pretrained on imperfect OSM labels and refined on a small accurate set, which gives the thesis a sourced method and research-question template. The full texts were blocked, so the facts come from search snippets and the exact accuracy numbers are still missing.

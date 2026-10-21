@@ -2,7 +2,7 @@
 title: Thesis PoC pipeline (working design)
 type: analysis
 tags: [thesis, architecture, decision]
-sources: [thesis-goal, dsia-studienordnung-2027]
+sources: [thesis-goal, dsia-studienordnung-2027, maggiori-osm-imperfect-labels, maggiori-2017-hr-semantic-labeling]
 updated: 2026-10-20
 ---
 Working end-to-end design for the thesis: Overpass → labels → model → PoC platform. It is a draft built on the goal statement; most design choices are not sourced yet.
@@ -14,7 +14,7 @@ Working end-to-end design for the thesis: Overpass → labels → model → PoC 
 3. **Get matching [[orthoimagery]]**: same extent, known resolution and acquisition date.
 4. **Build labels** ([[osm-weak-labels]]): rasterise polygons into masks and/or derive boxes; tile to fixed-size chips; split train/val/test **by region**, not randomly, to avoid spatial leakage. (unsourced)
 5. **Train and compare models**: [[object-detection]] and/or [[semantic-segmentation]], with a classical ML baseline (for example a random forest on colour, texture and shape features, see [[spectral-texture-features]]) to justify using DL. Both families are taught: random forests and ensembles in Statistical Learning 1/2, CNNs in ML & Deep Learning ([[dsia-studienordnung-2027]]).
-6. **Evaluate** on a hand-checked test set, since the OSM labels are noisy. (unsourced)
+6. **Refine and evaluate**: optionally fine-tune on a small hand-corrected set (the two-step scheme of [[maggiori-osm-imperfect-labels]]), and evaluate on a hand-checked test set with overall accuracy **and** mean F1 ([[maggiori-2017-hr-semantic-labeling]]).
 7. **PoC on the [[poc-platform]]**: upload GeoTIFF → tile → infer → merge → GeoJSON output, optionally compared with current OSM to report agreement, objects missing from OSM, and possibly outdated ones.
 
 ## Fit with the programme
