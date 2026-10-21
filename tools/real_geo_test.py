@@ -97,15 +97,16 @@ def inside(segs, lon, lat):
     return bool(np.count_nonzero(crosses) % 2)
 
 
-def fetch_dop(e, n, side_m):
+def fetch_dop(e, n, side_m, url=WMS, layer="by_dop20c"):
+    """Square DOP crop centred on (e, n) in EPSG:25832; `url`/`layer` select e.g. a historical flight year."""
     px = int(round(side_m / DOP_GSD))
     h = side_m / 2
-    q = {"SERVICE": "WMS", "VERSION": "1.3.0", "REQUEST": "GetMap", "LAYERS": "by_dop20c", "STYLES": "",
+    q = {"SERVICE": "WMS", "VERSION": "1.3.0", "REQUEST": "GetMap", "LAYERS": layer, "STYLES": "",
          "CRS": "EPSG:25832", "BBOX": f"{e - h},{n - h},{e + h},{n + h}", "WIDTH": px, "HEIGHT": px,
          "FORMAT": "image/jpeg"}
     for attempt in range(3):
         try:
-            with urllib.request.urlopen(WMS + "?" + urllib.parse.urlencode(q), timeout=120) as r:
+            with urllib.request.urlopen(url + "?" + urllib.parse.urlencode(q), timeout=120) as r:
                 return Image.open(io.BytesIO(r.read())).convert("RGB")
         except Exception:
             time.sleep(5 * (attempt + 1))
