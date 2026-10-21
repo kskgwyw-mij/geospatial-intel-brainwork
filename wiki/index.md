@@ -19,6 +19,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[rural-geolocalization-search]] — Search evidence for road-sparse geolocalisation: DEM orthoprojection, land-cover boundary-map matching, rural benchmark subset.
 - [[pretrained-models-search]] — Search facts: TorchGeo/Satlas Swin V2 NAIP weights, YOLO11-OBB on DOTAv1 (78.4 mAP50 nano), DINOv3 SAT-493M (Maxar 0.6 m).
 - [[author-decision-nadir-input]] — Author decision: nadir images are the required input; orthoimagery ideal but optional.
+- [[author-decision-no-metadata]] — Author decision: the photo is used without any metadata, so location, scale and north must come from the image.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities

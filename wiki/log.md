@@ -80,3 +80,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[author-decision-nadir-input]]
 - updated: [[thesis-goal]] (amendment), [[orthoimagery]], [[osm-weak-labels]], [[poc-platform]], [[thesis-poc-pipeline]], [[osm-fingerprint-geolocalization]], [[overview]]
 - notes: Input relaxed from orthoimagery to nadir frames. tools/osm_overlay.py gains `--nadir LAT,LON,HEADING` with --gsd or height/focal/sensor; it assumes flat ground and exact nadir, and was tested for heading rotation and the camera-derived GSD. Label offsets grow (GPS, heading, relief), so detection-to-OSM alignment and fingerprinting become more important.
+
+## [2026-10-21] ingest | Author decision: photo only, no metadata
+- created: [[author-decision-no-metadata]]
+- updated: [[osm-fingerprint-geolocalization]] (new section on unknown position, scale and rotation), [[thesis-goal]], [[poc-platform]], [[thesis-poc-pipeline]], [[thesis-timeline]], [[overview]]
+- notes: Geolocation becomes a core step. Scale comes from metric anchors (tennis courts, pitches, cars, lanes); the fingerprint becomes a rotation-invariant constellation matched by a RANSAC similarity transform against a regional OSM index; a search-region prior is needed. Training may still use georeferenced orthophotos; the --nadir metadata mode is not part of inference.

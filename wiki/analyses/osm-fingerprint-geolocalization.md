@@ -2,7 +2,7 @@
 title: Two-factor OSM fingerprint for locating an image
 type: analysis
 tags: [geolocalization, fingerprint, overpass, decision]
-sources: [costea-2016-aerial-geolocalization, methods-10-25cm-search, aerial-cv-benchmarks, author-note-rural-roads, rural-geolocalization-search]
+sources: [author-decision-no-metadata, costea-2016-aerial-geolocalization, methods-10-25cm-search, aerial-cv-benchmarks, author-note-rural-roads, rural-geolocalization-search]
 updated: 2026-10-21
 ---
 How to turn detected objects in an orthoimage into a two-factor "fingerprint" (what + where-relative-to-what) that can be searched in OSM via Overpass to find where the image was taken, and how to estimate whether a fingerprint is unique.
@@ -130,6 +130,42 @@ Practical split: **urban → roads, intersections and objects; rural → forest 
 and fields as a boundary map, plus terrain.** One retrieve-then-verify pipeline can serve both, by adding
 the area-based anchors to the same neighbourhood descriptor. (unsourced)
 
+## Photo only, no metadata: unknown position, scale and rotation
+The thesis input is the nadir photo **without metadata** ([[author-decision-no-metadata]]). Compared with an
+orthophoto, three things are unknown: **where**, **how big** (GSD, metres per pixel) and **which way is north**.
+Bearing and metric distance, the strongest factors above, are therefore not directly available.
+(Everything in this section is design reasoning: unsourced unless cited.)
+
+**1. Recover scale from objects with known size ("metric anchors")**
+- Standardised objects set the scale: a tennis court (about 23.8 × 11 m doubles), football pitches (within a regulated range), cars (about 4.5 m), road lane width (about 3 m), parking bays (about 2.5 × 5 m).
+- One detected tennis court gives the GSD to within a few percent. Several anchors averaged give a robust estimate.
+- With the scale known, the distance factor works again.
+
+**2. Make the fingerprint rotation-invariant, or search over rotation**
+- Use **distances and angles *between* objects**, for example triangles of three anchors (side lengths, or angles and side ratios if the scale is also unknown). These do not change when the photo is rotated. This is geometric hashing / constellation matching, as in star trackers.
+- Alternatively, try candidate rotations, for example every 5°, and keep the best alignment. Costea & Leordeanu's final alignment is affine-invariant, while their retrieval step assumed a known heading ([[costea-2016-aerial-geolocalization]]).
+- Weak orientation cues: shadow direction (sun from the south at midday in the northern hemisphere), and the dominant direction of streets or fields.
+
+**3. Fingerprint without metadata = a similarity-invariant constellation**
+Factor 1 = the classes of the detected anchors (pool, tennis court, tank, pylon, farm building…).
+Factor 2 = their **relative geometry**: pairwise distances in metres (from the recovered scale) and angles between them.
+The match fits a 2D **similarity transform** (translation + rotation + scale) between image objects and OSM objects
+with RANSAC; the winner has the most consistent matches and the lowest residual.
+
+**4. A search region is still needed**
+Without GPS the search area is the prior, for example "Tyrol". The smaller the region, the fewer chance matches
+(see the uniqueness formula above). Download the anchor classes for the whole region once from Overpass into
+a local index, instead of querying live.
+
+**5. Training vs. inference**
+"No metadata" applies to the **uploaded photo** at inference. Training can still use georeferenced orthophotos
+with projected OSM labels (`tools/osm_overlay.py`). Augment with rotation, scale and perspective/lean so the
+detectors cope with raw nadir frames.
+
+**Resulting pipeline:** detect + classify objects → estimate scale from metric anchors → build an invariant
+constellation → RANSAC similarity match against the regional OSM index → location, scale and rotation →
+project the full OSM layer onto the photo to label or check every object → output geo-objects.
+
 ## Thesis angle
 This could be the research question itself: *"How many and which OSM-mapped objects detected in
 a 10–25 cm orthophoto are needed to geolocate it uniquely within Tyrol?"* It uses the
@@ -138,6 +174,7 @@ rate against fingerprint size. Ethics: geolocating images can affect privacy, so
 ([[thesis-timeline]]). (unsourced)
 
 ## Related
+- [[author-decision-no-metadata]]
 - [[pretrained-models]]
 - [[author-note-rural-roads]]
 - [[rural-geolocalization-search]]

@@ -12,7 +12,7 @@ Current big-picture understanding of ML/DL algorithm selection for recognising O
 The master thesis in the [[hok-dsia-master]] aims at an ML/DL **recognition and
 classification** method for objects that exist in [[openstreetmap]] (defined via
 [[overpass-turbo]]), applied to [[orthoimagery]], with a proof of concept in which imagery is
-uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** nadir images suffice; orthoimagery is ideal but not required ([[author-decision-nadir-input]]).
+uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** a nadir photo **without metadata** ([[author-decision-nadir-input]], [[author-decision-no-metadata]]). Location, scale and north are unknown, so the method must detect objects, then locate the photo by matching them to OSM.
 
 ## Current understanding
 
@@ -43,7 +43,7 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** nadir imag
 - Does the PoC platform exist already, or is building it part of the thesis?
 - How should spatial leakage be handled in train/test splits? (unsourced)
 - Which regulation version applies to the author? The one ingested covers cohorts starting WS 2027/28.
-- Is geolocation by fingerprint ([[osm-fingerprint-geolocalization]]) part of the thesis goal, or a separate extension?
+- Geolocation is now part of the method ([[author-decision-no-metadata]]). Open: which search region is the prior (all of Tyrol? one district?), and how is scale recovered (metric anchors such as tennis courts)?
 - What is the research question for the exposé? A PoC alone is not one; see [[thesis-timeline]].
 - Formal thesis guidelines (length, citation style, deadlines) are not in the regulation.
 

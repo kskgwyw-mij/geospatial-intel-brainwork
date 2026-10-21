@@ -30,6 +30,7 @@ these deliverables. See [[thesis-poc-pipeline]] for the working design.
 
 > [!note] Amendment (2026-10-21)
 > The input is a **nadir image**; orthoimagery is ideal but not required ([[author-decision-nadir-input]]).
+> Further narrowed: the photo is used **without any metadata** ([[author-decision-no-metadata]]), so geolocation is part of the method.
 
 ## Open interpretation points
 

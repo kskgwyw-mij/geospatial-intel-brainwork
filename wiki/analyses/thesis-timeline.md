@@ -24,7 +24,7 @@ For a cohort starting WS 2027/28, semester 4 is summer 2029. Confirm the author'
   ([[dsia-studienordnung-2027]]). "Build a PoC" alone is not a research question. A candidate:
   *How accurately can models trained only on OSM-derived weak labels recognise and classify
   class X in orthoimagery, compared with a classical ML baseline?* (unsourced) A sourced variant: *how much does a small hand-corrected set improve a model pretrained on Overpass labels?*, following the two-step scheme in [[maggiori-osm-imperfect-labels]].
-- Alternative research question: *how many and which detected OSM objects are needed to geolocate a tile uniquely?*; see [[osm-fingerprint-geolocalization]].
+- With metadata-free photos as input ([[author-decision-no-metadata]]), geolocation is part of the method. A natural research question: *how reliably can a metadata-free nadir photo be located, scaled and oriented from detected OSM objects, and how many objects are needed?*; see [[osm-fingerprint-geolocalization]].
 - No geospatial courses exist in the curriculum ([[dsia-studienordnung-2027]]), so the
   thesis must cover the GIS basics itself: coordinate reference systems, rasters vs. vectors,
   [[overpass-api]] and [[orthoimagery]] sources.
