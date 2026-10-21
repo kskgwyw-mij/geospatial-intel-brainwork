@@ -11,6 +11,7 @@ The thesis search region and study area: southern Upper Bavaria, operationalised
 - Chosen by the author as the search region ([[author-decision-search-region]]).
 - No official unit called "Oberbayern Süd" exists. Working definition: **Region 17 Oberland** (3,956 km²: Bad Tölz-Wolfratshausen, Garmisch-Partenkirchen, Miesbach, Weilheim-Schongau) plus **Region 18 Südostoberbayern** (5,225 km²) ([[bayern-dop-regions-search]]). Total about **9,181 km²**, roughly half of Oberbayern (about 17,529 km²).
 - Region 18's districts are Rosenheim (district and city), Traunstein, Berchtesgadener Land, Altötting and Mühldorf a. Inn. (unsourced)
+- **Status: provisional.** The author keeps this working definition (both planning regions, including Altötting and Mühldorf) for now and may change the area later ([[author-decision-search-region]]). Keep the region a parameter (a district list or polygon) in queries and tools, never hard-coded.
 - **Alternative narrower definition:** only the Alpine-edge districts GAP, TÖL, MB, WM, RO, TS and BGL, which drops the lowland districts Altötting and Mühldorf. The author should confirm. (unsourced)
 
 ## Character (unsourced)

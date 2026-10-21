@@ -43,7 +43,7 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** a nadir ph
 - Does the PoC platform exist already, or is building it part of the thesis?
 - How should spatial leakage be handled in train/test splits? (unsourced)
 - Which regulation version applies to the author? The one ingested covers cohorts starting WS 2027/28.
-- Geolocation is now part of the method ([[author-decision-no-metadata]]). The search region is fixed ([[oberbayern-sued]]). Open: should it include the lowland districts Altötting and Mühldorf? How is scale recovered (metric anchors such as tennis courts)?
+- Geolocation is now part of the method ([[author-decision-no-metadata]]). The search region is fixed ([[oberbayern-sued]]). The provisional choice is both planning regions, including Altötting and Mühldorf; the area may change later, so keep it parameterised. How is scale recovered (metric anchors such as tennis courts)?
 - What is the research question for the exposé? A PoC alone is not one; see [[thesis-timeline]].
 - Formal thesis guidelines (length, citation style, deadlines) are not in the regulation.
 

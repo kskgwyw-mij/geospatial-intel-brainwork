@@ -100,3 +100,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[ransac]]
 - updated: [[osm-fingerprint-geolocalization]], [[costea-2016-aerial-geolocalization]], [[imagery-sources]] (fixed a stale "Tyrol = thesis region" row)
 - notes: Concept page with the algorithm, the iteration formula (w = 0.3, s = 2 gives about 49 iterations) and its role in metadata-free geolocation, where the best similarity transform directly yields position, scale and north. Written from standard knowledge (unsourced).
+
+## [2026-10-21] edit | Search region confirmed as provisional
+- updated: [[author-decision-search-region]], [[oberbayern-sued]], [[overview]]
+- notes: The working definition (Oberland + Südostoberbayern, including Altötting and Mühldorf) is kept for now. The author may choose another area later, so the region must remain a swappable parameter in queries and tools.
