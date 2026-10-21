@@ -59,5 +59,6 @@ An earlier version of this page, built from search snippets, mixed in a "648× f
 [[osm-fingerprint-geolocalization]], [[osm-weak-labels]], [[overview]]
 
 ## Related
+- [[ransac]]
 - [[osm-fingerprint-geolocalization]]
 - [[osm-weak-labels]]

@@ -8,6 +8,11 @@ This is label projection, not visual detection: objects missing from OSM are
 not found, and OSM-vs-image offsets are carried over.
 
 Georeference (pick one):
+  --nadir LAT,LON,HEADING
+                     raw nadir frame (drone/aerial photo): image-centre position, compass
+                     direction the top of the image faces, plus --gsd or
+                     --height/--focal-mm/--sensor-width-mm. Assumes flat ground and an exact
+                     nadir view, so tall objects (relief displacement) and tilt add offsets.
   --bbox W,S,E,N     lon/lat bounds of a Web-Mercator image (map screenshot, XYZ tiles)
   --worldfile F      .pgw/.jgw/.tfw world file, with --epsg (4326 and 3857 built in;
                      others such as 31287 or 32632 need `pip install pyproj`)
@@ -16,6 +21,8 @@ Georeference (pick one):
 OSM input: Overpass Turbo "Export -> GeoJSON", or raw Overpass JSON from `out geom;`.
 
   python3 tools/osm_overlay.py ortho.png export.geojson --bbox 12.16,47.57,12.18,47.58
+  python3 tools/osm_overlay.py DJI_0042.JPG export.geojson --nadir 47.583,12.170,35 \
+      --height 120 --focal-mm 8.8 --sensor-width-mm 13.2
   python3 tools/osm_overlay.py ortho.tif export.geojson --yolo labels/
 
 Needs numpy and Pillow; pyproj only for national CRSs.
@@ -131,6 +138,11 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("image")
     ap.add_argument("osm", help="Overpass Turbo GeoJSON export or Overpass JSON (out geom)")
+    ap.add_argument("--nadir", help="LAT,LON,HEADING of a raw nadir frame (centre + top-of-image compass bearing)")
+    ap.add_argument("--gsd", type=float, help="ground sampling distance in m/px (with --nadir)")
+    ap.add_argument("--height", type=float, help="flying height above ground in m (with --nadir)")
+    ap.add_argument("--focal-mm", type=float, help="lens focal length in mm (with --nadir)")
+    ap.add_argument("--sensor-width-mm", type=float, help="sensor width in mm (with --nadir)")
     ap.add_argument("--bbox", help="W,S,E,N in lon/lat for a Web-Mercator image")
     ap.add_argument("--worldfile")
     ap.add_argument("--epsg", type=int, help="CRS of the image (with --worldfile, or to override GeoTIFF)")
@@ -142,7 +154,23 @@ def main():
 
     img = Image.open(args.image)
     W, H = img.size
-    if args.bbox:
+    if args.nadir:
+        lat0, lon0, heading = (float(v) for v in args.nadir.split(","))
+        gsd = args.gsd
+        if gsd is None:
+            if not (args.height and args.focal_mm and args.sensor_width_mm):
+                raise SystemExit("--nadir needs --gsd or --height, --focal-mm and --sensor-width-mm")
+            gsd = args.height * args.sensor_width_mm / (args.focal_mm * W)
+        h = math.radians(heading)
+        k = math.radians(1) * R
+
+        def to_px(lon, lat):
+            east = (lon - lon0) * k * math.cos(math.radians(lat0))
+            north = (lat - lat0) * k
+            right = east * math.cos(h) - north * math.sin(h)
+            up = east * math.sin(h) + north * math.cos(h)
+            return W / 2 + right / gsd, H / 2 - up / gsd
+    elif args.bbox:
         w, s, e, n = (float(v) for v in args.bbox.split(","))
         (x0, y1), (x1, y0) = lonlat_to_3857(w, s), lonlat_to_3857(e, n)
         sx, sy, proj = (x1 - x0) / W, (y1 - y0) / H, lonlat_to_3857  # y1 is south, so sy < 0
@@ -155,9 +183,10 @@ def main():
         x0, y0, sx, sy, epsg = geotiff_georef(img)
         proj = make_projector(args.epsg or epsg)
 
-    def to_px(lon, lat):
-        x, y = proj(lon, lat)
-        return (x - x0) / sx, (y - y0) / sy
+    if not args.nadir:
+        def to_px(lon, lat):
+            x, y = proj(lon, lat)
+            return (x - x0) / sx, (y - y0) / sy
 
     keys = [k.strip() for k in args.keys.split(",") if k.strip()]
     canvas = img.convert("RGB")

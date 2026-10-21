@@ -71,3 +71,60 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-21] edit | Tool: project Overpass objects onto a nadir image
 - updated: [[thesis-poc-pipeline]], [[osm-weak-labels]]
 - notes: Added tools/osm_overlay.py (numpy + Pillow; pyproj optional). Input: Overpass Turbo GeoJSON or Overpass JSON with `out geom`, plus georeference via GeoTIFF tags, a world file + EPSG, or a lon/lat bbox for Web-Mercator images. Output: annotated PNG, a JSON of pixel boxes and polygons per OSM object, and optional YOLO labels. Tested on synthetic data; all three georeference modes agree.
+
+## [2026-10-21] query | Nadir vs. orthoimagery
+- updated: [[orthoimagery]]
+- notes: Nadir describes the viewing direction of a raw central-perspective photo, with relief displacement d = r·h/H. Ortho describes processing: DTM rectification to uniform map scale, but buildings still lean. True ortho uses a DSM so roofs sit over footprints. The overlay tool and OSM labels need orthoimages; raw nadir frames must be orthorectified or geolocated first. Answered from general photogrammetry knowledge (unsourced).
+
+## [2026-10-21] ingest | Author decision: nadir images suffice (+ nadir mode in osm_overlay.py)
+- created: [[author-decision-nadir-input]]
+- updated: [[thesis-goal]] (amendment), [[orthoimagery]], [[osm-weak-labels]], [[poc-platform]], [[thesis-poc-pipeline]], [[osm-fingerprint-geolocalization]], [[overview]]
+- notes: Input relaxed from orthoimagery to nadir frames. tools/osm_overlay.py gains `--nadir LAT,LON,HEADING` with --gsd or height/focal/sensor; it assumes flat ground and exact nadir, and was tested for heading rotation and the camera-derived GSD. Label offsets grow (GPS, heading, relief), so detection-to-OSM alignment and fingerprinting become more important.
+
+## [2026-10-21] ingest | Author decision: photo only, no metadata
+- created: [[author-decision-no-metadata]]
+- updated: [[osm-fingerprint-geolocalization]] (new section on unknown position, scale and rotation), [[thesis-goal]], [[poc-platform]], [[thesis-poc-pipeline]], [[thesis-timeline]], [[overview]]
+- notes: Geolocation becomes a core step. Scale comes from metric anchors (tennis courts, pitches, cars, lanes); the fingerprint becomes a rotation-invariant constellation matched by a RANSAC similarity transform against a regional OSM index; a search-region prior is needed. Training may still use georeferenced orthophotos; the --nadir metadata mode is not part of inference.
+
+## [2026-10-21] ingest | Geopera: 10 free sources of satellite data for Germany (search snippets)
+- created: [[geopera-free-satellite-germany]], [[imagery-sources]]
+- updated: [[orthoimagery]], [[thesis-poc-pipeline]], [[overview]]
+- notes: The page was blocked, so it was ingested from search snippets and flagged as a vendor blog. Key takeaway: free satellite imagery (Sentinel-2, 10 m) is too coarse for the classes, while German state orthophotos (DOP10/20, NRW 10 cm on a 3-year cycle) fit training at 10–25 cm. Proposed: train on German DOP, fine-tune and test on Tyrol, and simulate metadata-free test photos from held-out tiles.
+
+## [2026-10-21] ingest | Author decision: search region Oberbayern Süd (+ Bavarian DOP and region search)
+- created: [[author-decision-search-region]], [[bayern-dop-regions-search]], [[oberbayern-sued]]
+- updated: [[osm-fingerprint-geolocalization]] (example re-computed for about 9,181 km²; a pair without bearing is not unique, so use triangles), [[imagery-sources]] (Bavarian DOP20 is now the first choice), [[orthoimagery]], [[overview]]
+- notes: "Oberbayern Süd" is not official; working definition is planning regions 17 Oberland + 18 Südostoberbayern. Bavarian DOP20 (RGB+CIR) is CC BY 4.0, so training and testing can happen in-region with a district split. Open: whether to include the lowland districts Altötting and Mühldorf.
+
+## [2026-10-21] query | What is RANSAC?
+- created: [[ransac]]
+- updated: [[osm-fingerprint-geolocalization]], [[costea-2016-aerial-geolocalization]], [[imagery-sources]] (fixed a stale "Tyrol = thesis region" row)
+- notes: Concept page with the algorithm, the iteration formula (w = 0.3, s = 2 gives about 49 iterations) and its role in metadata-free geolocation, where the best similarity transform directly yields position, scale and north. Written from standard knowledge (unsourced).
+
+## [2026-10-21] edit | Search region confirmed as provisional
+- updated: [[author-decision-search-region]], [[oberbayern-sued]], [[overview]]
+- notes: The working definition (Oberland + Südostoberbayern, including Altötting and Mühldorf) is kept for now. The author may choose another area later, so the region must remain a swappable parameter in queries and tools.
+
+## [2026-10-21] edit | Search region narrowed to the Alpine-edge districts
+- updated: [[author-decision-search-region]], [[oberbayern-sued]], [[osm-fingerprint-geolocalization]], [[imagery-sources]], [[overview]]
+- notes: Provisional region is now GAP, TÖL, MB, WM, RO (+ Rosenheim city), TS, BGL, about 7,800 km² (Oberland part sourced, the other areas approximate); Altötting and Mühldorf dropped. Overpass queries updated; the uniqueness example was rescaled at constant density (N about 15 % lower); the train/test split is now Oberland districts vs. RO/TS/BGL.
+
+## [2026-10-21] ingest | Copernicus Browser (second imagery source, search snippets)
+- created: [[copernicus-browser]]
+- updated: [[imagery-sources]], [[osm-fingerprint-geolocalization]], [[overview]]
+- notes: The site was blocked, so it was ingested from search snippets. Sentinel-2 is too coarse for objects, and the VHR2024 download is restricted. The useful part is Copernicus DEM GLO-30 (30 m, free with registration) as the terrain layer for Alpine and rural geolocation. EEA-10 (10 m) is restricted, and the GLO-30 view service needs a CCM opt-in since Aug 2026.
+
+## [2026-10-21] ingest | Geopera article, full clip (replaces snippet-based ingest)
+- updated: [[geopera-free-satellite-germany]] (rewritten from the full text), [[copernicus-browser]], [[imagery-sources]], [[overview]]
+- created: [[german-dop-search]] (the DOP facts split out of the old snippet notes)
+- notes: Full list of 10 sources; key point: free satellite data is 10–30 m and paid satellite is at best 30 cm, still coarser than free Bavarian DOP20. Flagged a contradiction: the blog says Copernicus needs no registration, the CDSE docs say a free account is required. Corrected the attribution: the DOP10/20/40 facts came from other search results, not this article.
+
+## [2026-10-21] edit | Geolocation matcher prototype + simulation
+- created: [[geo-match-prototype]]
+- updated: [[osm-fingerprint-geolocalization]], [[thesis-poc-pipeline]], [[ransac]], [[overview]]
+- notes: Added tools/geo_match.py (hypothesise-and-verify similarity matching, metric anchors, confidence status) and tools/sim_geo_match.py. Synthetic results: at 7,744 km², 8/8 confident matches correct, ≥ 8 detections 6/7 located, 3–4 detections 0/20; when located, errors are about 0.2 m, < 0.1 % GSD and < 0.1° heading. 2-inlier fits carry no evidence. The densities are hypothetical; next step is to rerun on the real Overpass export.
+
+## [2026-10-21] ingest | Author note: use cases for GNSS-denied drone localisation
+- created: [[author-note-use-cases-gnss-denied]], [[gnss-denied-use-cases]]
+- updated: [[thesis-timeline]] (preferred research question, dual-use ethics), [[overview]]
+- notes: The thesis is now framed as GNSS-denied visual localisation using detected OSM objects. There are 8 use cases; the best fits are spoofing and outage backup, Alpine shading, after-the-fact locating, sub-metre refinement, inspection and OSM maintenance. Military use is dual-use and goes in the ethics section. The German research question is adopted as the preferred exposé candidate. The jamming, multipath and drone-GPS claims still need literature.

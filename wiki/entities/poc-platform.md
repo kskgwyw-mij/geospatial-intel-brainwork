@@ -7,7 +7,7 @@ updated: 2026-10-20
 ---
 The proof-of-concept platform where orthoimagery is uploaded and the thesis model's detections are shown.
 
-- Users upload [[orthoimagery]] to the platform, which runs the recognition/classification model on it ([[thesis-goal]]).
+- Users upload **nadir images**, with orthoimagery as the ideal case ([[author-decision-nadir-input]]). The photo is used **without metadata** ([[author-decision-no-metadata]]): the platform must first locate it by fingerprint matching against a regional OSM index ([[osm-fingerprint-geolocalization]]), then report geo-objects. The platform runs the recognition/classification model on it ([[thesis-goal]]).
 - **Unknown:** whether this is an existing platform (from the university or an employer) or something the thesis must build. That decides deployment constraints such as GPU availability, upload size, and supported formats like GeoTIFF/COG.
 
 ## Programme hooks

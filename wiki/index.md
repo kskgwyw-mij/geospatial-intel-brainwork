@@ -18,6 +18,14 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[author-note-rural-roads]] — Author observation: roads alone will not work in sparse countryside.
 - [[rural-geolocalization-search]] — Search evidence for road-sparse geolocalisation: DEM orthoprojection, land-cover boundary-map matching, rural benchmark subset.
 - [[pretrained-models-search]] — Search facts: TorchGeo/Satlas Swin V2 NAIP weights, YOLO11-OBB on DOTAv1 (78.4 mAP50 nano), DINOv3 SAT-493M (Maxar 0.6 m).
+- [[author-decision-nadir-input]] — Author decision: nadir images are the required input; orthoimagery ideal but optional.
+- [[author-decision-no-metadata]] — Author decision: the photo is used without any metadata, so location, scale and north must come from the image.
+- [[geopera-free-satellite-germany]] — Vendor blog (full clip): 10 free sources for Germany; free satellite data is 10–30 m, paid satellite at best 30 cm; contradiction on Copernicus registration.
+- [[german-dop-search]] — Search facts: German state orthophotos DOP20/40 nationwide, DOP10 in some Länder (NRW 10 cm, 3-year cycle).
+- [[author-decision-search-region]] — Author decision: the search region is Oberbayern Süd.
+- [[bayern-dop-regions-search]] — Search facts: Bavarian DOP20 (20 cm RGB+CIR) open under CC BY 4.0; Oberland 3,956 km² + Südostoberbayern 5,225 km².
+- [[copernicus-browser]] — Copernicus Browser (CDSE): free Sentinel data and mosaics, Copernicus DEM (GLO-30 free, EEA-10 restricted), VHR2024 (download restricted); useful mainly as a terrain DEM.
+- [[author-note-use-cases-gnss-denied]] — Author note (German): eight use cases for GNSS-denied drone localisation, simulation limits, proposed research question.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities
@@ -25,6 +33,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[openstreetmap]] — The crowd-sourced world map whose features define the object classes.
 - [[overpass-api]] — Read-only query API for OSM data; the backend Overpass Turbo calls.
 - [[overpass-turbo]] — Web IDE for writing and visualising Overpass queries; defines which OSM objects count.
+- [[oberbayern-sued]] — Search region and study area: provisionally the Alpine-edge districts GAP, TÖL, MB, WM, RO, TS, BGL (about 7,800 km²), DOP20 imagery, Overpass area query.
 - [[poc-platform]] — The proof-of-concept platform where orthoimagery is uploaded and detections are shown.
 
 ## Concepts
@@ -32,6 +41,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[osm-weak-labels]] — Using OSM geometries from Overpass as noisy training labels instead of hand annotation.
 - [[object-detection]] — Bounding box plus class per object; suits compact, countable features.
 - [[semantic-segmentation]] — A class for every pixel; suits areal and linear features.
+- [[ransac]] — Random Sample Consensus: robustly fits a transform (shift, rotation, scale) despite many wrong matches; the core of the geolocation matcher.
 - [[spectral-texture-features]] — Colour, texture and shape cues that reveal land use (e.g. industrial areas) and power a classical ML baseline.
 
 ## Analyses
@@ -40,5 +50,8 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[cv-detectability]] — What CV can and cannot recognise in orthoimagery, by task, object size and GSD, mapped to OSM tags.
 - [[methods-10-25cm]] — Per-class detector/segmenter/classifier choice at 10–25 cm, three-head pipeline, scope cuts.
 - [[osm-fingerprint-geolocalization]] — Two-factor fingerprint (anchor + neighbourhood constellation) to locate images via Overpass; uniqueness maths, urban vs. rural anchors, search procedure.
+- [[geo-match-prototype]] — Matcher prototype (geo_match.py) and simulation: confident matches always correct; about 8 anchors needed at regional scale.
 - [[pretrained-models]] — Pretrained CNNs and foundation models per thesis task, resolution caveat, minimal fine-tuning stack.
+- [[imagery-sources]] — Imagery for training (German DOP10/20, Tyrolean orthophotos) and testing (simulated metadata-free nadir crops); Sentinel-2 ruled out for objects.
+- [[gnss-denied-use-cases]] — Application framing: GNSS-denied visual localisation, use-case table with prototype fit and evidence, research question, dual-use ethics.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.
