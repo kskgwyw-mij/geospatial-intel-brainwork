@@ -71,3 +71,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-21] edit | Tool: project Overpass objects onto a nadir image
 - updated: [[thesis-poc-pipeline]], [[osm-weak-labels]]
 - notes: Added tools/osm_overlay.py (numpy + Pillow; pyproj optional). Input: Overpass Turbo GeoJSON or Overpass JSON with `out geom`, plus georeference via GeoTIFF tags, a world file + EPSG, or a lon/lat bbox for Web-Mercator images. Output: annotated PNG, a JSON of pixel boxes and polygons per OSM object, and optional YOLO labels. Tested on synthetic data; all three georeference modes agree.
+
+## [2026-10-21] query | Nadir vs. orthoimagery
+- updated: [[orthoimagery]]
+- notes: Nadir describes the viewing direction of a raw central-perspective photo, with relief displacement d = r·h/H. Ortho describes processing: DTM rectification to uniform map scale, but buildings still lean. True ortho uses a DSM so roofs sit over footprints. The overlay tool and OSM labels need orthoimages; raw nadir frames must be orthorectified or geolocated first. Answered from general photogrammetry knowledge (unsourced).
