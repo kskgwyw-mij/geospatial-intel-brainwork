@@ -193,6 +193,7 @@ rate against fingerprint size. Ethics: geolocating images can affect privacy, so
 ([[thesis-timeline]]). (unsourced)
 
 ## Related
+- [[coarse-to-fine-localization]]
 - [[geo-match-prototype]]
 - [[ransac]]
 - [[oberbayern-sued]]
