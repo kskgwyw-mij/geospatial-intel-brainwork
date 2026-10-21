@@ -2,8 +2,8 @@
 title: OSM / Overpass object catalogue
 type: analysis
 tags: [osm, overpass, classes, catalogue]
-sources: [author-note-industrial-colour]
-updated: 2026-10-20
+sources: [settlement-overpass-labels, author-note-industrial-colour]
+updated: 2026-10-21
 ---
 Catalogue of what Overpass Turbo / the Overpass API can return: element types, the primary feature keys with their main values, and how visible each class is in orthoimagery. It is the menu for choosing the thesis classes.
 
@@ -35,7 +35,7 @@ estimate. (unsourced)
 
 | Key | Main values | Visibility | Notes for ML |
 |---|---|---|---|
-| `building` | yes, house, residential, detached, apartments, garage(s), shed, industrial, commercial, retail, warehouse, farm_auxiliary, barn, roof, church, school, hut, greenhouse, service, construction | ●●● footprint / ●● subtype | Best-covered class; the subtype is often `yes` → weak class labels |
+| `building` | yes, house, residential, detached, apartments, garage(s), shed, industrial, commercial, retail, warehouse, farm_auxiliary, barn, roof, church, school, hut, greenhouse, service, construction | ●●● footprint / ●● subtype | Best-covered class; the subtype is often `yes` (74–76 % in Miesbach and Garmisch) → weak class labels. `addr:housenumber` (35–43 %) separates dwellings from barns and huts ([[settlement-overpass-labels]]) |
 | `highway` | motorway, trunk, primary, secondary, tertiary, unclassified, residential, service, track, path, footway, cycleway, steps, living_street, pedestrian; nodes: crossing, traffic_signals, bus_stop, street_lamp | ●●● roads / ● nodes | Lines → buffer for masks; road class is partly semantic |
 | `landuse` | residential, commercial, industrial, retail, farmland, farmyard, meadow, orchard, vineyard, forest, grass, cemetery, allotments, construction, quarry, landfill, railway, military, greenhouse_horticulture, basin, reservoir | ●●● industrial, farmland, forest / ●● others | Large polygons; boundaries are fuzzy → segmentation or tile classification. Industrial areas differ in colour ([[author-note-industrial-colour]]); see [[spectral-texture-features]] |
 | `natural` | wood, tree (node), tree_row, scrub, heath, grassland, wetland, water, beach, sand, scree, bare_rock, cliff, glacier, peak, spring | ●●● tree, water / ●● others | `natural=tree` is a good point-detection class |
@@ -106,6 +106,7 @@ Export the counts for the study area (taginfo or the Overpass `out tags` query a
 `raw/` and `/ingest` them. That replaces the visibility guesses with real sample counts per class.
 
 ## Related
+- [[settlement-overpass]]
 - [[cv-detectability]]
 - [[overpass-api]]
 - [[overpass-turbo]]

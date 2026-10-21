@@ -2,8 +2,8 @@
 title: Overpass API
 type: entity
 tags: [osm, api, data]
-sources: [thesis-goal]
-updated: 2026-10-20
+sources: [settlement-overpass-labels, thesis-goal]
+updated: 2026-10-21
 ---
 Read-only query API for OpenStreetMap data; it is the backend that Overpass Turbo calls.
 
@@ -15,7 +15,11 @@ Element types, primary keys and query templates: [[osm-object-catalog]].
 
 Pair-proximity queries (`around.<set>:<m>`) for fingerprint search: [[osm-fingerprint-geolocalization]].
 
+## Settlement layer
+`tools/overpass_settlements.py` turns one area query (buildings with `out center tags`, plus `place=*` nodes) into a 100 m grid of settlement / inhabited / built-only cells. Garmisch: 10,315 cells in one request. Busy mirrors answer 504, so retry with backoff ([[settlement-overpass-labels]], [[settlement-overpass]]).
+
 ## Related
+- [[settlement-overpass]]
 - [[osm-fingerprint-geolocalization]]
 - [[osm-object-catalog]]
 - [[overpass-turbo]]
