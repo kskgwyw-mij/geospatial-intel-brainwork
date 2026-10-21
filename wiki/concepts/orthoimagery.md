@@ -2,7 +2,7 @@
 title: Orthoimagery
 type: concept
 tags: [imagery, remote-sensing]
-sources: [thesis-goal, maggiori-2017-hr-semantic-labeling, author-decision-nadir-input]
+sources: [thesis-goal, maggiori-2017-hr-semantic-labeling, author-decision-nadir-input, geopera-free-satellite-germany]
 updated: 2026-10-20
 ---
 Aerial or satellite images that are geometrically corrected (orthorectified), so they line up with map coordinates; the input data of the thesis.
@@ -11,6 +11,7 @@ Aerial or satellite images that are geometrically corrected (orthorectified), so
 - Because orthoimages are georeferenced, OSM vectors can be projected straight onto pixels to make labels; see [[osm-weak-labels]]. (unsourced)
 - Key properties to pin down: ground sample distance (cm per pixel), bands (RGB / RGB+NIR), acquisition date (compared with OSM edit dates), and licence. (unsourced)
 - A DSM/nDSM (surface heights) can be stacked as an extra input band next to the colour bands ([[maggiori-2017-hr-semantic-labeling]]).
+- Germany: state orthophotos DOP20/DOP40 nationwide, DOP10 in some Länder (NRW: 10 cm, 3-year cycle) ([[geopera-free-satellite-germany]]). Source comparison: [[imagery-sources]].
 - For Austria, the state-run basemap.at orthophoto and the regional (Land) orthophotos are candidate sources; check resolution and licence before use. (unsourced)
 
 ## Nadir vs. ortho vs. true ortho (unsourced)
@@ -40,6 +41,7 @@ Consequences for this thesis:
   the same house shifts only about 7 px.
 
 ## Related
+- [[imagery-sources]]
 - [[osm-weak-labels]]
 - [[object-detection]]
 - [[semantic-segmentation]]

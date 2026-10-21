@@ -39,7 +39,7 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** a nadir ph
 
 - Which object classes and study region? This drives every other choice. Candidates: [[osm-object-catalog]].
 - Detection, segmentation, or both? Proposed answer: both, per class ([[methods-10-25cm]]).
-- Which orthoimagery source (resolution, date, licence)?
+- Which orthoimagery source (resolution, date, licence)? Proposed: train on German state DOP10/20 (open in several Länder), fine-tune and test on Tyrolean orthophotos, and simulate metadata-free test photos from held-out tiles ([[imagery-sources]]).
 - Does the PoC platform exist already, or is building it part of the thesis?
 - How should spatial leakage be handled in train/test splits? (unsourced)
 - Which regulation version applies to the author? The one ingested covers cohorts starting WS 2027/28.

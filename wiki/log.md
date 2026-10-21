@@ -85,3 +85,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[author-decision-no-metadata]]
 - updated: [[osm-fingerprint-geolocalization]] (new section on unknown position, scale and rotation), [[thesis-goal]], [[poc-platform]], [[thesis-poc-pipeline]], [[thesis-timeline]], [[overview]]
 - notes: Geolocation becomes a core step. Scale comes from metric anchors (tennis courts, pitches, cars, lanes); the fingerprint becomes a rotation-invariant constellation matched by a RANSAC similarity transform against a regional OSM index; a search-region prior is needed. Training may still use georeferenced orthophotos; the --nadir metadata mode is not part of inference.
+
+## [2026-10-21] ingest | Geopera: 10 free sources of satellite data for Germany (search snippets)
+- created: [[geopera-free-satellite-germany]], [[imagery-sources]]
+- updated: [[orthoimagery]], [[thesis-poc-pipeline]], [[overview]]
+- notes: The page was blocked, so it was ingested from search snippets and flagged as a vendor blog. Key takeaway: free satellite imagery (Sentinel-2, 10 m) is too coarse for the classes, while German state orthophotos (DOP10/20, NRW 10 cm on a 3-year cycle) fit training at 10–25 cm. Proposed: train on German DOP, fine-tune and test on Tyrol, and simulate metadata-free test photos from held-out tiles.

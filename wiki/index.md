@@ -20,6 +20,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[pretrained-models-search]] — Search facts: TorchGeo/Satlas Swin V2 NAIP weights, YOLO11-OBB on DOTAv1 (78.4 mAP50 nano), DINOv3 SAT-493M (Maxar 0.6 m).
 - [[author-decision-nadir-input]] — Author decision: nadir images are the required input; orthoimagery ideal but optional.
 - [[author-decision-no-metadata]] — Author decision: the photo is used without any metadata, so location, scale and north must come from the image.
+- [[geopera-free-satellite-germany]] — Vendor blog (snippets): 10 free imagery sources for Germany; Sentinel-2 10 m; official German DOP10/20/40 orthophotos (NRW 10 cm, 3-year cycle).
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities
@@ -43,4 +44,5 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[methods-10-25cm]] — Per-class detector/segmenter/classifier choice at 10–25 cm, three-head pipeline, scope cuts.
 - [[osm-fingerprint-geolocalization]] — Two-factor fingerprint (anchor + neighbourhood constellation) to locate images via Overpass; uniqueness maths, urban vs. rural anchors, search procedure.
 - [[pretrained-models]] — Pretrained CNNs and foundation models per thesis task, resolution caveat, minimal fine-tuning stack.
+- [[imagery-sources]] — Imagery for training (German DOP10/20, Tyrolean orthophotos) and testing (simulated metadata-free nadir crops); Sentinel-2 ruled out for objects.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.
