@@ -75,3 +75,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-21] query | Nadir vs. orthoimagery
 - updated: [[orthoimagery]]
 - notes: Nadir describes the viewing direction of a raw central-perspective photo, with relief displacement d = r·h/H. Ortho describes processing: DTM rectification to uniform map scale, but buildings still lean. True ortho uses a DSM so roofs sit over footprints. The overlay tool and OSM labels need orthoimages; raw nadir frames must be orthorectified or geolocated first. Answered from general photogrammetry knowledge (unsourced).
+
+## [2026-10-21] ingest | Author decision: nadir images suffice (+ nadir mode in osm_overlay.py)
+- created: [[author-decision-nadir-input]]
+- updated: [[thesis-goal]] (amendment), [[orthoimagery]], [[osm-weak-labels]], [[poc-platform]], [[thesis-poc-pipeline]], [[osm-fingerprint-geolocalization]], [[overview]]
+- notes: Input relaxed from orthoimagery to nadir frames. tools/osm_overlay.py gains `--nadir LAT,LON,HEADING` with --gsd or height/focal/sensor; it assumes flat ground and exact nadir, and was tested for heading rotation and the camera-derived GSD. Label offsets grow (GPS, heading, relief), so detection-to-OSM alignment and fingerprinting become more important.

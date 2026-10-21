@@ -8,6 +8,8 @@ updated: 2026-10-21
 How to turn detected objects in an orthoimage into a two-factor "fingerprint" (what + where-relative-to-what) that can be searched in OSM via Overpass to find where the image was taken, and how to estimate whether a fingerprint is unique.
 
 ## When this is needed
+With nadir images as the thesis input ([[author-decision-nadir-input]]), this matters more: frames without GPS/heading metadata can only be placed by fingerprinting, and frames with metadata still need fine alignment.
+
 State orthophotos are already georeferenced. Fingerprinting matters for images **without**
 coordinates: drone frames with stripped metadata, screenshots, scanned historic air photos,
 or tiles whose georeference must be verified. Published precedent: detect road intersections,

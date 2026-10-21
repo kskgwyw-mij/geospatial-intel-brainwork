@@ -12,7 +12,7 @@ Current big-picture understanding of ML/DL algorithm selection for recognising O
 The master thesis in the [[hok-dsia-master]] aims at an ML/DL **recognition and
 classification** method for objects that exist in [[openstreetmap]] (defined via
 [[overpass-turbo]]), applied to [[orthoimagery]], with a proof of concept in which imagery is
-uploaded to a [[poc-platform]] ([[thesis-goal]]).
+uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** nadir images suffice; orthoimagery is ideal but not required ([[author-decision-nadir-input]]).
 
 ## Current understanding
 

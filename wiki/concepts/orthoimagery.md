@@ -2,7 +2,7 @@
 title: Orthoimagery
 type: concept
 tags: [imagery, remote-sensing]
-sources: [thesis-goal, maggiori-2017-hr-semantic-labeling]
+sources: [thesis-goal, maggiori-2017-hr-semantic-labeling, author-decision-nadir-input]
 updated: 2026-10-20
 ---
 Aerial or satellite images that are geometrically corrected (orthorectified), so they line up with map coordinates; the input data of the thesis.
@@ -26,10 +26,13 @@ Rule of thumb: nadir describes **how** the photo was taken; ortho describes **wh
 Every orthophoto starts from nadir (or near-nadir) photos, but a nadir photo is not an orthophoto until it
 is orthorectified. Oblique imagery is the opposite of nadir: the camera is tilted.
 
+**Thesis decision:** nadir images are the required input; orthoimages are the ideal case, not a requirement ([[author-decision-nadir-input]]).
+
 Consequences for this thesis:
-- `tools/osm_overlay.py` and [[osm-weak-labels]] assume a **north-up, georeferenced orthoimage**.
-  Raw nadir drone frames must first be orthorectified (photogrammetry software such as OpenDroneMap) or
-  located by [[osm-fingerprint-geolocalization]].
+- `tools/osm_overlay.py` handles both. Orthoimages use their georeference (GeoTIFF, world file, bbox). Raw nadir frames use
+  `--nadir LAT,LON,HEADING` plus GSD or camera parameters, assuming flat ground and an exact nadir view, so
+  relief displacement and tilt remain as label offsets. Frames without metadata must first be located by
+  [[osm-fingerprint-geolocalization]]; orthorectification (for example OpenDroneMap) is optional.
 - With a standard (not true) orthophoto, OSM building footprints and image roofs disagree by the lean.
   Expect systematic label offsets for tall buildings ([[methods-10-25cm]]).
 - Example of the lean in a raw nadir photo: with h/H = 10 m / 100 m (a house seen from a drone at 100 m), a

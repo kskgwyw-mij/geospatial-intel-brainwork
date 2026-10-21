@@ -11,7 +11,7 @@ Working end-to-end design for the thesis: Overpass → labels → model → PoC 
 
 1. **Define classes in [[overpass-turbo]]**: one documented Overpass QL query per class (tag filter + area).
 2. **Pull geometries via the [[overpass-api]]** for the training regions; cache them as GeoJSON with the OSM timestamp.
-3. **Get matching [[orthoimagery]]**: same extent, known resolution and acquisition date.
+3. **Get matching imagery**: **nadir images** are the required input, with [[orthoimagery]] ideal but optional ([[author-decision-nadir-input]]). Use the same extent, a known resolution (GSD) and the acquisition date; for raw frames, the camera position, heading and height.
 4. **Build labels** ([[osm-weak-labels]]): project the Overpass export onto the image with `tools/osm_overlay.py` (annotated PNG, pixel boxes and polygons as JSON, YOLO txt); rasterise polygons into masks and/or derive boxes; tile to fixed-size chips; split train/val/test **by region**, not randomly, to avoid spatial leakage. (unsourced)
 5. **Train and compare models** (per-class choice and the three-head design in [[methods-10-25cm]]): [[object-detection]] and/or [[semantic-segmentation]], with a classical ML baseline (for example a random forest on colour, texture and shape features, see [[spectral-texture-features]]) to justify using DL. Both families are taught: random forests and ensembles in Statistical Learning 1/2, CNNs in ML & Deep Learning ([[dsia-studienordnung-2027]]).
 6. **Refine and evaluate**: optionally fine-tune on a small hand-corrected set (the two-step scheme of [[maggiori-osm-imperfect-labels]]), and evaluate on a hand-checked test set with overall accuracy **and** mean F1 ([[maggiori-2017-hr-semantic-labeling]]).

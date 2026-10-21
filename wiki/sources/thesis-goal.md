@@ -28,6 +28,9 @@ The thesis, written in the [[hok-dsia-master]], has two deliverables:
 This is the anchor for the whole wiki: every algorithm comparison should be judged against
 these deliverables. See [[thesis-poc-pipeline]] for the working design.
 
+> [!note] Amendment (2026-10-21)
+> The input is a **nadir image**; orthoimagery is ideal but not required ([[author-decision-nadir-input]]).
+
 ## Open interpretation points
 
 - Does "recognition" mean bounding boxes ([[object-detection]]), pixel masks ([[semantic-segmentation]]), or both?
