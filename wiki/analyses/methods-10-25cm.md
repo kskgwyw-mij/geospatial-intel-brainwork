@@ -50,6 +50,8 @@ fine-tune on a small hand-checked set ([[maggiori-osm-imperfect-labels]]). Compa
 the classical random-forest baseline and a zero-shot Grounded-SAM baseline (F1 0.83 on WHU
 buildings), which gives a three-way comparison for the research question.
 
+Pretrained starting points for each head (YOLO11-OBB on DOTA, DeepForest, Satlas/DINOv3 encoders, SAM2): [[pretrained-models]].
+
 ## 4. What to scope down to
 A full three-head system is too much for one part-time thesis. (unsourced) Realistic cuts:
 - **Minimum:** buildings (segmentation) plus roof shape (classifier). One object, both "recognition" and "classification", rich OSM labels.
@@ -63,6 +65,7 @@ A full three-head system is too much for one part-time thesis. (unsourced) Reali
 - **Tile borders:** use overlapping tiles at inference ([[maggiori-2017-hr-semantic-labeling]]).
 
 ## Related
+- [[pretrained-models]]
 - [[cv-detectability]]
 - [[osm-object-catalog]]
 - [[semantic-segmentation]]

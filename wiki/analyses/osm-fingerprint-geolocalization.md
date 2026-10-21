@@ -136,6 +136,7 @@ rate against fingerprint size. Ethics: geolocating images can affect privacy, so
 ([[thesis-timeline]]). (unsourced)
 
 ## Related
+- [[pretrained-models]]
 - [[author-note-rural-roads]]
 - [[rural-geolocalization-search]]
 - [[costea-2016-aerial-geolocalization]]

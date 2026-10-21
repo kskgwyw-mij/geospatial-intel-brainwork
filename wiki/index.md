@@ -17,6 +17,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[costea-2016-aerial-geolocalization]] — Costea & Leordeanu 2016 (full text): intersection-neighbourhood fingerprints matched to OSM plus RANSAC/Chamfer alignment; about 90 % of intersections located within 2.5 m at 1 m/px.
 - [[author-note-rural-roads]] — Author observation: roads alone will not work in sparse countryside.
 - [[rural-geolocalization-search]] — Search evidence for road-sparse geolocalisation: DEM orthoprojection, land-cover boundary-map matching, rural benchmark subset.
+- [[pretrained-models-search]] — Search facts: TorchGeo/Satlas Swin V2 NAIP weights, YOLO11-OBB on DOTAv1 (78.4 mAP50 nano), DINOv3 SAT-493M (Maxar 0.6 m).
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities
@@ -39,4 +40,5 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[cv-detectability]] — What CV can and cannot recognise in orthoimagery, by task, object size and GSD, mapped to OSM tags.
 - [[methods-10-25cm]] — Per-class detector/segmenter/classifier choice at 10–25 cm, three-head pipeline, scope cuts.
 - [[osm-fingerprint-geolocalization]] — Two-factor fingerprint (anchor + neighbourhood constellation) to locate images via Overpass; uniqueness maths, urban vs. rural anchors, search procedure.
+- [[pretrained-models]] — Pretrained CNNs and foundation models per thesis task, resolution caveat, minimal fine-tuning stack.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.

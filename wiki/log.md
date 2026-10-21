@@ -62,3 +62,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[author-note-rural-roads]], [[rural-geolocalization-search]]
 - updated: [[osm-fingerprint-geolocalization]], [[overview]]
 - notes: Added a rural strategy that switches from point anchors to shape anchors: forest edges, watercourses, field mosaic, hedges, farm-building footprints and orientations, pylons, and Alpine features, matched as boundary maps with robust (Chamfer/RANSAC) alignment, with a DEM as fallback. Neighbourhood radius adapts to anchor density.
+
+## [2026-10-21] query | Are there pretrained CNNs?
+- created: [[pretrained-models-search]], [[pretrained-models]]
+- updated: [[methods-10-25cm]], [[osm-fingerprint-geolocalization]], [[overview]]
+- notes: Yes, one per head: YOLO11-OBB pretrained on DOTAv1 (already covers pools, tanks, pitches), DeepForest, SatlasPretrain Swin V2/ResNet via TorchGeo, DINOv3 SAT-493M (0.6 m Maxar, also usable as a fingerprint retrieval descriptor), SAM2/Grounded-SAM. None was trained at 10–25 cm, so fine-tune or resample.
