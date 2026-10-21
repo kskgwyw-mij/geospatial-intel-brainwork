@@ -23,6 +23,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[geopera-free-satellite-germany]] — Vendor blog (snippets): 10 free imagery sources for Germany; Sentinel-2 10 m; official German DOP10/20/40 orthophotos (NRW 10 cm, 3-year cycle).
 - [[author-decision-search-region]] — Author decision: the search region is Oberbayern Süd.
 - [[bayern-dop-regions-search]] — Search facts: Bavarian DOP20 (20 cm RGB+CIR) open under CC BY 4.0; Oberland 3,956 km² + Südostoberbayern 5,225 km².
+- [[copernicus-browser]] — Copernicus Browser (CDSE): free Sentinel data and mosaics, Copernicus DEM (GLO-30 free, EEA-10 restricted), VHR2024 (download restricted); useful mainly as a terrain DEM.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities

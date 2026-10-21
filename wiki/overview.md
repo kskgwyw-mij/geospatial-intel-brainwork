@@ -12,7 +12,7 @@ Current big-picture understanding of ML/DL algorithm selection for recognising O
 The master thesis in the [[hok-dsia-master]] aims at an ML/DL **recognition and
 classification** method for objects that exist in [[openstreetmap]] (defined via
 [[overpass-turbo]]), applied to [[orthoimagery]], with a proof of concept in which imagery is
-uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** a nadir photo **without metadata** ([[author-decision-nadir-input]], [[author-decision-no-metadata]]). Location, scale and north are unknown, so the method must detect objects, then locate the photo by matching them to OSM. **Search region:** [[oberbayern-sued]], provisionally the Alpine-edge districts only (GAP, TÖL, MB, WM, RO, TS, BGL; about 7,800 km²) ([[author-decision-search-region]]), with open Bavarian DOP20 imagery ([[bayern-dop-regions-search]]).
+uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** a nadir photo **without metadata** ([[author-decision-nadir-input]], [[author-decision-no-metadata]]). Location, scale and north are unknown, so the method must detect objects, then locate the photo by matching them to OSM. **Search region:** [[oberbayern-sued]], provisionally the Alpine-edge districts only (GAP, TÖL, MB, WM, RO, TS, BGL; about 7,800 km²) ([[author-decision-search-region]]), with open Bavarian DOP20 imagery ([[bayern-dop-regions-search]]) and the free Copernicus DEM GLO-30 as the terrain layer ([[copernicus-browser]]).
 
 ## Current understanding
 

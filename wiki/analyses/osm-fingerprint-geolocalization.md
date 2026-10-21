@@ -122,7 +122,7 @@ anchors**, which the countryside has in abundance:
 | **Tracks** | `highway=track\|path` | Denser than roads, distinctive curves | Medium (often incompletely mapped) |
 | **Power lines & pylons** | `power=line`, `power=tower` | Straight lines with regular pylon spacing; pylons are point anchors | High |
 | **Alpine extras (Tyrol)** | `aerialway=*`, `piste:type`, `natural=peak\|cliff\|scree` | Very rare, distinctive | High |
-| **Terrain** | Not OSM: a DEM/DSM | Ridge and valley shapes are unique everywhere | Very high |
+| **Terrain** | Not OSM: a DEM/DSM, for example Copernicus DEM GLO-30, free ([[copernicus-browser]]) | Ridge and valley shapes are unique everywhere | Very high |
 
 Evidence and method (sourced unless marked):
 - **Boundary-map matching** is the rural counterpart of road matching. Segment land cover, simplify it to boundary maps, and template-match against large maps; this has been done for cadastral geolocation ([[rural-geolocalization-search]]).

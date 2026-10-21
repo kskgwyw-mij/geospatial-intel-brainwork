@@ -108,3 +108,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-21] edit | Search region narrowed to the Alpine-edge districts
 - updated: [[author-decision-search-region]], [[oberbayern-sued]], [[osm-fingerprint-geolocalization]], [[imagery-sources]], [[overview]]
 - notes: Provisional region is now GAP, TÖL, MB, WM, RO (+ Rosenheim city), TS, BGL, about 7,800 km² (Oberland part sourced, the other areas approximate); Altötting and Mühldorf dropped. Overpass queries updated; the uniqueness example was rescaled at constant density (N about 15 % lower); the train/test split is now Oberland districts vs. RO/TS/BGL.
+
+## [2026-10-21] ingest | Copernicus Browser (second imagery source, search snippets)
+- created: [[copernicus-browser]]
+- updated: [[imagery-sources]], [[osm-fingerprint-geolocalization]], [[overview]]
+- notes: The site was blocked, so it was ingested from search snippets. Sentinel-2 is too coarse for objects, and the VHR2024 download is restricted. The useful part is Copernicus DEM GLO-30 (30 m, free with registration) as the terrain layer for Alpine and rural geolocation. EEA-10 (10 m) is restricted, and the GLO-30 view service needs a CCM opt-in since Aug 2026.

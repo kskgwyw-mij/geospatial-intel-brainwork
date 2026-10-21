@@ -2,7 +2,7 @@
 title: Imagery sources for training and testing
 type: analysis
 tags: [imagery, data-sources, decision]
-sources: [bayern-dop-regions-search, author-decision-search-region, geopera-free-satellite-germany, author-decision-no-metadata, pretrained-models-search, maggiori-2017-hr-semantic-labeling]
+sources: [copernicus-browser, bayern-dop-regions-search, author-decision-search-region, geopera-free-satellite-germany, author-decision-no-metadata, pretrained-models-search, maggiori-2017-hr-semantic-labeling]
 updated: 2026-10-21
 ---
 Which imagery to use for training (georeferenced, OSM-labelled) and testing (metadata-free nadir photos), ranked by fit with the thesis resolution of 10–25 cm.
@@ -21,7 +21,10 @@ Which imagery to use for training (georeferenced, OSM-labelled) and testing (met
 | Austrian orthophotos (basemap.at, Land Tirol) | about 10–25 cm | Tyrol (bordering the search region) | ●● out-of-region generalisation test; check licence | (unsourced) |
 | ISPRS Potsdam / Vaihingen | 5 / 9 cm | Small benchmark tiles | ●● method comparison, not OSM-labelled | [[maggiori-2017-hr-semantic-labeling]] |
 | Maxar (behind DINOv3-sat pretraining) | 0.6 m | Global, commercial | ● pretraining only | [[pretrained-models-search]] |
-| Sentinel-2 (Copernicus) | 10 m | Global, 5-day revisit, free | ✗ for objects; land cover only | [[geopera-free-satellite-germany]] |
+| Sentinel-2 (Copernicus) | 10 m | Global, 5-day revisit, free; quarterly and annual mosaics in the Copernicus Browser | ✗ for objects; land cover only | [[geopera-free-satellite-germany]], [[copernicus-browser]] |
+| **Copernicus DEM GLO-30** (Copernicus Browser) | 30 m elevation | Global, free with registration (view service needs a CCM opt-in) | ●●● **terrain cue** for Alpine and rural geolocation; not for objects | [[copernicus-browser]] |
+| Copernicus DEM EEA-10 | 10 m elevation | Europe; restricted user categories | ●● if access is granted | [[copernicus-browser]] |
+| Copernicus VHR2024 mosaic | not stated | All of Europe; download only for EU or public research users, view-only for the public | ? check eligibility | [[copernicus-browser]] |
 | Commercial aerial (for example Vexcel) | 7.5 cm urban | Paid | Optional | [[geopera-free-satellite-germany]] |
 
 ## Recommendation (updated for the search region [[oberbayern-sued]])
@@ -29,6 +32,7 @@ Which imagery to use for training (georeferenced, OSM-labelled) and testing (met
 2. Optionally add NRW DOP10 for extra urban training data, and use Tyrolean orthophotos as an out-of-region generalisation test. (unsourced)
 3. **Simulate metadata-free nadir test photos** by cropping held-out orthophotos, then rotating, rescaling and stripping coordinates. The true position, scale and heading are known, so geolocation error can be measured exactly.
 4. Ignore Sentinel-2 for objects. Use it only for land-cover context, if at all.
+5. **Use Copernicus DEM GLO-30** (via the Copernicus Browser) as the terrain layer for geolocation in the Alpine districts ([[copernicus-browser]]).
 
 ## Related
 - [[orthoimagery]]
