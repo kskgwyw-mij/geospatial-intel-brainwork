@@ -169,6 +169,8 @@ a local index, instead of querying live.
 with projected OSM labels (`tools/osm_overlay.py`). Augment with rotation, scale and perspective/lean so the
 detectors cope with raw nadir frames.
 
+**Prototype:** implemented in `tools/geo_match.py`. In simulation, confident matches were always correct, but about 8 anchors per photo are needed at regional scale ([[geo-match-prototype]]).
+
 **Resulting pipeline:** detect + classify objects → estimate scale from metric anchors → build an invariant
 constellation → RANSAC similarity match against the regional OSM index → location, scale and rotation →
 project the full OSM layer onto the photo to label or check every object → output geo-objects.
@@ -181,6 +183,7 @@ rate against fingerprint size. Ethics: geolocating images can affect privacy, so
 ([[thesis-timeline]]). (unsourced)
 
 ## Related
+- [[geo-match-prototype]]
 - [[ransac]]
 - [[oberbayern-sued]]
 - [[author-decision-no-metadata]]

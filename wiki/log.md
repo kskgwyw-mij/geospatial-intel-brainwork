@@ -118,3 +118,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - updated: [[geopera-free-satellite-germany]] (rewritten from the full text), [[copernicus-browser]], [[imagery-sources]], [[overview]]
 - created: [[german-dop-search]] (the DOP facts split out of the old snippet notes)
 - notes: Full list of 10 sources; key point: free satellite data is 10–30 m and paid satellite is at best 30 cm, still coarser than free Bavarian DOP20. Flagged a contradiction: the blog says Copernicus needs no registration, the CDSE docs say a free account is required. Corrected the attribution: the DOP10/20/40 facts came from other search results, not this article.
+
+## [2026-10-21] edit | Geolocation matcher prototype + simulation
+- created: [[geo-match-prototype]]
+- updated: [[osm-fingerprint-geolocalization]], [[thesis-poc-pipeline]], [[ransac]], [[overview]]
+- notes: Added tools/geo_match.py (hypothesise-and-verify similarity matching, metric anchors, confidence status) and tools/sim_geo_match.py. Synthetic results: at 7,744 km², 8/8 confident matches correct, ≥ 8 detections 6/7 located, 3–4 detections 0/20; when located, errors are about 0.2 m, < 0.1 % GSD and < 0.1° heading. 2-inlier fits carry no evidence. The densities are hypothetical; next step is to rerun on the real Overpass export.

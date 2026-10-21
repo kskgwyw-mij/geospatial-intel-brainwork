@@ -36,6 +36,7 @@ Photo: 6 detected objects. Candidates: 10 OSM matches, of which 7 are wrong.
 - Re-fit on those 3 inliers: the photo lies at that location, at 0.19 m/px, rotated 112°.
 
 ## Related
+- [[geo-match-prototype]]
 - [[osm-fingerprint-geolocalization]]
 - [[costea-2016-aerial-geolocalization]]
 - [[osm-weak-labels]]
