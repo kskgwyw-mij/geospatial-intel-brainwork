@@ -128,7 +128,7 @@ Evidence and method (sourced unless marked):
 - **Boundary-map matching** is the rural counterpart of road matching. Segment land cover, simplify it to boundary maps, and template-match against large maps; this has been done for cadastral geolocation ([[rural-geolocalization-search]]).
   Here, render OSM `landuse`, `natural`, `waterway` and `barrier` geometry into the same boundary map and match detections against it.
 - **Expect broken edges:** natural boundaries are irregular, discontinuous and partly hidden by vegetation ([[rural-geolocalization-search]]), so use robust matching such as Chamfer distance or RANSAC rather than exact shapes ([[costea-2016-aerial-geolocalization]]).
-- **Terrain** is the strongest fallback in Tyrol. DEM-based orthoprojection gave about 26–31 m mean error after 2 km in a UAV setting ([[rural-geolocalization-search]]). An nDSM also improves detection ([[maggiori-2017-hr-semantic-labeling]]).
+- **Terrain** is the strongest fallback in the Alpine search region ([[oberbayern-sued]]). DEM-based orthoprojection gave about 26–31 m mean error after 2 km in a UAV setting ([[rural-geolocalization-search]]). An nDSM also improves detection ([[maggiori-2017-hr-semantic-labeling]]).
 - **Adapt the radius:** grow the neighbourhood w until expected chance matches N ≪ 1. Rural tiles need a larger w because anchors are sparser, but each anchor is also rarer. (unsourced)
 - **Season:** use shapes, not colours, for fields, because crop colour flips between flights; prefer forest edges, water and buildings as the primary anchors. (unsourced)
 - **Evaluation data:** AirZoo-Real has a 190-image rural subset ([[rural-geolocalization-search]]).
