@@ -2,7 +2,7 @@
 title: Technical & statistical feasibility
 type: analysis
 tags: [feasibility, statistics, evaluation, risks]
-sources: [real-e2e-test, osm-real-test, author-decision-no-metadata, author-decision-search-region, author-decision-detection-in-scope, bayern-dop20rgb-detail, bayern-opengeodata, pretrained-models-search, dsia-studienordnung-2027, costea-2016-aerial-geolocalization]
+sources: [localization-levers-test, real-e2e-test, osm-real-test, author-decision-no-metadata, author-decision-search-region, author-decision-detection-in-scope, bayern-dop20rgb-detail, bayern-opengeodata, pretrained-models-search, dsia-studienordnung-2027, costea-2016-aerial-geolocalization]
 updated: 2026-10-21
 ---
 Why metadata-free localisation from detected OSM objects is technically buildable and statistically sound, with back-of-envelope numbers: false-match probability, anchor availability, precision, and the test-set sizes needed to prove it.
@@ -100,6 +100,9 @@ With real DOP20 photos, an off-the-shelf DOTA detector (precision about 0.5, rec
 6/40 photos near anchors and **0/40 uniformly placed photos** were located. One "confident" match was wrong. A repetitive tank farm
 matched a denser tank farm 63.5 km away, so A1's independence assumption fails for clustered single-class objects.
 A1 should therefore count inliers *above the expected chance level for the local density* rather than raw inliers (proposal, unsourced).
+
+## Coverage ceilings per cue ([[localization-levers-test]])
+Share of random Garmisch photos (500 × 375 m) with enough of each cue: point anchors 0.1–1.6 %, buildings ≥ 8 16 %, junctions ≥ 3 32 %, object cues combined 34 %, object or line cues (roads, water, forest edges) **78 %**, nothing mapped 22 %. Ranked plan: [[localization-improvements]].
 
 ## Bottom line
 Technically, every component exists or has a working prototype. Statistically, uniqueness is not the problem

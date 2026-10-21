@@ -206,10 +206,13 @@ def main():
         res = geo_match.match(dets, (W, H), anchors, frame) if len(dets) >= 2 else None
         row = {"site": s, "mode": args.mode, "e": round(e, 1), "n": round(n, 1), "heading": round(heading, 2),
                "dets": len(dets), "det_tp": tp, "osm_in_photo": len(truth), "osm_found": found,
-               "det_classes": sorted({d["class"] for d in dets}), "status": None, "err_m": None}
+               "det_classes": sorted({d["class"] for d in dets}), "status": None, "err_m": None,
+               "dets_px": [[d["class"], round(d["x"], 1), round(d["y"], 1), round(d["conf"], 3), round(d["len_px"], 1)]
+                           for d in dets]}
         if res:
             ex, ny = TO_UTM.transform(*res["center_lonlat"])
-            row.update({"status": res["status"], "inliers": res["inliers"], "err_m": round(math.hypot(ex - e, ny - n), 2),
+            row.update({"status": res["status"], "inliers": res["inliers"], "margin": res["margin"],
+                        "inlier_classes": res["inlier_classes"], "err_m": round(math.hypot(ex - e, ny - n), 2),
                         "gsd_err_pct": round(100 * abs(res["gsd_m"] / DOP_GSD - 1), 2),
                         "heading_err": round(abs((res["heading_deg"] - heading + 180) % 360 - 180), 2)})
         row["sec"] = round(time.time() - t0, 1)

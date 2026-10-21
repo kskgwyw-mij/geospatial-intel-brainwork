@@ -2,7 +2,7 @@
 title: Geolocation matcher prototype & first simulation
 type: analysis
 tags: [geolocalization, ransac, prototype, evaluation]
-sources: [real-e2e-test, osm-real-test, author-decision-no-metadata, author-decision-search-region, costea-2016-aerial-geolocalization, author-decision-detection-in-scope]
+sources: [localization-levers-test, real-e2e-test, osm-real-test, author-decision-no-metadata, author-decision-search-region, costea-2016-aerial-geolocalization, author-decision-detection-in-scope]
 updated: 2026-10-21
 ---
 First working prototype of metadata-free photo geolocation (`tools/geo_match.py`) and its evaluation on simulated photos (`tools/sim_geo_match.py`): confident matches were always right, but photos need about 5–8 detected anchors.
@@ -50,7 +50,9 @@ When located: median position error **0.2–0.4 m**, GSD error **< 0.1 %**, head
 > scale with 68 inliers. In a dense, repetitive single-class cluster, inlier count no longer measures uniqueness.
 > Overall: 6/40 photos near anchors located (15 %), 0/40 uniformly placed. Correct matches: 0.9–5.2 m, ≤ 2.4 % scale and ≤ 2.9° heading error.
 
-Fix to implement (proposal, unsourced): score hypotheses by inliers **beyond the chance expectation** given the local OSM density
+**Implemented (2026-10-21):** "confident" now also needs inliers from ≥ 2 classes (`min_classes=2`). On the same 40 real sites, confident went from 3/4 to 2/2 correct ([[localization-levers-test]]). Simulation numbers above were produced with the old rule.
+
+Further fixes (proposal, unsourced): score hypotheses by inliers **beyond the chance expectation** given the local OSM density
 of each class at the hypothesised scale; cap the contribution of any one class (or require ≥ 2 classes for "confident"); and keep a GSD prior
 when the camera type is roughly known.
 
@@ -71,6 +73,7 @@ when the camera type is roughly known.
 - Real detections will come from the fine-tuned detectors ([[pretrained-models]], [[methods-10-25cm]]). Detection is in scope ([[author-decision-detection-in-scope]]), so replace the simulated 85 % recall, 2 false alarms and perfect classes with the **measured** detector performance, including class confusion. First measurement with the off-the-shelf DOTA model: precision about 0.5, recall about 0.6 against OSM ([[real-e2e-test]]).
 
 ## Related
+- [[localization-improvements]]
 - [[feasibility]]
 - [[coarse-to-fine-localization]]
 - [[osm-fingerprint-geolocalization]]
