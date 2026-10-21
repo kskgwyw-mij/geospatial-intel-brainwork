@@ -166,3 +166,13 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[osm-real-test]]
 - updated: [[geo-match-prototype]], [[feasibility]], [[osm-fingerprint-geolocalization]], [[oberbayern-sued]], [[overview]]; tools/sim_geo_match.py gains --uniform-photos
 - notes: Overpass mirror maps.mail.ru is reachable. Real anchors: 11,599 (about 1.5/km²); pools 934 vs 4,250 assumed. On the real layout, confident matches are 30/30 correct, but uniformly placed photos are located 1 % of the time. Miesbach: 47,261 buildings (about 55/km²); random footprints have ≥ 8 buildings 23 %, none 51 %. Synthetic results were optimistic on coverage; buildings with descriptors plus terrain are required.
+
+## [2026-10-21] ingest | HOK course documents: WA exposé slides, ASPO chapter 1, AI guideline
+- created: [[hok-aspo-2026]], [[wa-course-expose]], [[hok-ki-leitlinie]], [[expose-guide]]
+- updated: [[thesis-timeline]], [[hok-dsia-master]], [[overview]]
+- notes: The exposé has six fixed sections and is due 23.10.2026 as a name-free PDF, plus an AI-documentation PDF (self-estimated AI share ≤ 50 %). Thesis registration by 31.10.2026. ASPO: 10–15k words, ≥ 6 months processing (≥ 10 weeks in semester 4), defence 50 % of the final exam, unfair AI use = serious fraud. The author is probably in semester 3 (WS 2026/27), so the ingested 2027/28 programme regulation may not be theirs. The WA slides and the AI guideline are kept only as paraphrased notes (internal teaching material; the guideline forbids uploading such material to AI tools, so that point is flagged for the author). The ASPO statute PDF is stored.
+
+## [2026-10-21] ingest | Real end-to-end test (DOP20 + pretrained detector + real OSM)
+- created: [[real-e2e-test]]
+- updated: [[geo-match-prototype]], [[feasibility]], [[osm-real-test]], [[pretrained-models]], [[overview]]; schema and lint gain `raw_data:` for data files belonging to a source
+- notes: 80 real metadata-free DOP20 photos, 500 × 375 m. Zero-shot YOLO11s-OBB (DOTA): precision 0.49, recall 0.62 vs OSM. Located 6/40 near anchors (correct ones 0.9–5.2 m, ≤ 2.4 % scale, ≤ 2.9°) and 0/40 uniformly placed (36/40 photos contain no anchor). First wrong "confident" match: a tank farm matched the densest tank cluster 63.5 km away → inlier count must be judged against local density / class diversity. Contradiction with the simulated 30/30 is recorded.

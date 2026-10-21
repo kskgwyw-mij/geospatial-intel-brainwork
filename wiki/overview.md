@@ -3,7 +3,7 @@ title: Overview
 type: overview
 tags: [meta]
 sources: [thesis-goal, dsia-studienordnung-2027, hok-dsia-program-listings, maggiori-osm-imperfect-labels, maggiori-2017-hr-semantic-labeling]
-updated: 2026-10-20
+updated: 2026-10-21
 ---
 Current big-picture understanding of ML/DL algorithm selection for recognising OSM/Overpass objects in orthoimagery, for the HOK master thesis.
 
@@ -31,6 +31,7 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** a nadir ph
 - **Application framing: GNSS-denied visual localisation** of drones and aerial photos ([[gnss-denied-use-cases]], [[author-note-use-cases-gnss-denied]]). Use cases: GPS outage, jamming and spoofing; Alpine signal shading; search and rescue; locating imagery after the fact; sub-metre GPS refinement; infrastructure inspection; OSM maintenance. Dual-use, so it needs an ethics section.
 - **Geolocation prototype** ([[geo-match-prototype]]): in simulation at the size of the search region, "confident" matches were 100 % correct, with sub-metre position, < 0.1 % scale and < 0.1° heading error. Photos need about 8 detected anchors; 3–4 fail, so rural photos need more anchor types.
 - **Real-data check** ([[osm-real-test]]): on real OSM anchors (11,599, about 1.5/km²), confident matches stay correct (30/30), but randomly placed photos are located only **1 %** of the time. Buildings (about 55/km² in Miesbach) give ≥ 8 objects in about 23 % of photos, and **51 % of photos contain no building at all**. Earlier synthetic results were optimistic on coverage.
+- **Real end-to-end test** ([[real-e2e-test]]): real DOP20 + pretrained DOTA detector (precision about 0.5, recall about 0.6 vs OSM) + real OSM located 6/40 photos near anchors and 0/40 random ones. **One confident match was wrong** (a repetitive tank farm), so the confidence rule must become density-aware.
 - **Feasibility** ([[feasibility]]): with ≥ 4 agreeing objects, false matches are very rare in about 7,800 km², since each extra inlier multiplies the risk by about 10⁻⁴. The bottleneck is **anchor availability**: rare objects (about 2/km²) almost never give ≥ 4 per photo, so dense anchors (buildings, trees, intersections) are required. Precision is about σ/√n, and OSM error passes through (1.8 m at 2 m OSM noise). About 100 test photos per condition give ±10 pp CIs.
 - **Fine-grained localisation is coarse-to-fine** ([[coarse-to-fine-localization]]): region prior → object fingerprint retrieval → RANSAC object alignment (metre level) → dense registration against DOP20 (sub-metre) → camera pose with DOM20/DGM1 heights (removes relief displacement).
 - **Pretrained models exist for every head** ([[pretrained-models]]): YOLO11-OBB on DOTA (pools, tanks, pitches), DeepForest (trees), SatlasPretrain and DINOv3-satellite encoders (segmentation, retrieval), SAM2 (masks). None was trained at 10–25 cm, so fine-tune locally.
@@ -52,11 +53,14 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** a nadir ph
 - Geolocation is now part of the method ([[author-decision-no-metadata]]). The search region is fixed ([[oberbayern-sued]]). Provisional choice: Alpine-edge districts only; the area may change later, so keep it parameterised. How is scale recovered (metric anchors such as tennis courts)?
 - Research question: a preferred candidate exists (GNSS-denied localisation from OSM objects; see [[thesis-timeline]]). Open: confirm it with the supervisor, and back the use-case claims with literature.
 - Contradiction: Copernicus access with vs. without registration ([[geopera-free-satellite-germany]] vs. [[copernicus-browser]]). The official docs are taken as correct.
-- Formal thesis guidelines (length, citation style, deadlines) are not in the regulation.
+- Formal rules are now known: 10–15k words, ≥ 6 months processing, exposé due 23.10.2026, registration 31.10.2026, AI share ≤ 50 % ([[hok-aspo-2026]], [[wa-course-expose]]; checklist in [[expose-guide]]). Still missing: the HOK thesis guide (citation style) and confirmation of the cohort and regulation version.
+- Contradiction: confident matches 30/30 correct with simulated detections ([[osm-real-test]]) vs 3/4 with real detections ([[real-e2e-test]]). Cause: repetitive single-class clusters; fix the scoring.
+- Literature for the exposé is thin: the relevance (GNSS-denied UAV localisation) rests on an author note; it needs peer-reviewed sources ([[expose-guide]]).
 
 ## Related
 - [[thesis-goal]]
 - [[thesis-poc-pipeline]]
 - [[thesis-timeline]]
+- [[expose-guide]]
 - [[index]]
 - [[log]]

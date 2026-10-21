@@ -2,8 +2,8 @@
 title: Thesis timeline & course fit
 type: analysis
 tags: [thesis, planning]
-sources: [dsia-studienordnung-2027, thesis-goal, maggiori-osm-imperfect-labels, author-note-use-cases-gnss-denied, author-decision-detection-in-scope]
-updated: 2026-10-20
+sources: [hok-aspo-2026, wa-course-expose, dsia-studienordnung-2027, thesis-goal, maggiori-osm-imperfect-labels, author-note-use-cases-gnss-denied, author-decision-detection-in-scope]
+updated: 2026-10-21
 ---
 How the thesis goal maps onto the part-time DSIA semesters: when each thesis milestone happens and which course supplies what.
 
@@ -17,7 +17,24 @@ How the thesis goal maps onto the part-time DSIA semesters: when each thesis mil
 | 4 | **Thesis (20 ECTS) + committee exam (2 ECTS)**; colloquium presenting question, outline and method ([[dsia-studienordnung-2027]]) | Full experiments, the PoC on the [[poc-platform]], writing, defence |
 
 Semester dates: winter KW 40 – KW 5, summer KW 11 – KW 28 ([[dsia-studienordnung-2027]]).
-For a cohort starting WS 2027/28, semester 4 is summer 2029. Confirm the author's actual cohort. (unsourced)
+
+## Actual dates (cohort inferred from the course schedule)
+The scientific-writing course with the exposé assignment runs in autumn 2026 ([[wa-course-expose]]), so the author is
+most likely in **semester 3 = WS 2026/27**, and semester 4 is **SS 2027** (inference; confirm). The ingested
+programme regulation applies to cohorts from WS 2027/28, so the author's own curriculum version may differ in detail.
+
+| Date | Milestone |
+|---|---|
+| 23.10.2026 | Exposé + AI-documentation PDF due in the WA course ([[wa-course-expose]]) |
+| 24.10.2026 | WA session: peer review and rebuttal ([[wa-course-expose]]) |
+| 31.10.2026 | Thesis registration (form + exposé) on Moodle ([[wa-course-expose]]) |
+| by end of WS 2026/27 | Exposé approved, supervisor assigned → processing time starts ([[hok-aspo-2026]]) |
+| ≥ 6 months later, with ≥ 10 weeks in SS 2027 | Earliest submission, e.g. about May–July 2027 if approval comes in Nov–Dec 2026 ([[hok-aspo-2026]]; the dates are an inference) |
+| ≤ 6 weeks after the processing time | Reviews by both reviewers ([[hok-aspo-2026]]) |
+| afterwards | Committee exam: presentation 10 %, defence 50 %, curriculum questions 40 % ([[hok-aspo-2026]]) |
+
+Formal limits: 10,000–15,000 words ±10 %, single-author, sworn declaration of independent work ([[hok-aspo-2026]]).
+Exposé structure and checklist: [[expose-guide]].
 
 ## What the regulation implies for scoping
 - The exposé must align the **problem, research question and method**
@@ -41,3 +58,5 @@ For a cohort starting WS 2027/28, semester 4 is summer 2029. Confirm the author'
 - [[thesis-goal]]
 - [[thesis-poc-pipeline]]
 - [[hok-dsia-master]]
+- [[expose-guide]]
+- [[hok-aspo-2026]]

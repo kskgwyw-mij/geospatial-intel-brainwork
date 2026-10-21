@@ -58,7 +58,8 @@ Body conventions:
 - End each page with a `## Related` section of `[[wikilinks]]`.
 
 Source pages (`wiki/sources/<name>.md`) also carry `raw: raw/<file>` in frontmatter (plus optional
-`superseded_raw: [raw/<old-file>]` when a fuller version of the source replaced earlier notes) and
+`superseded_raw: [raw/<old-file>]` when a fuller version of the source replaced earlier notes, and
+`raw_data: [raw/<file>]` for data files — exports, result tables — that belong to the source) and
 contain: **Summary**, **Key claims** (bulleted, specific, with numbers), **Relevance to this
 wiki**, **Pages touched**.
 

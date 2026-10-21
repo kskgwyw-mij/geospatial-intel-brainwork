@@ -99,6 +99,7 @@ def main():
         if fm:
             ingested.add(fm.get("raw"))
             ingested.update(fm.get("superseded_raw") or [])
+            ingested.update(fm.get("raw_data") or [])
     for f in sorted(RAW.rglob("*")):
         if f.is_file() and "assets" not in f.parts and not f.name.startswith("."):
             if str(f.relative_to(ROOT)) not in ingested:

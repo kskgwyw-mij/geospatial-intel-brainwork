@@ -8,6 +8,9 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 
 ## Sources
 - [[thesis-goal]] — The author's own statement of the master thesis goal: an ML/DL method that recognises and classifies OSM objects (via Overpass Turbo) in orthoimagery, shown in a PoC platform.
+- [[hok-aspo-2026]] — HOK general study & exam regulation (amended 8 Jun 2026): thesis 10–15k words, exposé approved by semester 3, ≥ 6 months processing, defence 50 %, unfair AI use counts as fraud.
+- [[wa-course-expose]] — Scientific-writing course notes: exposé structure, due 23.10.2026 (name-free PDF + AI documentation, ≤ 50 % AI), registration by 31.10.2026.
+- [[hok-ki-leitlinie]] — HOK AI & study guideline: AI supports but must not replace own work; disclose use; no uploading of copyrighted teaching material.
 - [[dsia-studienordnung-2027]] — Official 83-page study regulation (from WS 2027/28): curriculum, thesis rules (exposé, 20+2 ECTS), relevant courses, admission.
 - [[aerial-cv-benchmarks]] — Search-result facts on DOTA (detection, 15–18 classes), ISPRS Potsdam/Vaihingen (6-class segmentation, 5/9 cm) and Inria (30 cm buildings).
 - [[author-note-industrial-colour]] — Author observation: industrial areas have a distinct colour in orthoimagery.
@@ -29,6 +32,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[bayern-opengeodata]] — Bavarian OpenGeoData catalogue (full clip): DOP20 RGB/CIR, DGM1, DOM20, LiDAR, LoD2, Einzelbäume, Hausumringe, ATKIS, ALKIS land use, parcels and districts.
 - [[bayern-dop20rgb-detail]] — DOP20 RGB product page: 1 km GeoTIFF tiles in EPSG:25832, about 50 MB per tile, up to 126 GB per district, WMS (incl. historical DOP) and WMTS, CC BY 4.0.
 - [[author-decision-detection-in-scope]] — Author decision: detection and classification are part of the thesis, alongside metadata-free localisation.
+- [[real-e2e-test]] — Real end-to-end test (DOP20 + DOTA YOLO11-OBB + real OSM): detection precision 0.49 / recall 0.62; located 6/40 near anchors, 0/40 random; first wrong confident match (tank farm).
 - [[osm-real-test]] — Real OSM test: 11,599 anchors (about 1.5/km²), Miesbach 47k buildings (about 55/km²); random photos located 1 % with point anchors; half of footprints have no building.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
@@ -60,4 +64,5 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[pretrained-models]] — Pretrained CNNs and foundation models per thesis task, resolution caveat, minimal fine-tuning stack.
 - [[imagery-sources]] — Imagery for training (German DOP10/20, Tyrolean orthophotos) and testing (simulated metadata-free nadir crops); Sentinel-2 ruled out for objects.
 - [[gnss-denied-use-cases]] — Application framing: GNSS-denied visual localisation, use-case table with prototype fit and evidence, research question, dual-use ethics.
+- [[expose-guide]] — Exposé checklist: required sections, deadlines, AI documentation, and which wiki pages supply each section.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.

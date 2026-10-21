@@ -2,7 +2,7 @@
 title: Technical & statistical feasibility
 type: analysis
 tags: [feasibility, statistics, evaluation, risks]
-sources: [osm-real-test, author-decision-no-metadata, author-decision-search-region, author-decision-detection-in-scope, bayern-dop20rgb-detail, bayern-opengeodata, pretrained-models-search, dsia-studienordnung-2027, costea-2016-aerial-geolocalization]
+sources: [real-e2e-test, osm-real-test, author-decision-no-metadata, author-decision-search-region, author-decision-detection-in-scope, bayern-dop20rgb-detail, bayern-opengeodata, pretrained-models-search, dsia-studienordnung-2027, costea-2016-aerial-geolocalization]
 updated: 2026-10-21
 ---
 Why metadata-free localisation from detected OSM objects is technically buildable and statistically sound, with back-of-envelope numbers: false-match probability, anchor availability, precision, and the test-set sizes needed to prove it.
@@ -95,10 +95,16 @@ So A2's prediction is confirmed with real data. Object-based localisation is fea
 (with size, orientation and roof descriptors, because 74 % are just `building=yes`). In about half of the Alpine-edge area it is
 infeasible without terrain (DGM1) and shape cues (forest edges, water).
 
+## Real end-to-end check ([[real-e2e-test]])
+With real DOP20 photos, an off-the-shelf DOTA detector (precision about 0.5, recall about 0.6 against OSM) and real OSM:
+6/40 photos near anchors and **0/40 uniformly placed photos** were located. One "confident" match was wrong. A repetitive tank farm
+matched a denser tank farm 63.5 km away, so A1's independence assumption fails for clustered single-class objects.
+A1 should therefore count inliers *above the expected chance level for the local density* rather than raw inliers (proposal, unsourced).
+
 ## Bottom line
 Technically, every component exists or has a working prototype. Statistically, uniqueness is not the problem
 (≥ 4 agreeing objects make false matches very rare in about 7,800 km²); **anchor availability is**, and real OSM data
-confirms it: point anchors cover about 1 % of random photos, buildings about 25–30 %, and half the area has no buildings ([[osm-real-test]]). The thesis
+confirms it: point anchors cover about 1 % of random photos, buildings about 25–30 %, and half the area has no buildings ([[osm-real-test]]). The real end-to-end run located 0/40 random photos and showed that repetitive clusters can fool the confidence rule ([[real-e2e-test]]). The thesis
 therefore stands or falls on detecting enough *dense* anchors per photo, which makes FF1 (detection) and FF2
 (localisation) inseparable.
 

@@ -4,6 +4,7 @@ type: source
 tags: [osm, real-data, evaluation, density]
 sources: [osm-real-test]
 raw: raw/2026-10-21-osm-real-test-notes.md
+raw_data: [raw/2026-10-21-osm-anchors-alpine-edge.json]
 updated: 2026-10-21
 ---
 First test with real OSM data for the search region: real anchor counts (11,599 objects, about 1.5/km²), building density in Miesbach (about 55/km²), and the matcher's performance on the real object layout. It shows that point anchors alone fail for randomly placed photos.
@@ -37,7 +38,11 @@ are still **simulated** (85 % recall, 2 false alarms, 1 m OSM noise), but the ob
 ## Pages touched
 [[feasibility]], [[geo-match-prototype]], [[osm-fingerprint-geolocalization]], [[oberbayern-sued]], [[overview]]
 
+> [!note] Follow-up
+> The real end-to-end run with real imagery and a real detector ([[real-e2e-test]]) found one wrong confident match, so "confident 30/30" holds only for simulated detections.
+
 ## Related
+- [[real-e2e-test]]
 - [[feasibility]]
 - [[geo-match-prototype]]
 - [[oberbayern-sued]]
