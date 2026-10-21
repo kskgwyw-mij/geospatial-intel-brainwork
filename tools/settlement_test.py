@@ -25,15 +25,22 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from overpass_settlements import is_dwelling  # noqa: E402
 from real_geo_test import TO_UTM, fetch_dop, inside, load_segments  # noqa: E402
 
 HIST_WMS = "https://geoservices.bayern.de/od/wms/histdop/v1/histdop"
 
 
 def load_buildings(path):
-    pts = [TO_UTM.transform(el["center"]["lon"], el["center"]["lat"])
-           for el in json.loads(Path(path).read_text())["elements"] if "center" in el]
-    return np.array(pts)
+    """Building centroids in EPSG:25832 plus a dwelling flag (same rule as overpass_settlements.py)."""
+    els = [el for el in json.loads(Path(path).read_text())["elements"] if "center" in el]
+    pts = [(*TO_UTM.transform(el["center"]["lon"], el["center"]["lat"]), is_dwelling(el.get("tags", {}))) for el in els]
+    return np.array(pts, dtype=float)
+
+
+def count(bld, e, n, half):
+    m = (np.abs(bld[:, 0] - e) < half) & (np.abs(bld[:, 1] - n) < half)
+    return int(m.sum()), int(bld[m, 2].sum())
 
 
 def handcrafted(img):
@@ -72,7 +79,7 @@ def collect(args):
             if inside(segs, lon, lat):
                 cells.append((*TO_UTM.transform(lon, lat), "uniform"))
         for _ in range(args.centred):
-            e, n = bld[rng.randrange(len(bld))]
+            e, n, _ = bld[rng.randrange(len(bld))]
             cells.append((e + rng.uniform(-40, 40), n + rng.uniform(-40, 40), "centred"))
         half = args.cell_m / 2
 
@@ -84,12 +91,11 @@ def collect(args):
 
         with ThreadPoolExecutor(args.threads) as ex:
             for i, ((e, n, kind), now, old) in enumerate(ex.map(work, cells)):
-                d = np.abs(bld - (e, n))
-                nb = int(np.count_nonzero((d[:, 0] < half) & (d[:, 1] < half)))
-                nb150 = int(np.count_nonzero(np.hypot(*(bld - (e, n)).T) < 150))
+                nb, ndw = count(bld, e, n, half)
+                nb150 = int(np.count_nonzero(np.hypot(bld[:, 0] - e, bld[:, 1] - n) < 150))
                 old_ok = float(np.asarray(old).std()) > 1.0          # blank (white) = not flown that year
                 rows.append({"district": name, "e": round(e, 1), "n": round(n, 1), "kind": kind,
-                             "nb": nb, "nb150": nb150, "old_ok": old_ok})
+                             "nb": nb, "ndw": ndw, "nb150": nb150, "old_ok": old_ok})
                 feats_now.append(handcrafted(now))
                 feats_old.append(handcrafted(old))
                 emb_now.append(model.embed(now, imgsz=512, verbose=False)[0].cpu().numpy())
@@ -112,12 +118,20 @@ def analyse(args):
 
     z = np.load(args.npz)
     rows = json.loads(str(z["rows"]))
+    for name, path in args.buildings or []:  # (re)label from Overpass exports, e.g. for files made before `ndw`
+        bld = load_buildings(path)
+        for r in rows:
+            if r["district"] == name:
+                r["nb"], r["ndw"] = count(bld, r["e"], r["n"], 50)
     dist = np.array([r["district"] for r in rows])
     uni = np.array([r["kind"] == "uniform" for r in rows])
     old_ok = np.array([r["old_ok"] for r in rows])
     blocks = np.array([f"{r['district']}_{int(r['e'] // 2000)}_{int(r['n'] // 2000)}" for r in rows])
     targets = {"built (>=1 building in 1 ha)": np.array([r["nb"] >= 1 for r in rows]),
                "settlement (>=5 buildings in 1 ha)": np.array([r["nb"] >= 5 for r in rows])}
+    if all("ndw" in r for r in rows):  # Overpass dwelling rule: excludes barns, huts, garages
+        targets["inhabited (>=1 dwelling in 1 ha)"] = np.array([r["ndw"] >= 1 for r in rows])
+        targets["settlement (>=3 dwellings in 1 ha)"] = np.array([r["ndw"] >= 3 for r in rows])
     featsets = {"colour/texture": ("hc_now", "hc_old"), "DOTA embedding": ("emb_now", "emb_old")}
     first, second = dist[0], [d for d in dict.fromkeys(dist) if d != dist[0]][0]
     out = {"cells": {d: int((dist == d).sum()) for d in dict.fromkeys(dist)},
@@ -179,6 +193,8 @@ def main():
     a = sub.add_parser("analyse")
     a.add_argument("npz")
     a.add_argument("--old-name", default="2018")
+    a.add_argument("--buildings", nargs=2, action="append", metavar=("NAME", "FILE"),
+                   help="recount labels from an Overpass building export (cell size 100 m)")
     a.add_argument("--json")
     args = ap.parse_args()
     collect(args) if args.cmd == "collect" else analyse(args)

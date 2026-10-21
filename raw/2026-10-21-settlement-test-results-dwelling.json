@@ -1,0 +1,436 @@
+{
+ "cells": {
+  "MB": 550,
+  "GAP": 550
+ },
+ "uniform_cells": {
+  "MB": 400,
+  "GAP": 400
+ },
+ "results": [
+  {
+   "target": "built (>=1 building in 1 ha)",
+   "features": "colour/texture",
+   "MB spatial CV (all)": {
+    "n": 550,
+    "pos": 203,
+    "auc": 0.965,
+    "f1": 0.861,
+    "precision": 0.84,
+    "recall": 0.882
+   },
+   "MB spatial CV (uniform only)": {
+    "n": 400,
+    "pos": 53,
+    "auc": 0.942,
+    "f1": 0.63,
+    "precision": 0.541,
+    "recall": 0.755
+   },
+   "MB->GAP (all)": {
+    "n": 550,
+    "pos": 196,
+    "auc": 0.922,
+    "f1": 0.812,
+    "precision": 0.886,
+    "recall": 0.75
+   },
+   "MB->GAP (uniform only)": {
+    "n": 400,
+    "pos": 46,
+    "auc": 0.898,
+    "f1": 0.539,
+    "precision": 0.558,
+    "recall": 0.522
+   },
+   "MB->GAP, 2018 flight": {
+    "n": 550,
+    "pos": 196,
+    "auc": 0.913,
+    "f1": 0.778,
+    "precision": 0.84,
+    "recall": 0.724
+   },
+   "MB model on MB 2018 flight": {
+    "n": 550,
+    "pos": 203,
+    "auc": 0.96,
+    "f1": 0.872,
+    "precision": 0.892,
+    "recall": 0.852
+   },
+   "same-cell agreement 2024 vs 2018 (GAP)": 0.947
+  },
+  {
+   "target": "built (>=1 building in 1 ha)",
+   "features": "DOTA embedding",
+   "MB spatial CV (all)": {
+    "n": 550,
+    "pos": 203,
+    "auc": 0.969,
+    "f1": 0.907,
+    "precision": 0.923,
+    "recall": 0.892
+   },
+   "MB spatial CV (uniform only)": {
+    "n": 400,
+    "pos": 53,
+    "auc": 0.933,
+    "f1": 0.741,
+    "precision": 0.727,
+    "recall": 0.755
+   },
+   "MB->GAP (all)": {
+    "n": 550,
+    "pos": 196,
+    "auc": 0.965,
+    "f1": 0.884,
+    "precision": 0.937,
+    "recall": 0.837
+   },
+   "MB->GAP (uniform only)": {
+    "n": 400,
+    "pos": 46,
+    "auc": 0.965,
+    "f1": 0.761,
+    "precision": 0.761,
+    "recall": 0.761
+   },
+   "MB->GAP, 2018 flight": {
+    "n": 550,
+    "pos": 196,
+    "auc": 0.958,
+    "f1": 0.866,
+    "precision": 0.875,
+    "recall": 0.857
+   },
+   "MB model on MB 2018 flight": {
+    "n": 550,
+    "pos": 203,
+    "auc": 0.98,
+    "f1": 0.882,
+    "precision": 0.83,
+    "recall": 0.941
+   },
+   "same-cell agreement 2024 vs 2018 (GAP)": 0.925
+  },
+  {
+   "target": "settlement (>=5 buildings in 1 ha)",
+   "features": "colour/texture",
+   "MB spatial CV (all)": {
+    "n": 550,
+    "pos": 129,
+    "auc": 0.97,
+    "f1": 0.842,
+    "precision": 0.769,
+    "recall": 0.93
+   },
+   "MB spatial CV (uniform only)": {
+    "n": 400,
+    "pos": 15,
+    "auc": 0.98,
+    "f1": 0.51,
+    "precision": 0.361,
+    "recall": 0.867
+   },
+   "MB->GAP (all)": {
+    "n": 550,
+    "pos": 117,
+    "auc": 0.959,
+    "f1": 0.81,
+    "precision": 0.784,
+    "recall": 0.838
+   },
+   "MB->GAP (uniform only)": {
+    "n": 400,
+    "pos": 9,
+    "auc": 0.967,
+    "f1": 0.378,
+    "precision": 0.25,
+    "recall": 0.778
+   },
+   "MB->GAP, 2018 flight": {
+    "n": 550,
+    "pos": 117,
+    "auc": 0.943,
+    "f1": 0.779,
+    "precision": 0.703,
+    "recall": 0.872
+   },
+   "MB model on MB 2018 flight": {
+    "n": 550,
+    "pos": 129,
+    "auc": 0.96,
+    "f1": 0.827,
+    "precision": 0.76,
+    "recall": 0.907
+   },
+   "same-cell agreement 2024 vs 2018 (GAP)": 0.945
+  },
+  {
+   "target": "settlement (>=5 buildings in 1 ha)",
+   "features": "DOTA embedding",
+   "MB spatial CV (all)": {
+    "n": 550,
+    "pos": 129,
+    "auc": 0.985,
+    "f1": 0.88,
+    "precision": 0.877,
+    "recall": 0.884
+   },
+   "MB spatial CV (uniform only)": {
+    "n": 400,
+    "pos": 15,
+    "auc": 0.987,
+    "f1": 0.611,
+    "precision": 0.524,
+    "recall": 0.733
+   },
+   "MB->GAP (all)": {
+    "n": 550,
+    "pos": 117,
+    "auc": 0.982,
+    "f1": 0.888,
+    "precision": 0.863,
+    "recall": 0.915
+   },
+   "MB->GAP (uniform only)": {
+    "n": 400,
+    "pos": 9,
+    "auc": 0.995,
+    "f1": 0.593,
+    "precision": 0.444,
+    "recall": 0.889
+   },
+   "MB->GAP, 2018 flight": {
+    "n": 550,
+    "pos": 117,
+    "auc": 0.984,
+    "f1": 0.907,
+    "precision": 0.899,
+    "recall": 0.915
+   },
+   "MB model on MB 2018 flight": {
+    "n": 550,
+    "pos": 129,
+    "auc": 0.99,
+    "f1": 0.888,
+    "precision": 0.856,
+    "recall": 0.922
+   },
+   "same-cell agreement 2024 vs 2018 (GAP)": 0.955
+  },
+  {
+   "target": "inhabited (>=1 dwelling in 1 ha)",
+   "features": "colour/texture",
+   "MB spatial CV (all)": {
+    "n": 550,
+    "pos": 148,
+    "auc": 0.959,
+    "f1": 0.811,
+    "precision": 0.739,
+    "recall": 0.899
+   },
+   "MB spatial CV (uniform only)": {
+    "n": 400,
+    "pos": 30,
+    "auc": 0.977,
+    "f1": 0.667,
+    "precision": 0.529,
+    "recall": 0.9
+   },
+   "MB->GAP (all)": {
+    "n": 550,
+    "pos": 130,
+    "auc": 0.96,
+    "f1": 0.841,
+    "precision": 0.828,
+    "recall": 0.854
+   },
+   "MB->GAP (uniform only)": {
+    "n": 400,
+    "pos": 16,
+    "auc": 0.937,
+    "f1": 0.511,
+    "precision": 0.387,
+    "recall": 0.75
+   },
+   "MB->GAP, 2018 flight": {
+    "n": 550,
+    "pos": 130,
+    "auc": 0.957,
+    "f1": 0.829,
+    "precision": 0.786,
+    "recall": 0.877
+   },
+   "MB model on MB 2018 flight": {
+    "n": 550,
+    "pos": 148,
+    "auc": 0.957,
+    "f1": 0.835,
+    "precision": 0.801,
+    "recall": 0.872
+   },
+   "same-cell agreement 2024 vs 2018 (GAP)": 0.951
+  },
+  {
+   "target": "inhabited (>=1 dwelling in 1 ha)",
+   "features": "DOTA embedding",
+   "MB spatial CV (all)": {
+    "n": 550,
+    "pos": 148,
+    "auc": 0.963,
+    "f1": 0.849,
+    "precision": 0.827,
+    "recall": 0.872
+   },
+   "MB spatial CV (uniform only)": {
+    "n": 400,
+    "pos": 30,
+    "auc": 0.982,
+    "f1": 0.719,
+    "precision": 0.676,
+    "recall": 0.767
+   },
+   "MB->GAP (all)": {
+    "n": 550,
+    "pos": 130,
+    "auc": 0.984,
+    "f1": 0.874,
+    "precision": 0.895,
+    "recall": 0.854
+   },
+   "MB->GAP (uniform only)": {
+    "n": 400,
+    "pos": 16,
+    "auc": 0.984,
+    "f1": 0.647,
+    "precision": 0.611,
+    "recall": 0.688
+   },
+   "MB->GAP, 2018 flight": {
+    "n": 550,
+    "pos": 130,
+    "auc": 0.973,
+    "f1": 0.852,
+    "precision": 0.842,
+    "recall": 0.862
+   },
+   "MB model on MB 2018 flight": {
+    "n": 550,
+    "pos": 148,
+    "auc": 0.967,
+    "f1": 0.868,
+    "precision": 0.846,
+    "recall": 0.892
+   },
+   "same-cell agreement 2024 vs 2018 (GAP)": 0.936
+  },
+  {
+   "target": "settlement (>=3 dwellings in 1 ha)",
+   "features": "colour/texture",
+   "MB spatial CV (all)": {
+    "n": 550,
+    "pos": 101,
+    "auc": 0.954,
+    "f1": 0.756,
+    "precision": 0.641,
+    "recall": 0.921
+   },
+   "MB spatial CV (uniform only)": {
+    "n": 400,
+    "pos": 13,
+    "auc": 0.984,
+    "f1": 0.545,
+    "precision": 0.387,
+    "recall": 0.923
+   },
+   "MB->GAP (all)": {
+    "n": 550,
+    "pos": 94,
+    "auc": 0.959,
+    "f1": 0.798,
+    "precision": 0.743,
+    "recall": 0.862
+   },
+   "MB->GAP (uniform only)": {
+    "n": 400,
+    "pos": 7,
+    "auc": 0.983,
+    "f1": 0.5,
+    "precision": 0.333,
+    "recall": 1.0
+   },
+   "MB->GAP, 2018 flight": {
+    "n": 550,
+    "pos": 94,
+    "auc": 0.952,
+    "f1": 0.748,
+    "precision": 0.632,
+    "recall": 0.915
+   },
+   "MB model on MB 2018 flight": {
+    "n": 550,
+    "pos": 101,
+    "auc": 0.953,
+    "f1": 0.747,
+    "precision": 0.643,
+    "recall": 0.891
+   },
+   "same-cell agreement 2024 vs 2018 (GAP)": 0.933
+  },
+  {
+   "target": "settlement (>=3 dwellings in 1 ha)",
+   "features": "DOTA embedding",
+   "MB spatial CV (all)": {
+    "n": 550,
+    "pos": 101,
+    "auc": 0.959,
+    "f1": 0.793,
+    "precision": 0.741,
+    "recall": 0.851
+   },
+   "MB spatial CV (uniform only)": {
+    "n": 400,
+    "pos": 13,
+    "auc": 0.987,
+    "f1": 0.8,
+    "precision": 0.706,
+    "recall": 0.923
+   },
+   "MB->GAP (all)": {
+    "n": 550,
+    "pos": 94,
+    "auc": 0.982,
+    "f1": 0.867,
+    "precision": 0.907,
+    "recall": 0.83
+   },
+   "MB->GAP (uniform only)": {
+    "n": 400,
+    "pos": 7,
+    "auc": 0.999,
+    "f1": 0.824,
+    "precision": 0.7,
+    "recall": 1.0
+   },
+   "MB->GAP, 2018 flight": {
+    "n": 550,
+    "pos": 94,
+    "auc": 0.986,
+    "f1": 0.892,
+    "precision": 0.861,
+    "recall": 0.926
+   },
+   "MB model on MB 2018 flight": {
+    "n": 550,
+    "pos": 101,
+    "auc": 0.975,
+    "f1": 0.85,
+    "precision": 0.83,
+    "recall": 0.871
+   },
+   "same-cell agreement 2024 vs 2018 (GAP)": 0.955
+  }
+ ]
+}

@@ -181,3 +181,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[settlement-test]], [[settlement-detection]]; tools/settlement_test.py; tools/real_geo_test.py `fetch_dop` gains url/layer (historical flights)
 - updated: [[spectral-texture-features]], [[pretrained-models]], [[cv-detectability]], [[coarse-to-fine-localization]], [[overview]]
 - notes: Measured rather than assumed: 1,100 real 1-ha DOP20 cells, OSM building labels, Miesbach → Garmisch and 2024 → 2018. Settlement (≥ 5 buildings/ha) AUC 0.982–0.995 with a frozen DOTA embedding (0.94–0.97 with colour/texture); 2018 flight costs ≤ 0.016 AUC; 92–96 % same-cell agreement. "Any building" is harder (0.965 / 0.898): misses are isolated hay barns and Alpine huts. Low prevalence (2–4 %) limits precision at a naive threshold. OSM buildings ≠ inhabitants; ALKIS land use or a population grid would be better labels.
+
+## [2026-10-21] query | How to transfer settlement detection to the Overpass API?
+- created: [[settlement-overpass]], [[settlement-overpass-labels]]; tools/overpass_settlements.py; tools/settlement_test.py gains dwelling labels (`ndw`, `--buildings` relabelling)
+- updated: [[settlement-detection]], [[osm-object-catalog]], [[overpass-api]], [[overview]]
+- notes: The bridge is a tag rule plus a shared 100 m grid. 75 % of buildings are `building=yes`, but house numbers (35–43 %) separate dwellings from barns and huts. With the Overpass dwelling definition the detector does better (inhabited AUC 0.984, 0.973 on 2018; settlement 0.999 uniform). Live Garmisch query: 10,315 cells (2,541 settlement). Overpass then serves three roles: training labels for any region, a reference layer for coarse localisation, and a baseline for unmapped-building checks.
