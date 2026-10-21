@@ -38,6 +38,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[osm-weak-labels]] — Using OSM geometries from Overpass as noisy training labels instead of hand annotation.
 - [[object-detection]] — Bounding box plus class per object; suits compact, countable features.
 - [[semantic-segmentation]] — A class for every pixel; suits areal and linear features.
+- [[ransac]] — Random Sample Consensus: robustly fits a transform (shift, rotation, scale) despite many wrong matches; the core of the geolocation matcher.
 - [[spectral-texture-features]] — Colour, texture and shape cues that reveal land use (e.g. industrial areas) and power a classical ML baseline.
 
 ## Analyses

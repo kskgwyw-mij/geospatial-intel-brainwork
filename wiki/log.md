@@ -95,3 +95,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[author-decision-search-region]], [[bayern-dop-regions-search]], [[oberbayern-sued]]
 - updated: [[osm-fingerprint-geolocalization]] (example re-computed for about 9,181 km²; a pair without bearing is not unique, so use triangles), [[imagery-sources]] (Bavarian DOP20 is now the first choice), [[orthoimagery]], [[overview]]
 - notes: "Oberbayern Süd" is not official; working definition is planning regions 17 Oberland + 18 Südostoberbayern. Bavarian DOP20 (RGB+CIR) is CC BY 4.0, so training and testing can happen in-region with a district split. Open: whether to include the lowland districts Altötting and Mühldorf.
+
+## [2026-10-21] query | What is RANSAC?
+- created: [[ransac]]
+- updated: [[osm-fingerprint-geolocalization]], [[costea-2016-aerial-geolocalization]], [[imagery-sources]] (fixed a stale "Tyrol = thesis region" row)
+- notes: Concept page with the algorithm, the iteration formula (w = 0.3, s = 2 gives about 49 iterations) and its role in metadata-free geolocation, where the best similarity transform directly yields position, scale and north. Written from standard knowledge (unsourced).

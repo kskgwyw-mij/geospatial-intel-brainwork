@@ -155,7 +155,7 @@ Bearing and metric distance, the strongest factors above, are therefore not dire
 Factor 1 = the classes of the detected anchors (pool, tennis court, tank, pylon, farm building…).
 Factor 2 = their **relative geometry**: pairwise distances in metres (from the recovered scale) and angles between them.
 The match fits a 2D **similarity transform** (translation + rotation + scale) between image objects and OSM objects
-with RANSAC; the winner has the most consistent matches and the lowest residual.
+with [[ransac]]; the winner has the most consistent matches and the lowest residual.
 
 **4. A search region is still needed**
 Without GPS the search area is the prior, for example "Tyrol". The smaller the region, the fewer chance matches
@@ -179,6 +179,7 @@ rate against fingerprint size. Ethics: geolocating images can affect privacy, so
 ([[thesis-timeline]]). (unsourced)
 
 ## Related
+- [[ransac]]
 - [[oberbayern-sued]]
 - [[author-decision-no-metadata]]
 - [[pretrained-models]]

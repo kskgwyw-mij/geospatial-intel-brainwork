@@ -18,7 +18,7 @@ Which imagery to use for training (georeferenced, OSM-labelled) and testing (met
 | **Bavarian DOP20** (RGB + colour-infrared) | 20 cm | All of Bavaria, including the search region [[oberbayern-sued]]; **CC BY 4.0**, WMS | ●●●● **first choice**: in-region training **and** test data | [[bayern-dop-regions-search]] |
 | German state orthophotos **DOP10** (for example NRW) | 10 cm | Per Land; NRW renewed every 3 years | ●●● training at the upper resolution | [[geopera-free-satellite-germany]] |
 | German state orthophotos **DOP20 / DOP40** | 20 / 40 cm | Nationwide; about 3-year actuality (Lower Saxony) | ●●● DOP20 for training; DOP40 is borderline | [[geopera-free-satellite-germany]] |
-| Austrian orthophotos (basemap.at, Land Tirol) | about 10–25 cm | Tyrol (the thesis region) | ●●● in-domain test and fine-tune data; check licence | (unsourced) |
+| Austrian orthophotos (basemap.at, Land Tirol) | about 10–25 cm | Tyrol (bordering the search region) | ●● out-of-region generalisation test; check licence | (unsourced) |
 | ISPRS Potsdam / Vaihingen | 5 / 9 cm | Small benchmark tiles | ●● method comparison, not OSM-labelled | [[maggiori-2017-hr-semantic-labeling]] |
 | Maxar (behind DINOv3-sat pretraining) | 0.6 m | Global, commercial | ● pretraining only | [[pretrained-models-search]] |
 | Sentinel-2 (Copernicus) | 10 m | Global, 5-day revisit, free | ✗ for objects; land cover only | [[geopera-free-satellite-germany]] |
