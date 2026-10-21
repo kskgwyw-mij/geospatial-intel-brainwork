@@ -161,3 +161,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[feasibility]]
 - updated: [[geo-match-prototype]] (OSM-noise results), [[thesis-timeline]], [[overview]]; tools/sim_geo_match.py gains --osm-noise
 - notes: Uniqueness is not the limit: going from 3 to 4 inliers cuts expected false matches from about 22 to about 0.002 per photo (H = 10⁵). Anchor availability is the limit: rare classes give P(≥ 4) of about 0 per 0.27 km² photo, while dense anchors (≥ 30/km²) give 0.9+. Precision is about σ/√n; with OSM noise of 1 / 2 m the median error is 0.72 / 1.78 m, confident still 100 %. About 100 test photos per condition for ±10 pp.
+
+## [2026-10-21] ingest | Real OSM data test for the Alpine-edge districts
+- created: [[osm-real-test]]
+- updated: [[geo-match-prototype]], [[feasibility]], [[osm-fingerprint-geolocalization]], [[oberbayern-sued]], [[overview]]; tools/sim_geo_match.py gains --uniform-photos
+- notes: Overpass mirror maps.mail.ru is reachable. Real anchors: 11,599 (about 1.5/km²); pools 934 vs 4,250 assumed. On the real layout, confident matches are 30/30 correct, but uniformly placed photos are located 1 % of the time. Miesbach: 47,261 buildings (about 55/km²); random footprints have ≥ 8 buildings 23 %, none 51 %. Synthetic results were optimistic on coverage; buildings with descriptors plus terrain are required.

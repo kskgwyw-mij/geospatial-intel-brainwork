@@ -48,8 +48,12 @@ def synth_region(rng, size_km, villages):
     return objs
 
 
-def take_photo(rng, objs, W, H, recall, fp, jitter, gsd_rng):
-    centre = rng.choice(objs)[1] + complex(rng.gauss(0, 100), rng.gauss(0, 100))
+def take_photo(rng, objs, W, H, recall, fp, jitter, gsd_rng, uniform=False):
+    if uniform:  # any point of the region's bounding box: no bias towards object-rich places
+        xs, ys = [z.real for _, z in objs], [z.imag for _, z in objs]
+        centre = complex(rng.uniform(min(xs), max(xs)), rng.uniform(min(ys), max(ys)))
+    else:  # near a random object: optimistic, photos always contain something
+        centre = rng.choice(objs)[1] + complex(rng.gauss(0, 100), rng.gauss(0, 100))
     gsd, heading = rng.uniform(*gsd_rng), rng.uniform(0, 360)
     a = gsd * cmath.exp(-1j * math.radians(heading))  # image frame -> map
     dets = []
@@ -80,6 +84,7 @@ def main():
     ap.add_argument("--osm-noise", type=float, default=0.0, help="OSM positional error, std dev in metres per axis")
     ap.add_argument("--jitter", type=float, default=3.0, help="detector position noise in px")
     ap.add_argument("--seed", type=int, default=1)
+    ap.add_argument("--uniform-photos", action="store_true", help="place photos uniformly in the region, not near objects")
     args = ap.parse_args()
     rng = random.Random(args.seed)
     W, H = (int(v) for v in args.image.split("x"))
@@ -104,7 +109,8 @@ def main():
 
     rows = []
     for t in range(args.trials):
-        dets, centre, gsd, heading = take_photo(rng, world, W, H, args.recall, args.false_pos, args.jitter, gsd_rng)
+        dets, centre, gsd, heading = take_photo(rng, world, W, H, args.recall, args.false_pos, args.jitter, gsd_rng,
+                                               args.uniform_photos)
         res = match(dets, (W, H), osm, frame)
         if res is None:
             rows.append({"ok": False, "n": len(dets)})

@@ -2,7 +2,7 @@
 title: Geolocation matcher prototype & first simulation
 type: analysis
 tags: [geolocalization, ransac, prototype, evaluation]
-sources: [author-decision-no-metadata, author-decision-search-region, costea-2016-aerial-geolocalization, author-decision-detection-in-scope]
+sources: [osm-real-test, author-decision-no-metadata, author-decision-search-region, costea-2016-aerial-geolocalization, author-decision-detection-in-scope]
 updated: 2026-10-21
 ---
 First working prototype of metadata-free photo geolocation (`tools/geo_match.py`) and its evaluation on simulated photos (`tools/sim_geo_match.py`): confident matches were always right, but photos need about 5–8 detected anchors.
@@ -33,6 +33,15 @@ This follows the retrieve-then-verify pattern of [[costea-2016-aerial-geolocaliz
 | 7,744 km² | 40 | 9 (22 %) | 8 (8) | 5 (1) | 3/10 | 6/7 | about 2.7 s |
 
 When located: median position error **0.2–0.4 m**, GSD error **< 0.1 %**, heading error **< 0.1°**.
+
+## Real OSM layout (added later; detections still simulated)
+> [!warning] The tables above use synthetic villages with hypothetical densities.
+> On the **real** OSM anchors of the seven districts ([[osm-real-test]], 11,599 objects, about 1.5/km²), with 1 m OSM noise and 100 photos:
+> - photos near objects: 38 % located, **confident 30/30 correct**, median error 0.74 m;
+> - **photos uniformly placed in the region: 1 % located** (89/100 photos had 0–2 detections).
+>
+> Reliability holds on real geometry; coverage does not. Point anchors alone cannot locate typical photos. Use
+> `--uniform-photos` for honest coverage numbers; the default (photos near objects) is optimistic.
 
 ## OSM positional error (added later)
 `--osm-noise` shifts OSM objects by σ metres per axis. At σ = 0 / 1 / 2 m (60 photos, 900 km²) the median position error is 0.30 / 0.72 / 1.78 m, while confident matches stay 100 % correct (12/12, 12/12, 9/9). OSM error passes almost one-to-one into position error, so sub-metre accuracy needs registration against DOP20 ([[feasibility]], [[coarse-to-fine-localization]]).
