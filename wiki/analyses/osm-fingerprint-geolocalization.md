@@ -55,10 +55,12 @@ Expected number of chance matches in a region (assuming independent random place
 where `n_A` = count of class A and `ρ_B` = density of class B (per m²). The fingerprint is
 **unique when N ≪ 1**.
 
-*Illustrative example for the search region [[oberbayern-sued]] (about 9,181 km², [[bayern-dop-regions-search]]; hypothetical counts, not measured):*
-Suppose 5,000 pools and 1,000 tennis courts, so ρ_B ≈ 1.09·10⁻⁷ /m². For d = 100 m:
-- distance only, ±5 m → N ≈ 5000 · 1.09e-7 · 6283 m² ≈ **3.4 matches**, not unique;
-- distance + bearing, ±5 m positional tolerance → N ≈ 5000 · 1.09e-7 · 79 m² ≈ **0.04**, which is unique.
+*Illustrative example for the search region [[oberbayern-sued]] (Alpine-edge districts, about 7,800 km²; hypothetical counts, not measured):*
+Suppose 4,250 pools and 850 tennis courts (the same density as before, scaled to the area), so ρ_B ≈ 1.09·10⁻⁷ /m². For d = 100 m:
+- distance only, ±5 m → N ≈ 4250 · 1.09e-7 · 6283 m² ≈ **2.9 matches**, not unique;
+- distance + bearing, ±5 m positional tolerance → N ≈ 4250 · 1.09e-7 · 79 m² ≈ **0.04**, which is unique.
+
+At constant density, N scales with the region's area: shrinking from about 9,181 to about 7,800 km² cuts chance matches by about 15 %.
 
 Metadata-free photos have no bearing ([[author-decision-no-metadata]]), so a pair is **not** unique in this region.
 Add a third anchor: a triangle gives an extra distance and angle, which multiplies N by roughly another factor of
@@ -89,7 +91,7 @@ and building function (not visible).
 
    ```
    [out:json][timeout:300];
-   area["boundary"="administrative"]["admin_level"="6"]["name"~"Garmisch|Tölz|Miesbach|Weilheim|Rosenheim|Traunstein|Berchtesgaden|Altötting|Mühldorf"]->.a;  // Oberbayern Süd, see [[oberbayern-sued]]
+   area["boundary"="administrative"]["admin_level"="6"]["name"~"Garmisch|Tölz|Miesbach|Weilheim|Rosenheim|Traunstein|Berchtesgaden"]->.a;  // Oberbayern Süd, see [[oberbayern-sued]]
    nwr["leisure"="swimming_pool"](area.a)->.pools;
    nwr["leisure"="pitch"]["sport"="tennis"](around.pools:120)->.courts;
    nwr.pools(around.courts:120)->.pairs;

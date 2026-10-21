@@ -25,7 +25,7 @@ Which imagery to use for training (georeferenced, OSM-labelled) and testing (met
 | Commercial aerial (for example Vexcel) | 7.5 cm urban | Paid | Optional | [[geopera-free-satellite-germany]] |
 
 ## Recommendation (updated for the search region [[oberbayern-sued]])
-1. **Train and test on Bavarian DOP20** inside the search region ([[author-decision-search-region]]). It is open (CC BY 4.0, with attribution) and has a NIR band ([[bayern-dop-regions-search]]). **Split by district**, for example training on Oberland and testing on Südostoberbayern, so the test is spatially independent. (unsourced)
+1. **Train and test on Bavarian DOP20** inside the search region ([[author-decision-search-region]]). It is open (CC BY 4.0, with attribution) and has a NIR band ([[bayern-dop-regions-search]]). **Split by district**, for example training on the Oberland districts (GAP, TÖL, MB, WM) and testing on RO, TS and BGL, so the test is spatially independent. (unsourced)
 2. Optionally add NRW DOP10 for extra urban training data, and use Tyrolean orthophotos as an out-of-region generalisation test. (unsourced)
 3. **Simulate metadata-free nadir test photos** by cropping held-out orthophotos, then rotating, rescaling and stripping coordinates. The true position, scale and heading are known, so geolocation error can be measured exactly.
 4. Ignore Sentinel-2 for objects. Use it only for land-cover context, if at all.

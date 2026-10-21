@@ -5,14 +5,18 @@ tags: [region, study-area, bavaria]
 sources: [author-decision-search-region, bayern-dop-regions-search, author-note-rural-roads]
 updated: 2026-10-21
 ---
-The thesis search region and study area: southern Upper Bavaria, operationalised as planning regions 17 Oberland + 18 Südostoberbayern (about 9,180 km²).
+The thesis search region and study area: the Alpine-edge districts of southern Upper Bavaria (about 7,800 km²), a provisional working definition.
 
 ## Definition
 - Chosen by the author as the search region ([[author-decision-search-region]]).
 - No official unit called "Oberbayern Süd" exists. Working definition: **Region 17 Oberland** (3,956 km²: Bad Tölz-Wolfratshausen, Garmisch-Partenkirchen, Miesbach, Weilheim-Schongau) plus **Region 18 Südostoberbayern** (5,225 km²) ([[bayern-dop-regions-search]]). Total about **9,181 km²**, roughly half of Oberbayern (about 17,529 km²).
 - Region 18's districts are Rosenheim (district and city), Traunstein, Berchtesgadener Land, Altötting and Mühldorf a. Inn. (unsourced)
-- **Status: provisional.** The author keeps this working definition (both planning regions, including Altötting and Mühldorf) for now and may change the area later ([[author-decision-search-region]]). Keep the region a parameter (a district list or polygon) in queries and tools, never hard-coded.
-- **Alternative narrower definition:** only the Alpine-edge districts GAP, TÖL, MB, WM, RO, TS and BGL, which drops the lowland districts Altötting and Mühldorf. The author should confirm. (unsourced)
+- **Current working definition (provisional): Alpine-edge districts only** ([[author-decision-search-region]]):
+  Garmisch-Partenkirchen, Bad Tölz-Wolfratshausen, Miesbach, Weilheim-Schongau (together = Region Oberland, 3,956 km², [[bayern-dop-regions-search]]),
+  plus Landkreis Rosenheim (with the enclosed city of Rosenheim), Traunstein and Berchtesgadener Land. Altötting and Mühldorf a. Inn are excluded.
+- Area: about **7,800 km²**. Oberland is sourced; the other district areas are approximate: RO about 1,440 + Rosenheim city about 37, TS about 1,530, BGL about 840 km². (unsourced)
+- **Provisional:** the author may change the area later. Keep the region a parameter (a district list or polygon) in queries and tools, never hard-coded.
+- Earlier definition (superseded): all of planning regions 17 + 18, about 9,181 km².
 
 ## Character (unsourced)
 - A mix of Alpine valleys and mountains (Zugspitze, Karwendel, Chiemgau Alps), pre-Alpine lakes (Chiemsee, Tegernsee, Starnberger See edge, Kochelsee), farmland and many dispersed farms. Towns: Rosenheim, Traunstein, Garmisch-Partenkirchen, Bad Tölz.
@@ -26,7 +30,7 @@ The thesis search region and study area: southern Upper Bavaria, operationalised
   ```
   [out:json][timeout:600];
   area["boundary"="administrative"]["admin_level"="6"]
-      ["name"~"^(Landkreis )?(Garmisch-Partenkirchen|Bad Tölz-Wolfratshausen|Miesbach|Weilheim-Schongau|Rosenheim|Traunstein|Berchtesgadener Land|Altötting|Mühldorf a\\. ?Inn)$"]->.r;
+      ["name"~"^(Landkreis )?(Garmisch-Partenkirchen|Bad Tölz-Wolfratshausen|Miesbach|Weilheim-Schongau|Rosenheim|Traunstein|Berchtesgadener Land)$"]->.r;
   ( nwr["leisure"~"swimming_pool|pitch|track"](area.r);
     nwr["man_made"~"storage_tank|silo|water_tower|tower"](area.r);
     nwr["power"~"tower|generator"](area.r);

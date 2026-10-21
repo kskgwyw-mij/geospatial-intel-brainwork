@@ -104,3 +104,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-21] edit | Search region confirmed as provisional
 - updated: [[author-decision-search-region]], [[oberbayern-sued]], [[overview]]
 - notes: The working definition (Oberland + Südostoberbayern, including Altötting and Mühldorf) is kept for now. The author may choose another area later, so the region must remain a swappable parameter in queries and tools.
+
+## [2026-10-21] edit | Search region narrowed to the Alpine-edge districts
+- updated: [[author-decision-search-region]], [[oberbayern-sued]], [[osm-fingerprint-geolocalization]], [[imagery-sources]], [[overview]]
+- notes: Provisional region is now GAP, TÖL, MB, WM, RO (+ Rosenheim city), TS, BGL, about 7,800 km² (Oberland part sourced, the other areas approximate); Altötting and Mühldorf dropped. Overpass queries updated; the uniqueness example was rescaled at constant density (N about 15 % lower); the train/test split is now Oberland districts vs. RO/TS/BGL.

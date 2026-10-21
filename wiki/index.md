@@ -30,7 +30,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[openstreetmap]] — The crowd-sourced world map whose features define the object classes.
 - [[overpass-api]] — Read-only query API for OSM data; the backend Overpass Turbo calls.
 - [[overpass-turbo]] — Web IDE for writing and visualising Overpass queries; defines which OSM objects count.
-- [[oberbayern-sued]] — Search region and study area: planning regions Oberland + Südostoberbayern (about 9,181 km²), DOP20 imagery, Overpass area query.
+- [[oberbayern-sued]] — Search region and study area: provisionally the Alpine-edge districts GAP, TÖL, MB, WM, RO, TS, BGL (about 7,800 km²), DOP20 imagery, Overpass area query.
 - [[poc-platform]] — The proof-of-concept platform where orthoimagery is uploaded and detections are shown.
 
 ## Concepts

@@ -16,3 +16,13 @@ Verbatim:
 
 Interpretation: keep the working definition (planning regions 17 Oberland + 18 Südostoberbayern, including Altötting and Mühldorf) for now;
 the region is provisional and must stay a swappable parameter.
+
+## Follow-up 2 (2026-10-21)
+
+Verbatim:
+
+> only alpine edge districts for now
+
+Interpretation: narrow the search region to the Alpine-edge districts Garmisch-Partenkirchen, Bad Tölz-Wolfratshausen, Miesbach,
+Weilheim-Schongau, Rosenheim (district, plus the enclosed city of Rosenheim), Traunstein and Berchtesgadener Land; drop Altötting and Mühldorf a. Inn.
+Still provisional.
