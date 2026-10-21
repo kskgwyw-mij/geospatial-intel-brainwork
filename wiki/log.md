@@ -133,3 +133,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[bayern-opengeodata]]
 - updated: [[imagery-sources]], [[osm-fingerprint-geolocalization]], [[osm-weak-labels]], [[methods-10-25cm]], [[copernicus-browser]], [[bayern-dop-regions-search]], [[overview]]
 - notes: The site was blocked, so this comes from snippets. Free Bavarian data changes the design: DGM1 (1 m) replaces Copernicus GLO-30 for terrain inside Bavaria; DOM − DGM gives an nDSM band; LoD2 and Hausumringe give official building and roof-shape labels; ATKIS and ALKIS give rural anchors (parcels carry a no-modification clause). OSM stays the searched map.
+
+## [2026-10-21] ingest | Bayern OpenData: DOP20 RGB detail page + portal start page (full clips)
+- created: [[bayern-dop20rgb-detail]]
+- updated: [[bayern-opengeodata]] (rewritten from the full product list), [[imagery-sources]], [[oberbayern-sued]], [[osm-weak-labels]], [[methods-10-25cm]], [[spectral-texture-features]], [[overview]]
+- notes: Confirmed 1 km GeoTIFF tiles in EPSG:25832 (about 50 MB each, up to 126 GB per district), so sample tiles instead of mirroring about 160–390 GB. New finds: DOM20 (20 cm surface model, giving an nDSM at image resolution), Einzelbäume (official tree labels), ALKIS Tatsächliche Nutzung (land-use labels), ALKIS Verwaltungsgebiete (district polygons for the region parameter), historical DOP WMS (cross-year tests). The earlier snippet notes are superseded.

@@ -52,7 +52,7 @@ buildings), which gives a three-way comparison for the research question.
 
 Pretrained starting points for each head (YOLO11-OBB on DOTA, DeepForest, Satlas/DINOv3 encoders, SAM2): [[pretrained-models]].
 
-In Bavaria, **LoD2 provides roof shapes** and Hausumringe provide footprints as official labels, so the buildings + roof-shape scope no longer depends on sparse OSM `roof:shape` tags. DOM − DGM gives an nDSM input band ([[bayern-opengeodata]]).
+In Bavaria, **LoD2 provides roof shapes** and Hausumringe provide footprints as official labels, so the buildings + roof-shape scope no longer depends on sparse OSM `roof:shape` tags. DOM20 − DGM1 gives an nDSM input band at 20 cm, **Einzelbäume** gives official single-tree labels for the tree detector, and ALKIS land use labels the industrial and land-use classes ([[bayern-opengeodata]]).
 
 ## 4. What to scope down to
 A full three-head system is too much for one part-time thesis. (unsourced) Realistic cuts:
