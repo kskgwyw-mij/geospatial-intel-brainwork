@@ -25,6 +25,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[author-decision-search-region]] — Author decision: the search region is Oberbayern Süd.
 - [[bayern-dop-regions-search]] — Search facts: Bavarian DOP20 (20 cm RGB+CIR) open under CC BY 4.0; Oberland 3,956 km² + Südostoberbayern 5,225 km².
 - [[copernicus-browser]] — Copernicus Browser (CDSE): free Sentinel data and mosaics, Copernicus DEM (GLO-30 free, EEA-10 restricted), VHR2024 (download restricted); useful mainly as a terrain DEM.
+- [[author-note-use-cases-gnss-denied]] — Author note (German): eight use cases for GNSS-denied drone localisation, simulation limits, proposed research question.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 
 ## Entities
@@ -52,4 +53,5 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[geo-match-prototype]] — Matcher prototype (geo_match.py) and simulation: confident matches always correct; about 8 anchors needed at regional scale.
 - [[pretrained-models]] — Pretrained CNNs and foundation models per thesis task, resolution caveat, minimal fine-tuning stack.
 - [[imagery-sources]] — Imagery for training (German DOP10/20, Tyrolean orthophotos) and testing (simulated metadata-free nadir crops); Sentinel-2 ruled out for objects.
+- [[gnss-denied-use-cases]] — Application framing: GNSS-denied visual localisation, use-case table with prototype fit and evidence, research question, dual-use ethics.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.

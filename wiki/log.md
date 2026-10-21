@@ -123,3 +123,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[geo-match-prototype]]
 - updated: [[osm-fingerprint-geolocalization]], [[thesis-poc-pipeline]], [[ransac]], [[overview]]
 - notes: Added tools/geo_match.py (hypothesise-and-verify similarity matching, metric anchors, confidence status) and tools/sim_geo_match.py. Synthetic results: at 7,744 km², 8/8 confident matches correct, ≥ 8 detections 6/7 located, 3–4 detections 0/20; when located, errors are about 0.2 m, < 0.1 % GSD and < 0.1° heading. 2-inlier fits carry no evidence. The densities are hypothetical; next step is to rerun on the real Overpass export.
+
+## [2026-10-21] ingest | Author note: use cases for GNSS-denied drone localisation
+- created: [[author-note-use-cases-gnss-denied]], [[gnss-denied-use-cases]]
+- updated: [[thesis-timeline]] (preferred research question, dual-use ethics), [[overview]]
+- notes: The thesis is now framed as GNSS-denied visual localisation using detected OSM objects. There are 8 use cases; the best fits are spoofing and outage backup, Alpine shading, after-the-fact locating, sub-metre refinement, inspection and OSM maintenance. Military use is dual-use and goes in the ethics section. The German research question is adopted as the preferred exposé candidate. The jamming, multipath and drone-GPS claims still need literature.
