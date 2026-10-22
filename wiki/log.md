@@ -247,3 +247,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: expose/expose-rohfassung.typ
 - updated: [[expose-material]], expose/ki-dokumentation.typ (new row), README
 - notes: The author asked for a complete exposé. Declined as finished text: an honest AI share would far exceed the course's 50 % cap, and the HOK AI guideline forbids fully AI-generated texts where own work is required (ASPO 2.8). Delivered the course-sanctioned alternative: a paragraph plan per section (claim + citations from the author's own bibliography + evidence status: verified / title only / own AI-assisted pre-test / author's decision). 5 pages, compiles; documented in the AI-use PDF.
+
+## [2026-10-22] query | Strict review of the exposé draft
+- created: [[expose-review]]
+- updated: [[index]], [[expose-guide]], [[overview]]
+- notes: Draft PDF of 22.10.2026 (not stored in raw/). Grade 2–3 as is. Main defects: no success radius or primary endpoint; scale called unknown but never varied in the DOP20 test crops; the 34 % coverage rests on junctions, which are only an extension (buildings ≥ 8 alone 16.2 %, and DOTA has no building class); no stratified sample or out-of-region negatives, so FF2 and abstention rest on few images; one region pair confounds transfer with object density; null test and search space unspecified; detector error model mixes in OSM incompleteness; weak baseline. Fixes ranked for submission (23.10) and registration (31.10).
