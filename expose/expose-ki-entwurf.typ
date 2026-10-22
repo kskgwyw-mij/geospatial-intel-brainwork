@@ -13,9 +13,9 @@
   header: if ki-kennzeichnung { align(right, text(size: 8pt, fill: rgb("#b00020"))[KI-Entwurf · vor Verwendung überarbeiten]) },
 )
 #set text(lang: "de", region: "AT", size: 11pt)
-#set par(justify: true, leading: 0.7em, spacing: 1.1em)
+#set par(justify: true, leading: 0.7em, spacing: 1.4em)
 #set heading(numbering: "1.")
-#show heading.where(level: 1): set block(above: 1.5em, below: 0.8em)
+#show heading.where(level: 1): set block(above: 2.2em, below: 1.2em)
 #show heading.where(level: 1): set text(size: 13pt)
 
 #let fehlt(body) = text(fill: rgb("#b00020"))[[#body]]

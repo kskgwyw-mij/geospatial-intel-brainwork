@@ -308,3 +308,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Exposé draft: bibliography on one page
 - updated: expose/expose-ki-entwurf.typ + .pdf
 - notes: The bibliography starts on a new page (weak page break) at 9 pt with tighter spacing, so all entries fit on page 4. The text ends mid page 3; still 4 pages in total.
+
+## [2026-10-22] edit | Exposé draft: more spacing between headings and text blocks
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: Section headings: above 1.5 → 2.2 em, below 0.8 → 1.2 em. Paragraph spacing: 1.1 → 1.4 em. Still 4 pages; the bibliography stays alone on page 4.
