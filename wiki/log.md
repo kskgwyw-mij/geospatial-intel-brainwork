@@ -196,3 +196,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[expose-material]]
 - updated: [[expose-guide]]
 - notes: The author's German summary matches [[wa-course-expose]], with nothing new. Filed bullet material per required section (numbers, wiki sources, literature candidates with their verification status) and a fact list of what the AI assistant did, for the AI-documentation PDF. Deliberately no exposé prose (course and HOK AI guideline). Gaps: peer-reviewed literature on GNSS-free UAV localisation, the RANSAC original, OSM data quality.
+
+## [2026-10-22] edit | Exposé template in Typst
+- created: expose/expose.typ, expose/literatur.bib, expose/ki-dokumentation.typ
+- updated: [[expose-material]], README
+- notes: The author writes the exposé in Typst. The template has the required six-part structure, no author anywhere (PDF metadata author empty, checked with pdfinfo) and hint boxes per section that a switch removes for submission. The bib holds 8 candidates, each marked with its verification status, and an APA style switch. A second document holds the AI-use table and a % field with a > 50 % warning. All three compile with Typst 0.15. No exposé prose was written.
