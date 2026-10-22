@@ -229,3 +229,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Title: "Zoomstufen" → Bodenauflösungen / Ground Sampling Distances
 - updated: [[author-decision-title]] (raw → amended note, first note superseded), [[thesis-contribution]], [[thesis-timeline]], [[expose-material]], [[overview]]; expose/expose.typ
 - notes: Author's terminology choice. German subtitle: „Eine Generalisierungsstudie über Regionen und Bodenauflösungen“. English: "A Generalization Study across Regions and Ground Sampling Distances" (no "GSD" abbreviation in the title). The evaluation axis is now cross-GSD, e.g. DOP20 resampled to 0.4 / 0.8 m or different flight altitudes.
+
+## [2026-10-22] query | Does the title fit the topic development?
+- updated: [[expose-material]]
+- notes: Mostly yes. Covered: nadir input, geolocalisation, calibration/generalisation (the novelty); region left open by design. Only implicit: detection and classification (the original goal and a scope decision). Missing: "without metadata" (the core difficulty). The emphasis has moved from recognising to locating, so the exposé should keep detection as its own goal or sub-question and name the metadata-free setting early. Scope is ambitious; cross-provider is optional.

@@ -2,7 +2,7 @@
 title: Exposé-Materialsammlung (Stichpunkte je Abschnitt)
 type: analysis
 tags: [thesis, expose, ai-use]
-sources: [author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
+sources: [thesis-goal, author-decision-nadir-input, author-decision-detection-in-scope, author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
 updated: 2026-10-22
 ---
 Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Ausgangspunkt für den eigenen Text; dazu eine Faktenliste für die KI-Dokumentation. Hier steht bewusst **kein Fließtext**: Das Exposé formuliert die Autorin oder der Autor selbst ([[wa-course-expose]], [[hok-ki-leitlinie]]).
@@ -21,6 +21,13 @@ Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Au
   - Fachbegriffe wie „kalibriert“, „probabilistisch“, „Nadir“ sind für Fachfremde nicht selbsterklärend.
   - Präzise, ohne Abkürzungen, verrät keine Ergebnisse.
   - Bewusste Entscheidung der Autorin oder des Autors.
+
+- **Passung zur Themenfindung** (Abgleich mit [[thesis-goal]], [[author-decision-nadir-input]], [[author-decision-no-metadata]], [[author-decision-detection-in-scope]]):
+  - Abgedeckt: Nadir-Eingabe, Geolokalisierung, Kalibrierung und Generalisierung (Neuheit, [[thesis-contribution]]).
+  - Nur indirekt: **Erkennung und Klassifikation**, der Ausgangspunkt der Themenfindung.
+  - Fehlt: **„ohne Metadaten“**, die Kernschwierigkeit.
+  - Der Schwerpunkt hat sich vom Erkennen zum Verorten verschoben. Im Exposé deshalb die Erkennung als eigenes Ziel bzw. eigene Teilfrage führen und „ohne Metadaten“ in der Problemstellung früh benennen.
+  - Umfang: zwei Generalisierungsachsen plus Erkennung und Kalibrierung sind ambitioniert. Der Anbieterwechsel ist optional.
 
 ## Arbeitstitel — Bausteine (frühere Notizen)
 - Kernidee in Alltagssprache: *Luftbild ohne Ortsangabe → Ort, Maßstab und Ausrichtung aus erkannten Kartenobjekten*.
