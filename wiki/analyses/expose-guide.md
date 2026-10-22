@@ -54,7 +54,6 @@ The author decides how to rate this in the % estimate. The course's own guidance
 - Confirm which programme regulation applies to the author's cohort ([[dsia-studienordnung-2027]] is for cohorts from WS 2027/28).
 
 ## Related
-- [[expose-review]]
 - [[expose-material]]
 - [[thesis-timeline]]
 - [[hok-dsia-master]]

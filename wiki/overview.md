@@ -61,7 +61,6 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** a nadir ph
 - Is a scale prior (known drone type) compatible with "no metadata"? It is needed for the prior scenario in [[localization-improvements]].
 - Contradiction: confident matches 30/30 correct with simulated detections ([[osm-real-test]]) vs 3/4 with real detections ([[real-e2e-test]]). Cause: repetitive single-class clusters; fix the scoring.
 - Literature for the exposé: the relevance now has candidate peer-reviewed sources (VTRN / absolute visual localisation: reviews, Mars 2020 LVS, UAV orthophoto matching, OSM-based OrienterNet), found by search only; full texts must be read ([[vtrn-literature-search]]). The gap stated in the literature is regions without clear semantic features, which is this thesis's setting.
-- Evaluation design gaps found in the exposé review ([[expose-review]]): no fixed success radius or primary endpoint; test crops never vary scale although scale is "unknown"; no out-of-region negative images to test abstention; the null-hypothesis threshold needs a calibrated null distribution; search-space size and candidate generation are unspecified; detector errors measured against OSM mix in map incompleteness.
 
 ## Related
 - [[thesis-goal]]
