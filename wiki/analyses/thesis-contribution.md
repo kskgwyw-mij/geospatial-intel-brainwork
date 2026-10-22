@@ -2,7 +2,7 @@
 title: Thesis contribution — what is new, what exists, what it means for the method
 type: analysis
 tags: [thesis, novelty, geolocalization, method, evaluation]
-sources: [settlement-overpass-labels, osm-real-test, author-decision-generalisation-axes, author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, real-e2e-test, localization-levers-test, settlement-test, costea-2016-aerial-geolocalization]
+sources: [author-decision-framework-scope, settlement-overpass-labels, osm-real-test, author-decision-generalisation-axes, author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, real-e2e-test, localization-levers-test, settlement-test, costea-2016-aerial-geolocalization]
 updated: 2026-10-22
 ---
 The thesis contribution is a combination that no prior work found so far contains: POI-level OSM classes detected in nadir imagery, matched through a point-process likelihood with an explicit detector-error model, giving a calibrated location heatmap with a null hypothesis, and evaluated on real data with spatially blocked cross-region and cross-provider tests. Each ingredient exists separately ([[author-note-novelty]]).
@@ -34,6 +34,10 @@ The thesis contribution is a combination that no prior work found so far contain
    - Cross-region: train and tune in one district, test in another (as Miesbach → Garmisch in [[settlement-test]]).
    - Cross-provider: imagery from a different source, e.g. another state's orthophotos or real drone photos (unsourced; data still to be chosen, see [[imagery-sources]]).
    - Cross-year as a third axis: 2018 vs 2024 flights.
+
+## Framework and regional scope (decided)
+- **Framework:** Design Science Research, with the Peffers et al. 2007 process model ([[author-decision-framework-scope]]).
+- **Scope:** not limited to feature-poor regions. The cross-region test compares regions of *different object density*; feature-poor areas are the hardest case and give the abstention rate.
 
 ## Generalisation axes in the chosen title
 > [!note] Decided
@@ -75,6 +79,7 @@ The current fix (≥ 2 inlier classes for "confident") is a heuristic stand-in. 
 The four parts map onto FF1 (detection and error model), FF2 (likelihood, heatmap, calibration) and a possible FF3 (limits / abstention rate across regions and providers) in [[thesis-timeline]]. The research question itself is the author's to phrase ([[expose-material]]).
 
 ## Related
+- [[author-decision-framework-scope]]
 - [[author-decision-generalisation-axes]]
 - [[author-literature-list]]
 - [[author-note-novelty]]

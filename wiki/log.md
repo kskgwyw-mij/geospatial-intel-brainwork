@@ -260,3 +260,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] query | Which object classes? (placeholder in the exposé draft)
 - updated: [[thesis-contribution]], expose/expose-ki-entwurf.typ + .pdf
 - notes: Proposal, applied in the draft and still 4 pages. Core: pools, tennis, soccer, tracks (DOTA baseline, standard sizes); storage tanks (lattice test case); buildings split into dwelling/outbuilding (coverage lever, Overpass rule). Optional: power pylons (3,780, most frequent) and road junctions (32 % coverage), only if time allows. Based on measured region counts and coverage.
+
+## [2026-10-22] ingest | Author decision: DSR framework; scope not limited to feature-poor regions
+- created: [[author-decision-framework-scope]]
+- updated: [[thesis-contribution]], [[expose-material]], [[overview]]; expose/expose-ki-entwurf.typ + .pdf (framework sentence with Hevner/Peffers †; problem statement reframed to varying object density), expose/kandidaten.bib (+2, unverified)
+- notes: "data science research" interpreted as Design Science Research; the author can correct this. The draft is still 4 pages; the framework placeholder is closed. Open: error threshold in metres, a calibration source.

@@ -31,6 +31,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[author-note-use-cases-gnss-denied]] — Author note (German): eight use cases for GNSS-denied drone localisation, simulation limits, proposed research question.
 - [[bayern-opengeodata]] — Bavarian OpenGeoData catalogue (full clip): DOP20 RGB/CIR, DGM1, DOM20, LiDAR, LoD2, Einzelbäume, Hausumringe, ATKIS, ALKIS land use, parcels and districts.
 - [[bayern-dop20rgb-detail]] — DOP20 RGB product page: 1 km GeoTIFF tiles in EPSG:25832, about 50 MB per tile, up to 126 GB per district, WMS (incl. historical DOP) and WMTS, CC BY 4.0.
+- [[author-decision-framework-scope]] — Author decision: Design Science Research as framework (Hevner 2004, Peffers 2007); regions compared by object density, not limited to feature-poor areas.
 - [[author-decision-generalisation-axes]] — Author decision: generalise across regions only; no cross-provider test, GSD dropped as an axis.
 - [[author-decision-title]] — Author decision: working title „Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen: Eine Generalisierungsstudie über Regionen“.
 - [[author-decision-detection-in-scope]] — Author decision: detection and classification are part of the thesis, alongside metadata-free localisation.
