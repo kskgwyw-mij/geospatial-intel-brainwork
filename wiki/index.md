@@ -70,5 +70,6 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[localization-improvements]] — Ranked levers to improve localisation: more cues (buildings, junctions, lines), better detector, multi-frame, priors, verification, terrain/DOP for the rest.
 - [[settlement-overpass]] — Bridge between settlement detector and Overpass: dwelling tag rule + 100 m grid, query, use for labels, localisation and OSM completeness checks.
 - [[settlement-detection]] — How stably inhabited areas can be detected in DOP20: settlements yes (stable across districts and years), single huts no; label caveats and thesis use.
+- [[expose-material]] — Exposé material in German: bullet points, numbers and literature candidates per required section, plus a fact list for the AI-use documentation (no prose).
 - [[expose-guide]] — Exposé checklist: required sections, deadlines, AI documentation, and which wiki pages supply each section.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.

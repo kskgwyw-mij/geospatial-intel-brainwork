@@ -191,3 +191,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[localization-improvements]], [[localization-levers-test]]
 - updated: [[geo-match-prototype]], [[real-e2e-test]], [[feasibility]], [[overview]]; tools/geo_match.py gains a class-diversity rule for "confident" (`min_classes=2`); tools/real_geo_test.py saves detections and inlier classes per site
 - notes: Measured, not guessed. Random-photo coverage ceilings in Garmisch: point anchors 0.1–1.6 %, +buildings/junctions 34 %, +roads/water/forest edges 78 %, nothing mapped 22 %. The class rule turns confident 3/4 into 2/2 (tank-farm lattice error demoted). Region (5 km) + scale priors make confident and probable fully correct but raise located photos only from 6 to 10/40, because 18/40 sites have < 2 detections. Priority: more cue types and a better detector (FF1), then line/mask matching, multi-frame, priors as a scenario, terrain/DOP for the rest.
+
+## [2026-10-22] query | Exposé requirements (author's summary of the WA slides) → material per section
+- created: [[expose-material]]
+- updated: [[expose-guide]]
+- notes: The author's German summary matches [[wa-course-expose]], with nothing new. Filed bullet material per required section (numbers, wiki sources, literature candidates with their verification status) and a fact list of what the AI assistant did, for the AI-documentation PDF. Deliberately no exposé prose (course and HOK AI guideline). Gaps: peer-reviewed literature on GNSS-free UAV localisation, the RANSAC original, OSM data quality.

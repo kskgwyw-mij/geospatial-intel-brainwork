@@ -3,7 +3,7 @@ title: Exposé guide — requirements and where the material is
 type: analysis
 tags: [thesis, expose, planning, ai-use]
 sources: [wa-course-expose, hok-aspo-2026, hok-ki-leitlinie, dsia-studienordnung-2027, author-note-use-cases-gnss-denied, osm-real-test]
-updated: 2026-10-21
+updated: 2026-10-22
 ---
 A checklist of what the master exposé must contain and deliver, with pointers to the wiki pages holding the material for each section. It is deliberately not exposé text: the exposé must be the author's own writing.
 
@@ -54,6 +54,7 @@ The author decides how to rate this in the % estimate. The course's own guidance
 - Confirm which programme regulation applies to the author's cohort ([[dsia-studienordnung-2027]] is for cohorts from WS 2027/28).
 
 ## Related
+- [[expose-material]]
 - [[thesis-timeline]]
 - [[hok-dsia-master]]
 - [[wa-course-expose]]
