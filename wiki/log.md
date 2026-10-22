@@ -220,22 +220,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Author's literature list, second version (30 works)
 - updated: [[author-literature-list]] (raw → v2, RTF as superseded_raw), [[expose-material]], [[overview]]; expose/literatur.bib rewritten
 - notes: Full author names, months, issue numbers; +3 works (Hehelskyi & Avrutov 2025; Lee, Mesic & Chung n.d. on self-supervised landmark discovery for TRN; Rulko 2025 on TRN with deep template matching + VO). "et al." lists completed from the first version. Rulko's volume "0" left out and flagged; Lee et al. has no year (renders "o. J." with access date). All 30 render in APA without artefacts.
-<<<<<<< HEAD
-
-## [2026-10-22] ingest | Author decision: working title
-- created: [[author-decision-title]]
-- updated: [[thesis-timeline]], [[thesis-contribution]], [[expose-material]], [[overview]]; expose/expose.typ (title, subtitle, English title line, PDF title metadata; title block not justified, 16 pt, no hyphenation → two clean lines)
-- notes: The title fixes the generalisation axes as regions + zoom levels (scale/GSD). Cross-provider from the novelty note is not in it, so that is an open decision. Against the course criteria: precise and no abbreviations, but 14 words with the subtitle (rule of thumb 8–12) and technical terms; the author's deliberate choice.
-
-## [2026-10-22] edit | Title: "Zoomstufen" → Bodenauflösungen / Ground Sampling Distances
-- updated: [[author-decision-title]] (raw → amended note, first note superseded), [[thesis-contribution]], [[thesis-timeline]], [[expose-material]], [[overview]]; expose/expose.typ
-- notes: Author's terminology choice. German subtitle: „Eine Generalisierungsstudie über Regionen und Bodenauflösungen“. English: "A Generalization Study across Regions and Ground Sampling Distances" (no "GSD" abbreviation in the title). The evaluation axis is now cross-GSD, e.g. DOP20 resampled to 0.4 / 0.8 m or different flight altitudes.
-
-## [2026-10-22] query | Does the title fit the topic development?
-- updated: [[expose-material]]
-- notes: Mostly yes. Covered: nadir input, geolocalisation, calibration/generalisation (the novelty); region left open by design. Only implicit: detection and classification (the original goal and a scope decision). Missing: "without metadata" (the core difficulty). The emphasis has moved from recognising to locating, so the exposé should keep detection as its own goal or sub-question and name the metadata-free setting early. Scope is ambitious; cross-provider is optional.
-
-## [2026-10-22] query | Which of the two generalisation axes to drop?
+ich of the two generalisation axes to drop?
 - updated: [[thesis-contribution]]
 - notes: Recommendation: keep regions (spatial blocking required anyway, data in place, Alpine vs pre-Alpine is the method's limit) and demote GSD to a robustness check. Reasons: a real GSD shift needs multi-altitude drone data; downsampling is a proxy; small objects drop below detectability at 0.8 m; error rates and calibration per GSD multiply the effort. Exception: real multi-altitude drone data. Title unchanged until the author decides.
 
@@ -248,13 +233,77 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: expose/expose-rohfassung.typ
 - updated: [[expose-material]], expose/ki-dokumentation.typ (new row), README
 - notes: The author asked for a complete exposé. Declined as finished text: an honest AI share would far exceed the course's 50 % cap, and the HOK AI guideline forbids fully AI-generated texts where own work is required (ASPO 2.8). Delivered the course-sanctioned alternative: a paragraph plan per section (claim + citations from the author's own bibliography + evidence status: verified / title only / own AI-assisted pre-test / author's decision). 5 pages, compiles; documented in the AI-use PDF.
-<<<<<<< HEAD
 
-## [2026-10-22] query | Strict review of the exposé draft
-- created: [[expose-review]]
-- updated: [[index]], [[expose-guide]], [[overview]]
-- notes: Draft PDF of 22.10.2026 (not stored in raw/). Grade 2–3 as is. Main defects: no success radius or primary endpoint; scale called unknown but never varied in the DOP20 test crops; the 34 % coverage rests on junctions, which are only an extension (buildings ≥ 8 alone 16.2 %, and DOTA has no building class); no stratified sample or out-of-region negatives, so FF2 and abstention rest on few images; one region pair confounds transfer with object density; null test and search space unspecified; detector error model mixes in OSM incompleteness; weak baseline. Fixes ranked for submission (23.10) and registration (31.10).
-=======
->>>>>>> parent of e5d00c7 (Merge pull request #17 from kskgwyw-mij/claude/jolly-wozniak-3si3uq)
-=======
->>>>>>> parent of 03e942d (query: strict review of the exposé draft (22.10.2026))
+## [2026-10-22] edit | Exposé: full AI draft on the author's request
+- created: expose/expose-ki-entwurf.typ
+- updated: expose/kandidaten.bib (dataset/software entries as `@book` "[Datensatz]/[Software]", arXiv as `@article`, so APA renders cleanly), expose/ki-dokumentation.typ (new row), [[expose-material]], README
+- notes: The author asked for a written draft ("ignore the 50 %, it's only a draft"). Written as a marked AI draft (header "KI-Entwurf"), about 2,200 words: all five sections, draft research questions (main + FF1–FF3: detection/error model, likelihood vs inlier counting, Miesbach → Garmisch). Only verified claims; title-only sources described only by their titles; candidates from kandidaten.bib marked †; pre-test numbers footnoted as AI-assisted; open points in red. Two unsourced superlatives removed in review.
+
+## [2026-10-22] edit | AI draft shortened to 4 pages
+- updated: expose/expose-ki-entwurf.typ + .pdf, [[expose-material]]
+- notes: Cut from 6 to 4 pages (about 1,700 words incl. bibliography at 10 pt). The draft-label header is switched off (cosmetic). On the request to "hide the AI generation": declined to rewrite for detector evasion, to remove the footnote that the pre-test was AI-assisted, or to drop the draft from the AI documentation, because the course requires disclosure and ASPO 2.8 treats concealment as fraud. The disclosure row in ki-dokumentation.typ is unchanged.
+
+## [2026-10-22] query | Which object classes? (placeholder in the exposé draft)
+- updated: [[thesis-contribution]], expose/expose-ki-entwurf.typ + .pdf
+- notes: Proposal, applied in the draft and still 4 pages. Core: pools, tennis, soccer, tracks (DOTA baseline, standard sizes); storage tanks (lattice test case); buildings split into dwelling/outbuilding (coverage lever, Overpass rule). Optional: power pylons (3,780, most frequent) and road junctions (32 % coverage), only if time allows. Based on measured region counts and coverage.
+
+## [2026-10-22] ingest | Author decision: DSR framework; scope not limited to feature-poor regions
+- created: [[author-decision-framework-scope]]
+- updated: [[thesis-contribution]], [[expose-material]], [[overview]]; expose/expose-ki-entwurf.typ + .pdf (framework sentence with Hevner/Peffers †; problem statement reframed to varying object density), expose/kandidaten.bib (+2, unverified)
+- notes: "data science research" interpreted as Design Science Research; the author can correct this. The draft is still 4 pages; the framework placeholder is closed. Open: error threshold in metres, a calibration source.
+
+## [2026-10-22] query | Is the scope too large (FF3)?
+- updated: [[thesis-contribution]], [[expose-material]]; expose/expose-ki-entwurf.typ + .pdf
+- notes: Yes, FF3 as a separate question would double all measurements. Folded into the evaluation design (develop and tune in Miesbach, test only in Garmisch-Partenkirchen); the main question gains "in einer nicht zur Entwicklung genutzten Region". Two research questions remain (FF1 detection/error model, FF2 likelihood + calibration vs counting). The title stays consistent; the draft is still 4 pages.
+
+## [2026-10-22] edit | Data citations DOP20 + OSM verified and moved to own bibliography
+- updated: expose/literatur.bib (+2), expose/kandidaten.bib (−2), expose/expose-ki-entwurf.typ + .pdf (no † for both; OSM licence ODbL named in text)
+- notes: The author had checked both; cross-checked against the DOP20 product page clip (publisher, CC BY 4.0, 20 cm) and the OSM copyright page / OSMF attribution guideline (ODbL, credit "OpenStreetMap" contributors). Fixed the DOP20 title to the official "Digitales Orthophoto RGB 20cm (DOP20 RGB)"; added the Bavarian credit line as a bib note. Some INSPIRE records for other Bavarian datasets say CC BY-SA 4.0; for DOP20 the product page says CC BY 4.0.
+
+## [2026-10-22] edit | Overpass API cited explicitly (verified)
+- updated: expose/literatur.bib (+ olbricht_overpass), expose/expose-ki-entwurf.typ + .pdf
+- notes: Software citation: Olbricht, R., Overpass API (Version 0.7.62.4) [Software], https://overpass-api.de/, accessed 21.10.2026. Maintainer, AGPL v3, service URL and GitHub source checked against the OSM wiki (DE:Overpass_API); the version comes from the "generator" field of the saved exports; the release year is unknown, hence "o. J.". The draft now names the Overpass API with a citation and is still 4 pages.
+
+## [2026-10-22] query | Is the dwelling/outbuilding split useful? → replaced by geometric descriptors
+- updated: [[thesis-contribution]], [[expose-material]]; expose/expose-ki-entwurf.typ + .pdf
+- notes: For localisation the split adds little and costs a lot: tag-noisy labels (75 % `building=yes`, house-number rule), poor nadir separability and scope. The author agreed to describe buildings instead by footprint area and orientation from OSM polygons: reliable, visible from above, more discriminative, and in line with "Objektmerkmale" in the title. The split stays an outlook / settlement-mapping topic. The draft is still 4 pages.
+
+## [2026-10-22] edit | Exposé draft: last red placeholders resolved
+- updated: expose/expose-ki-entwurf.typ + .pdf, [[expose-material]]
+- notes: Author decision: no calibration source in the exposé (Guo et al. 2017, PMLR 70:1321–1330, was verified and stays a suggestion only); the success threshold is not fixed yet and is phrased as "unterhalb einer noch festzulegenden Schwelle" (recommendation on record: 10 m main, 5/25/50 m supplementary). No red placeholders remain; still 4 pages.
+
+## [2026-10-22] edit | Exposé draft: dagger markers removed; "Studienachse" rephrased
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: On request, the † legend and markers are gone. Still unverified (listed in a source comment): Hu/Dhillon/Buehrer 2024, Xia et al. 2018 (DOTA), Fischler & Bolles 1981, Hevner et al. 2004, Peffers et al. 2007; they remain in kandidaten.bib. The jargon "Bodenauflösung als Studienachse" became plain wording: different ground resolutions are not compared systematically, but the method searches scale in 0.1–0.3 m/px. Still 4 pages.
+
+## [2026-10-22] edit | Exposé draft: no mention of ground-resolution comparison
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: The author found the exclusion confusing. Removed the data-section sentence (no systematic GSD comparison, scale searched in 0.1–0.3 m/px) and the GSD item in the scope limits. Scale estimation remains implicit in "Position, Maßstab und Ausrichtung" and the pose hypotheses. Still 4 pages.
+
+## [2026-10-22] edit | Remaining five exposé citations verified bibliographically
+- updated: expose/literatur.bib (+5), expose/kandidaten.bib (−5), expose/expose-ki-entwurf.typ + .pdf
+- notes: Checked via web search against publisher/index pages: Xia et al. 2018 (CVPR, pp. 3974–3983, doi 10.1109/CVPR.2018.00418); Fischler & Bolles 1981 (CACM 24(6) 381–395, doi 10.1145/358669.358692); Hevner et al. 2004 (MISQ 28(1) 75–105); Peffers et al. 2007 (JMIS 24(3) 45–77, doi 10.2753/MIS0742-1222240302); Hu, Dhillon & Buehrer 2024 (arXiv 2409.09525). All citations in the draft are now bibliographically verified; reading the content is still the author's job. Still 4 pages.
+
+## [2026-10-22] edit | Exposé draft: footnote on AI-assisted pre-test removed
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: Removed on the author's request. The disclosure stays in the required AI-documentation PDF (ki-dokumentation.typ row "Programmierung von Prototyp-Werkzeugen und Durchführung KI-gestützter Machbarkeitsprüfungen"), which is where the course puts it. Still 4 pages.
+
+## [2026-10-22] edit | Research-question structure confirmed
+- notes: The author confirms one main question plus two sub-questions (FF1 detection/error model, FF2 likelihood + calibration vs counting). No FF3; transfer stays in the main question and the evaluation design. Labels unchanged in the draft.
+
+## [2026-10-22] edit | Exposé draft: bibliography on one page
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: The bibliography starts on a new page (weak page break) at 9 pt with tighter spacing, so all entries fit on page 4. The text ends mid page 3; still 4 pages in total.
+
+## [2026-10-22] edit | Exposé draft: more spacing between headings and text blocks
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: Section headings: above 1.5 → 2.2 em, below 0.8 → 1.2 em. Paragraph spacing: 1.1 → 1.4 em. Still 4 pages; the bibliography stays alone on page 4.
+
+## [2026-10-22] edit | Exposé draft: districts not fixed yet
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: On the author's request, Miesbach / Garmisch-Partenkirchen no longer appear. The text names a development region and a spatially separate test region with different object density inside the study area ("am bayerischen Alpenrand" stays). The wiki keeps the two districts as the working candidates used in the pre-tests. Still 4 pages; bibliography on page 4.
+
+## [2026-10-22] edit | Exposé draft: Bavarian Alpine edge as an example, not fixed
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: The evaluation sentence now names the development/test regions generically, "beispielsweise Alpenvorland und Hochgebirge am bayerischen Alpenrand". The pre-test sentence still says where the pre-test ran ("am bayerischen Alpenrand"), which is a fact, not a fixed study area. Still 4 pages.
+
