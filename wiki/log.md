@@ -304,3 +304,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 
 ## [2026-10-22] edit | Research-question structure confirmed
 - notes: The author confirms one main question plus two sub-questions (FF1 detection/error model, FF2 likelihood + calibration vs counting). No FF3; transfer stays in the main question and the evaluation design. Labels unchanged in the draft.
+
+## [2026-10-22] edit | Exposé draft: bibliography on one page
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: The bibliography starts on a new page (weak page break) at 9 pt with tighter spacing, so all entries fit on page 4. The text ends mid page 3; still 4 pages in total.

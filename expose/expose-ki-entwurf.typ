@@ -75,6 +75,8 @@ Methodischer Rahmen ist Design Science Research: Ein Verfahren wird als Artefakt
 
 *Abgrenzung.* Ausgeschlossen sind Schrägaufnahmen, Echtzeit-Navigation und ein Wechsel des Bildanbieters; die Arbeit ist auf zivile Anwendungen ausgerichtet.
 
-#set text(size: 10pt)
-#set par(spacing: 0.65em)
+#pagebreak(weak: true)
+#set text(size: 9pt)
+#set par(spacing: 0.45em, leading: 0.5em)
+#show heading.where(level: 1): set block(above: 0em, below: 0.6em)
 #bibliography(("literatur.bib", "kandidaten.bib"), title: [Literatur], style: zitierstil)
