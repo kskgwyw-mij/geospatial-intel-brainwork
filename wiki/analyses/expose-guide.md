@@ -55,6 +55,7 @@ The author decides how to rate this in the % estimate. The course's own guidance
 
 ## Related
 - [[expose-review]]
+- [[expose-revision]]
 - [[expose-material]]
 - [[thesis-timeline]]
 - [[hok-dsia-master]]

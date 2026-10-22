@@ -81,4 +81,5 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[expose-material]] — Exposé material in German: bullet points, numbers and literature candidates per required section, plus a fact list for the AI-use documentation (no prose).
 - [[expose-guide]] — Exposé checklist: required sections, deadlines, AI documentation, and which wiki pages supply each section.
 - [[expose-review]] — Strict review of the exposé draft (22.10.2026, German; = expose/expose-ki-entwurf.pdf): grade 2–3; no success criterion, scale never varied, core classes lack coverage, no negative test images; fixes ranked for 23.10 and 31.10.
+- [[expose-revision]] — Revision plan for the exposé (German): seven decisions with recommendations (10 m radius + 50 m, random 0.20–0.35 m test scale, region criteria instead of names, stratified test set with negatives), content, numbers and citations per defect; bibliography and editorial fixes done in the draft.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.
