@@ -265,3 +265,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[author-decision-framework-scope]]
 - updated: [[thesis-contribution]], [[expose-material]], [[overview]]; expose/expose-ki-entwurf.typ + .pdf (framework sentence with Hevner/Peffers †; problem statement reframed to varying object density), expose/kandidaten.bib (+2, unverified)
 - notes: "data science research" interpreted as Design Science Research; the author can correct this. The draft is still 4 pages; the framework placeholder is closed. Open: error threshold in metres, a calibration source.
+
+## [2026-10-22] query | Is the scope too large (FF3)?
+- updated: [[thesis-contribution]], [[expose-material]]; expose/expose-ki-entwurf.typ + .pdf
+- notes: Yes, FF3 as a separate question would double all measurements. Folded into the evaluation design (develop and tune in Miesbach, test only in Garmisch-Partenkirchen); the main question gains "in einer nicht zur Entwicklung genutzten Region". Two research questions remain (FF1 detection/error model, FF2 likelihood + calibration vs counting). The title stays consistent; the draft is still 4 pages.

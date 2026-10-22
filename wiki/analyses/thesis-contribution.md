@@ -75,6 +75,13 @@ The current fix (≥ 2 inlier classes for "confident") is a heuristic stand-in. 
 - A cross-provider data source: which second orthophoto or drone dataset, and under which licence.
 - The coverage limit stays. About 22 % of random Alpine-edge photos contain no mapped cue ([[localization-levers-test]]). The null hypothesis turns these into honest abstentions instead of wrong answers, and that rate is itself a result.
 
+## Scope reduction: FF3 folded into the evaluation design (applied in the exposé draft)
+The author found the scope too large, especially FF3, which would re-measure detection, localisation, calibration and abstention in both regions. In the draft:
+- only **FF1** (detection and error model) and **FF2** (likelihood vs inlier counting, including calibration) remain;
+- transfer is an **evaluation design**: develop and tune in Miesbach, test only in Garmisch-Partenkirchen. The main question ends "… in einer nicht zur Entwicklung genutzten Region".
+
+This keeps the title ("Generalisierungsstudie über Regionen") consistent at almost no extra cost, since a spatially separate test region is needed anyway. Further cuts if needed: optional classes (pylons, junctions), the dwelling/outbuilding split, and a minimal prototype.
+
 ## Link to the research question
 The four parts map onto FF1 (detection and error model), FF2 (likelihood, heatmap, calibration) and a possible FF3 (limits / abstention rate across regions and providers) in [[thesis-timeline]]. The research question itself is the author's to phrase ([[expose-material]]).
 
