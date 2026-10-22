@@ -220,6 +220,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Author's literature list, second version (30 works)
 - updated: [[author-literature-list]] (raw → v2, RTF as superseded_raw), [[expose-material]], [[overview]]; expose/literatur.bib rewritten
 - notes: Full author names, months, issue numbers; +3 works (Hehelskyi & Avrutov 2025; Lee, Mesic & Chung n.d. on self-supervised landmark discovery for TRN; Rulko 2025 on TRN with deep template matching + VO). "et al." lists completed from the first version. Rulko's volume "0" left out and flagged; Lee et al. has no year (renders "o. J." with access date). All 30 render in APA without artefacts.
+<<<<<<< HEAD
 
 ## [2026-10-22] ingest | Author decision: working title
 - created: [[author-decision-title]]
@@ -252,3 +253,5 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[expose-review]]
 - updated: [[index]], [[expose-guide]], [[overview]]
 - notes: Draft PDF of 22.10.2026 (not stored in raw/). Grade 2–3 as is. Main defects: no success radius or primary endpoint; scale called unknown but never varied in the DOP20 test crops; the 34 % coverage rests on junctions, which are only an extension (buildings ≥ 8 alone 16.2 %, and DOTA has no building class); no stratified sample or out-of-region negatives, so FF2 and abstention rest on few images; one region pair confounds transfer with object density; null test and search space unspecified; detector error model mixes in OSM incompleteness; weak baseline. Fixes ranked for submission (23.10) and registration (31.10).
+=======
+>>>>>>> parent of e5d00c7 (Merge pull request #17 from kskgwyw-mij/claude/jolly-wozniak-3si3uq)

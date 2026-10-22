@@ -10,15 +10,14 @@
 #let literatur-vollstaendig = true  // true: ganze literatur.bib zeigen; false: nur im Text zitierte Quellen
 
 // --- Metadaten (ohne Namen!) -------------------------------------------------
-#let arbeitstitel = [Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen]
-#let untertitel = [Eine Generalisierungsstudie über Regionen]
-#let titel-en = [Calibrated Probabilistic Geolocalization of Nadir Imagery with OpenStreetMap Features: A Cross-Region Generalization Study]  // none = ausblenden
+#let arbeitstitel = [Arbeitstitel (max. 8–12 Wörter, ohne Abkürzungen)]
+#let untertitel = none       // z. B. [am Beispiel …] oder none
 #let studiengang = [Masterstudiengang Data Science & Intelligent Analytics (berufsbegleitend)]
 #let hochschule = [Hochschule Kufstein Tirol]
 #let kurs = [Lehrveranstaltung „Wissenschaftliches Arbeiten“, WS 2026/27]
 #let abgabe = datetime(year: 2026, month: 10, day: 23)
 
-#set document(title: "Exposé zur Masterarbeit: Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen", author: ())
+#set document(title: "Exposé zur Masterarbeit", author: ())
 #set page(
   paper: "a4",
   margin: (x: 2.5cm, y: 2.5cm),
@@ -41,12 +40,10 @@
 
 // --- Titelblock ---------------------------------------------------------------
 #align(center)[
-  #set par(justify: false)
   #text(size: 10pt, upper[Exposé zur Masterarbeit]) \
   #v(0.4em)
-  #text(size: 16pt, weight: "bold", hyphenate: false, arbeitstitel)
+  #text(size: 17pt, weight: "bold", arbeitstitel)
   #if untertitel != none [ \ #text(size: 12pt, untertitel) ]
-  #if titel-en != none [ \ #v(0.2em) #text(size: 10pt, style: "italic", titel-en) ]
   #v(0.6em)
   #text(size: 10pt)[#studiengang · #hochschule \ #kurs · #abgabe.display("[day].[month].[year]")]
 ]
