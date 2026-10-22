@@ -1,0 +1,24 @@
+{
+ "n_photos": 2000,
+ "photo_m": [
+  500,
+  375
+ ],
+ "district": "GAP",
+ "coverage_pct": {
+  "DOTA-detectable point anchors >=4": 0.1,
+  "any point anchor >=4 (incl. pylons, towers)": 1.6,
+  "buildings >=1": 39.4,
+  "buildings >=8": 16.2,
+  "settlement cell >=1": 8.0,
+  "road junctions >=3": 31.6,
+  "visible roads/tracks >=200 m": 63.0,
+  "forest edge >=200 m": 18.0,
+  "waterway >=100 m": 49.5,
+  "power line >=100 m": 6.0,
+  "OBJECT cues (anchors>=4 or buildings>=8 or junctions>=3)": 34.0,
+  "LINE cues (road>=200 or forest edge>=200 or water>=100 or power>=100)": 77.6,
+  "object OR line cues": 77.8,
+  "NO mapped cue at all (terrain/texture only)": 22.2
+ }
+}

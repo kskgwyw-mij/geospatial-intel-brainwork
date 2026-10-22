@@ -1,0 +1,32 @@
+{
+ "baseline: whole region (~7,800 km2), GSD 0.05-0.6": {
+  "located_correct": "6/40",
+  "confident": "2/2",
+  "probable": "3/6",
+  "ambiguous": "1/14"
+ },
+ "scale prior: GSD 0.16-0.25 m": {
+  "located_correct": "8/40",
+  "confident": "3/3",
+  "probable": "4/9",
+  "ambiguous": "1/9"
+ },
+ "region prior: 20 km radius": {
+  "located_correct": "7/40",
+  "confident": "3/3",
+  "probable": "4/6",
+  "ambiguous": "0/10"
+ },
+ "region prior: 5 km radius": {
+  "located_correct": "8/40",
+  "confident": "4/4",
+  "probable": "3/5",
+  "ambiguous": "1/3"
+ },
+ "region 5 km + scale prior": {
+  "located_correct": "10/40",
+  "confident": "4/4",
+  "probable": "4/4",
+  "ambiguous": "2/3"
+ }
+}

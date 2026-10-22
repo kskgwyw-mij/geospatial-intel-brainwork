@@ -2,7 +2,7 @@
 title: Real end-to-end test — DOP20 + pretrained detector + real OSM
 type: source
 tags: [real-data, evaluation, detection, geolocalization]
-sources: [real-e2e-test]
+sources: [localization-levers-test, real-e2e-test]
 raw: raw/2026-10-21-real-e2e-test-notes.md
 raw_data: [raw/2026-10-21-real-e2e-anchor.jsonl, raw/2026-10-21-real-e2e-uniform.jsonl]
 updated: 2026-10-21
@@ -42,7 +42,11 @@ This is the first measurement for FF1 (detection) and the first end-to-end numbe
 ## Pages touched
 [[geo-match-prototype]], [[feasibility]], [[osm-real-test]], [[pretrained-models]], [[overview]]
 
+> [!note] Follow-up
+> After the class-diversity rule, the rerun of the same 40 anchor sites gives confident 2/2 correct ([[localization-levers-test]]).
+
 ## Related
+- [[localization-levers-test]]
 - [[osm-real-test]]
 - [[geo-match-prototype]]
 - [[feasibility]]

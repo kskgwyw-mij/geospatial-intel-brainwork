@@ -32,6 +32,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[bayern-opengeodata]] — Bavarian OpenGeoData catalogue (full clip): DOP20 RGB/CIR, DGM1, DOM20, LiDAR, LoD2, Einzelbäume, Hausumringe, ATKIS, ALKIS land use, parcels and districts.
 - [[bayern-dop20rgb-detail]] — DOP20 RGB product page: 1 km GeoTIFF tiles in EPSG:25832, about 50 MB per tile, up to 126 GB per district, WMS (incl. historical DOP) and WMTS, CC BY 4.0.
 - [[author-decision-detection-in-scope]] — Author decision: detection and classification are part of the thesis, alongside metadata-free localisation.
+- [[localization-levers-test]] — Real-data lever tests: cue coverage ceilings (point anchors 0.1–1.6 %, +buildings/junctions 34 %, +lines 78 %), class-diversity rule (confident 2/2), priors (6 → 10/40).
 - [[settlement-overpass-labels]] — Overpass building tags (75 % `building=yes`, 35–43 % house numbers), dwelling rule; detector AUC 0.984 for inhabited, 0.999 for settlement; live Garmisch grid.
 - [[settlement-test]] — Real test, 1,100 DOP20 hectares (Miesbach, Garmisch; 2024 and 2018 flights): settlement cells AUC 0.98–0.995 with a frozen DOTA embedding; misses are isolated huts.
 - [[real-e2e-test]] — Real end-to-end test (DOP20 + DOTA YOLO11-OBB + real OSM): detection precision 0.49 / recall 0.62; located 6/40 near anchors, 0/40 random; first wrong confident match (tank farm).
@@ -66,7 +67,9 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[pretrained-models]] — Pretrained CNNs and foundation models per thesis task, resolution caveat, minimal fine-tuning stack.
 - [[imagery-sources]] — Imagery for training (German DOP10/20, Tyrolean orthophotos) and testing (simulated metadata-free nadir crops); Sentinel-2 ruled out for objects.
 - [[gnss-denied-use-cases]] — Application framing: GNSS-denied visual localisation, use-case table with prototype fit and evidence, research question, dual-use ethics.
+- [[localization-improvements]] — Ranked levers to improve localisation: more cues (buildings, junctions, lines), better detector, multi-frame, priors, verification, terrain/DOP for the rest.
 - [[settlement-overpass]] — Bridge between settlement detector and Overpass: dwelling tag rule + 100 m grid, query, use for labels, localisation and OSM completeness checks.
 - [[settlement-detection]] — How stably inhabited areas can be detected in DOP20: settlements yes (stable across districts and years), single huts no; label caveats and thesis use.
+- [[expose-material]] — Exposé material in German: bullet points, numbers and literature candidates per required section, plus a fact list for the AI-use documentation (no prose).
 - [[expose-guide]] — Exposé checklist: required sections, deadlines, AI documentation, and which wiki pages supply each section.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.

@@ -104,7 +104,7 @@ def fit_similarity(zp, zm):
     return complex(a), complex(cm - a * cp)
 
 
-def match(dets, size, osm, frame, gsd_range=(0.05, 0.6), tol_m=4.0, max_pairs=20, min_px=40):
+def match(dets, size, osm, frame, gsd_range=(0.05, 0.6), tol_m=4.0, max_pairs=20, min_px=40, min_classes=2):
     W, H = size
     classes = [d["class"] for d in dets]
     zp = [complex(d["x"] - W / 2, -(d["y"] - H / 2)) for d in dets]  # image frame, y up
@@ -196,13 +196,16 @@ def match(dets, size, osm, frame, gsd_range=(0.05, 0.6), tol_m=4.0, max_pairs=20
     best["hypotheses"] = len(hyps)
     best["gsd_range_used"] = [round(gmin, 4), round(gmax, 4)]
     best["inlier_ids"] = [k for k, _ in inl]
+    best["inlier_classes"] = sorted({classes[k] for k, _ in inl})
     if runner:
         best["runner_up"] = describe(runner[2], runner[3], runner[0], float("nan"))
         best["margin"] = len(inl) - runner[0]
     else:
         best["margin"] = len(inl)
     # Two points always fit some similarity transform, so 2 inliers carry no evidence.
-    if len(inl) >= 4 and best["margin"] >= 2:
+    # A single class can be a regular lattice (tank farm, court rows) that also fits a denser lattice
+    # elsewhere at a wrong scale, so "confident" needs inliers from at least two classes.
+    if len(inl) >= 4 and best["margin"] >= 2 and len(best["inlier_classes"]) >= min_classes:
         best["status"] = "confident"
     elif len(inl) >= 3 and best["margin"] >= 1:
         best["status"] = "probable"
