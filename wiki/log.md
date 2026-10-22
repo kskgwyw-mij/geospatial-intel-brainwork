@@ -281,3 +281,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] query | Is the dwelling/outbuilding split useful? → replaced by geometric descriptors
 - updated: [[thesis-contribution]], [[expose-material]]; expose/expose-ki-entwurf.typ + .pdf
 - notes: For localisation the split adds little and costs a lot: tag-noisy labels (75 % `building=yes`, house-number rule), poor nadir separability and scope. The author agreed to describe buildings instead by footprint area and orientation from OSM polygons: reliable, visible from above, more discriminative, and in line with "Objektmerkmale" in the title. The split stays an outlook / settlement-mapping topic. The draft is still 4 pages.
+
+## [2026-10-22] edit | Exposé draft: last red placeholders resolved
+- updated: expose/expose-ki-entwurf.typ + .pdf, [[expose-material]]
+- notes: Author decision: no calibration source in the exposé (Guo et al. 2017, PMLR 70:1321–1330, was verified and stays a suggestion only); the success threshold is not fixed yet and is phrased as "unterhalb einer noch festzulegenden Schwelle" (recommendation on record: 10 m main, 5/25/50 m supplementary). No red placeholders remain; still 4 pages.
