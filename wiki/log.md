@@ -220,3 +220,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Author's literature list, second version (30 works)
 - updated: [[author-literature-list]] (raw → v2, RTF as superseded_raw), [[expose-material]], [[overview]]; expose/literatur.bib rewritten
 - notes: Full author names, months, issue numbers; +3 works (Hehelskyi & Avrutov 2025; Lee, Mesic & Chung n.d. on self-supervised landmark discovery for TRN; Rulko 2025 on TRN with deep template matching + VO). "et al." lists completed from the first version. Rulko's volume "0" left out and flagged; Lee et al. has no year (renders "o. J." with access date). All 30 render in APA without artefacts.
+
+## [2026-10-22] ingest | Author decision: working title
+- created: [[author-decision-title]]
+- updated: [[thesis-timeline]], [[thesis-contribution]], [[expose-material]], [[overview]]; expose/expose.typ (title, subtitle, English title line, PDF title metadata; title block not justified, 16 pt, no hyphenation → two clean lines)
+- notes: The title fixes the generalisation axes as regions + zoom levels (scale/GSD). Cross-provider from the novelty note is not in it, so that is an open decision. Against the course criteria: precise and no abbreviations, but 14 words with the subtitle (rule of thumb 8–12) and technical terms; the author's deliberate choice.

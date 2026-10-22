@@ -2,7 +2,7 @@
 title: Exposé-Materialsammlung (Stichpunkte je Abschnitt)
 type: analysis
 tags: [thesis, expose, ai-use]
-sources: [author-literature-list, author-note-novelty, vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
+sources: [author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
 updated: 2026-10-22
 ---
 Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Ausgangspunkt für den eigenen Text; dazu eine Faktenliste für die KI-Dokumentation. Hier steht bewusst **kein Fließtext**: Das Exposé formuliert die Autorin oder der Autor selbst ([[wa-course-expose]], [[hok-ki-leitlinie]]).
@@ -14,7 +14,15 @@ Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Au
 - Gliederung genau wie vorgegeben: Arbeitstitel · Ausgangssituation und Problemstellung · Relevanz · Zielsetzung und Ergebnisse · Vorgehensweise und Methoden · Literatur.
 - Danach: Anmeldung der Masterarbeit (Formular + Exposé) bis 31.10.2026 ([[wa-course-expose]]).
 
-## Arbeitstitel — Bausteine
+## Arbeitstitel — gewählt
+**„Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen: Eine Generalisierungsstudie über Regionen und Zoomstufen“**; englisch: „Calibrated Probabilistic Geolocalization of Nadir Imagery with OpenStreetMap Features: A Cross-Region and Cross-Zoom Generalization Study“ ([[author-decision-title]]). Steht in `expose/expose.typ`.
+- Abgleich mit den Kursvorgaben ([[wa-course-expose]]):
+  - Haupttitel 8 Wörter, mit Untertitel 14, also über der Faustregel 8–12.
+  - Fachbegriffe wie „kalibriert“, „probabilistisch“, „Nadir“ sind für Fachfremde nicht selbsterklärend.
+  - Präzise, ohne Abkürzungen, verrät keine Ergebnisse.
+  - Bewusste Entscheidung der Autorin oder des Autors.
+
+## Arbeitstitel — Bausteine (frühere Notizen)
 - Kernidee in Alltagssprache: *Luftbild ohne Ortsangabe → Ort, Maßstab und Ausrichtung aus erkannten Kartenobjekten*.
 - Vermeiden laut Vorgabe: Abkürzungen (OSM, GNSS, DOP, RANSAC), Fachjargon; ≤ 8–12 Wörter; keine Ergebnisse vorwegnehmen ([[wa-course-expose]]).
 - Begriffe, die Fachfremde verstehen: „Drohnenbild“, „Luftbild“, „ohne GPS“, „offene Kartendaten“, „OpenStreetMap“ (Eigenname), „automatisch verorten“.

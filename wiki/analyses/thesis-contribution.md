@@ -2,7 +2,7 @@
 title: Thesis contribution — what is new, what exists, what it means for the method
 type: analysis
 tags: [thesis, novelty, geolocalization, method, evaluation]
-sources: [author-literature-list, author-note-novelty, vtrn-literature-search, real-e2e-test, localization-levers-test, settlement-test, costea-2016-aerial-geolocalization]
+sources: [author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, real-e2e-test, localization-levers-test, settlement-test, costea-2016-aerial-geolocalization]
 updated: 2026-10-22
 ---
 The thesis contribution is a combination that no prior work found so far contains: POI-level OSM classes detected in nadir imagery, matched through a point-process likelihood with an explicit detector-error model, giving a calibrated location heatmap with a null hypothesis, and evaluated on real data with spatially blocked cross-region and cross-provider tests. Each ingredient exists separately ([[author-note-novelty]]).
@@ -34,6 +34,12 @@ The thesis contribution is a combination that no prior work found so far contain
    - Cross-region: train and tune in one district, test in another (as Miesbach → Garmisch in [[settlement-test]]).
    - Cross-provider: imagery from a different source, e.g. another state's orthophotos or real drone photos (unsourced; data still to be chosen, see [[imagery-sources]]).
    - Cross-year as a third axis: 2018 vs 2024 flights.
+
+## Generalisation axes in the chosen title
+The working title names **regions and zoom levels** as the generalisation axes ([[author-decision-title]]).
+- **Cross-region:** spatially blocked, e.g. Miesbach ↔ Garmisch.
+- **Cross-zoom:** test at ground resolutions other than those used for tuning, e.g. DOP20 resampled to 0.4 / 0.8 m, or WMTS zoom levels, or different flight altitudes (proposal). Altitude-dependent VTRN is studied by Castleberry & Martin 2021 ([[author-literature-list]]).
+- **Cross-provider** (from [[author-note-novelty]]) is not in the title. Decide whether it stays as a secondary test or is dropped.
 
 ## Why the likelihood should beat the current inlier counting (testable hypothesis)
 The current matcher counts inliers ([[geo-match-prototype]]). Its measured failure was a tank farm matched to a denser tank cluster 63.5 km away at 1.76× scale ([[real-e2e-test]]). Inlier counting rewards that pose: more objects lie nearby. The likelihood also charges **every OSM object in the hypothesised footprint that was not detected** (the log(1 − r) term). At 1.76× scale the footprint is about 3× larger and holds a denser cluster, so many objects go unexplained.
