@@ -273,3 +273,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Data citations DOP20 + OSM verified and moved to own bibliography
 - updated: expose/literatur.bib (+2), expose/kandidaten.bib (−2), expose/expose-ki-entwurf.typ + .pdf (no † for both; OSM licence ODbL named in text)
 - notes: The author had checked both; cross-checked against the DOP20 product page clip (publisher, CC BY 4.0, 20 cm) and the OSM copyright page / OSMF attribution guideline (ODbL, credit "OpenStreetMap" contributors). Fixed the DOP20 title to the official "Digitales Orthophoto RGB 20cm (DOP20 RGB)"; added the Bavarian credit line as a bib note. Some INSPIRE records for other Bavarian datasets say CC BY-SA 4.0; for DOP20 the product page says CC BY 4.0.
+
+## [2026-10-22] edit | Overpass API cited explicitly (verified)
+- updated: expose/literatur.bib (+ olbricht_overpass), expose/expose-ki-entwurf.typ + .pdf
+- notes: Software citation: Olbricht, R., Overpass API (Version 0.7.62.4) [Software], https://overpass-api.de/, accessed 21.10.2026. Maintainer, AGPL v3, service URL and GitHub source checked against the OSM wiki (DE:Overpass_API); the version comes from the "generator" field of the saved exports; the release year is unknown, hence "o. J.". The draft now names the Overpass API with a citation and is still 4 pages.

@@ -65,7 +65,7 @@ Wissenschaftlich soll (1) die Erkennungsgüte der genannten OSM-Objektklassen in
 
 Methodischer Rahmen ist Design Science Research: Ein Verfahren wird als Artefakt entwickelt und quantitativ evaluiert @hevner2004design#ungeprueft. Der Ablauf folgt dem Prozessmodell von Peffers et al. @peffers2007dsrm#ungeprueft mit den Schritten Problemidentifikation, Zieldefinition (FF1, FF2), Entwurf und Entwicklung (Fehlermodell, Wahrscheinlichkeitsfunktion), Demonstration im Prototyp und Evaluation über Regionen.
 
-*Daten.* Referenz sind OSM-Objekte aus der Overpass-API mit festem Abrufdatum (Lizenz ODbL) @osm2026; Bilddaten sind die amtlichen Orthophotos DOP20 (0,2 m, CC BY 4.0) @ldbv2026dop20. Daraus entstehen metadatenfreie Testbilder mit zufälliger Lage und Drehung, deren wahre Position nur der Auswertung bekannt ist. Die Bodenauflösung ist keine Studienachse; das Verfahren kennt den Maßstab aber nicht und durchsucht 0,1–0,3 m pro Pixel.
+*Daten.* Referenz sind OSM-Objekte (Lizenz ODbL) @osm2026, abgefragt über die Overpass API @olbricht_overpass mit festem Abrufdatum; Bilddaten sind die amtlichen Orthophotos DOP20 (0,2 m, CC BY 4.0) @ldbv2026dop20. Daraus entstehen metadatenfreie Testbilder mit zufälliger Lage und Drehung, deren wahre Position nur der Auswertung bekannt ist. Die Bodenauflösung ist keine Studienachse; das Verfahren kennt den Maßstab aber nicht und durchsucht 0,1–0,3 m pro Pixel.
 
 *Erkennung (FF1).* Ein auf dem Luftbild-Datensatz DOTA @xia2018dota#ungeprueft vortrainierter Detektor mit gedrehten Rahmen wird mit aus OSM abgeleiteten Labels feinabgestimmt. Die Evaluation je Klasse liefert das Fehlermodell.
 
