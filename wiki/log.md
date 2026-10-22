@@ -252,3 +252,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: expose/expose-ki-entwurf.typ
 - updated: expose/kandidaten.bib (dataset/software entries as `@book` "[Datensatz]/[Software]", arXiv as `@article`, so APA renders cleanly), expose/ki-dokumentation.typ (new row), [[expose-material]], README
 - notes: The author asked for a written draft ("ignore the 50 %, it's only a draft"). Written as a marked AI draft (header "KI-Entwurf"), about 2,200 words: all five sections, draft research questions (main + FF1–FF3: detection/error model, likelihood vs inlier counting, Miesbach → Garmisch). Only verified claims; title-only sources described only by their titles; candidates from kandidaten.bib marked †; pre-test numbers footnoted as AI-assisted; open points in red. Two unsourced superlatives removed in review.
+
+## [2026-10-22] edit | AI draft shortened to 4 pages
+- updated: expose/expose-ki-entwurf.typ + .pdf, [[expose-material]]
+- notes: Cut from 6 to 4 pages (about 1,700 words incl. bibliography at 10 pt). The draft-label header is switched off (cosmetic). On the request to "hide the AI generation": declined to rewrite for detector evasion, to remove the footnote that the pre-test was AI-assisted, or to drop the draft from the AI documentation, because the course requires disclosure and ASPO 2.8 treats concealment as fraud. The disclosure row in ki-dokumentation.typ is unchanged.
