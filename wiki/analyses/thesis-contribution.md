@@ -39,6 +39,13 @@ The thesis contribution is a combination that no prior work found so far contain
 The working title names **regions and ground sampling distances (GSD)** as the generalisation axes ([[author-decision-title]]).
 - **Cross-region:** spatially blocked, e.g. Miesbach ↔ Garmisch.
 - **Cross-GSD (Bodenauflösung):** test at ground sampling distances other than those used for tuning, e.g. DOP20 (0.2 m) resampled to 0.4 / 0.8 m, or imagery from different flight altitudes (proposal). Altitude-dependent VTRN is studied by Castleberry & Martin 2021 ([[author-literature-list]]).
+- **Recommendation if one axis must go (assistant's view, awaiting the author's decision): keep regions, demote GSD.**
+  - Spatial blocking is needed anyway against autocorrelation, the data exists, and Alpine vs pre-Alpine feature density *is* the method's limit ([[settlement-test]], [[localization-levers-test]]).
+  - A realistic GSD shift needs real drone flights at several altitudes; downsampling DOP20 is only a proxy.
+  - Small objects fall below detectability: a 6 m pool shrinks from about 30 px at 0.2 m to 7–8 px at 0.8 m.
+  - Each GSD needs its own detector error rates and calibration.
+  - Scale is estimated anyway in the metadata-free setting, so a fixed realistic band (e.g. 0.1–0.3 m) plus one or two resampled levels as a labelled robustness check is enough.
+  - Exception: with real multi-altitude drone imagery, GSD becomes the more interesting axis; keep a minimal two-region block regardless.
 - **Cross-provider** (from [[author-note-novelty]]) is not in the title. Decide whether it stays as a secondary test or is dropped.
 
 ## Why the likelihood should beat the current inlier counting (testable hypothesis)

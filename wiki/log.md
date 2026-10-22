@@ -233,3 +233,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] query | Does the title fit the topic development?
 - updated: [[expose-material]]
 - notes: Mostly yes. Covered: nadir input, geolocalisation, calibration/generalisation (the novelty); region left open by design. Only implicit: detection and classification (the original goal and a scope decision). Missing: "without metadata" (the core difficulty). The emphasis has moved from recognising to locating, so the exposé should keep detection as its own goal or sub-question and name the metadata-free setting early. Scope is ambitious; cross-provider is optional.
+
+## [2026-10-22] query | Which of the two generalisation axes to drop?
+- updated: [[thesis-contribution]]
+- notes: Recommendation: keep regions (spatial blocking required anyway, data in place, Alpine vs pre-Alpine is the method's limit) and demote GSD to a robustness check. Reasons: a real GSD shift needs multi-altitude drone data; downsampling is a proxy; small objects drop below detectability at 0.8 m; error rates and calibration per GSD multiply the effort. Exception: real multi-altitude drone data. Title unchanged until the author decides.
