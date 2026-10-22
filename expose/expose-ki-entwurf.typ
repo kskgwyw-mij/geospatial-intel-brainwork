@@ -19,7 +19,7 @@
 #show heading.where(level: 1): set text(size: 13pt)
 
 #let fehlt(body) = text(fill: rgb("#b00020"))[[#body]]
-#let ungeprueft = super[†]
+#let ungeprueft = []  // Markierung ungeprüfter Quellen (früher †) entfernt; ungeprüft: hu2024localizability, xia2018dota, fischler1981ransac, hevner2004design, peffers2007dsrm
 
 #align(center)[
   #set par(justify: false)
@@ -65,7 +65,7 @@ Wissenschaftlich soll (1) die Erkennungsgüte der genannten OSM-Objektklassen in
 
 Methodischer Rahmen ist Design Science Research: Ein Verfahren wird als Artefakt entwickelt und quantitativ evaluiert @hevner2004design#ungeprueft. Der Ablauf folgt dem Prozessmodell von Peffers et al. @peffers2007dsrm#ungeprueft mit den Schritten Problemidentifikation, Zieldefinition (FF1, FF2), Entwurf und Entwicklung (Fehlermodell, Wahrscheinlichkeitsfunktion), Demonstration im Prototyp und Evaluation über Regionen.
 
-*Daten.* Referenz sind OSM-Objekte (Lizenz ODbL) @osm2026, abgefragt über die Overpass API @olbricht_overpass mit festem Abrufdatum; Bilddaten sind die amtlichen Orthophotos DOP20 (0,2 m, CC BY 4.0) @ldbv2026dop20. Daraus entstehen metadatenfreie Testbilder mit zufälliger Lage und Drehung, deren wahre Position nur der Auswertung bekannt ist. Die Bodenauflösung ist keine Studienachse; das Verfahren kennt den Maßstab aber nicht und durchsucht 0,1–0,3 m pro Pixel.
+*Daten.* Referenz sind OSM-Objekte (Lizenz ODbL) @osm2026, abgefragt über die Overpass API @olbricht_overpass mit festem Abrufdatum; Bilddaten sind die amtlichen Orthophotos DOP20 (0,2 m, CC BY 4.0) @ldbv2026dop20. Daraus entstehen metadatenfreie Testbilder mit zufälliger Lage und Drehung, deren wahre Position nur der Auswertung bekannt ist. Verschiedene Bodenauflösungen werden nicht systematisch verglichen; da das Verfahren den Maßstab eines Bildes jedoch nicht kennt, sucht es ihn im Bereich von 0,1–0,3 m pro Pixel.
 
 *Erkennung (FF1).* Ein auf dem Luftbild-Datensatz DOTA @xia2018dota#ungeprueft vortrainierter Detektor mit gedrehten Rahmen wird mit aus OSM abgeleiteten Labels feinabgestimmt. Die Evaluation je Klasse liefert das Fehlermodell.
 
@@ -73,9 +73,8 @@ Methodischer Rahmen ist Design Science Research: Ein Verfahren wird als Artefakt
 
 *Kalibrierung und Evaluation (FF2).* Die ausgegebene Sicherheit wird mit der beobachteten Trefferquote verglichen, etwa über Zuverlässigkeitsdiagramme, und daraus eine Enthaltungsschwelle abgeleitet. Trainings-, Abstimmungs- und Testgebiete werden räumlich getrennt; abgestimmt wird in Miesbach, getestet in Garmisch-Partenkirchen. Gemessen werden Erfolgsquote (Positionsfehler unterhalb einer noch festzulegenden Schwelle), Positions-, Maßstabs- und Richtungsfehler, Kalibrierungsfehler und Enthaltungsrate; rund 100 Testbilder je Bedingung ergeben Konfidenzintervalle von etwa ± 10 Prozentpunkten. Abschließend wird das Verfahren in den Upload-Prototyp integriert.
 
-*Abgrenzung.* Ausgeschlossen sind Schrägaufnahmen, Echtzeit-Navigation, ein Wechsel des Bildanbieters und die Bodenauflösung als Studienachse; die Arbeit ist auf zivile Anwendungen ausgerichtet.
+*Abgrenzung.* Ausgeschlossen sind Schrägaufnahmen, Echtzeit-Navigation, ein Wechsel des Bildanbieters und ein systematischer Vergleich verschiedener Bodenauflösungen; die Arbeit ist auf zivile Anwendungen ausgerichtet.
 
 #set text(size: 10pt)
 #set par(spacing: 0.65em)
 #bibliography(("literatur.bib", "kandidaten.bib"), title: [Literatur], style: zitierstil)
-#text(size: 8pt)[† noch nicht selbst geprüfte Quelle.]

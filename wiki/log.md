@@ -285,3 +285,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Exposé draft: last red placeholders resolved
 - updated: expose/expose-ki-entwurf.typ + .pdf, [[expose-material]]
 - notes: Author decision: no calibration source in the exposé (Guo et al. 2017, PMLR 70:1321–1330, was verified and stays a suggestion only); the success threshold is not fixed yet and is phrased as "unterhalb einer noch festzulegenden Schwelle" (recommendation on record: 10 m main, 5/25/50 m supplementary). No red placeholders remain; still 4 pages.
+
+## [2026-10-22] edit | Exposé draft: dagger markers removed; "Studienachse" rephrased
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: On request, the † legend and markers are gone. Still unverified (listed in a source comment): Hu/Dhillon/Buehrer 2024, Xia et al. 2018 (DOTA), Fischler & Bolles 1981, Hevner et al. 2004, Peffers et al. 2007; they remain in kandidaten.bib. The jargon "Bodenauflösung als Studienachse" became plain wording: different ground resolutions are not compared systematically, but the method searches scale in 0.1–0.3 m/px. Still 4 pages.
