@@ -31,6 +31,9 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[author-note-use-cases-gnss-denied]] — Author note (German): eight use cases for GNSS-denied drone localisation, simulation limits, proposed research question.
 - [[bayern-opengeodata]] — Bavarian OpenGeoData catalogue (full clip): DOP20 RGB/CIR, DGM1, DOM20, LiDAR, LoD2, Einzelbäume, Hausumringe, ATKIS, ALKIS land use, parcels and districts.
 - [[bayern-dop20rgb-detail]] — DOP20 RGB product page: 1 km GeoTIFF tiles in EPSG:25832, about 50 MB per tile, up to 126 GB per district, WMS (incl. historical DOP) and WMTS, CC BY 4.0.
+- [[author-decision-framework-scope]] — Author decision: Design Science Research as framework (Hevner 2004, Peffers 2007); regions compared by object density, not limited to feature-poor areas.
+- [[author-decision-generalisation-axes]] — Author decision: generalise across regions only; no cross-provider test, GSD dropped as an axis.
+- [[author-decision-title]] — Author decision: working title „Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen: Eine Generalisierungsstudie über Regionen“.
 - [[author-decision-detection-in-scope]] — Author decision: detection and classification are part of the thesis, alongside metadata-free localisation.
 - [[author-literature-list]] — Author's manual bibliography, 30 works on GNSS-free visual/terrain-relative localisation (reviews, TRN, orthophoto matching, semantic/vector maps, SeqLoc); now the exposé bibliography.
 - [[author-note-novelty]] — Author's novelty assessment (verified by search): ingredients exist (Kunz 2021, Shankar 2016, Hu & Dhillon 2024, OrienterNet/MapLocNet/OSMLoc, SASGeo); their combination is new. arXiv 2608.07835 not found.
@@ -77,4 +80,6 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[settlement-detection]] — How stably inhabited areas can be detected in DOP20: settlements yes (stable across districts and years), single huts no; label caveats and thesis use.
 - [[expose-material]] — Exposé material in German: bullet points, numbers and literature candidates per required section, plus a fact list for the AI-use documentation (no prose).
 - [[expose-guide]] — Exposé checklist: required sections, deadlines, AI documentation, and which wiki pages supply each section.
+- [[expose-review]] — Strict review of the exposé draft (22.10.2026, German; = expose/expose-ki-entwurf.pdf): grade 2–3; no success criterion, scale never varied, core classes lack coverage, no negative test images; fixes ranked for 23.10 and 31.10.
+- [[expose-revision]] — Revision plan for the exposé (German): seven decisions with recommendations (10 m radius + 50 m, random 0.20–0.35 m test scale, region criteria instead of names, stratified test set with negatives), content, numbers and citations per defect; bibliography and editorial fixes done in the draft.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.

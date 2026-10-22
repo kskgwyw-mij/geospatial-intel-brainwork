@@ -2,10 +2,13 @@
 title: Thesis timeline & course fit
 type: analysis
 tags: [thesis, planning]
-sources: [hok-aspo-2026, wa-course-expose, dsia-studienordnung-2027, thesis-goal, maggiori-osm-imperfect-labels, author-note-use-cases-gnss-denied, author-decision-detection-in-scope]
-updated: 2026-10-21
+sources: [author-decision-title, hok-aspo-2026, wa-course-expose, dsia-studienordnung-2027, thesis-goal, maggiori-osm-imperfect-labels, author-note-use-cases-gnss-denied, author-decision-detection-in-scope]
+updated: 2026-10-22
 ---
 How the thesis goal maps onto the part-time DSIA semesters: when each thesis milestone happens and which course supplies what.
+
+## Working title (author decision)
+„Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen: Eine Generalisierungsstudie über Regionen“ ([[author-decision-title]]).
 
 ## Milestones (part-time form)
 
