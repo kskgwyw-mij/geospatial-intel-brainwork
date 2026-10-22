@@ -7,6 +7,7 @@
 // --- Schalter ---------------------------------------------------------------
 #let zeige-hinweise = true   // für die Abgabe auf false setzen
 #let zitierstil = "apa"      // HOK-Leitfaden prüfen; Alternativen: "ieee", "harvard-cite-them-right"
+#let literatur-vollstaendig = true  // true: ganze literatur.bib zeigen; false: nur im Text zitierte Quellen
 
 // --- Metadaten (ohne Namen!) -------------------------------------------------
 #let arbeitstitel = [Arbeitstitel (max. 8–12 Wörter, ohne Abkürzungen)]
@@ -102,8 +103,10 @@
 
 #hinweis[
   Literatur: Vorarbeiten, Literatur zur Relevanz, existierende Ergebnisse, Referenzen zu geplanten oder ähnlichen
-  Methoden. Nur selbst gelesene und geprüfte Quellen zitieren; Einträge in `literatur.bib` vorher kontrollieren.
-  Im Verzeichnis erscheinen nur tatsächlich zitierte Quellen (Zitat im Text: `@schluessel`).
+  Methoden. Nur selbst gelesene und geprüfte Quellen zitieren. Zitat im Text: `@schluessel` (z. B. `@kinnari2022season`).
+  `literatur-vollstaendig = true` zeigt die ganze eigene Liste; für die Abgabe besser `false`, damit nur zitierte Quellen erscheinen.
 ]
 
-#bibliography("literatur.bib", title: "Literatur", style: zitierstil)
+// literatur.bib = eigene, geprüfte Liste. Ungeprüfte Vorschläge stehen in kandidaten.bib und erscheinen erst,
+// wenn sie (nach eigener Prüfung) nach literatur.bib verschoben werden.
+#bibliography("literatur.bib", title: "Literatur", style: zitierstil, full: literatur-vollstaendig)

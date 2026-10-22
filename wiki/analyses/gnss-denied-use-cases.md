@@ -2,8 +2,8 @@
 title: GNSS-denied visual localisation — use cases & framing
 type: analysis
 tags: [use-cases, gnss-denied, drones, ethics, research-question]
-sources: [author-note-use-cases-gnss-denied, costea-2016-aerial-geolocalization, rural-geolocalization-search, dsia-studienordnung-2027, author-decision-no-metadata, bayern-dop-regions-search]
-updated: 2026-10-21
+sources: [vtrn-literature-search, author-note-use-cases-gnss-denied, costea-2016-aerial-geolocalization, rural-geolocalization-search, dsia-studienordnung-2027, author-decision-no-metadata, bayern-dop-regions-search]
+updated: 2026-10-22
 ---
 Application framing of the thesis: locating a drone or aerial photo without GPS/GNSS by matching detected OSM objects to the map. It lists the use cases, which of them the prototype already supports, the evidence behind each, and the dual-use implications.
 
@@ -48,7 +48,11 @@ types ([[author-note-use-cases-gnss-denied]]).
 GNSS jamming and spoofing incidents and countermeasures; GNSS multipath in Alpine terrain; consumer-drone GPS accuracy;
 recent GNSS-denied UAV visual localisation surveys.
 
+## Literature
+The field is called (visual) terrain-relative navigation or absolute visual localisation. It ranges from NASA's Mars 2020 landing (< 40 m from up to 3.2 km inertial error) to UAV image-to-orthophoto matching, plus reviews and datasets ([[vtrn-literature-search]], [[terrain-relative-navigation]]). This backs the GPS-outage use cases with peer-reviewed work.
+
 ## Related
+- [[terrain-relative-navigation]]
 - [[author-note-use-cases-gnss-denied]]
 - [[geo-match-prototype]]
 - [[osm-fingerprint-geolocalization]]

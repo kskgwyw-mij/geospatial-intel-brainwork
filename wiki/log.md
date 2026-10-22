@@ -201,3 +201,22 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: expose/expose.typ, expose/literatur.bib, expose/ki-dokumentation.typ
 - updated: [[expose-material]], README
 - notes: The author writes the exposé in Typst. The template has the required six-part structure, no author anywhere (PDF metadata author empty, checked with pdfinfo) and hint boxes per section that a switch removes for submission. The bib holds 8 candidates, each marked with its verification status, and an APA style switch. A second document holds the AI-use table and a % field with a > 50 % warning. All three compile with Typst 0.15. No exposé prose was written.
+
+## [2026-10-22] query | Research on Visual Terrain-Relative Navigation for position localisation
+- created: [[vtrn-literature-search]], [[terrain-relative-navigation]]
+- updated: [[expose-material]], [[gnss-denied-use-cases]], [[localization-improvements]], [[overview]]; expose/literatur.bib (+11 candidates, marked unverified)
+- notes: Web search, snippets only. TRN/VTRN covers TERCOM/DSMAC, the Mars 2020 LVS (3.2 km → < 40 m), VISINAV (Mourikis 2009), UAV image-to-orthophoto matching (Conte & Doherty 2009; Goforth & Lucey 2019; Kinnari 2021/2022), the seasonal fragility fix (Fragoso 2021), reviews (Couturier & Akhloufi 2021), datasets (University-1652, UAV-VisLoc) and semantic-map methods (OrienterNet with OSM at ground level; building-vector matching; SASGeo, synthetic only). The literature names feature-poor regions at low altitude as open, which gives the thesis gap peer-reviewed footing: OSM object matching for nadir images in rural/Alpine terrain, on real data.
+
+## [2026-10-22] ingest | Author note: novelty of the combination (verified)
+- created: [[author-note-novelty]], [[thesis-contribution]]
+- updated: [[expose-material]], [[terrain-relative-navigation]], [[geo-match-prototype]], [[localization-improvements]], [[overview]]; expose/literatur.bib (+6, Kunz/Shankar/Hu/MapLocNet/OSMLoc/SASGeo)
+- notes: Every ingredient exists; the combination does not: nadir POI detection, a detector-error point-process likelihood, a calibrated heatmap with a null hypothesis, and cross-region/provider tests on real data. Citations confirmed by search except arXiv 2608.07835 (not found, flagged). Method consequence: replace inlier counting with a likelihood whose undetected-OSM-object term should penalise lattice errors (tank farm), testable offline on the saved detections. This differs from the rejected density-aware chance score, so there is no contradiction.
+
+## [2026-10-22] ingest | Author's literature list (manual findings) → exposé bibliography
+- created: [[author-literature-list]]
+- updated: [[author-note-novelty]], [[thesis-contribution]], [[expose-material]], [[localization-improvements]], [[overview]]; expose/literatur.bib (now the author's 27 works, data as given; duplicate SASGeo merged; arXiv preprints as `@article{journal = arXiv}` and the Vilnius thesis as `@book` so APA renders cleanly), expose/kandidaten.bib (16 earlier unverified AI suggestions, not shown in the exposé), expose/expose.typ (`literatur-vollstaendig` switch, default: show the full own list)
+- notes: Resolves arXiv 2608.07835 = SeqLoc (Zheng et al. 2026, feature-sparse scenes). The nearest neighbours to the novelty claim (Schleiss 2019, Wei 2022, Ouyang 2024, SWA-PF 2025) are known by title only, so the boundary must be checked in their full texts.
+
+## [2026-10-22] edit | Author's literature list, second version (30 works)
+- updated: [[author-literature-list]] (raw → v2, RTF as superseded_raw), [[expose-material]], [[overview]]; expose/literatur.bib rewritten
+- notes: Full author names, months, issue numbers; +3 works (Hehelskyi & Avrutov 2025; Lee, Mesic & Chung n.d. on self-supervised landmark discovery for TRN; Rulko 2025 on TRN with deep template matching + VO). "et al." lists completed from the first version. Rulko's volume "0" left out and flagged; Lee et al. has no year (renders "o. J." with access date). All 30 render in APA without artefacts.
