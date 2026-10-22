@@ -11,8 +11,8 @@
 
 // --- Metadaten (ohne Namen!) -------------------------------------------------
 #let arbeitstitel = [Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen]
-#let untertitel = [Eine Generalisierungsstudie über Regionen und Bodenauflösungen]
-#let titel-en = [Calibrated Probabilistic Geolocalization of Nadir Imagery with OpenStreetMap Features: A Generalization Study across Regions and Ground Sampling Distances]  // none = ausblenden
+#let untertitel = [Eine Generalisierungsstudie über Regionen]
+#let titel-en = [Calibrated Probabilistic Geolocalization of Nadir Imagery with OpenStreetMap Features: A Cross-Region Generalization Study]  // none = ausblenden
 #let studiengang = [Masterstudiengang Data Science & Intelligent Analytics (berufsbegleitend)]
 #let hochschule = [Hochschule Kufstein Tirol]
 #let kurs = [Lehrveranstaltung „Wissenschaftliches Arbeiten“, WS 2026/27]

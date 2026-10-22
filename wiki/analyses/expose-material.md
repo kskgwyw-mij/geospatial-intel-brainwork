@@ -2,7 +2,7 @@
 title: Exposé-Materialsammlung (Stichpunkte je Abschnitt)
 type: analysis
 tags: [thesis, expose, ai-use]
-sources: [thesis-goal, author-decision-nadir-input, author-decision-detection-in-scope, author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
+sources: [author-decision-generalisation-axes, thesis-goal, author-decision-nadir-input, author-decision-detection-in-scope, author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
 updated: 2026-10-22
 ---
 Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Ausgangspunkt für den eigenen Text; dazu eine Faktenliste für die KI-Dokumentation. Hier steht bewusst **kein Fließtext**: Das Exposé formuliert die Autorin oder der Autor selbst ([[wa-course-expose]], [[hok-ki-leitlinie]]).
@@ -15,7 +15,7 @@ Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Au
 - Danach: Anmeldung der Masterarbeit (Formular + Exposé) bis 31.10.2026 ([[wa-course-expose]]).
 
 ## Arbeitstitel — gewählt
-**„Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen: Eine Generalisierungsstudie über Regionen und Bodenauflösungen“**; englisch: „Calibrated Probabilistic Geolocalization of Nadir Imagery with OpenStreetMap Features: A Generalization Study across Regions and Ground Sampling Distances“ ([[author-decision-title]]). Steht in `expose/expose.typ`. Begriff: **Bodenauflösung / Ground Sampling Distance (GSD)** statt „Zoomstufe“; im Methodenteil einmal definieren (Bodenfläche pro Pixel, z. B. 0,2 m bei DOP20).
+**„Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen: Eine Generalisierungsstudie über Regionen“**; englisch: „Calibrated Probabilistic Geolocalization of Nadir Imagery with OpenStreetMap Features: A Cross-Region Generalization Study“ ([[author-decision-title]]). Steht in `expose/expose.typ`. Begriff: **Bodenauflösung / Ground Sampling Distance (GSD)** statt „Zoomstufe“; im Methodenteil einmal definieren (Bodenfläche pro Pixel, z. B. 0,2 m bei DOP20).
 - Abgleich mit den Kursvorgaben ([[wa-course-expose]]):
   - Haupttitel 8 Wörter, mit Untertitel 14, also über der Faustregel 8–12.
   - Fachbegriffe wie „kalibriert“, „probabilistisch“, „Nadir“ sind für Fachfremde nicht selbsterklärend.
@@ -27,7 +27,7 @@ Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Au
   - Nur indirekt: **Erkennung und Klassifikation**, der Ausgangspunkt der Themenfindung.
   - Fehlt: **„ohne Metadaten“**, die Kernschwierigkeit.
   - Der Schwerpunkt hat sich vom Erkennen zum Verorten verschoben. Im Exposé deshalb die Erkennung als eigenes Ziel bzw. eigene Teilfrage führen und „ohne Metadaten“ in der Problemstellung früh benennen.
-  - Umfang: zwei Generalisierungsachsen plus Erkennung und Kalibrierung sind ambitioniert. Der Anbieterwechsel ist optional.
+  - Umfang: **entschieden**. Generalisiert wird nur über Regionen; kein Anbieterwechsel, die Bodenauflösung (GSD) ist keine Studienachse ([[author-decision-generalisation-axes]]). Den Maßstab schätzt das Verfahren trotzdem selbst; im Methodenteil einen realistischen GSD-Bereich nennen (z. B. 0,1–0,3 m).
 
 ## Arbeitstitel — Bausteine (frühere Notizen)
 - Kernidee in Alltagssprache: *Luftbild ohne Ortsangabe → Ort, Maßstab und Ausrichtung aus erkannten Kartenobjekten*.

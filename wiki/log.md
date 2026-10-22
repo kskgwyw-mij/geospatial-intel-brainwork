@@ -237,3 +237,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] query | Which of the two generalisation axes to drop?
 - updated: [[thesis-contribution]]
 - notes: Recommendation: keep regions (spatial blocking required anyway, data in place, Alpine vs pre-Alpine is the method's limit) and demote GSD to a robustness check. Reasons: a real GSD shift needs multi-altitude drone data; downsampling is a proxy; small objects drop below detectability at 0.8 m; error rates and calibration per GSD multiply the effort. Exception: real multi-altitude drone data. Title unchanged until the author decides.
+
+## [2026-10-22] ingest | Author decision: generalise across regions only
+- created: [[author-decision-generalisation-axes]]
+- updated: [[author-decision-title]], [[thesis-contribution]], [[expose-material]], [[overview]], [[thesis-timeline]]; expose/expose.typ (subtitle)
+- notes: No cross-provider test, GSD dropped as a study axis (it follows the recommendation). Subtitle: „Eine Generalisierungsstudie über Regionen“ / "A Cross-Region Generalization Study". Scale is still estimated by the metadata-free method; name a realistic GSD band in the methods.
