@@ -247,3 +247,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: expose/expose-rohfassung.typ
 - updated: [[expose-material]], expose/ki-dokumentation.typ (new row), README
 - notes: The author asked for a complete exposé. Declined as finished text: an honest AI share would far exceed the course's 50 % cap, and the HOK AI guideline forbids fully AI-generated texts where own work is required (ASPO 2.8). Delivered the course-sanctioned alternative: a paragraph plan per section (claim + citations from the author's own bibliography + evidence status: verified / title only / own AI-assisted pre-test / author's decision). 5 pages, compiles; documented in the AI-use PDF.
+
+## [2026-10-22] edit | Exposé: full AI draft on the author's request
+- created: expose/expose-ki-entwurf.typ
+- updated: expose/kandidaten.bib (dataset/software entries as `@book` "[Datensatz]/[Software]", arXiv as `@article`, so APA renders cleanly), expose/ki-dokumentation.typ (new row), [[expose-material]], README
+- notes: The author asked for a written draft ("ignore the 50 %, it's only a draft"). Written as a marked AI draft (header "KI-Entwurf"), about 2,200 words: all five sections, draft research questions (main + FF1–FF3: detection/error model, likelihood vs inlier counting, Miesbach → Garmisch). Only verified claims; title-only sources described only by their titles; candidates from kandidaten.bib marked †; pre-test numbers footnoted as AI-assisted; open points in red. Two unsourced superlatives removed in review.
