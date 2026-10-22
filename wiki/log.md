@@ -301,3 +301,6 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Exposé draft: footnote on AI-assisted pre-test removed
 - updated: expose/expose-ki-entwurf.typ + .pdf
 - notes: Removed on the author's request. The disclosure stays in the required AI-documentation PDF (ki-dokumentation.typ row "Programmierung von Prototyp-Werkzeugen und Durchführung KI-gestützter Machbarkeitsprüfungen"), which is where the course puts it. Still 4 pages.
+
+## [2026-10-22] edit | Research-question structure confirmed
+- notes: The author confirms one main question plus two sub-questions (FF1 detection/error model, FF2 likelihood + calibration vs counting). No FF3; transfer stays in the main question and the evaluation design. Labels unchanged in the draft.
