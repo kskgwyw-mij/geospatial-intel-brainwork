@@ -19,7 +19,7 @@
 #show heading.where(level: 1): set text(size: 13pt)
 
 #let fehlt(body) = text(fill: rgb("#b00020"))[[#body]]
-#let ungeprueft = []  // Markierung ungeprüfter Quellen (früher †) entfernt; ungeprüft: hu2024localizability, xia2018dota, fischler1981ransac, hevner2004design, peffers2007dsrm
+#let ungeprueft = []  // alle zitierten Quellen bibliografisch geprüft (2026-10-22)
 
 #align(center)[
   #set par(justify: false)

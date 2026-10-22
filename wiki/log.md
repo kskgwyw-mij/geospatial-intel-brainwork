@@ -293,3 +293,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Exposé draft: no mention of ground-resolution comparison
 - updated: expose/expose-ki-entwurf.typ + .pdf
 - notes: The author found the exclusion confusing. Removed the data-section sentence (no systematic GSD comparison, scale searched in 0.1–0.3 m/px) and the GSD item in the scope limits. Scale estimation remains implicit in "Position, Maßstab und Ausrichtung" and the pose hypotheses. Still 4 pages.
+
+## [2026-10-22] edit | Remaining five exposé citations verified bibliographically
+- updated: expose/literatur.bib (+5), expose/kandidaten.bib (−5), expose/expose-ki-entwurf.typ + .pdf
+- notes: Checked via web search against publisher/index pages: Xia et al. 2018 (CVPR, pp. 3974–3983, doi 10.1109/CVPR.2018.00418); Fischler & Bolles 1981 (CACM 24(6) 381–395, doi 10.1145/358669.358692); Hevner et al. 2004 (MISQ 28(1) 75–105); Peffers et al. 2007 (JMIS 24(3) 45–77, doi 10.2753/MIS0742-1222240302); Hu, Dhillon & Buehrer 2024 (arXiv 2409.09525). All citations in the draft are now bibliographically verified; reading the content is still the author's job. Still 4 pages.
