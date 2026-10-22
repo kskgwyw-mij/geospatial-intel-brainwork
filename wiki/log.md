@@ -220,7 +220,21 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Author's literature list, second version (30 works)
 - updated: [[author-literature-list]] (raw → v2, RTF as superseded_raw), [[expose-material]], [[overview]]; expose/literatur.bib rewritten
 - notes: Full author names, months, issue numbers; +3 works (Hehelskyi & Avrutov 2025; Lee, Mesic & Chung n.d. on self-supervised landmark discovery for TRN; Rulko 2025 on TRN with deep template matching + VO). "et al." lists completed from the first version. Rulko's volume "0" left out and flagged; Lee et al. has no year (renders "o. J." with access date). All 30 render in APA without artefacts.
-ich of the two generalisation axes to drop?
+
+## [2026-10-22] ingest | Author decision: working title
+- created: [[author-decision-title]]
+- updated: [[thesis-timeline]], [[thesis-contribution]], [[expose-material]], [[overview]]; expose/expose.typ (title, subtitle, English title line, PDF title metadata; title block not justified, 16 pt, no hyphenation → two clean lines)
+- notes: The title fixes the generalisation axes as regions + zoom levels (scale/GSD). Cross-provider from the novelty note is not in it, so that is an open decision. Against the course criteria: precise and no abbreviations, but 14 words with the subtitle (rule of thumb 8–12) and technical terms; the author's deliberate choice.
+
+## [2026-10-22] edit | Title: "Zoomstufen" → Bodenauflösungen / Ground Sampling Distances
+- updated: [[author-decision-title]] (raw → amended note, first note superseded), [[thesis-contribution]], [[thesis-timeline]], [[expose-material]], [[overview]]; expose/expose.typ
+- notes: Author's terminology choice. German subtitle: „Eine Generalisierungsstudie über Regionen und Bodenauflösungen“. English: "A Generalization Study across Regions and Ground Sampling Distances" (no "GSD" abbreviation in the title). The evaluation axis is now cross-GSD, e.g. DOP20 resampled to 0.4 / 0.8 m or different flight altitudes.
+
+## [2026-10-22] query | Does the title fit the topic development?
+- updated: [[expose-material]]
+- notes: Mostly yes. Covered: nadir input, geolocalisation, calibration/generalisation (the novelty); region left open by design. Only implicit: detection and classification (the original goal and a scope decision). Missing: "without metadata" (the core difficulty). The emphasis has moved from recognising to locating, so the exposé should keep detection as its own goal or sub-question and name the metadata-free setting early. Scope is ambitious; cross-provider is optional.
+
+## [2026-10-22] query | Which of the two generalisation axes to drop?
 - updated: [[thesis-contribution]]
 - notes: Recommendation: keep regions (spatial blocking required anyway, data in place, Alpine vs pre-Alpine is the method's limit) and demote GSD to a robustness check. Reasons: a real GSD shift needs multi-altitude drone data; downsampling is a proxy; small objects drop below detectability at 0.8 m; error rates and calibration per GSD multiply the effort. Exception: real multi-altitude drone data. Title unchanged until the author decides.
 
@@ -307,3 +321,6 @@ ich of the two generalisation axes to drop?
 - updated: expose/expose-ki-entwurf.typ + .pdf
 - notes: The evaluation sentence now names the development/test regions generically, "beispielsweise Alpenvorland und Hochgebirge am bayerischen Alpenrand". The pre-test sentence still says where the pre-test ran ("am bayerischen Alpenrand"), which is a fact, not a fixed study area. Still 4 pages.
 
+## [2026-10-23] edit | Restore wiki and raw files lost in the revert of PR #17
+- updated: [[author-decision-title]], [[author-decision-generalisation-axes]] (restored), [[expose-material]], [[thesis-contribution]], [[thesis-timeline]], [[overview]], [[index]], [[log]]; raw/2026-10-22-author-decision-title.md, raw/2026-10-22-author-decision-title-gsd.md, raw/2026-10-22-author-decision-generalisation-axes.md (restored)
+- notes: Reverting the PR #17 merge on main also removed the title and generalisation-axes decisions, three raw notes (raw is immutable), four log entries, and left a truncated log heading and expose-material without `sources`. Later pages and the exposé draft still rely on these decisions, and lint failed (6 errors). wiki/ and raw/ are restored to the jolly-wozniak tip (411def2), so lint is clean again. expose/ files (Rohfassung, expose.typ title, README, ki-dokumentation rows) were left as the revert set them; expose-material notes that the Rohfassung is gone from main.
