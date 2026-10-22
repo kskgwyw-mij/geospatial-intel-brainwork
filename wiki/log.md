@@ -256,3 +256,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | AI draft shortened to 4 pages
 - updated: expose/expose-ki-entwurf.typ + .pdf, [[expose-material]]
 - notes: Cut from 6 to 4 pages (about 1,700 words incl. bibliography at 10 pt). The draft-label header is switched off (cosmetic). On the request to "hide the AI generation": declined to rewrite for detector evasion, to remove the footnote that the pre-test was AI-assisted, or to drop the draft from the AI documentation, because the course requires disclosure and ASPO 2.8 treats concealment as fraud. The disclosure row in ki-dokumentation.typ is unchanged.
+
+## [2026-10-22] query | Which object classes? (placeholder in the exposé draft)
+- updated: [[thesis-contribution]], expose/expose-ki-entwurf.typ + .pdf
+- notes: Proposal, applied in the draft and still 4 pages. Core: pools, tennis, soccer, tracks (DOTA baseline, standard sizes); storage tanks (lattice test case); buildings split into dwelling/outbuilding (coverage lever, Overpass rule). Optional: power pylons (3,780, most frequent) and road junctions (32 % coverage), only if time allows. Based on measured region counts and coverage.

@@ -2,7 +2,7 @@
 title: Thesis contribution — what is new, what exists, what it means for the method
 type: analysis
 tags: [thesis, novelty, geolocalization, method, evaluation]
-sources: [author-decision-generalisation-axes, author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, real-e2e-test, localization-levers-test, settlement-test, costea-2016-aerial-geolocalization]
+sources: [settlement-overpass-labels, osm-real-test, author-decision-generalisation-axes, author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, real-e2e-test, localization-levers-test, settlement-test, costea-2016-aerial-geolocalization]
 updated: 2026-10-22
 ---
 The thesis contribution is a combination that no prior work found so far contains: POI-level OSM classes detected in nadir imagery, matched through a point-process likelihood with an explicit detector-error model, giving a calibrated location heatmap with a null hypothesis, and evaluated on real data with spatially blocked cross-region and cross-provider tests. Each ingredient exists separately ([[author-note-novelty]]).
@@ -50,6 +50,14 @@ The first working title named **regions and ground sampling distances (GSD)** as
   - Scale is estimated anyway in the metadata-free setting, so a fixed realistic band (e.g. 0.1–0.3 m) plus one or two resampled levels as a labelled robustness check is enough.
   - Exception: with real multi-altitude drone imagery, GSD becomes the more interesting axis; keep a minimal two-region block regardless.
 - **Cross-provider** (from [[author-note-novelty]]) is not in the title. Decide whether it stays as a secondary test or is dropped.
+
+## Object classes (proposal applied in the exposé draft)
+| Group | Classes | Why | Evidence |
+|---|---|---|---|
+| Core A | swimming pools, tennis courts, soccer pitches, running tracks | DOTA zero-shot baseline exists; standardised sizes help the scale estimate | region counts 934 / 681 / 812 / 299 ([[osm-real-test]]); zero-shot P 0.49, R 0.62 ([[real-e2e-test]]) |
+| Core B | storage tanks | in DOTA; clustered, so they test the lattice failure | 782 tanks; tank-farm error ([[real-e2e-test]]) |
+| Core C | buildings, split into dwelling vs outbuilding | main coverage lever; the split comes from Overpass tags | about 43–55 /km²; ≥ 8 buildings in 16–23 % of photos ([[osm-real-test]], [[localization-levers-test]], [[settlement-overpass-labels]]) |
+| Optional | power pylons, road junctions | most frequent point anchor / proven fingerprint (Costea), but they need new training or road segmentation | 3,780 pylons; ≥ 3 junctions in 32 % of photos ([[localization-levers-test]]) |
 
 ## Why the likelihood should beat the current inlier counting (testable hypothesis)
 The current matcher counts inliers ([[geo-match-prototype]]). Its measured failure was a tank farm matched to a denser tank cluster 63.5 km away at 1.76× scale ([[real-e2e-test]]). Inlier counting rewards that pose: more objects lie nearby. The likelihood also charges **every OSM object in the hypothesised footprint that was not detected** (the log(1 − r) term). At 1.76× scale the footprint is about 3× larger and holds a denser cluster, so many objects go unexplained.
