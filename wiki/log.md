@@ -316,3 +316,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Exposé draft: districts not fixed yet
 - updated: expose/expose-ki-entwurf.typ + .pdf
 - notes: On the author's request, Miesbach / Garmisch-Partenkirchen no longer appear. The text names a development region and a spatially separate test region with different object density inside the study area ("am bayerischen Alpenrand" stays). The wiki keeps the two districts as the working candidates used in the pre-tests. Still 4 pages; bibliography on page 4.
+
+## [2026-10-22] edit | Exposé draft: Bavarian Alpine edge as an example, not fixed
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: The evaluation sentence now names the development/test regions generically, "beispielsweise Alpenvorland und Hochgebirge am bayerischen Alpenrand". The pre-test sentence still says where the pre-test ran ("am bayerischen Alpenrand"), which is a fact, not a fixed study area. Still 4 pages.

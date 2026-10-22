@@ -58,7 +58,7 @@ Wissenschaftlich soll (1) die Erkennungsgüte der genannten OSM-Objektklassen in
   *Forschungsfrage:* Wie zuverlässig und wie gut kalibriert lassen sich Nadir-Luftbilder ohne Metadaten allein anhand erkannter OpenStreetMap-Objekte in einer nicht zur Entwicklung genutzten Region verorten?
   - *FF1:* Mit welcher Güte lassen sich ausgewählte OSM-Objektklassen in Luftbildern mit 0,2 m Bodenauflösung erkennen, und wie lassen sich die Detektorfehler als Fehlermodell beschreiben?
   - *FF2:* Verbessert eine Wahrscheinlichkeitsfunktion mit Fehlermodell und Nullhypothese Trefferquote und Kalibrierung gegenüber einem Abgleich, der nur übereinstimmende Objekte zählt?
-  Die Übertragbarkeit ist keine eigene Teilfrage, sondern im Evaluationsdesign verankert: entwickelt und abgestimmt wird in einer Region des Untersuchungsraums, getestet ausschließlich in einer räumlich getrennten zweiten Region mit anderer Objektdichte.
+  Die Übertragbarkeit ist keine eigene Teilfrage, sondern im Evaluationsdesign verankert: entwickelt und abgestimmt wird in einer Region, getestet ausschließlich in einer räumlich getrennten zweiten Region mit anderer Objektdichte, beispielsweise Alpenvorland und Hochgebirge am bayerischen Alpenrand.
 ]
 
 = Vorgehensweise und Methoden
