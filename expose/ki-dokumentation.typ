@@ -43,10 +43,6 @@
     [Prüfung und Interpretation; Durchführung der eigentlichen Experimente in der Masterarbeit],
   [Claude Code (Anthropic)], [Checkliste und Stichpunktsammlung je Exposé-Abschnitt; Typst-Vorlage],
     [Formulierung des gesamten Exposé-Texts],
-  [Claude Code (Anthropic)], [Rohfassung als Absatzplan: Kernaussage, Belege aus der eigenen Literaturliste und Belegstatus je geplantem Absatz (Datei `expose-rohfassung.typ`)],
-    [Eigene Literaturrecherche (Quellenliste), Auswahl und Prüfung der Belege, Ausformulierung aller Absätze in eigenen Worten],
-  [Claude Code (Anthropic)], [Ausformulierter Exposé-Entwurf auf Basis der eigenen Literaturliste (Datei `expose-ki-entwurf.typ`)],
-    [Titel, Themenwahl, Literaturliste, inhaltliche Entscheidungen (Regionen, Nadir, ohne Metadaten, Generalisierungsachse); Überarbeitung des Entwurfs],
 )
 
 = Geschätzter KI-Anteil
