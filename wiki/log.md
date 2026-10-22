@@ -289,3 +289,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Exposé draft: dagger markers removed; "Studienachse" rephrased
 - updated: expose/expose-ki-entwurf.typ + .pdf
 - notes: On request, the † legend and markers are gone. Still unverified (listed in a source comment): Hu/Dhillon/Buehrer 2024, Xia et al. 2018 (DOTA), Fischler & Bolles 1981, Hevner et al. 2004, Peffers et al. 2007; they remain in kandidaten.bib. The jargon "Bodenauflösung als Studienachse" became plain wording: different ground resolutions are not compared systematically, but the method searches scale in 0.1–0.3 m/px. Still 4 pages.
+
+## [2026-10-22] edit | Exposé draft: no mention of ground-resolution comparison
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: The author found the exclusion confusing. Removed the data-section sentence (no systematic GSD comparison, scale searched in 0.1–0.3 m/px) and the GSD item in the scope limits. Scale estimation remains implicit in "Position, Maßstab und Ausrichtung" and the pose hypotheses. Still 4 pages.
