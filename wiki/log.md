@@ -312,3 +312,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Exposé draft: more spacing between headings and text blocks
 - updated: expose/expose-ki-entwurf.typ + .pdf
 - notes: Section headings: above 1.5 → 2.2 em, below 0.8 → 1.2 em. Paragraph spacing: 1.1 → 1.4 em. Still 4 pages; the bibliography stays alone on page 4.
+
+## [2026-10-22] edit | Exposé draft: districts not fixed yet
+- updated: expose/expose-ki-entwurf.typ + .pdf
+- notes: On the author's request, Miesbach / Garmisch-Partenkirchen no longer appear. The text names a development region and a spatially separate test region with different object density inside the study area ("am bayerischen Alpenrand" stays). The wiki keeps the two districts as the working candidates used in the pre-tests. Still 4 pages; bibliography on page 4.

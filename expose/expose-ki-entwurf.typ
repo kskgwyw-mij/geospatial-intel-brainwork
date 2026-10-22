@@ -58,7 +58,7 @@ Wissenschaftlich soll (1) die Erkennungsgüte der genannten OSM-Objektklassen in
   *Forschungsfrage:* Wie zuverlässig und wie gut kalibriert lassen sich Nadir-Luftbilder ohne Metadaten allein anhand erkannter OpenStreetMap-Objekte in einer nicht zur Entwicklung genutzten Region verorten?
   - *FF1:* Mit welcher Güte lassen sich ausgewählte OSM-Objektklassen in Luftbildern mit 0,2 m Bodenauflösung erkennen, und wie lassen sich die Detektorfehler als Fehlermodell beschreiben?
   - *FF2:* Verbessert eine Wahrscheinlichkeitsfunktion mit Fehlermodell und Nullhypothese Trefferquote und Kalibrierung gegenüber einem Abgleich, der nur übereinstimmende Objekte zählt?
-  Die Übertragbarkeit ist keine eigene Teilfrage, sondern im Evaluationsdesign verankert: entwickelt und abgestimmt wird im Landkreis Miesbach (Alpenvorland), getestet ausschließlich im Landkreis Garmisch-Partenkirchen (Hochgebirge).
+  Die Übertragbarkeit ist keine eigene Teilfrage, sondern im Evaluationsdesign verankert: entwickelt und abgestimmt wird in einer Region des Untersuchungsraums, getestet ausschließlich in einer räumlich getrennten zweiten Region mit anderer Objektdichte.
 ]
 
 = Vorgehensweise und Methoden
@@ -71,7 +71,7 @@ Methodischer Rahmen ist Design Science Research: Ein Verfahren wird als Artefakt
 
 *Verortung (FF2).* Für Hypothesen aus Ort, Drehung und Maßstab werden die OSM-Objekte ins Bild projiziert. Die Wahrscheinlichkeit berücksichtigt übereinstimmende Erkennungen (Trefferrate, Verwechslung, Lagefehler), übersehene Kartenobjekte und Fehlalarme als Poisson-Punktprozess. Über ein Hypothesenraster entsteht eine Positionsverteilung, die gegen die Nullhypothese „alle Erkennungen sind Fehlalarme“ geprüft wird; der Term für übersehene Objekte soll Fehlzuordnungen bei regelmäßigen Anordnungen verhindern. Vergleichsverfahren ist ein robuster Abgleich über die Zahl übereinstimmender Objekte @fischler1981ransac#ungeprueft.
 
-*Kalibrierung und Evaluation (FF2).* Die ausgegebene Sicherheit wird mit der beobachteten Trefferquote verglichen, etwa über Zuverlässigkeitsdiagramme, und daraus eine Enthaltungsschwelle abgeleitet. Trainings-, Abstimmungs- und Testgebiete werden räumlich getrennt; abgestimmt wird in Miesbach, getestet in Garmisch-Partenkirchen. Gemessen werden Erfolgsquote (Positionsfehler unterhalb einer noch festzulegenden Schwelle), Positions-, Maßstabs- und Richtungsfehler, Kalibrierungsfehler und Enthaltungsrate; rund 100 Testbilder je Bedingung ergeben Konfidenzintervalle von etwa ± 10 Prozentpunkten. Abschließend wird das Verfahren in den Upload-Prototyp integriert.
+*Kalibrierung und Evaluation (FF2).* Die ausgegebene Sicherheit wird mit der beobachteten Trefferquote verglichen, etwa über Zuverlässigkeitsdiagramme, und daraus eine Enthaltungsschwelle abgeleitet. Trainings-, Abstimmungs- und Testgebiete werden räumlich getrennt; abgestimmt wird in der Entwicklungsregion, getestet in der Testregion. Gemessen werden Erfolgsquote (Positionsfehler unterhalb einer noch festzulegenden Schwelle), Positions-, Maßstabs- und Richtungsfehler, Kalibrierungsfehler und Enthaltungsrate; rund 100 Testbilder je Bedingung ergeben Konfidenzintervalle von etwa ± 10 Prozentpunkten. Abschließend wird das Verfahren in den Upload-Prototyp integriert.
 
 *Abgrenzung.* Ausgeschlossen sind Schrägaufnahmen, Echtzeit-Navigation und ein Wechsel des Bildanbieters; die Arbeit ist auf zivile Anwendungen ausgerichtet.
 
