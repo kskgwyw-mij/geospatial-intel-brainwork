@@ -277,3 +277,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] edit | Overpass API cited explicitly (verified)
 - updated: expose/literatur.bib (+ olbricht_overpass), expose/expose-ki-entwurf.typ + .pdf
 - notes: Software citation: Olbricht, R., Overpass API (Version 0.7.62.4) [Software], https://overpass-api.de/, accessed 21.10.2026. Maintainer, AGPL v3, service URL and GitHub source checked against the OSM wiki (DE:Overpass_API); the version comes from the "generator" field of the saved exports; the release year is unknown, hence "o. J.". The draft now names the Overpass API with a citation and is still 4 pages.
+
+## [2026-10-22] query | Is the dwelling/outbuilding split useful? → replaced by geometric descriptors
+- updated: [[thesis-contribution]], [[expose-material]]; expose/expose-ki-entwurf.typ + .pdf
+- notes: For localisation the split adds little and costs a lot: tag-noisy labels (75 % `building=yes`, house-number rule), poor nadir separability and scope. The author agreed to describe buildings instead by footprint area and orientation from OSM polygons: reliable, visible from above, more discriminative, and in line with "Objektmerkmale" in the title. The split stays an outlook / settlement-mapping topic. The draft is still 4 pages.
