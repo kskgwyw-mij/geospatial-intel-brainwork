@@ -2,7 +2,7 @@
 title: Exposé-Materialsammlung (Stichpunkte je Abschnitt)
 type: analysis
 tags: [thesis, expose, ai-use]
-sources: [author-note-novelty, vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
+sources: [author-literature-list, author-note-novelty, vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
 updated: 2026-10-22
 ---
 Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Ausgangspunkt für den eigenen Text; dazu eine Faktenliste für die KI-Dokumentation. Hier steht bewusst **kein Fließtext**: Das Exposé formuliert die Autorin oder der Autor selbst ([[wa-course-expose]], [[hok-ki-leitlinie]]).
@@ -57,7 +57,8 @@ Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Au
     - ein Detektor-Fehlermodell in einer Punktprozess-Likelihood;
     - eine kalibrierte Heatmap mit Nullhypothese;
     - ein räumlich geblockter Test über Regionen und Bildanbieter hinweg.
-  - arXiv 2608.07835 ist nicht auffindbar und darf so nicht zitiert werden.
+  - arXiv 2608.07835 = **SeqLoc** (Zheng et al. 2026), laut eigener Literaturliste ([[author-literature-list]]).
+  - **Eigene Literaturliste (27 Werke)** ist jetzt `expose/literatur.bib` und erscheint im Exposé. Ungeprüfte KI-Vorschläge stehen getrennt in `expose/kandidaten.bib`. Nächste Nachbarn zur Abgrenzung (Volltexte lesen!): Schleiss 2019, Wei et al. 2022, Ouyang et al. 2024, SWA-PF 2025, SeqLoc 2026.
 - **Mehrwert:** Kombination aus Erkennung (Forschungsfrage FF1) und Verortung (FF2), reproduzierbar mit offenen bayerischen Daten.
 - **Literatur zur Relevanz (Kandidaten aus der Recherche, [[vtrn-literature-search]]):** Das Feld heißt *(Visual) Terrain-Relative Navigation* bzw. *Absolute Visual Localization* ([[terrain-relative-navigation]]).
   - Übersicht: Couturier & Akhloufi 2021.

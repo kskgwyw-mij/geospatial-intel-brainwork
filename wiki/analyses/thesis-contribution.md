@@ -2,7 +2,7 @@
 title: Thesis contribution — what is new, what exists, what it means for the method
 type: analysis
 tags: [thesis, novelty, geolocalization, method, evaluation]
-sources: [author-note-novelty, vtrn-literature-search, real-e2e-test, localization-levers-test, settlement-test, costea-2016-aerial-geolocalization]
+sources: [author-literature-list, author-note-novelty, vtrn-literature-search, real-e2e-test, localization-levers-test, settlement-test, costea-2016-aerial-geolocalization]
 updated: 2026-10-22
 ---
 The thesis contribution is a combination that no prior work found so far contains: POI-level OSM classes detected in nadir imagery, matched through a point-process likelihood with an explicit detector-error model, giving a calibrated location heatmap with a null hypothesis, and evaluated on real data with spatially blocked cross-region and cross-provider tests. Each ingredient exists separately ([[author-note-novelty]]).
@@ -15,6 +15,8 @@ The thesis contribution is a combination that no prior work found so far contain
 | Point-process model of indistinguishable landmarks | Hu, Dhillon & Buehrer 2024 ([[author-note-novelty]]) | Analysis of localizability, not a pipeline; no detector errors |
 | OSM as a localisation reference, probabilistic filters | OrienterNet, MapLocNet, OSMLoc ([[author-note-novelty]], [[vtrn-literature-search]]) | Ground-level cameras, cities |
 | Rejecting ambiguous fixes | SASGeo ([[vtrn-literature-search]]) | Synthetic proof of concept only; says real-flight validation is missing |
+| Aerial image → map-like representation; vector/semantic map + particle filter | Schleiss 2019; Wei et al. 2022; Ouyang et al. 2024; SWA-PF 2025 ([[author-literature-list]]) | Titles only so far: **read the full texts to confirm the novelty boundary**, especially for detector-error modelling and null hypotheses |
+| Multi-frame localisation in feature-sparse scenes | SeqLoc 2026 ([[author-literature-list]]) | Cross-view and sequence-based; relevant to the coverage limit and multi-frame lever |
 | Image-to-orthophoto VTRN on UAVs | Conte & Doherty 2009; Goforth & Lucey 2019; Kinnari et al. 2022 ([[vtrn-literature-search]]) | Appearance matching, fragile across seasons; a candidate baseline |
 
 ## The four novel parts, concretely
@@ -49,6 +51,7 @@ The current fix (≥ 2 inlier classes for "confident") is a heuristic stand-in. 
 The four parts map onto FF1 (detection and error model), FF2 (likelihood, heatmap, calibration) and a possible FF3 (limits / abstention rate across regions and providers) in [[thesis-timeline]]. The research question itself is the author's to phrase ([[expose-material]]).
 
 ## Related
+- [[author-literature-list]]
 - [[author-note-novelty]]
 - [[vtrn-literature-search]]
 - [[terrain-relative-navigation]]

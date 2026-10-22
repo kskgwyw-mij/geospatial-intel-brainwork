@@ -1,95 +1,19 @@
-% Literaturkandidaten aus dem Wiki (wiki/analyses/expose-material.md).
-% VOR DER VERWENDUNG: Quelle selbst lesen und alle Angaben (Seiten, Band, DOI) am Original prüfen.
-% Stand: costea2016 und maggiori2017labeling als Volltext gelesen; die übrigen nur aus Suchtreffern
-% bzw. Allgemeinwissen, daher besonders genau kontrollieren.
+% Eigene Literaturliste (manuell recherchiert), übertragen aus manual_findings.rtf am 2026-10-22.
+% Angaben unverändert übernommen; der doppelte SASGeo-Eintrag (2026a/2026b) wurde zusammengeführt.
+% Weitere, ungeprüfte Kandidaten des KI-Assistenten stehen in kandidaten.bib.
 
-@inproceedings{costea2016,
-  author    = {Costea, Dragos and Leordeanu, Marius},
-  title     = {Aerial Image Geolocalization from Recognition and Matching of Roads and Intersections},
-  booktitle = {Proceedings of the British Machine Vision Conference (BMVC)},
-  year      = {2016},
-  month     = sep,
-  url       = {https://arxiv.org/abs/1605.08323},
-}
-
-@article{maggiori2017labeling,
-  author  = {Maggiori, Emmanuel and Tarabalka, Yuliya and Charpiat, Guillaume and Alliez, Pierre},
-  title   = {High-Resolution Aerial Image Labeling With Convolutional Neural Networks},
-  journal = {IEEE Transactions on Geoscience and Remote Sensing},
-  year    = {2017},
-  volume  = {55},
-  number  = {12},
-  pages   = {7092--7103},
-}
-
-@article{maggiori2017osm,
-  author  = {Maggiori, Emmanuel and Tarabalka, Yuliya and Charpiat, Guillaume and Alliez, Pierre},
-  title   = {Convolutional Neural Networks for Large-Scale Remote-Sensing Image Classification},
-  journal = {IEEE Transactions on Geoscience and Remote Sensing},
-  year    = {2017},
-  note    = {Band, Heft und Seiten prüfen},
-}
-
-@inproceedings{xia2018dota,
-  author    = {Xia, Gui-Song and Bai, Xiang and Ding, Jian and Zhu, Zhen and Belongie, Serge and Luo, Jiebo
-               and Datcu, Mihai and Pelillo, Marcello and Zhang, Liangpei},
-  title     = {{DOTA}: A Large-Scale Dataset for Object Detection in Aerial Images},
-  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year      = {2018},
-  month     = jun,
-  note      = {Seiten prüfen},
-}
-
-@article{fischler1981ransac,
-  author  = {Fischler, Martin A. and Bolles, Robert C.},
-  title   = {Random Sample Consensus: A Paradigm for Model Fitting with Applications to Image Analysis and Automated Cartography},
-  journal = {Communications of the ACM},
-  year    = {1981},
-  volume  = {24},
-  number  = {6},
-  pages   = {381--395},
-}
-
-@misc{ultralytics2024yolo11,
-  author       = {{Ultralytics}},
-  title        = {Ultralytics YOLO11},
-  year         = {2024},
-  howpublished = {Software},
-  note         = {Version und Zitierhinweis der Projektseite prüfen},
-}
-
-@misc{ldbv2026dop20,
-  author       = {{Bayerische Vermessungsverwaltung}},
-  title        = {Digitales Orthophoto 20 cm (DOP20) RGB},
-  year         = {2026},
-  howpublished = {OpenData Bayern},
-  url          = {https://geodaten.bayern.de/opengeodata/OpenDataDetail.html?pn=dop20rgb},
-  note         = {Lizenz CC BY 4.0},
-}
-
-@misc{osm2026,
-  author       = {{OpenStreetMap-Mitwirkende}},
-  title        = {OpenStreetMap},
-  year         = {2026},
-  url          = {https://www.openstreetmap.org},
-  note         = {Daten unter ODbL; Abrufdatum angeben},
-}
-
-% --- Ergänzt 2026-10-22: Visual Terrain-Relative Navigation / UAV-Lokalisierung (nur Suchtreffer, siehe
-%     wiki/sources/vtrn-literature-search.md). Vor Verwendung selbst lesen und Angaben prüfen.
-
-@article{couturier2021review,
-  author  = {Couturier, Andy and Akhloufi, Moulay A.},
-  title   = {A Review on Absolute Visual Localization for {UAV}},
-  journal = {Robotics and Autonomous Systems},
-  year    = {2021},
-  volume  = {135},
-  pages   = {103666},
-  doi     = {10.1016/j.robot.2020.103666},
+@inproceedings{castleberry2021vtrn,
+  author    = {Castleberry, M. and Martin, S.},
+  title     = {Improving Visual Terrain Relative Navigation for Aerial Systems at Diverse Altitudes},
+  booktitle = {Autonomous Systems: Sensors, Processing, and Security for Vehicles and Infrastructure 2021},
+  publisher = {SPIE},
+  year      = {2021},
+  pages     = {1174802},
+  doi       = {10.1117/12.2587350},
 }
 
 @article{conte2009vision,
-  author  = {Conte, Gianpaolo and Doherty, Patrick},
+  author  = {Conte, G. and Doherty, P.},
   title   = {Vision-Based Unmanned Aerial Vehicle Navigation Using Geo-Referenced Information},
   journal = {EURASIP Journal on Advances in Signal Processing},
   year    = {2009},
@@ -98,136 +22,227 @@
   doi     = {10.1155/2009/387308},
 }
 
+@article{costea2016,
+  author = {Costea, D. and Leordeanu, M.},
+  title  = {Aerial Image Geolocalization from Recognition and Matching of Roads and Intersections},
+  journal = {arXiv},
+  year   = {2016},
+  doi    = {10.48550/arXiv.1605.08323},
+}
+
+@article{couturier2021review,
+  author  = {Couturier, A. and Akhloufi, M. A.},
+  title   = {A Review on Absolute Visual Localization for {UAV}},
+  journal = {Robotics and Autonomous Systems},
+  year    = {2021},
+  volume  = {135},
+  pages   = {103666},
+  doi     = {10.1016/j.robot.2020.103666},
+}
+
+@article{deng2026aeromap3d,
+  author = {Deng, Z. and Sentis, L.},
+  title  = {{AeroMap3D}: Anchoring Monocular {UAV} 6-{DoF} Localization to Visual-Geometric-Semantic Map Priors},
+  journal = {arXiv},
+  year   = {2026},
+  doi    = {10.48550/arXiv.2607.14009},
+}
+
+@article{dhaouadi2025ortholoc,
+  author = {Dhaouadi, O. and Marin, R. and Meier, J. and Kaiser, J. and Cremers, D.},
+  title  = {{OrthoLoC}: {UAV} 6-{DoF} Localization and Calibration Using Orthographic Geodata},
+  journal = {arXiv},
+  year   = {2025},
+  doi    = {10.48550/arXiv.2509.18350},
+}
+
 @inproceedings{goforth2019gps,
-  author    = {Goforth, Hunter and Lucey, Simon},
+  author    = {Goforth, H. and Lucey, S.},
   title     = {{GPS}-Denied {UAV} Localization using Pre-existing Satellite Imagery},
-  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
+  booktitle = {2019 International Conference on Robotics and Automation (ICRA)},
+  publisher = {IEEE Press},
   year      = {2019},
-  month     = may,
   pages     = {2974--2980},
+  doi       = {10.1109/ICRA.2019.8793558},
+}
+
+@article{jarraya2025gnss,
+  author  = {Jarraya, I. and Al-Batati, A. and Kadri, M. B. and Abdelkader, M. and Ammar, A. and Boulila, W. and Koubaa, A.},
+  title   = {{GNSS}-Denied Unmanned Aerial Vehicle Navigation: Analyzing Computational Complexity, Sensor Fusion, and Localization Methodologies},
+  journal = {Satellite Navigation},
+  year    = {2025},
+  volume  = {6},
+  pages   = {9},
+  doi     = {10.1186/s43020-025-00162-z},
+}
+
+% Abschlussarbeit (Art laut Quelle nicht angegeben); als @book gesetzt, damit die Universität im APA-Stil erscheint.
+@book{jurevicius2019pf,
+  author    = {Jurevičius, R.},
+  title     = {Investigation of Particle Filter Based Visual Localization for Unmanned Aerial Vehicle Flights at Low-Altitude},
+  publisher = {Vilniaus universitetas},
+  year      = {2019},
+}
+
+@article{kinnari2023lsvl,
+  author  = {Kinnari, J. and Renzulli, R. and Verdoja, F. and Kyrki, V.},
+  title   = {{LSVL}: Large-Scale Season-Invariant Visual Localization for {UAVs}},
+  journal = {Robotics and Autonomous Systems},
+  year    = {2023},
+  volume  = {168},
+  pages   = {104497},
+  doi     = {10.1016/j.robot.2023.104497},
 }
 
 @article{kinnari2022season,
-  author  = {Kinnari, Jouko and Verdoja, Francesco and Kyrki, Ville},
+  author  = {Kinnari, J. and Verdoja, F. and Kyrki, V.},
   title   = {Season-Invariant {GNSS}-Denied Visual Localization for {UAVs}},
   journal = {IEEE Robotics and Automation Letters},
   year    = {2022},
   volume  = {7},
-  number  = {4},
   pages   = {10232--10239},
+  doi     = {10.1109/LRA.2022.3191038},
 }
 
-@article{fragoso2021vtrn,
-  author  = {Fragoso, Anthony and others},
-  title   = {A Seasonally Invariant Deep Transform for Visual Terrain-Relative Navigation},
-  journal = {Science Robotics},
-  year    = {2021},
-  note    = {Autorenliste, Band und Artikelnummer prüfen},
+@inproceedings{kinnari2021orthophotos,
+  author    = {Kinnari, J. and Verdoja, F. and Kyrki, V.},
+  title     = {{GNSS}-Denied Geolocalization of {UAVs} by Visual Matching of Onboard Camera Images with Orthophotos},
+  booktitle = {2021 20th International Conference on Advanced Robotics (ICAR)},
+  year      = {2021},
+  pages     = {555--562},
+  doi       = {10.1109/ICAR53236.2021.9659333},
 }
-
-@article{mourikis2009vision,
-  author  = {Mourikis, Anastasios I. and Trawny, Nikolas and Roumeliotis, Stergios I. and Johnson, Andrew E.
-             and Ansar, Adnan and Matthies, Larry},
-  title   = {Vision-Aided Inertial Navigation for Spacecraft Entry, Descent, and Landing},
-  journal = {IEEE Transactions on Robotics},
-  year    = {2009},
-  volume  = {25},
-  number  = {2},
-  pages   = {264--280},
-}
-
-@article{cheng2021lvs,
-  author  = {Cheng, Yang and Ansar, Adnan and Johnson, Andrew E.},
-  title   = {Making an Onboard Reference Map from {MRO/CTX} Imagery for {Mars 2020} Lander Vision System},
-  journal = {Earth and Space Science},
-  year    = {2021},
-  doi     = {10.1029/2020EA001560},
-  note    = {Titel aus Suchtreffer rekonstruiert -- am Original prüfen},
-}
-
-@inproceedings{patel2020google,
-  author    = {Patel, Bhavit and Barfoot, Timothy D. and Schoellig, Angela P.},
-  title     = {Visual Localization with {Google Earth} Images for Robust Global Pose Estimation of {UAVs}},
-  booktitle = {IEEE International Conference on Robotics and Automation (ICRA)},
-  year      = {2020},
-}
-
-@inproceedings{sarlin2023orienternet,
-  author    = {Sarlin, Paul-Edouard and others},
-  title     = {{OrienterNet}: Visual Localization in {2D} Public Maps with Neural Matching},
-  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year      = {2023},
-  month     = jun,
-  pages     = {21632--21642},
-  note      = {Autorenliste prüfen},
-}
-
-@inproceedings{zheng2020university,
-  author    = {Zheng, Zhedong and Wei, Yunchao and Yang, Yi},
-  title     = {University-1652: A Multi-view Multi-source Benchmark for Drone-based Geo-localization},
-  booktitle = {Proceedings of the 28th ACM International Conference on Multimedia},
-  year      = {2020},
-  pages     = {1395--1403},
-}
-
-@misc{xu2024uavvisloc,
-  author = {Xu, Wenjia and Yao, Yaxuan and Cao, Jiaqi and others},
-  title  = {{UAV-VisLoc}: A Large-scale Dataset for {UAV} Visual Localization},
-  year   = {2024},
-  url    = {https://arxiv.org/abs/2405.11936},
-  note   = {Preprint; Autorenliste prüfen},
-}
-
-% --- Ergänzt 2026-10-22: Vorarbeiten zur Neuheitsabgrenzung (siehe wiki/sources/author-note-novelty.md).
-%     Per Suche bestätigt (Abstracts); vor Verwendung selbst lesen. arXiv 2608.07835 NICHT auffindbar -> nicht zitieren.
 
 @inproceedings{kunz2021osm,
-  author    = {Kunz, Maximilian and Vierling, Axel and Wolf, Patrick and Berns, Karsten},
+  author    = {Kunz, M. and Vierling, A. and Wolf, P. and Berns, K.},
   title     = {Localization using {OSM} Landmarks},
-  booktitle = {Anais do XIII Simpósio Brasileiro de Robótica e Simpósio Latino Americano de Robótica (SBR/LARS)},
-  publisher = {Sociedade Brasileira de Computação},
+  booktitle = {2021 Latin American Robotics Symposium (LARS), 2021 Brazilian Symposium on Robotics (SBR), and 2021 Workshop on Robotics in Education (WRE)},
   year      = {2021},
   pages     = {228--233},
+  doi       = {10.1109/LARS/SBR/WRE54079.2021.9605475},
 }
 
-@article{shankar2016subgraph,
-  author  = {Shankar, Vaishaal and Zhang, Jordan and Chen, Jerry and others},
-  title   = {Approximate Subgraph Isomorphism for Image Localization},
-  journal = {Electronic Imaging},
-  year    = {2016},
-  volume  = {28},
-  number  = {15},
-  note    = {Autorenliste und Seiten prüfen},
+@article{michaelson2024trn,
+  author  = {Michaelson, K. A. and Wang, F. and Zanetti, R.},
+  title   = {Terrain-Relative Navigation With Neuro-Inspired Elevation Encoding},
+  journal = {IEEE Transactions on Aerospace and Electronic Systems},
+  year    = {2024},
+  volume  = {60},
+  pages   = {3368--3378},
+  doi     = {10.1109/TAES.2024.3362760},
 }
 
-@misc{hu2024localizability,
-  author = {Hu, Haozhou and Dhillon, Harpreet S. and Buehrer, R. Michael},
-  title  = {Foundations of Vision-Based Localization: A New Approach to Localizability Analysis Using Stochastic Geometry},
-  year   = {2024},
-  url    = {https://arxiv.org/abs/2409.09525},
-  note   = {Preprint},
+@article{ouyang2024vectormap,
+  author  = {Ouyang, C. and Hu, S. and Long, F. and Shi, S. and Yu, Z. and Zhao, K. and You, Z. and Pi, J. and Xing, B.},
+  title   = {A Semantic Vector Map-Based Approach for Aircraft Positioning in {GNSS/GPS} Denied Large-Scale Environment},
+  journal = {Defence Technology},
+  year    = {2024},
+  volume  = {34},
+  pages   = {1--10},
+  doi     = {10.1016/j.dt.2023.07.006},
 }
 
-@misc{wu2024maplocnet,
-  author = {Wu, Hang and others},
-  title  = {{MapLocNet}: Coarse-to-Fine Feature Registration for Visual Re-Localization in Navigation Maps},
-  year   = {2024},
-  url    = {https://arxiv.org/abs/2407.08561},
-  note   = {Preprint; Autorenliste prüfen},
+@article{sarlin2023orienternet,
+  author = {Sarlin, P.-E. and DeTone, D. and Yang, T.-Y. and Avetisyan, A. and Straub, J. and Malisiewicz, T. and Bulo, S. R. and Newcombe, R. and Kontschieder, P. and Balntas, V.},
+  title  = {{OrienterNet}: Visual Localization in {2D} Public Maps with Neural Matching},
+  journal = {arXiv},
+  year   = {2023},
+  doi    = {10.48550/arXiv.2304.02009},
 }
 
-@misc{liao2024osmloc,
-  author = {Liao, Youqi and Chen, Xieyuanli and others},
-  title  = {{OSMLoc}: Single Image-Based Visual Localization in {OpenStreetMap} with Fused Geometric and Semantic Guidance},
-  year   = {2024},
-  url    = {https://arxiv.org/abs/2411.08665},
-  note   = {Preprint; Titel je nach Version leicht verschieden; Autorenliste prüfen},
+@article{schleiss2019translating,
+  author  = {Schleiss, M.},
+  title   = {Translating Aerial Images into Street-Map-Like Representations for Visual Self-Localization of {UAVs}},
+  journal = {The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences},
+  year    = {2019},
+  volume  = {XLII-2-W13},
+  pages   = {575--580},
+  doi     = {10.5194/isprs-archives-XLII-2-W13-575-2019},
 }
 
-@misc{sasgeo2026,
-  author = {{SASGeo authors}},
-  title  = {{SASGeo}: Stability-Aware Semantic Map Localization for {GNSS}-Denied {UAVs} -- A Framework and Synthetic Proof of Concept},
+@article{silvestrini2022iekf,
+  author  = {Silvestrini, S. and Piccinin, M. and Zanotti, G. and Brandonisio, A. and Lunghi, P. and Lavagna, M.},
+  title   = {Implicit Extended {Kalman} Filter for Optical Terrain Relative Navigation Using Delayed Measurements},
+  journal = {Aerospace},
+  year    = {2022},
+  volume  = {9},
+  pages   = {503},
+  doi     = {10.3390/aerospace9090503},
+}
+
+@article{terlizzi2026geometric,
+  author = {Terlizzi, G. and Fathian, K.},
+  title  = {Large-Scale Geometric Map-Based Localization of {UAVs} in {GNSS}-Denied Urban Environments},
+  journal = {arXiv},
   year   = {2026},
-  url    = {https://arxiv.org/abs/2607.07737},
-  note   = {Preprint; Autorenliste noch nicht bekannt -- am Original ergänzen},
+  doi    = {10.48550/arXiv.2609.28225},
+}
+
+@article{sasgeo2026,
+  author = {Trukhina, N. and Vashkelis, V.},
+  title  = {{SASGeo}: Stability-Aware Semantic Map Localization for {GNSS}-Denied {UAVs} -- A Framework and Synthetic Proof of Concept},
+  journal = {arXiv},
+  year   = {2026},
+  doi    = {10.48550/arXiv.2607.07737},
+}
+
+@article{wang2026uav,
+  author  = {Wang, T.-C. and Tsou, L.-H. and Jhan, J.-P. and Tang, R.-S.},
+  title   = {{UAV} Visual Localization in {GNSS}-Denied Environments},
+  journal = {The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences},
+  year    = {2026},
+  volume  = {XLIX-B1-2026},
+  pages   = {55--61},
+  doi     = {10.5194/isprs-archives-XLIX-B1-2026-55-2026},
+}
+
+@article{wei2022gis,
+  author = {Wei, J. and Karakay, D. and Yilmaz, A.},
+  title  = {A {GIS} Aided Approach for Geolocalizing an Unmanned Aerial System Using Deep Learning},
+  journal = {arXiv},
+  year   = {2022},
+  doi    = {10.48550/arXiv.2208.12251},
+}
+
+@article{xu2024uavvisloc,
+  author = {Xu, W. and Yao, Y. and Cao, J. and Wei, Z. and Liu, C. and Wang, J. and Peng, M.},
+  title  = {{UAV-VisLoc}: A Large-scale Dataset for {UAV} Visual Localization},
+  journal = {arXiv},
+  year   = {2024},
+  doi    = {10.48550/arXiv.2405.11936},
+}
+
+@article{yao2024terrain,
+  author  = {Yao, F. and Lan, C. and Wang, L. and Wan, H. and Gao, T. and Wei, Z.},
+  title   = {{GNSS}-Denied Geolocalization of {UAVs} Using Terrain-Weighted Constraint Optimization},
+  journal = {International Journal of Applied Earth Observation and Geoinformation},
+  year    = {2024},
+  volume  = {135},
+  pages   = {104277},
+  doi     = {10.1016/j.jag.2024.104277},
+}
+
+@article{ye2026dsmfree,
+  author = {Ye, Y. and Teng, X. and Chen, S. and Song, X. and Sun, Y. and Yu, Q. and Li, Z.},
+  title  = {{DSM}-Free {UAV} Visual Localization via Latent-Depth Variable Projection and Structure-Adaptive Coupling},
+  journal = {arXiv},
+  year   = {2026},
+  doi    = {10.48550/arXiv.2610.14945},
+}
+
+@article{yuan2025swapf,
+  author = {Yuan, J. and Dai, M. and Zheng, E. and Su, C. and Chen, N. and Hu, Q. and Zhu, S. and Cao, Y.},
+  title  = {{SWA-PF}: Semantic-Weighted Adaptive Particle Filter for Memory-Efficient 4-{DoF} {UAV} Localization in {GNSS}-Denied Environments},
+  journal = {arXiv},
+  year   = {2025},
+  doi    = {10.48550/arXiv.2509.13795},
+}
+
+@article{zheng2026seqloc,
+  author  = {Zheng, J. and Huang, Y. and Dai, R. and Liu, R. and Chen, Y. and Peng, K. and Yang, K. and Zhang, J. and Wang, G. and Wysocki, O. and Stiefelhagen, R.},
+  title   = {{SeqLoc}: Beyond the Single Frame for Cross-View Geo-Localization in Feature-Sparse Scenes},
+  journal = {arXiv},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2608.07835v2},
+  urldate = {2026-10-22},
 }

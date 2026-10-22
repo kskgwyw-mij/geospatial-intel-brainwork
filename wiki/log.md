@@ -211,3 +211,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[author-note-novelty]], [[thesis-contribution]]
 - updated: [[expose-material]], [[terrain-relative-navigation]], [[geo-match-prototype]], [[localization-improvements]], [[overview]]; expose/literatur.bib (+6, Kunz/Shankar/Hu/MapLocNet/OSMLoc/SASGeo)
 - notes: Every ingredient exists; the combination does not: nadir POI detection, a detector-error point-process likelihood, a calibrated heatmap with a null hypothesis, and cross-region/provider tests on real data. Citations confirmed by search except arXiv 2608.07835 (not found, flagged). Method consequence: replace inlier counting with a likelihood whose undetected-OSM-object term should penalise lattice errors (tank farm), testable offline on the saved detections. This differs from the rejected density-aware chance score, so there is no contradiction.
+
+## [2026-10-22] ingest | Author's literature list (manual findings) → exposé bibliography
+- created: [[author-literature-list]]
+- updated: [[author-note-novelty]], [[thesis-contribution]], [[expose-material]], [[localization-improvements]], [[overview]]; expose/literatur.bib (now the author's 27 works, data as given; duplicate SASGeo merged; arXiv preprints as `@article{journal = arXiv}` and the Vilnius thesis as `@book` so APA renders cleanly), expose/kandidaten.bib (16 earlier unverified AI suggestions, not shown in the exposé), expose/expose.typ (`literatur-vollstaendig` switch, default: show the full own list)
+- notes: Resolves arXiv 2608.07835 = SeqLoc (Zheng et al. 2026, feature-sparse scenes). The nearest neighbours to the novelty claim (Schleiss 2019, Wei 2022, Ouyang 2024, SWA-PF 2025) are known by title only, so the boundary must be checked in their full texts.

@@ -2,7 +2,7 @@
 title: Author note — novelty of the thesis combination (with verification)
 type: source
 tags: [thesis, literature, novelty, geolocalization]
-sources: [author-note-novelty]
+sources: [author-literature-list, author-note-novelty]
 raw: raw/2026-10-22-author-note-novelty.md
 updated: 2026-10-22
 ---
@@ -10,7 +10,7 @@ The author's novelty assessment: every ingredient exists in prior work, but thei
 
 ## Summary
 The note lists four strands of prior work and states the gap as their combination. Search verification: Kunz et al. 2021, Shankar et al. 2016,
-Hu & Dhillon 2024, MapLocNet, OSMLoc and SASGeo are confirmed. **arXiv 2608.07835 could not be found**, so do not cite it until it has been seen.
+Hu & Dhillon 2024, MapLocNet, OSMLoc and SASGeo are confirmed. arXiv 2608.07835 was not found by search, but the author's literature list identifies it as **SeqLoc** (Zheng et al. 2026, cross-view geo-localisation in feature-sparse scenes) ([[author-literature-list]]).
 
 ## Key claims
 - **Object-to-OSM landmark matching with a scene graph exists for ground robots:** Kunz, Vierling, Wolf & Berns, SBR/LARS 2021, pp. 228–233 ([[author-note-novelty]]).
@@ -32,6 +32,7 @@ It defines the thesis contribution and changes the planned matcher, from inlier 
 [[thesis-contribution]], [[geo-match-prototype]], [[localization-improvements]], [[expose-material]], [[terrain-relative-navigation]], [[overview]]
 
 ## Related
+- [[author-literature-list]]
 - [[thesis-contribution]]
 - [[vtrn-literature-search]]
 - [[terrain-relative-navigation]]
