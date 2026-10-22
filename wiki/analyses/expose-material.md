@@ -2,7 +2,7 @@
 title: Exposé-Materialsammlung (Stichpunkte je Abschnitt)
 type: analysis
 tags: [thesis, expose, ai-use]
-sources: [wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
+sources: [vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
 updated: 2026-10-22
 ---
 Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Ausgangspunkt für den eigenen Text; dazu eine Faktenliste für die KI-Dokumentation. Hier steht bewusst **kein Fließtext**: Das Exposé formuliert die Autorin oder der Autor selbst ([[wa-course-expose]], [[hok-ki-leitlinie]]).
@@ -48,7 +48,13 @@ Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Au
   - Bekannte Ansätze nutzen dichte Merkmale wie Straßenkreuzungen in Städten ([[costea-2016-aerial-geolocalization]]).
   - Wie weit objektbasierte Verortung in **merkmalsarmen ländlichen und alpinen Gebieten** trägt und wie viele Objekte nötig sind, ist offen (Lücke im Wiki; mit Literatur belegen!).
 - **Mehrwert:** Kombination aus Erkennung (Forschungsfrage FF1) und Verortung (FF2), reproduzierbar mit offenen bayerischen Daten.
-- **Lücke im Material:** Die Relevanz stützt sich bisher auf eine eigene Notiz. **3–5 begutachtete Quellen zu GNSS-freier visueller Drohnen-Lokalisierung selbst recherchieren und lesen** ([[expose-guide]]).
+- **Literatur zur Relevanz (Kandidaten aus der Recherche, [[vtrn-literature-search]]):** Das Feld heißt *(Visual) Terrain-Relative Navigation* bzw. *Absolute Visual Localization* ([[terrain-relative-navigation]]).
+  - Übersicht: Couturier & Akhloufi 2021.
+  - Raumfahrt: Mars 2020 LVS; Mourikis et al. 2009.
+  - UAV: Conte & Doherty 2009; Goforth & Lucey 2019; Kinnari et al. 2022; Fragoso et al. 2021 zur Saisonabhängigkeit.
+  - Semantische Karten: OrienterNet 2023 (OSM, bodennah), SASGeo 2026 (nur synthetisch).
+  - Ein Review von 2025 nennt Gebiete ohne klare semantische Merkmale als offenes Problem; **genau dort setzt die Lücke an**.
+  - Alle Quellen bisher nur aus Suchtreffern: **selbst lesen und prüfen**.
 
 ## Zielsetzung und Ergebnisse — Material
 - **Wissenschaftliche Ziele:**
@@ -96,7 +102,8 @@ Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Au
 | Detektor | Ultralytics YOLO11-OBB (Software) | nur Suchtreffer ([[pretrained-models-search]]) |
 | Ländliche Verortung | Ansätze mit Geländemodell und Landbedeckungsgrenzen | nur Suchtreffer ([[rural-geolocalization-search]]) |
 | Daten | Bayerische Vermessungsverwaltung: DOP20 (CC BY 4.0); OpenStreetMap-Mitwirkende (ODbL) | Produktseiten ([[bayern-dop20rgb-detail]]) |
-| **Fehlt noch** | GNSS-freie visuelle UAV-Lokalisierung (Relevanz); RANSAC-Originalquelle (Fischler & Bolles 1981); OSM-Datenqualität | selbst recherchieren |
+| Relevanz / Forschungsstand | Couturier & Akhloufi 2021 (Review); Conte & Doherty 2009; Goforth & Lucey 2019; Kinnari et al. 2022; Fragoso et al. 2021; Mourikis et al. 2009; Sarlin et al. 2023 (OrienterNet); Zheng et al. 2020 und Xu et al. 2024 (Datensätze) | nur Suchtreffer ([[vtrn-literature-search]]); Einträge in `expose/literatur.bib` |
+| **Fehlt noch** | Volltexte der obigen Quellen lesen; OSM-Datenqualität | selbst recherchieren |
 
 Hinweise des Kurses: Recherchetools (Elicit, Consensus, ResearchRabbit …) liefern Kandidaten, aber ohne Qualitätsprüfung und mit „Vollständigkeitsillusion“. Geschützte PDFs nicht in KI-Lesetools hochladen; selbst lesen ([[wa-course-expose]]).
 

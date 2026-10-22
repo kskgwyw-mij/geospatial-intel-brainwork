@@ -32,6 +32,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[bayern-opengeodata]] — Bavarian OpenGeoData catalogue (full clip): DOP20 RGB/CIR, DGM1, DOM20, LiDAR, LoD2, Einzelbäume, Hausumringe, ATKIS, ALKIS land use, parcels and districts.
 - [[bayern-dop20rgb-detail]] — DOP20 RGB product page: 1 km GeoTIFF tiles in EPSG:25832, about 50 MB per tile, up to 126 GB per district, WMS (incl. historical DOP) and WMTS, CC BY 4.0.
 - [[author-decision-detection-in-scope]] — Author decision: detection and classification are part of the thesis, alongside metadata-free localisation.
+- [[vtrn-literature-search]] — Literature search on visual terrain-relative navigation and UAV absolute visual localisation: Mars 2020 LVS, Conte & Doherty, Goforth & Lucey, Kinnari, Fragoso, reviews, datasets, OSM/semantic-map methods.
 - [[localization-levers-test]] — Real-data lever tests: cue coverage ceilings (point anchors 0.1–1.6 %, +buildings/junctions 34 %, +lines 78 %), class-diversity rule (confident 2/2), priors (6 → 10/40).
 - [[settlement-overpass-labels]] — Overpass building tags (75 % `building=yes`, 35–43 % house numbers), dwelling rule; detector AUC 0.984 for inhabited, 0.999 for settlement; live Garmisch grid.
 - [[settlement-test]] — Real test, 1,100 DOP20 hectares (Miesbach, Garmisch; 2024 and 2018 flights): settlement cells AUC 0.98–0.995 with a frozen DOTA embedding; misses are isolated huts.
@@ -52,6 +53,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[osm-weak-labels]] — Using OSM geometries from Overpass as noisy training labels instead of hand annotation.
 - [[object-detection]] — Bounding box plus class per object; suits compact, countable features.
 - [[semantic-segmentation]] — A class for every pixel; suits areal and linear features.
+- [[terrain-relative-navigation]] — (Visual) terrain-relative navigation: locating a vehicle by matching its view to a georeferenced map; variants, typical structure, weak points; the established name for this thesis's task.
 - [[ransac]] — Random Sample Consensus: robustly fits a transform (shift, rotation, scale) despite many wrong matches; the core of the geolocation matcher.
 - [[spectral-texture-features]] — Colour, texture and shape cues that reveal land use (e.g. industrial areas) and power a classical ML baseline.
 

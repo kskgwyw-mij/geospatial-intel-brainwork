@@ -2,8 +2,8 @@
 title: How to improve localisation — ranked levers
 type: analysis
 tags: [geolocalization, planning, evaluation, thesis]
-sources: [localization-levers-test, real-e2e-test, osm-real-test, settlement-test, settlement-overpass-labels, costea-2016-aerial-geolocalization, maggiori-osm-imperfect-labels, author-note-use-cases-gnss-denied, bayern-opengeodata]
-updated: 2026-10-21
+sources: [vtrn-literature-search, localization-levers-test, real-e2e-test, osm-real-test, settlement-test, settlement-overpass-labels, costea-2016-aerial-geolocalization, maggiori-osm-imperfect-labels, author-note-use-cases-gnss-denied, bayern-opengeodata]
+updated: 2026-10-22
 ---
 A ranked plan for raising localisation performance, ordered by the failure each lever fixes as measured on real data. **Coverage of map cues is the bottleneck**, detection quality is second, and priors and verification fix reliability.
 
@@ -37,6 +37,7 @@ A ranked plan for raising localisation performance, ordered by the failure each 
 - Should DOP20 imagery be used as a reference (image-to-image) or only OSM? A DOP-only baseline would be an informative comparison (unsourced).
 
 ## Related
+- [[terrain-relative-navigation]]
 - [[localization-levers-test]]
 - [[geo-match-prototype]]
 - [[feasibility]]

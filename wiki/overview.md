@@ -3,7 +3,7 @@ title: Overview
 type: overview
 tags: [meta]
 sources: [thesis-goal, dsia-studienordnung-2027, hok-dsia-program-listings, maggiori-osm-imperfect-labels, maggiori-2017-hr-semantic-labeling]
-updated: 2026-10-21
+updated: 2026-10-22
 ---
 Current big-picture understanding of ML/DL algorithm selection for recognising OSM/Overpass objects in orthoimagery, for the HOK master thesis.
 
@@ -58,7 +58,7 @@ uploaded to a [[poc-platform]] ([[thesis-goal]]). **Input decision:** a nadir ph
 - Formal rules are now known: 10–15k words, ≥ 6 months processing, exposé due 23.10.2026, registration 31.10.2026, AI share ≤ 50 % ([[hok-aspo-2026]], [[wa-course-expose]]; checklist in [[expose-guide]]). Still missing: the HOK thesis guide (citation style) and confirmation of the cohort and regulation version.
 - Is a scale prior (known drone type) compatible with "no metadata"? It is needed for the prior scenario in [[localization-improvements]].
 - Contradiction: confident matches 30/30 correct with simulated detections ([[osm-real-test]]) vs 3/4 with real detections ([[real-e2e-test]]). Cause: repetitive single-class clusters; fix the scoring.
-- Literature for the exposé is thin: the relevance (GNSS-denied UAV localisation) rests on an author note; it needs peer-reviewed sources ([[expose-guide]]).
+- Literature for the exposé: the relevance now has candidate peer-reviewed sources (VTRN / absolute visual localisation: reviews, Mars 2020 LVS, UAV orthophoto matching, OSM-based OrienterNet), found by search only; full texts must be read ([[vtrn-literature-search]]). The gap stated in the literature is regions without clear semantic features, which is this thesis's setting.
 
 ## Related
 - [[thesis-goal]]

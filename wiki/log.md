@@ -201,3 +201,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: expose/expose.typ, expose/literatur.bib, expose/ki-dokumentation.typ
 - updated: [[expose-material]], README
 - notes: The author writes the exposé in Typst. The template has the required six-part structure, no author anywhere (PDF metadata author empty, checked with pdfinfo) and hint boxes per section that a switch removes for submission. The bib holds 8 candidates, each marked with its verification status, and an APA style switch. A second document holds the AI-use table and a % field with a > 50 % warning. All three compile with Typst 0.15. No exposé prose was written.
+
+## [2026-10-22] query | Research on Visual Terrain-Relative Navigation for position localisation
+- created: [[vtrn-literature-search]], [[terrain-relative-navigation]]
+- updated: [[expose-material]], [[gnss-denied-use-cases]], [[localization-improvements]], [[overview]]; expose/literatur.bib (+11 candidates, marked unverified)
+- notes: Web search, snippets only. TRN/VTRN covers TERCOM/DSMAC, the Mars 2020 LVS (3.2 km → < 40 m), VISINAV (Mourikis 2009), UAV image-to-orthophoto matching (Conte & Doherty 2009; Goforth & Lucey 2019; Kinnari 2021/2022), the seasonal fragility fix (Fragoso 2021), reviews (Couturier & Akhloufi 2021), datasets (University-1652, UAV-VisLoc) and semantic-map methods (OrienterNet with OSM at ground level; building-vector matching; SASGeo, synthetic only). The literature names feature-poor regions at low altitude as open, which gives the thesis gap peer-reviewed footing: OSM object matching for nadir images in rural/Alpine terrain, on real data.
