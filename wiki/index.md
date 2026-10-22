@@ -32,7 +32,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[bayern-opengeodata]] — Bavarian OpenGeoData catalogue (full clip): DOP20 RGB/CIR, DGM1, DOM20, LiDAR, LoD2, Einzelbäume, Hausumringe, ATKIS, ALKIS land use, parcels and districts.
 - [[bayern-dop20rgb-detail]] — DOP20 RGB product page: 1 km GeoTIFF tiles in EPSG:25832, about 50 MB per tile, up to 126 GB per district, WMS (incl. historical DOP) and WMTS, CC BY 4.0.
 - [[author-decision-detection-in-scope]] — Author decision: detection and classification are part of the thesis, alongside metadata-free localisation.
-- [[author-literature-list]] — Author's manual bibliography, 27 works on GNSS-free visual/terrain-relative localisation (reviews, TRN, orthophoto matching, semantic/vector maps, SeqLoc); now the exposé bibliography.
+- [[author-literature-list]] — Author's manual bibliography, 30 works on GNSS-free visual/terrain-relative localisation (reviews, TRN, orthophoto matching, semantic/vector maps, SeqLoc); now the exposé bibliography.
 - [[author-note-novelty]] — Author's novelty assessment (verified by search): ingredients exist (Kunz 2021, Shankar 2016, Hu & Dhillon 2024, OrienterNet/MapLocNet/OSMLoc, SASGeo); their combination is new. arXiv 2608.07835 not found.
 - [[vtrn-literature-search]] — Literature search on visual terrain-relative navigation and UAV absolute visual localisation: Mars 2020 LVS, Conte & Doherty, Goforth & Lucey, Kinnari, Fragoso, reviews, datasets, OSM/semantic-map methods.
 - [[localization-levers-test]] — Real-data lever tests: cue coverage ceilings (point anchors 0.1–1.6 %, +buildings/junctions 34 %, +lines 78 %), class-diversity rule (confident 2/2), priors (6 → 10/40).

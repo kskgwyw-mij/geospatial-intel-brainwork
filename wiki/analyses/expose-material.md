@@ -58,7 +58,7 @@ Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Au
     - eine kalibrierte Heatmap mit Nullhypothese;
     - ein räumlich geblockter Test über Regionen und Bildanbieter hinweg.
   - arXiv 2608.07835 = **SeqLoc** (Zheng et al. 2026), laut eigener Literaturliste ([[author-literature-list]]).
-  - **Eigene Literaturliste (27 Werke)** ist jetzt `expose/literatur.bib` und erscheint im Exposé. Ungeprüfte KI-Vorschläge stehen getrennt in `expose/kandidaten.bib`. Nächste Nachbarn zur Abgrenzung (Volltexte lesen!): Schleiss 2019, Wei et al. 2022, Ouyang et al. 2024, SWA-PF 2025, SeqLoc 2026.
+  - **Eigene Literaturliste (30 Werke)** ist jetzt `expose/literatur.bib` und erscheint im Exposé. Ungeprüfte KI-Vorschläge stehen getrennt in `expose/kandidaten.bib`. Nächste Nachbarn zur Abgrenzung (Volltexte lesen!): Schleiss 2019, Wei et al. 2022, Ouyang et al. 2024, SWA-PF 2025, SeqLoc 2026.
 - **Mehrwert:** Kombination aus Erkennung (Forschungsfrage FF1) und Verortung (FF2), reproduzierbar mit offenen bayerischen Daten.
 - **Literatur zur Relevanz (Kandidaten aus der Recherche, [[vtrn-literature-search]]):** Das Feld heißt *(Visual) Terrain-Relative Navigation* bzw. *Absolute Visual Localization* ([[terrain-relative-navigation]]).
   - Übersicht: Couturier & Akhloufi 2021.

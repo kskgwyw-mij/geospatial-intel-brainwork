@@ -3,10 +3,11 @@ title: Author's literature list — visual localisation without GNSS (manual fin
 type: source
 tags: [literature, thesis, geolocalization, gnss-denied, uav]
 sources: [author-literature-list]
-raw: raw/2026-10-22-author-literature-list.rtf
+raw: raw/2026-10-22-author-literature-list-v2.md
+superseded_raw: [raw/2026-10-22-author-literature-list.rtf]
 updated: 2026-10-22
 ---
-The author's own, manually researched bibliography of 27 works (28 lines, with one duplicate) on visual and terrain-relative localisation of UAVs and aircraft without GNSS. It is now the exposé bibliography (`expose/literatur.bib`).
+The author's own, manually researched bibliography of 30 works (second version, with full names, months and issues; the first version had 27) on visual and terrain-relative localisation of UAVs and aircraft without GNSS. It is now the exposé bibliography (`expose/literatur.bib`).
 
 ## Summary
 The list gives full bibliographic data with DOIs. Contents are known here only from titles and the earlier search results ([[vtrn-literature-search]], [[author-note-novelty]]). The author has the papers; the wiki has not read their full texts. It resolves one open point: **arXiv 2608.07835 is SeqLoc** (Zheng et al. 2026), the paper cited in [[author-note-novelty]] that the search could not find.
@@ -38,6 +39,12 @@ The list gives full bibliographic data with DOIs. Contents are known here only f
   - Dhaouadi et al. 2025, **OrthoLoC**: 6-DoF localisation and calibration from orthographic geodata ([[author-literature-list]], [[author-note-novelty]]).
 - **Feature-sparse scenes and sequences:** **Zheng et al. 2026, SeqLoc** (arXiv 2608.07835): beyond the single frame, cross-view geo-localisation in feature-sparse scenes ([[author-literature-list]]).
 - **Particle filters at low altitude:** Jurevičius 2019, Vilnius University ([[author-literature-list]]).
+- **Added in the second version:**
+  - Hehelskyi & Avrutov 2025 (Mechanics of Gyroscopic Systems 49, 31–44): UAV navigation methods in difficult environmental conditions;
+  - **Lee, Mesic & Chung** (n.d., Caltech group of the VTRN season work): self-supervised landmark discovery for TRN;
+  - **Rulko 2025** (System Analysis and Applied Information Science 1, 4–19): TRN with deep-feature template matching plus visual odometry.
+
+  Lee et al. relates directly to which landmarks are worth detecting ([[author-literature-list]]).
 - **Datasets:** Xu et al. 2024, UAV-VisLoc ([[author-literature-list]]).
 
 ## Relevance to this wiki

@@ -216,3 +216,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[author-literature-list]]
 - updated: [[author-note-novelty]], [[thesis-contribution]], [[expose-material]], [[localization-improvements]], [[overview]]; expose/literatur.bib (now the author's 27 works, data as given; duplicate SASGeo merged; arXiv preprints as `@article{journal = arXiv}` and the Vilnius thesis as `@book` so APA renders cleanly), expose/kandidaten.bib (16 earlier unverified AI suggestions, not shown in the exposé), expose/expose.typ (`literatur-vollstaendig` switch, default: show the full own list)
 - notes: Resolves arXiv 2608.07835 = SeqLoc (Zheng et al. 2026, feature-sparse scenes). The nearest neighbours to the novelty claim (Schleiss 2019, Wei 2022, Ouyang 2024, SWA-PF 2025) are known by title only, so the boundary must be checked in their full texts.
+
+## [2026-10-22] edit | Author's literature list, second version (30 works)
+- updated: [[author-literature-list]] (raw → v2, RTF as superseded_raw), [[expose-material]], [[overview]]; expose/literatur.bib rewritten
+- notes: Full author names, months, issue numbers; +3 works (Hehelskyi & Avrutov 2025; Lee, Mesic & Chung n.d. on self-supervised landmark discovery for TRN; Rulko 2025 on TRN with deep template matching + VO). "et al." lists completed from the first version. Rulko's volume "0" left out and flagged; Lee et al. has no year (renders "o. J." with access date). All 30 render in APA without artefacts.
