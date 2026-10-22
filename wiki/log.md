@@ -242,3 +242,8 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[author-decision-generalisation-axes]]
 - updated: [[author-decision-title]], [[thesis-contribution]], [[expose-material]], [[overview]], [[thesis-timeline]]; expose/expose.typ (subtitle)
 - notes: No cross-provider test, GSD dropped as a study axis (it follows the recommendation). Subtitle: „Eine Generalisierungsstudie über Regionen“ / "A Cross-Region Generalization Study". Scale is still estimated by the metadata-free method; name a realistic GSD band in the methods.
+
+## [2026-10-22] edit | Exposé: AI draft plan (Rohfassung) instead of a ghost-written exposé
+- created: expose/expose-rohfassung.typ
+- updated: [[expose-material]], expose/ki-dokumentation.typ (new row), README
+- notes: The author asked for a complete exposé. Declined as finished text: an honest AI share would far exceed the course's 50 % cap, and the HOK AI guideline forbids fully AI-generated texts where own work is required (ASPO 2.8). Delivered the course-sanctioned alternative: a paragraph plan per section (claim + citations from the author's own bibliography + evidence status: verified / title only / own AI-assisted pre-test / author's decision). 5 pages, compiles; documented in the AI-use PDF.

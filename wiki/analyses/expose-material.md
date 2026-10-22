@@ -8,6 +8,7 @@ updated: 2026-10-22
 Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Ausgangspunkt für den eigenen Text; dazu eine Faktenliste für die KI-Dokumentation. Hier steht bewusst **kein Fließtext**: Das Exposé formuliert die Autorin oder der Autor selbst ([[wa-course-expose]], [[hok-ki-leitlinie]]).
 
 ## Formales (Abgabe 23.10.2026, Moodle)
+- **KI-Rohfassung (Absatzplan):** `expose/expose-rohfassung.typ` (5 S.). Pro Abschnitt geplante Absätze mit Kernaussage, `@`-Belegen aus der eigenen Literaturliste und Status (✔ belegt / ◐ nur Titel / ◆ eigene Vorprüfung / ✎ eigene Entscheidung). Ausgangspunkt, kein Abgabetext; in der KI-Dokumentation ausgewiesen.
 - **Satz in Typst:** Vorlage `expose/expose.typ` (anonym, Pflichtgliederung, Hinweisboxen, die sich mit `zeige-hinweise = false` ausblenden), Literatur in `expose/literatur.bib`, zweites PDF `expose/ki-dokumentation.typ`. Kompilieren: `typst compile expose/expose.typ`.
 - PDF 1: Exposé **ohne Namen**, auch nicht in den PDF-Eigenschaften (Autor-Feld) prüfen ([[wa-course-expose]]).
 - PDF 2: verwendete Tools mit den jeweiligen Aufgaben, plus geschätzter KI-Anteil in %; **über 50 % ist nicht erlaubt** ([[wa-course-expose]]).
