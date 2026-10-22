@@ -15,7 +15,7 @@ Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Au
 - Danach: Anmeldung der Masterarbeit (Formular + Exposé) bis 31.10.2026 ([[wa-course-expose]]).
 
 ## Arbeitstitel — gewählt
-**„Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen: Eine Generalisierungsstudie über Regionen und Zoomstufen“**; englisch: „Calibrated Probabilistic Geolocalization of Nadir Imagery with OpenStreetMap Features: A Cross-Region and Cross-Zoom Generalization Study“ ([[author-decision-title]]). Steht in `expose/expose.typ`.
+**„Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen: Eine Generalisierungsstudie über Regionen und Bodenauflösungen“**; englisch: „Calibrated Probabilistic Geolocalization of Nadir Imagery with OpenStreetMap Features: A Generalization Study across Regions and Ground Sampling Distances“ ([[author-decision-title]]). Steht in `expose/expose.typ`. Begriff: **Bodenauflösung / Ground Sampling Distance (GSD)** statt „Zoomstufe“; im Methodenteil einmal definieren (Bodenfläche pro Pixel, z. B. 0,2 m bei DOP20).
 - Abgleich mit den Kursvorgaben ([[wa-course-expose]]):
   - Haupttitel 8 Wörter, mit Untertitel 14, also über der Faustregel 8–12.
   - Fachbegriffe wie „kalibriert“, „probabilistisch“, „Nadir“ sind für Fachfremde nicht selbsterklärend.

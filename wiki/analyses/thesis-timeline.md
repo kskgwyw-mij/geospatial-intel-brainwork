@@ -8,7 +8,7 @@ updated: 2026-10-22
 How the thesis goal maps onto the part-time DSIA semesters: when each thesis milestone happens and which course supplies what.
 
 ## Working title (author decision)
-„Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen: Eine Generalisierungsstudie über Regionen und Zoomstufen“ ([[author-decision-title]]).
+„Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen: Eine Generalisierungsstudie über Regionen und Bodenauflösungen“ ([[author-decision-title]]).
 
 ## Milestones (part-time form)
 

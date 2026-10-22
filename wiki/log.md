@@ -225,3 +225,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 - created: [[author-decision-title]]
 - updated: [[thesis-timeline]], [[thesis-contribution]], [[expose-material]], [[overview]]; expose/expose.typ (title, subtitle, English title line, PDF title metadata; title block not justified, 16 pt, no hyphenation → two clean lines)
 - notes: The title fixes the generalisation axes as regions + zoom levels (scale/GSD). Cross-provider from the novelty note is not in it, so that is an open decision. Against the course criteria: precise and no abbreviations, but 14 words with the subtitle (rule of thumb 8–12) and technical terms; the author's deliberate choice.
+
+## [2026-10-22] edit | Title: "Zoomstufen" → Bodenauflösungen / Ground Sampling Distances
+- updated: [[author-decision-title]] (raw → amended note, first note superseded), [[thesis-contribution]], [[thesis-timeline]], [[expose-material]], [[overview]]; expose/expose.typ
+- notes: Author's terminology choice. German subtitle: „Eine Generalisierungsstudie über Regionen und Bodenauflösungen“. English: "A Generalization Study across Regions and Ground Sampling Distances" (no "GSD" abbreviation in the title). The evaluation axis is now cross-GSD, e.g. DOP20 resampled to 0.4 / 0.8 m or different flight altitudes.

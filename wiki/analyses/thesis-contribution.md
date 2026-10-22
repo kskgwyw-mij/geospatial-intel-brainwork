@@ -36,9 +36,9 @@ The thesis contribution is a combination that no prior work found so far contain
    - Cross-year as a third axis: 2018 vs 2024 flights.
 
 ## Generalisation axes in the chosen title
-The working title names **regions and zoom levels** as the generalisation axes ([[author-decision-title]]).
+The working title names **regions and ground sampling distances (GSD)** as the generalisation axes ([[author-decision-title]]).
 - **Cross-region:** spatially blocked, e.g. Miesbach ↔ Garmisch.
-- **Cross-zoom:** test at ground resolutions other than those used for tuning, e.g. DOP20 resampled to 0.4 / 0.8 m, or WMTS zoom levels, or different flight altitudes (proposal). Altitude-dependent VTRN is studied by Castleberry & Martin 2021 ([[author-literature-list]]).
+- **Cross-GSD (Bodenauflösung):** test at ground sampling distances other than those used for tuning, e.g. DOP20 (0.2 m) resampled to 0.4 / 0.8 m, or imagery from different flight altitudes (proposal). Altitude-dependent VTRN is studied by Castleberry & Martin 2021 ([[author-literature-list]]).
 - **Cross-provider** (from [[author-note-novelty]]) is not in the title. Decide whether it stays as a secondary test or is dropped.
 
 ## Why the likelihood should beat the current inlier counting (testable hypothesis)
