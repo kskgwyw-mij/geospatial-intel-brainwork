@@ -2,19 +2,45 @@
 title: Exposé-Materialsammlung (Stichpunkte je Abschnitt)
 type: analysis
 tags: [thesis, expose, ai-use]
-
+sources: [author-decision-framework-scope, author-decision-generalisation-axes, thesis-goal, author-decision-nadir-input, author-decision-detection-in-scope, author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
 updated: 2026-10-22
 ---
 Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Ausgangspunkt für den eigenen Text; dazu eine Faktenliste für die KI-Dokumentation. Hier steht bewusst **kein Fließtext**: Das Exposé formuliert die Autorin oder der Autor selbst ([[wa-course-expose]], [[hok-ki-leitlinie]]).
 
 ## Formales (Abgabe 23.10.2026, Moodle)
+- **Rahmenwerk und Fokus (entschieden, [[author-decision-framework-scope]]):**
+  - Design Science Research nach Hevner et al. 2004, Ablaufmodell nach Peffers et al. 2007 (beide ungeprüft, in `kandidaten.bib`).
+  - Die Problemstellung ist **nicht** auf merkmalsarme Regionen beschränkt: Regionen unterscheiden sich in der Objektdichte, merkmalsarme Gebiete sind der schwierigste Fall.
+  - Beides steht im Entwurf.
+- **Gebäude:** beschrieben durch **Grundfläche und Ausrichtung** statt Unterscheidung nach Wohn- und Nebengebäuden (verrauschte Tags, von oben schwer unterscheidbar). Die Unterscheidung bleibt höchstens Ausblick ([[thesis-contribution]]).
+- **Offene Punkte im Entwurf erledigt:**
+  - Keine Kalibrierungsquelle (Entscheidung); Vorschlag Guo et al. 2017 (PMLR 70, 1321–1330, geprüft) bleibt nur notiert.
+  - Erfolgsschwelle noch nicht festgelegt, im Text „unterhalb einer noch festzulegenden Schwelle“. Empfehlung: 10 m als Hauptschwelle, ergänzend 5/25/50 m (Vorprüfung: richtige Treffer 0,9–5,2 m, falsche 44–64 km; OSM-Lagefehler ca. 1–2 m).
+- **Umfang reduziert:** FF3 entfällt als eigene Frage. Die Übertragbarkeit steckt im Evaluationsdesign (Entwicklung Miesbach, Test nur Garmisch-Partenkirchen); es bleiben FF1 und FF2 ([[thesis-contribution]]).
+- **KI-Entwurf (ausformuliert):** `expose/expose-ki-entwurf.typ` (PDF daneben), auf ausdrücklichen Wunsch als Draft. Gekürzt auf **4 Seiten inkl. Literatur** (rund 1.700 Wörter); die Arbeitsmarkierung „KI-Entwurf“ in der Kopfzeile ist abgeschaltet, die Offenlegung steht in `ki-dokumentation.typ`. Er nutzt die eigene Literaturliste; ungeprüfte Kandidaten sind mit † markiert, offene Punkte rot ([Objektklassen], [X m], [Quelle Kalibrierung], [Rahmenwerk]). Die Forschungsfragen sind ein Entwurf und mit der Betreuung zu fixieren. Er ist in der KI-Dokumentation ausgewiesen.
+- **KI-Rohfassung (Absatzplan):** `expose/expose-rohfassung.typ` (5 S.; auf `main` durch den Revert vom 23.10.2026 entfernt, in der Git-Historie unter Commit 61ea11f). Pro Abschnitt geplante Absätze mit Kernaussage, `@`-Belegen aus der eigenen Literaturliste und Status (✔ belegt / ◐ nur Titel / ◆ eigene Vorprüfung / ✎ eigene Entscheidung). Ausgangspunkt, kein Abgabetext; in der KI-Dokumentation ausgewiesen.
 - **Satz in Typst:** Vorlage `expose/expose.typ` (anonym, Pflichtgliederung, Hinweisboxen, die sich mit `zeige-hinweise = false` ausblenden), Literatur in `expose/literatur.bib`, zweites PDF `expose/ki-dokumentation.typ`. Kompilieren: `typst compile expose/expose.typ`.
 - PDF 1: Exposé **ohne Namen**, auch nicht in den PDF-Eigenschaften (Autor-Feld) prüfen ([[wa-course-expose]]).
 - PDF 2: verwendete Tools mit den jeweiligen Aufgaben, plus geschätzter KI-Anteil in %; **über 50 % ist nicht erlaubt** ([[wa-course-expose]]).
 - Gliederung genau wie vorgegeben: Arbeitstitel · Ausgangssituation und Problemstellung · Relevanz · Zielsetzung und Ergebnisse · Vorgehensweise und Methoden · Literatur.
 - Danach: Anmeldung der Masterarbeit (Formular + Exposé) bis 31.10.2026 ([[wa-course-expose]]).
 
-## Arbeitstitel — Bausteine
+## Arbeitstitel — gewählt
+**„Kalibrierte probabilistische Geolokalisierung von Nadir-Luftbildern anhand von OpenStreetMap-Objektmerkmalen: Eine Generalisierungsstudie über Regionen“**; englisch: „Calibrated Probabilistic Geolocalization of Nadir Imagery with OpenStreetMap Features: A Cross-Region Generalization Study“ ([[author-decision-title]]). Steht in `expose/expose.typ`. Begriff: **Bodenauflösung / Ground Sampling Distance (GSD)** statt „Zoomstufe“; im Methodenteil einmal definieren (Bodenfläche pro Pixel, z. B. 0,2 m bei DOP20).
+- Abgleich mit den Kursvorgaben ([[wa-course-expose]]):
+  - Haupttitel 8 Wörter, mit Untertitel 14, also über der Faustregel 8–12.
+  - Fachbegriffe wie „kalibriert“, „probabilistisch“, „Nadir“ sind für Fachfremde nicht selbsterklärend.
+  - Präzise, ohne Abkürzungen, verrät keine Ergebnisse.
+  - Bewusste Entscheidung der Autorin oder des Autors.
+
+- **Passung zur Themenfindung** (Abgleich mit [[thesis-goal]], [[author-decision-nadir-input]], [[author-decision-no-metadata]], [[author-decision-detection-in-scope]]):
+  - Abgedeckt: Nadir-Eingabe, Geolokalisierung, Kalibrierung und Generalisierung (Neuheit, [[thesis-contribution]]).
+  - Nur indirekt: **Erkennung und Klassifikation**, der Ausgangspunkt der Themenfindung.
+  - Fehlt: **„ohne Metadaten“**, die Kernschwierigkeit.
+  - Der Schwerpunkt hat sich vom Erkennen zum Verorten verschoben. Im Exposé deshalb die Erkennung als eigenes Ziel bzw. eigene Teilfrage führen und „ohne Metadaten“ in der Problemstellung früh benennen.
+  - Umfang: **entschieden**. Generalisiert wird nur über Regionen; kein Anbieterwechsel, die Bodenauflösung (GSD) ist keine Studienachse ([[author-decision-generalisation-axes]]). Den Maßstab schätzt das Verfahren trotzdem selbst; im Methodenteil einen realistischen GSD-Bereich nennen (z. B. 0,1–0,3 m).
+
+## Arbeitstitel — Bausteine (frühere Notizen)
 - Kernidee in Alltagssprache: *Luftbild ohne Ortsangabe → Ort, Maßstab und Ausrichtung aus erkannten Kartenobjekten*.
 - Vermeiden laut Vorgabe: Abkürzungen (OSM, GNSS, DOP, RANSAC), Fachjargon; ≤ 8–12 Wörter; keine Ergebnisse vorwegnehmen ([[wa-course-expose]]).
 - Begriffe, die Fachfremde verstehen: „Drohnenbild“, „Luftbild“, „ohne GPS“, „offene Kartendaten“, „OpenStreetMap“ (Eigenname), „automatisch verorten“.

@@ -2,8 +2,7 @@
 title: Thesis contribution — what is new, what exists, what it means for the method
 type: analysis
 tags: [thesis, novelty, geolocalization, method, evaluation]
-sources: [author-literature-list, author-note-novelty, vtrn-literature-search, real-e2e-test, localization-levers-test, settlement-test, costea-2016-aerial-geolocalization]
-
+sources: [author-decision-framework-scope, settlement-overpass-labels, osm-real-test, author-decision-generalisation-axes, author-decision-title, author-literature-list, author-note-novelty, vtrn-literature-search, real-e2e-test, localization-levers-test, settlement-test, costea-2016-aerial-geolocalization]
 updated: 2026-10-22
 ---
 The thesis contribution is a combination that no prior work found so far contains: POI-level OSM classes detected in nadir imagery, matched through a point-process likelihood with an explicit detector-error model, giving a calibrated location heatmap with a null hypothesis, and evaluated on real data with spatially blocked cross-region and cross-provider tests. Each ingredient exists separately ([[author-note-novelty]]).
@@ -31,11 +30,38 @@ The thesis contribution is a combination that no prior work found so far contain
 
    *r*, *P* and *λ* come from the FF1 measurements, not from guesses. This links FF1 to FF2 formally.
 3. **A calibrated heatmap with a null hypothesis.** Evaluate log L(h) − log L₀ over a grid of poses. L₀ means "all detections are clutter, the photo is not locatable", and it is the null hypothesis. This gives a heatmap rather than one answer, and the method **abstains** when nothing beats L₀. Calibration: the probability mass inside a radius must match the empirical hit rate, checked with reliability diagrams (proposal, unsourced).
-4. **Spatially blocked cross-region and cross-provider evaluation.**
+4. **Spatially blocked cross-region evaluation** (cross-provider dropped, [[author-decision-generalisation-axes]]).
    - Cross-region: train and tune in one district, test in another (as Miesbach → Garmisch in [[settlement-test]]).
    - Cross-provider: imagery from a different source, e.g. another state's orthophotos or real drone photos (unsourced; data still to be chosen, see [[imagery-sources]]).
    - Cross-year as a third axis: 2018 vs 2024 flights.
 
+## Framework and regional scope (decided)
+- **Framework:** Design Science Research, with the Peffers et al. 2007 process model ([[author-decision-framework-scope]]).
+- **Scope:** not limited to feature-poor regions. The cross-region test compares regions of *different object density*; feature-poor areas are the hardest case and give the abstention rate.
+
+## Generalisation axes in the chosen title
+> [!note] Decided
+> Generalisation is across **regions only**: no cross-provider test, and GSD is not a study axis ([[author-decision-generalisation-axes]]). The notes below record how that decision was reached.
+
+The first working title named **regions and ground sampling distances (GSD)** as the generalisation axes ([[author-decision-title]]).
+- **Cross-region:** spatially blocked, e.g. Miesbach ↔ Garmisch.
+- **Cross-GSD (Bodenauflösung):** test at ground sampling distances other than those used for tuning, e.g. DOP20 (0.2 m) resampled to 0.4 / 0.8 m, or imagery from different flight altitudes (proposal). Altitude-dependent VTRN is studied by Castleberry & Martin 2021 ([[author-literature-list]]).
+- **Recommendation if one axis must go (assistant's view, awaiting the author's decision): keep regions, demote GSD.**
+  - Spatial blocking is needed anyway against autocorrelation, the data exists, and Alpine vs pre-Alpine feature density *is* the method's limit ([[settlement-test]], [[localization-levers-test]]).
+  - A realistic GSD shift needs real drone flights at several altitudes; downsampling DOP20 is only a proxy.
+  - Small objects fall below detectability: a 6 m pool shrinks from about 30 px at 0.2 m to 7–8 px at 0.8 m.
+  - Each GSD needs its own detector error rates and calibration.
+  - Scale is estimated anyway in the metadata-free setting, so a fixed realistic band (e.g. 0.1–0.3 m) plus one or two resampled levels as a labelled robustness check is enough.
+  - Exception: with real multi-altitude drone imagery, GSD becomes the more interesting axis; keep a minimal two-region block regardless.
+- **Cross-provider** (from [[author-note-novelty]]) is not in the title. Decide whether it stays as a secondary test or is dropped.
+
+## Object classes (proposal applied in the exposé draft)
+| Group | Classes | Why | Evidence |
+|---|---|---|---|
+| Core A | swimming pools, tennis courts, soccer pitches, running tracks | DOTA zero-shot baseline exists; standardised sizes help the scale estimate | region counts 934 / 681 / 812 / 299 ([[osm-real-test]]); zero-shot P 0.49, R 0.62 ([[real-e2e-test]]) |
+| Core B | storage tanks | in DOTA; clustered, so they test the lattice failure | 782 tanks; tank-farm error ([[real-e2e-test]]) |
+| Core C | buildings, described by footprint area and orientation | main coverage lever; geometric descriptors come from OSM polygons without tag noise and are visible from above (decided 2026-10-22, replacing the dwelling/outbuilding split) | about 43–55 /km²; ≥ 8 buildings in 16–23 % of photos ([[osm-real-test]], [[localization-levers-test]], [[settlement-overpass-labels]]) |
+| Optional | power pylons, road junctions | most frequent point anchor / proven fingerprint (Costea), but they need new training or road segmentation | 3,780 pylons; ≥ 3 junctions in 32 % of photos ([[localization-levers-test]]) |
 
 ## Why the likelihood should beat the current inlier counting (testable hypothesis)
 The current matcher counts inliers ([[geo-match-prototype]]). Its measured failure was a tank farm matched to a denser tank cluster 63.5 km away at 1.76× scale ([[real-e2e-test]]). Inlier counting rewards that pose: more objects lie nearby. The likelihood also charges **every OSM object in the hypothesised footprint that was not detected** (the log(1 − r) term). At 1.76× scale the footprint is about 3× larger and holds a denser cluster, so many objects go unexplained.
@@ -69,6 +95,8 @@ This keeps the title ("Generalisierungsstudie über Regionen") consistent at alm
 The four parts map onto FF1 (detection and error model), FF2 (likelihood, heatmap, calibration) and a possible FF3 (limits / abstention rate across regions and providers) in [[thesis-timeline]]. The research question itself is the author's to phrase ([[expose-material]]).
 
 ## Related
+- [[author-decision-framework-scope]]
+- [[author-decision-generalisation-axes]]
 - [[author-literature-list]]
 - [[author-note-novelty]]
 - [[vtrn-literature-search]]
