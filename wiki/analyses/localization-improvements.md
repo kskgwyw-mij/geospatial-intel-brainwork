@@ -2,7 +2,7 @@
 title: How to improve localisation — ranked levers
 type: analysis
 tags: [geolocalization, planning, evaluation, thesis]
-sources: [vtrn-literature-search, localization-levers-test, real-e2e-test, osm-real-test, settlement-test, settlement-overpass-labels, costea-2016-aerial-geolocalization, maggiori-osm-imperfect-labels, author-note-use-cases-gnss-denied, bayern-opengeodata]
+sources: [author-note-novelty, vtrn-literature-search, localization-levers-test, real-e2e-test, osm-real-test, settlement-test, settlement-overpass-labels, costea-2016-aerial-geolocalization, maggiori-osm-imperfect-labels, author-note-use-cases-gnss-denied, bayern-opengeodata]
 updated: 2026-10-22
 ---
 A ranked plan for raising localisation performance, ordered by the failure each lever fixes as measured on real data. **Coverage of map cues is the bottleneck**, detection quality is second, and priors and verification fix reliability.
@@ -22,7 +22,7 @@ A ranked plan for raising localisation performance, ordered by the failure each 
 | 3 | **Better detector** (fine-tune on DOP20 with OSM + ALKIS labels; add frequent local classes: barns and huts, power pylons, chapels, bridges) | Too few detections (18/40 sites have < 2) | Zero-shot DOTA: precision 0.49, recall 0.62 ([[real-e2e-test]]). Pretrain on OSM, then refine on a small clean set ([[maggiori-osm-imperfect-labels]]). Barn/hut-only hectares are 6,158 in Garmisch alone ([[settlement-overpass-labels]]) | Medium; this is FF1 anyway |
 | 4 | **Multi-frame accumulation**: a flight yields many overlapping frames; chain them (visual odometry) into a strip of 1–2 km and match the strip | Coverage + uniqueness | Several overlapping photos cover several times the area, so cue counts rise and cues add up across frames (unsourced; follows from the coverage table) | Medium |
 | 5 | **Priors from the use case**: last GNSS fix → region radius; known drone/camera → GSD band | Reliability, search cost | 5 km + scale prior: confident 4/4, probable 4/4, located 6 → 10/40 ([[localization-levers-test]]). GPS outage is a listed use case ([[author-note-use-cases-gnss-denied]]) | Low |
-| 6 | **Verification and confidence**: class-diversity rule (done); render-and-compare check of the hypothesis against the photo's segmentation; size-consistency check against OSM polygons | False confident matches | The tank-farm error is caught by the class rule; density-aware chance scoring would not catch it ([[localization-levers-test]]) | Low–medium |
+| 6 | **Verification and confidence**: point-process likelihood with measured detector errors + null hypothesis, as a calibrated heatmap ([[thesis-contribution]]); class-diversity rule (done, heuristic stand-in); render-and-compare check of the hypothesis against the photo's segmentation; size-consistency check against OSM polygons | False confident matches | The tank-farm error is caught by the class rule; density-aware chance scoring would not catch it ([[localization-levers-test]]) | Low–medium |
 | 7 | **Terrain and imagery for the remaining 22 %** | No mapped cue | 22.2 % of random photos have no OSM cue ([[localization-levers-test]]). Options: dense registration against DOP20 (learned matchers) and DOM20/DGM1 relief ([[coarse-to-fine-localization]], [[bayern-opengeodata]]) | High; it is stage 3–4 of the pipeline |
 
 ## Recommendation for the thesis (proposal)
@@ -37,6 +37,7 @@ A ranked plan for raising localisation performance, ordered by the failure each 
 - Should DOP20 imagery be used as a reference (image-to-image) or only OSM? A DOP-only baseline would be an informative comparison (unsourced).
 
 ## Related
+- [[thesis-contribution]]
 - [[terrain-relative-navigation]]
 - [[localization-levers-test]]
 - [[geo-match-prototype]]

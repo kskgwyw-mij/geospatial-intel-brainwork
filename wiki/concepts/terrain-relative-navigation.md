@@ -2,7 +2,7 @@
 title: Terrain-relative navigation (TRN / VTRN)
 type: concept
 tags: [navigation, geolocalization, gnss-denied, uav]
-sources: [vtrn-literature-search, costea-2016-aerial-geolocalization, rural-geolocalization-search]
+sources: [author-note-novelty, vtrn-literature-search, costea-2016-aerial-geolocalization, rural-geolocalization-search]
 updated: 2026-10-22
 ---
 Estimating a vehicle's position by matching its sensor view of the ground (elevation, or camera images in the visual variant, VTRN) against a georeferenced map, usually fused with inertial sensors. It is the established name for what this thesis does with OSM objects.
@@ -15,7 +15,10 @@ Estimating a vehicle's position by matching its sensor view of the ground (eleva
 | Camera image | Rendered 3D view | Patel et al. 2020, Google Earth ([[vtrn-literature-search]]) |
 | Detected roads / intersections | OSM road graph | Costea & Leordeanu 2016 ([[costea-2016-aerial-geolocalization]]) |
 | Semantic layers / vector features | OSM / vector map | OrienterNet (ground level), building-contour matching, SASGeo (synthetic) ([[vtrn-literature-search]]) |
-| Detected objects (this thesis) | OSM objects via Overpass | [[geo-match-prototype]], [[osm-fingerprint-geolocalization]] |
+| Detected objects (ground robot) | OSM landmarks, scene graph | Kunz et al. 2021 ([[author-note-novelty]]) |
+| Hand-built query graph | Road + building-footprint graph | Shankar et al. 2016, subgraph isomorphism ([[author-note-novelty]]) |
+| Indistinguishable landmarks (theory) | Poisson point process | Hu, Dhillon & Buehrer 2024, localizability analysis ([[author-note-novelty]]) |
+| Detected objects (this thesis) | OSM objects via Overpass | [[geo-match-prototype]], [[osm-fingerprint-geolocalization]]; planned point-process likelihood ([[thesis-contribution]]) |
 | Elevation from images / DEM | DEM | DEM orthoprojection ([[rural-geolocalization-search]]) |
 
 ## Typical structure
@@ -31,6 +34,7 @@ Planetary landers, missiles and most UAV systems work this way ([[vtrn-literatur
 - **Cross-view gap:** an oblique UAV view differs from the nadir map. This thesis avoids it by using nadir images ([[author-decision-nadir-input]]).
 
 ## Related
+- [[thesis-contribution]]
 - [[vtrn-literature-search]]
 - [[gnss-denied-use-cases]]
 - [[coarse-to-fine-localization]]

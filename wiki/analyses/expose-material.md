@@ -2,7 +2,7 @@
 title: Exposé-Materialsammlung (Stichpunkte je Abschnitt)
 type: analysis
 tags: [thesis, expose, ai-use]
-sources: [vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
+sources: [author-note-novelty, vtrn-literature-search, wa-course-expose, hok-ki-leitlinie, hok-aspo-2026, author-note-use-cases-gnss-denied, author-decision-no-metadata, author-decision-detection-in-scope, author-decision-search-region, osm-real-test, real-e2e-test, settlement-test, settlement-overpass-labels, localization-levers-test, costea-2016-aerial-geolocalization, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, pretrained-models-search, bayern-dop20rgb-detail, rural-geolocalization-search]
 updated: 2026-10-22
 ---
 Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Ausgangspunkt für den eigenen Text; dazu eine Faktenliste für die KI-Dokumentation. Hier steht bewusst **kein Fließtext**: Das Exposé formuliert die Autorin oder der Autor selbst ([[wa-course-expose]], [[hok-ki-leitlinie]]).
@@ -47,6 +47,17 @@ Stichpunkte, Zahlen und Quellen für jeden Pflichtabschnitt des Exposés, als Au
 - **Theoretisch (Wissenslücke):**
   - Bekannte Ansätze nutzen dichte Merkmale wie Straßenkreuzungen in Städten ([[costea-2016-aerial-geolocalization]]).
   - Wie weit objektbasierte Verortung in **merkmalsarmen ländlichen und alpinen Gebieten** trägt und wie viele Objekte nötig sind, ist offen (Lücke im Wiki; mit Literatur belegen!).
+  - **Neuheit liegt in der Kombination, nicht in den Bausteinen** ([[author-note-novelty]], [[thesis-contribution]]). Belegte Vorarbeiten:
+    - Objekt-zu-OSM-Landmarken über einen Szenengraphen, für Bodenroboter (Kunz et al. 2021);
+    - Subgraph-Matching auf Straßen- und Gebäudegraphen mit händisch erstelltem Abfragegraphen (Shankar et al. 2016);
+    - Punktprozess-Modell ununterscheidbarer Landmarken, nur als Analyse (Hu, Dhillon & Buehrer 2024);
+    - OSM-Lokalisierung bodennah (OrienterNet, MapLocNet, OSMLoc); SASGeo nur synthetisch.
+  - Neu ist die Kombination:
+    - POI-Klassen aus Senkrechtaufnahmen erkannt;
+    - ein Detektor-Fehlermodell in einer Punktprozess-Likelihood;
+    - eine kalibrierte Heatmap mit Nullhypothese;
+    - ein räumlich geblockter Test über Regionen und Bildanbieter hinweg.
+  - arXiv 2608.07835 ist nicht auffindbar und darf so nicht zitiert werden.
 - **Mehrwert:** Kombination aus Erkennung (Forschungsfrage FF1) und Verortung (FF2), reproduzierbar mit offenen bayerischen Daten.
 - **Literatur zur Relevanz (Kandidaten aus der Recherche, [[vtrn-literature-search]]):** Das Feld heißt *(Visual) Terrain-Relative Navigation* bzw. *Absolute Visual Localization* ([[terrain-relative-navigation]]).
   - Übersicht: Couturier & Akhloufi 2021.
@@ -123,6 +134,7 @@ Belegt durch [[log]] und die Git-Historie dieses Repositorys. Das verwendete Too
 Prozentschätzung: Die Zahl legst du selbst fest; sie muss ≤ 50 % sein ([[wa-course-expose]]). Ein ehrlicher Weg: den Anteil pro Abschnitt schätzen, wobei Text, Ideen und Analysen unterschiedlich gewichtet werden, und dann mitteln.
 
 ## Related
+- [[thesis-contribution]]
 - [[expose-guide]]
 - [[wa-course-expose]]
 - [[hok-ki-leitlinie]]

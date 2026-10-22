@@ -32,6 +32,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[bayern-opengeodata]] — Bavarian OpenGeoData catalogue (full clip): DOP20 RGB/CIR, DGM1, DOM20, LiDAR, LoD2, Einzelbäume, Hausumringe, ATKIS, ALKIS land use, parcels and districts.
 - [[bayern-dop20rgb-detail]] — DOP20 RGB product page: 1 km GeoTIFF tiles in EPSG:25832, about 50 MB per tile, up to 126 GB per district, WMS (incl. historical DOP) and WMTS, CC BY 4.0.
 - [[author-decision-detection-in-scope]] — Author decision: detection and classification are part of the thesis, alongside metadata-free localisation.
+- [[author-note-novelty]] — Author's novelty assessment (verified by search): ingredients exist (Kunz 2021, Shankar 2016, Hu & Dhillon 2024, OrienterNet/MapLocNet/OSMLoc, SASGeo); their combination is new. arXiv 2608.07835 not found.
 - [[vtrn-literature-search]] — Literature search on visual terrain-relative navigation and UAV absolute visual localisation: Mars 2020 LVS, Conte & Doherty, Goforth & Lucey, Kinnari, Fragoso, reviews, datasets, OSM/semantic-map methods.
 - [[localization-levers-test]] — Real-data lever tests: cue coverage ceilings (point anchors 0.1–1.6 %, +buildings/junctions 34 %, +lines 78 %), class-diversity rule (confident 2/2), priors (6 → 10/40).
 - [[settlement-overpass-labels]] — Overpass building tags (75 % `building=yes`, 35–43 % house numbers), dwelling rule; detector AUC 0.984 for inhabited, 0.999 for settlement; live Garmisch grid.
@@ -69,6 +70,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[pretrained-models]] — Pretrained CNNs and foundation models per thesis task, resolution caveat, minimal fine-tuning stack.
 - [[imagery-sources]] — Imagery for training (German DOP10/20, Tyrolean orthophotos) and testing (simulated metadata-free nadir crops); Sentinel-2 ruled out for objects.
 - [[gnss-denied-use-cases]] — Application framing: GNSS-denied visual localisation, use-case table with prototype fit and evidence, research question, dual-use ethics.
+- [[thesis-contribution]] — What is new: nadir POI detection + detector-error point-process likelihood + calibrated heatmap with null hypothesis + cross-region/provider tests; prior work per ingredient; why it should fix lattice errors.
 - [[localization-improvements]] — Ranked levers to improve localisation: more cues (buildings, junctions, lines), better detector, multi-frame, priors, verification, terrain/DOP for the rest.
 - [[settlement-overpass]] — Bridge between settlement detector and Overpass: dwelling tag rule + 100 m grid, query, use for labels, localisation and OSM completeness checks.
 - [[settlement-detection]] — How stably inhabited areas can be detected in DOP20: settlements yes (stable across districts and years), single huts no; label caveats and thesis use.
