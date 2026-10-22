@@ -269,3 +269,7 @@ Latest entries: `grep "^## \[" wiki/log.md | tail -5`
 ## [2026-10-22] query | Is the scope too large (FF3)?
 - updated: [[thesis-contribution]], [[expose-material]]; expose/expose-ki-entwurf.typ + .pdf
 - notes: Yes, FF3 as a separate question would double all measurements. Folded into the evaluation design (develop and tune in Miesbach, test only in Garmisch-Partenkirchen); the main question gains "in einer nicht zur Entwicklung genutzten Region". Two research questions remain (FF1 detection/error model, FF2 likelihood + calibration vs counting). The title stays consistent; the draft is still 4 pages.
+
+## [2026-10-22] edit | Data citations DOP20 + OSM verified and moved to own bibliography
+- updated: expose/literatur.bib (+2), expose/kandidaten.bib (−2), expose/expose-ki-entwurf.typ + .pdf (no † for both; OSM licence ODbL named in text)
+- notes: The author had checked both; cross-checked against the DOP20 product page clip (publisher, CC BY 4.0, 20 cm) and the OSM copyright page / OSMF attribution guideline (ODbL, credit "OpenStreetMap" contributors). Fixed the DOP20 title to the official "Digitales Orthophoto RGB 20cm (DOP20 RGB)"; added the Bavarian credit line as a bib note. Some INSPIRE records for other Bavarian datasets say CC BY-SA 4.0; for DOP20 the product page says CC BY 4.0.
