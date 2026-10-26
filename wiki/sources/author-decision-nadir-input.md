@@ -21,6 +21,9 @@ It amends the input stated in [[thesis-goal]] ("orthoimagery"). Consequences:
 - Relief displacement and camera tilt remain in the image, so OSM labels shift more than on orthophotos ([[orthoimagery]], [[osm-weak-labels]]).
 - Images without metadata need [[osm-fingerprint-geolocalization]], which becomes more central.
 
+> [!note] Follow-up
+> The peer review asks why the exposé focuses on nadir images only, since drones can also take oblique images or record metadata (A5, [[peer-review-expose]]). The exposé needs a short reason; points in [[expose-revision]].
+
 ## Pages touched
 [[thesis-goal]], [[orthoimagery]], [[osm-weak-labels]], [[poc-platform]], [[thesis-poc-pipeline]], [[osm-fingerprint-geolocalization]], [[overview]]
 

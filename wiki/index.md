@@ -44,6 +44,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[real-e2e-test]] — Real end-to-end test (DOP20 + DOTA YOLO11-OBB + real OSM): detection precision 0.49 / recall 0.62; located 6/40 near anchors, 0/40 random; first wrong confident match (tank farm).
 - [[osm-real-test]] — Real OSM test: 11,599 anchors (about 1.5/km²), Miesbach 47k buildings (about 55/km²); random photos located 1 % with point anchors; half of footprints have no building.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
+- [[peer-review-expose]] — Fellow student's peer review of the exposé draft (22.10.2026) with the author's notes: method coherent; criticises long sentences, citation density, unclear goal (drones?), unexplained nadir/OSM-only choices, settlement-vs-Alpine-edge contradiction.
 
 ## Entities
 - [[hok-dsia-master]] — The DSIA master's programme at HOK Kufstein Tirol (part-time form) in which the thesis is written.
