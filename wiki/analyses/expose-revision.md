@@ -7,7 +7,7 @@ updated: 2026-10-26
 ---
 Umsetzungsplan zu [[expose-review]] und zum Peer Review ([[peer-review-expose]]): sieben Entscheidungen mit Empfehlung, dann für jeden Mangel die Stelle im Exposé, was dort stehen muss, die fertigen Zahlen und die geprüften Belege; Bibliografie und redaktionelle Punkte sind im Entwurf auf `main` bereits korrigiert.
 
-Die inhaltlichen Sätze formuliert der Autor selbst; hier steht, was sie enthalten müssen. Quelltext: `expose/expose-ki-entwurf.typ`; Seitenangaben beziehen sich auf das PDF vom 22.10.2026. Erledigtes wird in der Status-Spalte von [[expose-review]] abgehakt. Bewusste Entscheidungen des Autors (Schwelle und Regionen offen, keine Kalibrierungsquelle, kein Hinweis auf Bodenauflösungen) sind in [[expose-review]] aufgeführt; die Empfehlungen unten respektieren sie, wo das geht.
+Die inhaltlichen Sätze formuliert der Autor selbst; hier steht, was sie enthalten müssen. Als Schreibgerüst mit einer Hinweisbox pro Absatz liegt das in `expose/expose-v2.typ` (ohne Fließtext). Quelltext: `expose/expose-ki-entwurf.typ`; Seitenangaben beziehen sich auf das PDF vom 22.10.2026. Erledigtes wird in der Status-Spalte von [[expose-review]] abgehakt. Bewusste Entscheidungen des Autors (Schwelle und Regionen offen, keine Kalibrierungsquelle, kein Hinweis auf Bodenauflösungen) sind in [[expose-review]] aufgeführt; die Empfehlungen unten respektieren sie, wo das geht.
 
 ## Bereits erledigt
 **Bibliografie (#15):**
