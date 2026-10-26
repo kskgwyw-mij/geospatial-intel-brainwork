@@ -2,12 +2,12 @@
 title: Exposé-Überarbeitung — Entscheidungen, Inhalte und Belege je Mangel
 type: analysis
 tags: [thesis, expose, review, evaluation-design]
-sources: [localization-levers-test, real-e2e-test, osm-real-test, settlement-test, settlement-overpass-labels, aerial-cv-benchmarks, costea-2016-aerial-geolocalization, author-literature-list, author-decision-generalisation-axes, author-decision-title, bayern-dop-regions-search, wa-course-expose, hok-aspo-2026, author-decision-framework-scope]
-updated: 2026-10-23
+sources: [localization-levers-test, real-e2e-test, osm-real-test, settlement-test, settlement-overpass-labels, aerial-cv-benchmarks, costea-2016-aerial-geolocalization, author-literature-list, author-decision-generalisation-axes, author-decision-title, bayern-dop-regions-search, wa-course-expose, hok-aspo-2026, author-decision-framework-scope, peer-review-expose, author-decision-no-metadata, author-decision-nadir-input, bayern-dop20rgb-detail]
+updated: 2026-10-26
 ---
-Umsetzungsplan zu [[expose-review]]: sieben Entscheidungen mit Empfehlung, dann für jeden Mangel die Stelle im Exposé, was dort stehen muss, die fertigen Zahlen und die geprüften Belege; Bibliografie und redaktionelle Punkte sind im Entwurf auf `main` bereits korrigiert.
+Umsetzungsplan zu [[expose-review]] und zum Peer Review ([[peer-review-expose]]): sieben Entscheidungen mit Empfehlung, dann für jeden Mangel die Stelle im Exposé, was dort stehen muss, die fertigen Zahlen und die geprüften Belege; Bibliografie und redaktionelle Punkte sind im Entwurf auf `main` bereits korrigiert.
 
-Die inhaltlichen Sätze formuliert der Autor selbst; hier steht, was sie enthalten müssen. Quelltext: `expose/expose-ki-entwurf.typ`; Seitenangaben beziehen sich auf das PDF vom 22.10.2026. Erledigtes wird in der Status-Spalte von [[expose-review]] abgehakt. Bewusste Entscheidungen des Autors (Schwelle und Regionen offen, keine Kalibrierungsquelle, kein Hinweis auf Bodenauflösungen) sind in [[expose-review]] aufgeführt; die Empfehlungen unten respektieren sie, wo das geht.
+Die inhaltlichen Sätze formuliert der Autor selbst; hier steht, was sie enthalten müssen. Als Schreibgerüst mit einer Hinweisbox pro Absatz liegt das in `expose/expose-v2.typ` (ohne Fließtext). Quelltext: `expose/expose-ki-entwurf.typ`; Seitenangaben beziehen sich auf das PDF vom 22.10.2026. Erledigtes wird in der Status-Spalte von [[expose-review]] abgehakt. Bewusste Entscheidungen des Autors (Schwelle und Regionen offen, keine Kalibrierungsquelle, kein Hinweis auf Bodenauflösungen) sind in [[expose-review]] aufgeführt; die Empfehlungen unten respektieren sie, wo das geht.
 
 ## Bereits erledigt
 **Bibliografie (#15):**
@@ -116,6 +116,9 @@ Die inhaltlichen Sätze formuliert der Autor selbst; hier steht, was sie enthalt
   - Kalibrierung: Die Quelle wurde bewusst weggelassen. Eine Begutachtung wird aber fragen, woher Zuverlässigkeitsdiagramm und ECE kommen; ein Halbsatz mit Guo et al. 2017 genügt.
 
 ### #10 Vorprüfung mit Stichprobenangaben
+> [!note] Nach dem Peer Review
+> Der Autor will das Beispiel aus der Vorprüfung aus dem Exposé nehmen (Notiz zu A6, [[peer-review-expose]]). Dann entfällt #10; die Zahlen bleiben im Wiki und können ins Methodenkapitel der Arbeit. Gilt nur, falls die Zahlen doch bleiben:
+
 - **Stelle:** Abschnitt 1, letzter Absatz.
 - **Inhalt:**
   - Abdeckung: 2.000 zufällige Ausschnitte im Landkreis Garmisch-Partenkirchen ([[localization-levers-test]]), statt „am bayerischen Alpenrand“.
@@ -151,12 +154,52 @@ Erledigt, siehe oben.
   - Die Arbeit nutzt nur offene Daten (ODbL, CC BY 4.0), keine Echtzeit-Navigation, und bezieht die Ergebnisse auf zivile Szenarien ([[gnss-denied-use-cases]]).
 - **Streichliste (#19):** Bei Zeitmangel in dieser Reihenfolge streichen: Strommasten, Kreuzungen, Gegenrichtung des Regionentests, Oberfläche des Prototyps. Bearbeitungszeit ≥ 6 Monate ([[hok-aspo-2026]]).
 
+## Peer Review (26.10.2026)
+Punkte aus dem Review eines Mitstudierenden mit den handschriftlichen Notizen des Autors ([[peer-review-expose]]). Seitenangaben beziehen sich auf das PDF vom 22.10.2026.
+
+### A2 Warum nur OSM und keine Orthofotos als Referenz? (Notiz: „guter Punkt“)
+- **Stelle:** Abschnitt 1, Absatz 2 (bisher ein Satz: „frei verfügbare, weniger erscheinungsabhängige Referenz“); Abgrenzung in Abschnitt 4.
+- **Inhalt, drei Gründe:**
+  - **Methodisch:** Die Testbilder sind Ausschnitte der DOP20. Ein Abgleich gegen dieselben Orthofotos wäre zirkulär, weil Anfrage und Referenz aus derselben Quelle stammen; er ließe sich mit diesen Daten nicht fair prüfen (unsourced, vgl. #8).
+  - **Praktisch:** Bildreferenzen sind groß und altern. DOP20 kommt in Kacheln von etwa 50 MB je km², bis 126 GB je Landkreis ([[bayern-dop20rgb-detail]]); OSM-Objekte sind kompakte Vektordaten. Bildabgleiche sind empfindlich gegenüber Jahreszeit und Beleuchtung (Kinnari et al. 2022, 2023; steht schon in Abschnitt 1).
+  - **Beitrag:** Der Bildabgleich gegen Orthofotos ist etabliert (Goforth & Lucey 2019; Kinnari et al. 2021); der Beitrag dieser Arbeit ist der kartenbasierte Weg.
+- **Ausblick (ein Halbsatz):** Die Kombination ist sinnvoll, z. B. OSM für die Grobverortung und anschließend Feinregistrierung gegen Orthofotos ([[coarse-to-fine-localization]]), gehört aber nicht zum Umfang.
+
+### A4 Was ist das Hauptziel? (Notiz: „Ziel ist nicht leicht verständlich“)
+- **Stelle:** Abschnitt 1, Absatz 1 (Einstieg über Drohnen und GNSS); Abschnitt 2 „Praktisch“; Abschnitt 3, erster Satz.
+- **Inhalt:**
+  - Einstieg über das allgemeine Problem: ein senkrechtes Luftbild ohne Positionsangaben auf der Karte verorten. Drohnen bei GNSS-Ausfall sind *eine* Anwendung neben der nachträglichen Verortung von Luftbildern und der Kartenpflege ([[gnss-denied-use-cases]]).
+  - In der Relevanz die Anwendung zuerst nennen, die das Design direkt prüft: die nachträgliche Verortung von Luftbildern (vgl. #2b). Echtzeit-Navigation bleibt in der Abgrenzung ausgeschlossen; so passt alles zusammen.
+  - Abschnitt 3 mit einem Satz zum Hauptziel beginnen: Verortung mit verlässlicher Unsicherheitsangabe. Die Erkennung (FF1) ist Mittel zum Zweck. Der Reviewer hat FF1 für das Hauptziel gehalten ([[peer-review-expose]]).
+
+### A5 Warum nur Nadir-Aufnahmen und ohne Metadaten? (Notiz: „Bezug zu Drohnen zu arg → nur ein Anwendungsfall“)
+- **Stelle:** Abschnitt 1, Absatz 3; Abgrenzung („Ausgeschlossen sind Schrägaufnahmen“).
+- **Inhalt:**
+  - **Nadir:** Senkrechte Bilder haben einen nahezu einheitlichen Maßstab und eine kartenähnliche Geometrie. Die OSM-Objekte lassen sich deshalb mit Position, Drehung und Maßstab ins Bild legen, also mit vier Freiheitsgraden statt einer vollen Kamerapose (unsourced). Orthofotos, Bildflüge und viele Kartierflüge mit Drohnen liefern solche Bilder ([[author-decision-nadir-input]]). Schrägaufnahmen bräuchten ein Perspektivmodell und Höhen; das ist eine bewusste Grenze.
+  - **Ohne Metadaten:** Das ist der ungünstigste Fall und deckt Bilder aus Archiven, weitergegebene Bilder und ausgefallene Sensoren ab ([[author-decision-no-metadata]]). Vorhandene Teilangaben (Region, Flughöhe) werden zu Vorwissen und verbessern die Verortung; in der Vorprüfung stieg der Anteil verorteter Bilder mit Regions- und Maßstabsvorwissen von 6 auf 10 von 40 ([[localization-levers-test]]).
+  - Drohnen nur als Beispiel nennen, nicht als Rahmen (Notiz des Autors).
+
+### A6 Widerspruch: Objekte vor allem in Siedlungen, Region am Alpenrand? (Notiz: „Beispiel aus PoC nicht erwähnen → zu verwirrend“)
+- **Stelle:** Abschnitt 1, Absatz 4 (Vorprüfung „am bayerischen Alpenrand“, 0,1–1,6 %, 34 %, 22 %); Kasten in Abschnitt 3 („beispielsweise Alpenvorland und Hochgebirge am bayerischen Alpenrand“).
+- **Inhalt:**
+  - Die Zahlen der Vorprüfung und den Ortsnamen streichen. Stehen bleibt eine allgemeine Aussage: Die Dichte kartierter Objekte schwankt stark zwischen Regionen, und merkmalsarme Gebiete gelten als besonders schwierig (Jarraya et al. 2025; Zheng et al. 2026, schon zitiert).
+  - Im Kasten statt des Beispiels die Auswahlkriterien aus E3 nennen.
+  - Den vermeintlichen Widerspruch auflösen: Die Arbeit ist nicht auf merkmalsarme Gebiete beschränkt ([[author-decision-framework-scope]]). Gerade weil die Dichte schwankt, braucht das Verfahren eine Enthaltung; die Enthaltungsrate zeigt, wo die Methode endet.
+- **Folge:** #10 entfällt. Bei #3 wandert die Abdeckungszahl ins Methodenkapitel der Arbeit; im Exposé reicht die Begründung, warum Gebäude zu den Kernklassen gehören.
+
+### A1, A3, A7 Lesbarkeit, Zitate, Stil (Notizen: „änderbar ✓“, „Referenzen gezielter verwenden“)
+- **Lange Sätze (A1):** Sätze über etwa 30 Wörter teilen. Längste auf S. 1–3: S. 2 „Theoretisch existieren die Bausteine einzeln …“ (59 Wörter), S. 2 „Wissenschaftlich soll (1) … (2) …“ (etwa 50), S. 1 „Weitere Ansätze übersetzen …“ (44), S. 1 „Verbreitet ist der Abgleich …“ (38), „Solche Verfahren sind jedoch …“ (37), „Fällt das Signal aus …“ (37). Median 24,5 Wörter (Zählung des Assistenten).
+- **Zitate (A3):** S. 1 hat 7 Zitate in 4 Sätzen (Absatz 1) und 8 in 4 Sätzen (Absatz 2). Pro Aussage ein bis zwei Belege, verwandte Arbeiten bündeln (z. B. Partikelfilter auf Vektorkarten: Ouyang et al. 2024; Yuan et al. 2025) und bei den nächsten Nachbarn in einem Halbsatz sagen, worin sie sich unterscheiden (vgl. #9).
+- **Satzzeichen (A7):** Auf S. 1–3 stehen 13 Semikolons und 2 Gedankenstriche. Meist reicht ein Punkt; das kürzt zugleich die Sätze aus A1.
+
 ## Reihenfolge
-- **Bis 23.10.2026:** E1 und E2 festlegen, Kriterien aus E3 nennen; #1, #2 und #10 einarbeiten. #14, #15 und #17 sind erledigt.
-- **Bis 31.10.2026:** E4–E7; #3, #4, #6, #7, #8, #9; danach #11–#13, #16, #18.
+- **Abgabe 23.10.2026:** vorbei; erledigt waren #14, #15 und #17.
+- **Bis zur Anmeldung 31.10.2026:** zuerst die Peer-Review-Punkte A4, A5, A6 und A2 (sie betreffen Einstieg, Relevanz und Problemstellung) sowie A1/A3/A7 beim Umschreiben; dann E1–E3 mit #1, #2, #5; danach E4–E7 mit #3, #4, #6, #7, #8, #9.
+- **Später:** #11–#13, #16, #18.
 
 ## Related
 - [[expose-review]]
+- [[peer-review-expose]]
 - [[expose-guide]]
 - [[expose-material]]
 - [[thesis-contribution]]

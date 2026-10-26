@@ -17,7 +17,7 @@ cross-referencing and bookkeeping.
 | `wiki/` | Summaries, entity & concept pages, analyses, `overview.md`, `index.md`, `log.md` | The LLM |
 | `CLAUDE.md` | The schema: structure, page format, workflows | You + the LLM |
 | `tools/` | `lint.py` (health checks), `search.py` (BM25 search), `osm_overlay.py` (project Overpass objects onto a nadir image → annotated PNG + pixel labels / YOLO), `geo_match.py` (locate a metadata-free photo from detected objects + OSM), `sim_geo_match.py` (simulated evaluation), `real_geo_test.py` (end-to-end test on real DOP20 imagery + pretrained YOLO11-OBB + real OSM), `settlement_test.py` (settlement detection stability), `overpass_settlements.py` (Overpass → 100 m settlement grid) | — |
-| `expose/` | Exposé in Typst: `expose.typ` (anonymous, required structure, hint boxes), `literatur.bib` (own verified list), `kandidaten.bib` (unverified AI suggestions), `ki-dokumentation.typ` (AI-use documentation). Build: `typst compile expose/expose.typ` | Author writes the text |
+| `expose/` | Exposé in Typst: `expose.typ` (anonymous, required structure, hint boxes), `literatur.bib` (own verified list), `kandidaten.bib` (unverified AI suggestions), `ergaenzungen.bib` (verified additions from the review), `expose-v2.typ` (writing scaffold after review and peer review: hint boxes per paragraph, no prose), `expose-ki-entwurf.typ` (AI draft of 22.10.), `ki-dokumentation.typ` (AI-use documentation). Build: `typst compile expose/expose.typ` | Author writes the text |
 | `.claude/commands/` | `/ingest`, `/query`, `/lint` slash commands for Claude Code | — |
 
 ## Workflow

@@ -2,8 +2,8 @@
 title: Exposé-Entwurf — strenge Bewertung (22.10.2026)
 type: analysis
 tags: [thesis, expose, review, evaluation-design]
-sources: [localization-levers-test, real-e2e-test, osm-real-test, settlement-overpass-labels, aerial-cv-benchmarks, costea-2016-aerial-geolocalization, author-literature-list, author-note-novelty, vtrn-literature-search, wa-course-expose, hok-aspo-2026, author-decision-generalisation-axes, author-decision-framework-scope, settlement-test, bayern-dop20rgb-detail, maggiori-osm-imperfect-labels]
-updated: 2026-10-23
+sources: [localization-levers-test, real-e2e-test, osm-real-test, settlement-overpass-labels, aerial-cv-benchmarks, costea-2016-aerial-geolocalization, author-literature-list, author-note-novelty, vtrn-literature-search, wa-course-expose, hok-aspo-2026, author-decision-generalisation-axes, author-decision-framework-scope, settlement-test, bayern-dop20rgb-detail, maggiori-osm-imperfect-labels, peer-review-expose]
+updated: 2026-10-26
 ---
 Strenge Bewertung des Exposé-Entwurfs vom 22.10.2026: Urteil Gut bis Befriedigend (2–3), acht schwere Mängel (vor allem fehlendes Erfolgskriterium, nie variierter Maßstab, Kernklassen ohne Abdeckung, Testdesign ohne Negativbilder), mit Prioritäten für Abgabe (23.10.) und Anmeldung (31.10.).
 
@@ -70,6 +70,14 @@ Einige Mängel gehen auf Entscheidungen zurück, die im [[log]] vom 22.10.2026 f
 - **Dual Use (#18):** Ein Halbsatz („zivile Anwendungen“) ist zu wenig; zwei bis drei Sätze ([[gnss-denied-use-cases]]). Lizenzen (ODbL, CC BY 4.0) korrekt genannt ([[bayern-dop20rgb-detail]]).
 - **Kein Zeit- und Risikoplan (#19):** Vom Kurs nicht verlangt ([[wa-course-expose]]). Für ≥ 6 Monate berufsbegleitend ([[hok-aspo-2026]]) ist der Umfang knapp: Feintuning für fünf und mehr Klassen, Gebäudesegmentierung, Likelihood, Kalibrierung, zwei Regionen, Prototyp. Nennen, was bei Zeitmangel wegfällt (Strommasten, Kreuzungen, Prototyp).
 
+## Abgleich mit dem Peer Review
+Ein Mitstudierender hat denselben Entwurf begutachtet ([[peer-review-expose]]). Er hält Vorgehen und Forschungsfragen für schlüssig, deckt sich aber in drei Punkten mit dieser Bewertung:
+- A2 (warum nur OSM, keine Orthofotos) ↔ #8.
+- A4/A5 (Hauptziel Drohnen? warum Nadir?) ↔ #2b.
+- A6 (Objekte in Siedlungen, Region am Alpenrand) ↔ #3 und #10.
+
+Neu sind Lesbarkeit (A1), Zitatdichte (A3), die fehlende Begründung für Nadir und „ohne Metadaten“ (A5) und der Stileindruck (A7). Umsetzung in [[expose-revision]].
+
 ## Reihenfolge
 - **Bis zur Abgabe (23.10.2026):** #1, #2, #10, #14, #15 und die Auswahlkriterien der Regionen aus #5. Meist ein bis zwei Sätze pro Punkt.
 - **Bis zur Anmeldung (31.10.2026):** #3, #4, #6, #7 und die RFS-Literatur aus #9. Sie verändern das Methodenkapitel.
@@ -78,6 +86,7 @@ Die Spalte *Status* aktualisieren, wenn eine überarbeitete Fassung vorliegt. En
 
 ## Related
 - [[expose-revision]]
+- [[peer-review-expose]]
 - [[expose-guide]]
 - [[expose-material]]
 - [[thesis-contribution]]

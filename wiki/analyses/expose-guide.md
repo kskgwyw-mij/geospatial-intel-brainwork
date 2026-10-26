@@ -14,7 +14,7 @@ A checklist of what the master exposé must contain and deliver, with pointers t
 | AI-documentation PDF | with the exposé | Tools used and for which tasks, plus an estimated AI share in %; **> 50 % not allowed** ([[wa-course-expose]]) |
 | Thesis registration: form + exposé | **31.10.2026**, Moodle | The programme director approves the topic; propose a supervisor after talking to them ([[wa-course-expose]]) |
 | Exposé approval | by the end of semester 3 at the latest | Otherwise a topic is assigned ([[hok-aspo-2026]]) |
-| Review and rebuttal session | 24.10.2026 | Peer reviews of exposés ([[wa-course-expose]]) |
+| Review and rebuttal session | 24.10.2026 | Peer reviews of exposés ([[wa-course-expose]]); review received: [[peer-review-expose]] |
 
 ## Section checklist → wiki material
 | Required section ([[wa-course-expose]]) | What the course asks for | Material in the wiki |
@@ -55,6 +55,7 @@ The author decides how to rate this in the % estimate. The course's own guidance
 
 ## Related
 - [[expose-review]]
+- [[peer-review-expose]]
 - [[expose-revision]]
 - [[expose-material]]
 - [[thesis-timeline]]

@@ -2,8 +2,8 @@
 title: GNSS-denied visual localisation — use cases & framing
 type: analysis
 tags: [use-cases, gnss-denied, drones, ethics, research-question]
-sources: [vtrn-literature-search, author-note-use-cases-gnss-denied, costea-2016-aerial-geolocalization, rural-geolocalization-search, dsia-studienordnung-2027, author-decision-no-metadata, bayern-dop-regions-search]
-updated: 2026-10-22
+sources: [vtrn-literature-search, author-note-use-cases-gnss-denied, costea-2016-aerial-geolocalization, rural-geolocalization-search, dsia-studienordnung-2027, author-decision-no-metadata, bayern-dop-regions-search, peer-review-expose]
+updated: 2026-10-26
 ---
 Application framing of the thesis: locating a drone or aerial photo without GPS/GNSS by matching detected OSM objects to the map. It lists the use cases, which of them the prototype already supports, the evidence behind each, and the dual-use implications.
 
@@ -12,6 +12,8 @@ Application framing of the thesis: locating a drone or aerial photo without GPS/
 the camera image plus map data alone ([[author-note-use-cases-gnss-denied]]). The thesis's specific angle is that
 the map is **OSM via Overpass**, and the image features are **detected OSM-class objects** (not pixels), matched by
 [[ransac]]-style similarity fitting ([[geo-match-prototype]]).
+
+**Weight of the drone framing:** after the peer review, the author treats drones as **one use case among several**, not as the frame of the thesis ("Bezug zu Drohnen zu arg → nur ein Anwendungsfall"). The reviewer found the primary goal unclear because the exposé opens with drones but excludes real-time navigation ([[peer-review-expose]]). The exposé should open with the general task, locating a nadir image without metadata, and list drones next to after-the-fact image localisation and map maintenance ([[expose-revision]]).
 
 ## Use cases
 
