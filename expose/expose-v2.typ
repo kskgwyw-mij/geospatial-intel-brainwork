@@ -234,6 +234,12 @@
     Für YOLO-OBB sprechen gedrehte Rahmen, vorhandene DOTA-Gewichte und Geschwindigkeit. Originalarbeiten zitieren
     (`redmon2016yolo`, `ren2017fasterrcnn`, `liu2016ssd` in ergaenzungen.bib), nicht den Medium-Artikel.
     Die Vergleichszahlen von 2016 (Pascal VOC, Bodenfotos) taugen nicht als Beleg für Luftbilder.
+  - Aktuelle Belege für schnelle Erkennung kleiner Objekte von oben (wiki: detector-choice):
+    YOLO11-OBB 78,4–81,3 mAP50 auf DOTA bei 4,4–28,6 ms je 1024-px-Kachel (T4; Herstellerangabe,
+    `ultralytics2024yolo11`) gegen Oriented R-CNN 75,87 % bei etwa 66 ms (`xie2021orientedrcnn`);
+    YOLO11 auf Drohnenbildern 32–46 % mAP50 bei 330–38 FPS (`mi2026yolo11suav`). Grenze: Objekte unter
+    etwa 16 px (`wang2021aitod`); die Klassen dieser Arbeit sind bei 0,2 m größer (Becken 15–60 px).
+    Fehlalarme durch kreisförmige Strukturen bei Tanks (`wan2024yolov7ot`).
   - Manuell geprüfte Teilmenge (z. B. 50 Ausschnitte): real-kartiert, real-unkartiert, Fehlalarm. So trennen sich
     Detektorfehler und OSM-Lücken; OSM-Vollständigkeit schwankt räumlich (`hecht2013completeness`).
 ]

@@ -2,7 +2,7 @@
 title: Pretrained CNNs & foundation models for the thesis
 type: analysis
 tags: [pretrained, transfer-learning, foundation-models, decision]
-sources: [settlement-test, real-e2e-test, pretrained-models-search, methods-10-25cm-search, maggiori-2017-hr-semantic-labeling, aerial-cv-benchmarks, sojasingarayar-2022-detector-comparison]
+sources: [settlement-test, real-e2e-test, pretrained-models-search, methods-10-25cm-search, maggiori-2017-hr-semantic-labeling, aerial-cv-benchmarks, sojasingarayar-2022-detector-comparison, yolo-small-aerial-search]
 updated: 2026-10-28
 ---
 Which pretrained networks exist for each part of the thesis (detection, segmentation, classification, geolocation), what they were trained on, and how to fine-tune them on Overpass-labelled 10–25 cm orthophotos.
@@ -27,7 +27,7 @@ pretrained initialisation better than training from scratch ([[maggiori-2017-hr-
 ## Per thesis task
 - **Buildings & solar (segmentation):** a U-Net or FPN with a SatlasPretrain Swin or DINOv3-satellite encoder; plain ImageNet ResNet as the cheap baseline. Fine-tune on Overpass masks ([[osm-weak-labels]]).
 - **Pools, tanks, pitches (detection):** fine-tune **YOLO11-OBB from the DOTA weights**. These classes are already in DOTA, so it is the smallest step from pretrained model to thesis model.
-  - Family context: [[yolo]] is single-shot; the two-stage alternative is [[faster-r-cnn]]. In the 2016 comparison on Pascal VOC, single-shot SSD matched Faster R-CNN's accuracy at 6.6× the speed, while the original YOLO was faster but less accurate (66 % vs 73 % mAP) ([[sojasingarayar-2022-detector-comparison]]). A current comparison of oriented detectors on DOTA is still missing from the wiki.
+  - Family context: [[yolo]] is single-shot; the two-stage alternative is [[faster-r-cnn]]. In the 2016 comparison on Pascal VOC, single-shot SSD matched Faster R-CNN's accuracy at 6.6× the speed, while the original YOLO was faster but less accurate (66 % vs 73 % mAP) ([[sojasingarayar-2022-detector-comparison]]). Current evidence: YOLO11-OBB reaches 78.4–81.3 mAP50 on DOTA at 4.4–28.6 ms per tile (T4), against 75.87 % mAP at about 66 ms for the two-stage Oriented R-CNN ([[yolo-small-aerial-search]]); decision and limits in [[detector-choice]].
 - **Trees:** DeepForest as is, then fine-tune on local crowns.
 - **Roof shape and sport (classification):** an ImageNet EfficientNet or ResNet on crops; the domain-pretrained variant is in [[methods-10-25cm-search]].
 - **Geolocation fingerprint:** use **DINOv3-satellite embeddings** of the neighbourhood as the retrieval descriptor, instead of training an AlexNet descriptor as in [[costea-2016-aerial-geolocalization]]. Verify geometrically as before ([[osm-fingerprint-geolocalization]]). (unsourced)
@@ -58,6 +58,7 @@ The 512-d embedding of the same DOTA model, with only a linear classifier on top
 All are open and PyTorch-based; check each licence before using it in the [[poc-platform]]. (unsourced)
 
 ## Related
+- [[detector-choice]]
 - [[yolo]]
 - [[faster-r-cnn]]
 - [[settlement-detection]]

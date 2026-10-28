@@ -2,7 +2,7 @@
 title: Object detection
 type: concept
 tags: [deep-learning, computer-vision]
-sources: [thesis-goal, aerial-cv-benchmarks, methods-10-25cm-search, sojasingarayar-2022-detector-comparison, pretrained-models-search, real-e2e-test]
+sources: [thesis-goal, aerial-cv-benchmarks, methods-10-25cm-search, sojasingarayar-2022-detector-comparison, pretrained-models-search, real-e2e-test, yolo-small-aerial-search]
 updated: 2026-10-28
 ---
 Finding each object in an image and returning a bounding box plus a class; one reading of "recognition and classification" in the thesis.
@@ -24,7 +24,9 @@ Finding each object in an image and returning a bounding box plus a class; one r
   | SSD300 | single-shot | 74 % | 46 |
 
   In this 2016-era comparison, single-shot SSD matched two-stage accuracy at 6.6× the speed. The numbers come from a blog that quotes the SSD authors; YOLO's speed is inconsistent within it (45 fps in the text, 21 fps in the chart), see [[yolo]].
+- **Today, on aerial imagery:** YOLO11-OBB (78.4–81.3 mAP50 on DOTA, 4.4–28.6 ms per 1024 px tile on a T4) is faster and at least as accurate as the two-stage Oriented R-CNN (75.87 % mAP, about 66 ms), so the 2016 trade-off no longer holds ([[yolo-small-aerial-search]], [[detector-choice]]).
 - Other families: RetinaNet (one-stage with focal loss) and transformer detectors (DETR variants) (unsourced).
+- **Small objects:** COCO counts objects under 32² px as small; current YOLOs fail mainly on very tiny objects under about 16 px (AI-TOD) ([[yolo-small-aerial-search]]). At 0.2 m the thesis classes are larger ([[detector-choice]]).
 - **Oriented boxes:** rotated-box variants suit top-down imagery; DOTA labels oriented boxes ([[aerial-cv-benchmarks]]). The thesis uses YOLO11-OBB with DOTA weights: nano 78.4 mAP50 on DOTAv1 ([[pretrained-models-search]]); zero-shot on DOP20 precision 0.49, recall 0.62 against OSM ([[real-e2e-test]]).
 - Instance segmentation (Mask R-CNN and similar) produces boxes and masks together, which suits buildings (unsourced).
 
@@ -34,6 +36,7 @@ Finding each object in an image and returning a bounding box plus a class; one r
 - Usual metrics: mAP at IoU 0.5 and mAP over IoU 0.5:0.95 (unsourced).
 
 ## Related
+- [[detector-choice]]
 - [[faster-r-cnn]]
 - [[yolo]]
 - [[ssd-detector]]

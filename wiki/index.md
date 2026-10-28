@@ -46,6 +46,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 - [[peer-review-expose]] — Fellow student's peer review of the exposé draft (22.10.2026) with the author's notes: method coherent; criticises long sentences, citation density, unclear goal (drones?), unexplained nadir/OSM-only choices, settlement-vs-Alpine-edge contradiction.
 - [[sojasingarayar-2022-detector-comparison]] — Medium blog (2022): Faster R-CNN (two-stage, RPN) vs YOLO and SSD (single-shot); VOC2007 chart: SSD300 74 % mAP at 46 fps, Faster R-CNN 73 %/7 fps, YOLO 66 %/21 fps. Orientation only, cite the original papers.
+- [[yolo-small-aerial-search]] — Search: YOLO11-OBB 78.4–81.3 mAP50 on DOTA at 4.4–28.6 ms/tile (T4) vs Oriented R-CNN 75.87 % at ~66 ms; YOLO11 on VisDrone 32–46 % at 330–38 FPS; YOLO weak below ~16 px (AI-TOD); pool and tank precedents.
 
 ## Entities
 - [[hok-dsia-master]] — The DSIA master's programme at HOK Kufstein Tirol (part-time form) in which the thesis is written.
@@ -88,3 +89,4 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[expose-review]] — Strict review of the exposé draft (22.10.2026, German; = expose/expose-ki-entwurf.pdf): grade 2–3; no success criterion, scale never varied, core classes lack coverage, no negative test images; fixes ranked for 23.10 and 31.10.
 - [[expose-revision]] — Revision plan for the exposé (German): seven decisions with recommendations (10 m radius + 50 m, random 0.20–0.35 m test scale, region criteria instead of names, stratified test set with negatives), content, numbers and citations per defect; bibliography and editorial fixes done in the draft.
 - [[thesis-timeline]] — Thesis milestones per part-time semester and which courses feed the thesis.
+- [[detector-choice]] — Why YOLO-OBB for small objects in DOP20: speed at DOTA-level accuracy, object sizes vs the tiny-object limit, evidence levels, what to cite in the exposé, open risks.
