@@ -230,6 +230,10 @@
     (`xia2018dota`), feinabgestimmt mit OSM-Labels, für die fünf Punktklassen; (2) Gebäudesegmentierung mit
     OSM-Umrissen als Labels. DOTA hat keine Gebäudeklasse; rund 75 % der OSM-Gebäude sind nur `building=yes`,
     deshalb Grundfläche und Ausrichtung als Merkmale.
+  - Detektorwahl in einem Satz begründen: einstufige Detektoren (YOLO, SSD) gegen zweistufige (Faster R-CNN).
+    Für YOLO-OBB sprechen gedrehte Rahmen, vorhandene DOTA-Gewichte und Geschwindigkeit. Originalarbeiten zitieren
+    (`redmon2016yolo`, `ren2017fasterrcnn`, `liu2016ssd` in ergaenzungen.bib), nicht den Medium-Artikel.
+    Die Vergleichszahlen von 2016 (Pascal VOC, Bodenfotos) taugen nicht als Beleg für Luftbilder.
   - Manuell geprüfte Teilmenge (z. B. 50 Ausschnitte): real-kartiert, real-unkartiert, Fehlalarm. So trennen sich
     Detektorfehler und OSM-Lücken; OSM-Vollständigkeit schwankt räumlich (`hecht2013completeness`).
 ]

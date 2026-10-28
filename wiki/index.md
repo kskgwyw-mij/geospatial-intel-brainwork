@@ -45,6 +45,7 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[osm-real-test]] — Real OSM test: 11,599 anchors (about 1.5/km²), Miesbach 47k buildings (about 55/km²); random photos located 1 % with point anchors; half of footprints have no building.
 - [[hok-dsia-program-listings]] — Third-party listing facts about the part-time MSc programme; the official page could not be fetched.
 - [[peer-review-expose]] — Fellow student's peer review of the exposé draft (22.10.2026) with the author's notes: method coherent; criticises long sentences, citation density, unclear goal (drones?), unexplained nadir/OSM-only choices, settlement-vs-Alpine-edge contradiction.
+- [[sojasingarayar-2022-detector-comparison]] — Medium blog (2022): Faster R-CNN (two-stage, RPN) vs YOLO and SSD (single-shot); VOC2007 chart: SSD300 74 % mAP at 46 fps, Faster R-CNN 73 %/7 fps, YOLO 66 %/21 fps. Orientation only, cite the original papers.
 
 ## Entities
 - [[hok-dsia-master]] — The DSIA master's programme at HOK Kufstein Tirol (part-time form) in which the thesis is written.
@@ -53,6 +54,9 @@ Updated on every ingest, filed query, or rename. Read this first when answering 
 - [[overpass-turbo]] — Web IDE for writing and visualising Overpass queries; defines which OSM objects count.
 - [[oberbayern-sued]] — Search region and study area: provisionally the Alpine-edge districts GAP, TÖL, MB, WM, RO, TS, BGL (about 7,800 km²), DOP20 imagery, Overpass area query.
 - [[poc-platform]] — The proof-of-concept platform where orthoimagery is uploaded and detections are shown.
+- [[faster-r-cnn]] — Two-stage detector: Region Proposal Network + Fast R-CNN head; 73 % mAP at 7 fps on VOC2007; alternative to the YOLO-type detector.
+- [[yolo]] — Single-shot grid detector family; YOLO11-OBB with DOTA weights is the thesis detector (78.4 mAP50 nano on DOTAv1; zero-shot P 0.49 / R 0.62 on DOP20).
+- [[ssd-detector]] — Single Shot MultiBox Detector: default boxes on multi-scale feature maps; 74 % mAP at 46 fps on VOC2007 (SSD300).
 
 ## Concepts
 - [[orthoimagery]] — Orthorectified aerial or satellite images that line up with map coordinates; the input data.

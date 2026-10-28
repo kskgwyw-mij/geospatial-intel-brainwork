@@ -2,8 +2,8 @@
 title: Detector & classifier approaches for 10–25 cm orthophotos
 type: analysis
 tags: [methods, decision, detection, segmentation, classification]
-sources: [bayern-opengeodata, methods-10-25cm-search, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, author-note-industrial-colour]
-updated: 2026-10-21
+sources: [bayern-opengeodata, methods-10-25cm-search, maggiori-2017-hr-semantic-labeling, maggiori-osm-imperfect-labels, aerial-cv-benchmarks, author-note-industrial-colour, sojasingarayar-2022-detector-comparison]
+updated: 2026-10-28
 ---
 A rethink of which detector, segmenter and classifier approaches fit each thesis class (buildings and roof shapes, pools, solar arrays, trees, pitches, tanks) at state-orthophoto resolution, and how they combine into one pipeline.
 
@@ -12,7 +12,7 @@ A rethink of which detector, segmenter and classifier approaches fit each thesis
 | Family | How it works | Role in the thesis |
 |---|---|---|
 | **A. Classical ML** | Pixel- or segment-based features (colour, texture, nDSM height, shape) → random forest or gradient boosting | Baseline; justifies DL ([[spectral-texture-features]]) |
-| **B. Task-specific deep learning** | Semantic segmentation (U-Net, DeepLab, SegFormer), instance segmentation (Mask R-CNN, YOLO-seg), detection (YOLO, RetinaNet, Faster R-CNN; oriented boxes), patch classification (ResNet, EfficientNet) | Main method, trained on [[osm-weak-labels]] |
+| **B. Task-specific deep learning** | Semantic segmentation (U-Net, DeepLab, SegFormer), instance segmentation (Mask R-CNN, YOLO-seg), detection (single-shot [[yolo]], [[ssd-detector]], RetinaNet; two-stage [[faster-r-cnn]]; oriented boxes; families compared in [[sojasingarayar-2022-detector-comparison]]), patch classification (ResNet, EfficientNet) | Main method, trained on [[osm-weak-labels]] |
 | **C. Two-stage pipelines** | Find the object first, then classify a crop of it (for example building → roof shape, pitch → sport) | Turns OSM attribute tags into classification targets |
 | **D. Foundation / zero-shot** | SAM/SAM2 masks from box or point prompts; Grounding DINO + SAM from text prompts | Label refiner and comparison point; not the main model |
 
